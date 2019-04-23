@@ -1,0 +1,8 @@
+{
+  "prettier.eslintIntegration": true,
+  "prettier.trailingComma": "es5",
+  "python.jediEnabled": false,
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false
+}
