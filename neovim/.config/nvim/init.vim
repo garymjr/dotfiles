@@ -55,6 +55,7 @@ set noshowmode
 set noswapfile
 set noundofile
 set nowrap
+set path+=**
 set re=1
 set ruler
 set shiftwidth=2
