@@ -9,7 +9,6 @@ let maplocalleader = ','
 " Section: Plugins
 
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-commentary'
 Plug 'wellle/targets.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
@@ -19,6 +18,9 @@ Plug 'mattn/emmet-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 call plug#end()
 
@@ -81,7 +83,7 @@ augroup ColorScheme
   au ColorScheme * call SetupDefaultItalics()
 augroup END
 
-colorscheme onedark
+colorscheme neodark
 
 " Section: Autocmd
 
@@ -115,6 +117,31 @@ endfunc
 " Set coc_filetypes to an empty array
 let g:coc_filetypes = []
 
+" Use context aware comments in Vue files
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
+
+let g:NERDSpaceDelims = 1
+
+let g:airline_theme='neodark'
+
 " Section: Mappings
 
 " Use esc to exit insert mode in terminal
@@ -134,13 +161,11 @@ nnoremap Y y$
 inoremap <silent> <c-e> <c-r>=emmet#expandAbbr(0, "")<cr>
 
 " <leader>
-nnoremap <silent> <tab> :GFiles<cr>
-nnoremap <silent> <leader><leader> :Buffers<cr>
+nnoremap <silent> <tab> :Buffers<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 nnoremap <silent> <leader>c <c-w>c
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
-nnoremap <silent> <leader>ff :Files<cr>
-nnoremap <silent> <leader>fv :e $MYVIMRC<cr>
+nnoremap <silent> <leader>f :GFiles<cr>
 nnoremap <silent> <leader>h :Helptags<cr>
 nnoremap <silent> <leader>wh <c-w>h
 nnoremap <silent> <leader>wj <c-w>j
