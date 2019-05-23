@@ -16,12 +16,13 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'scrooloose/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'mcchrish/nnn.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 call plug#end()
 
