@@ -1,2 +1,2 @@
-call coc#add_extension('coc-vetur', 'coc-eslint', 'coc-prettier')
-let g:coc_filetypes += ['vue']
+let b:ale_linters = ['eslint', 'prettier', 'prettier-eslint']
+let b:ale_fixers = ['eslint', 'prettier', 'prettier-eslint']

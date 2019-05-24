@@ -1,2 +1,2 @@
-call coc#add_extension('coc-tsserver', 'coc-eslint', 'coc-prettier')
-let g:coc_filetypes += ['javascript', 'javascript.jsx']
+let b:ale_linters = ['eslint', 'prettier', 'prettier-eslint', 'tsserver']
+let b:ale_fixers = ['eslint', 'prettier', 'prettier-eslint']

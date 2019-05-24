@@ -23,7 +23,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
+Plug 'w0rp/ale'
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 call plug#end()
 
 " Section: Settings
