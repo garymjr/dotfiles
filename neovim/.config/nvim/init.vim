@@ -24,6 +24,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
+Plug 'tmsvg/pear-tree'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 call plug#end()
 
@@ -145,6 +146,9 @@ endfunction
 let g:NERDSpaceDelims = 1
 
 let g:airline_theme='neodark'
+
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 
 " Section: Mappings
 
