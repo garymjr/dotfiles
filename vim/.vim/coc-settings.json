@@ -1,0 +1,9 @@
+{
+  "prettier.eslintIntegration": true,
+  "diagnostic.enableSign": false,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "json"],
+  "coc.preferences.colorSupport": false,
+  "snippets.extends": {
+    "typescript": ["javascript"]
+  }
+}
