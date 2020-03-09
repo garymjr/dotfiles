@@ -20,6 +20,7 @@ Plug 'romainl/flattened'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'srcery-colors/srcery-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'pechorin/any-jump.vim'
 
 " coc.nvim plugins
 " Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
@@ -43,6 +44,7 @@ set clipboard^=unnamed,unnamedplus
 set complete-=i
 set complete-=t
 set completeopt=menu,menuone,noinsert,noselect
+set encoding=utf-8
 set expandtab
 set foldmethod=indent
 set foldlevelstart=99
@@ -84,6 +86,8 @@ set wildignore+=*/node_modules/*
 set wildmenu
 set wildmode=list:longest,list:full
 
+scriptencoding utf-8
+
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
@@ -94,27 +98,39 @@ colorscheme onehalfdark
 let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'palenight'
 
+let g:any_jump_search_prefered_engine = 'rg'
+
 " highlight CocHighlightText guibg=#34394e
 
-augroup DotVim
+augroup AutoUpdateFiles
   autocmd!
-
-  " Update files
   autocmd CursorHold,FocusGained,WinEnter * checktime
   autocmd BufEnter,BufWrite,CursorHold * syntax sync fromstart
-
-  " Always put quickfix on the bottom
-  autocmd FileType qf wincmd J
-
-  " Fix for css files
-  autocmd FileType css setlocal iskeyword+=-
-
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
 augroup Coc
   autocmd!
   autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup END
+
+augroup RemeberLastPosition
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+augroup Typescript
+  autocmd!
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+augroup END
+
+augroup Css
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
+
+augroup QuickFix
+  autocmd!
+  autocmd FileType qf wincmd J
 augroup END
 
 let g:polygot_disabled = ['typescriptreact']
@@ -148,7 +164,7 @@ command! -bang -nargs=? -complete=dir GFiles
 nnoremap <silent> <tab> :Buffers<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>gf :GFiles<cr>
-nnoremap <silent> <leader>ff :Files<cr>
+nnoremap <silent> <leader>f :Files<cr>
 nnoremap <silent> <leader><leader> :Files<cr>
 nnoremap <silent> <leader>h :Helptags<cr>
 nnoremap <silent> <leader>lg :term ++close lazygit<cr>
