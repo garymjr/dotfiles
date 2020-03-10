@@ -21,18 +21,20 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'srcery-colors/srcery-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'pechorin/any-jump.vim'
+Plug 'jacoborus/tender.vim'
 
 " coc.nvim plugins
 " Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install'}
+" Plug 'neoclide/coc-eslint', {'do': 'yarn install'}
+Plug 'neoclide/coc-emmet', {'do': 'yarn install'}
+Plug 'neoclide/coc-json', {'do': 'yarn install'}
+Plug 'neoclide/coc-tabnine', {'do': 'yarn install'}
+" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install'}
 call plug#end()
 
 set autoindent
@@ -94,7 +96,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " highlight default link CocHighlightText NONE
 
 filetype plugin indent on
-colorscheme onehalfdark
+colorscheme tender
 let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'palenight'
 
