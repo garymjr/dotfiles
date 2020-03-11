@@ -1,38 +1,40 @@
 call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
-Plug 'joshdick/onedark.vim'
-Plug 'KeitaNakamura/neodark.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
+Plug 'markonm/traces.vim'
+
+Plug 'yuezk/vim-js'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'hauleth/blame.vim'
-Plug 'markonm/traces.vim'
-Plug 'romainl/flattened'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'srcery-colors/srcery-vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'pechorin/any-jump.vim'
-Plug 'jacoborus/tender.vim'
 
-" coc.nvim plugins
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'jacoborus/tender.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'KeitaNakamura/neodark.vim'
+
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 " Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install'}
-" Plug 'neoclide/coc-eslint', {'do': 'yarn install'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install'}
 Plug 'neoclide/coc-emmet', {'do': 'yarn install'}
 Plug 'neoclide/coc-json', {'do': 'yarn install'}
-Plug 'neoclide/coc-tabnine', {'do': 'yarn install'}
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install'}
 call plug#end()
@@ -120,11 +122,6 @@ augroup RemeberLastPosition
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-augroup Typescript
-  autocmd!
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-augroup END
-
 augroup Css
   autocmd!
   autocmd FileType css setlocal iskeyword+=-
@@ -134,8 +131,6 @@ augroup QuickFix
   autocmd!
   autocmd FileType qf wincmd J
 augroup END
-
-let g:polygot_disabled = ['typescriptreact']
 
 let g:startify_change_to_dir = 0
 
@@ -177,4 +172,3 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 imap <C-l> <Plug>(coc-snippets-expand)
 inoremap <silent><expr> <c-x>o coc#refresh()
-" inoremap <silent><expr> <c-e> coc#refresh()
