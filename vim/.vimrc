@@ -123,9 +123,6 @@ let g:startify_change_to_dir = 0
 
 let mapleader=' '
 
-" Use esc to exit insert mode in terminal
-tnoremap <esc> <c-\><c-n>
-
 " Keep visual selection when shifting
 vmap < <gv
 vmap > >gv
