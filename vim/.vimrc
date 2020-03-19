@@ -94,7 +94,10 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 filetype plugin indent on
 colorscheme srcery
+
 let g:airline_powerline_fonts = 1
+let g:airline_left_sep = "\ue0b8"
+let g:airline_right_sep = "\ue0be"
 
 augroup AutoUpdateFiles
   autocmd!
