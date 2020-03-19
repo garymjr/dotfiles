@@ -6,5 +6,5 @@
   "snippets.extends": {
     "typescript": ["javascript"]
   },
-  "suggest.autoTrigger": "trigger"
+  "suggest.autoTrigger": "none"
 }

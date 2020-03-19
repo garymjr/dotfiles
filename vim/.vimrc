@@ -65,7 +65,9 @@ set noundofile
 set nowrap
 set number
 set path+=**
+set re=2
 set ruler
+set scrolloff=3 sidescrolloff=3
 set shiftwidth=2
 set shortmess+=I
 set shortmess+=W
@@ -94,17 +96,10 @@ filetype plugin indent on
 colorscheme srcery
 let g:airline_powerline_fonts = 1
 
-let g:any_jump_search_prefered_engine = 'rg'
-
 augroup AutoUpdateFiles
   autocmd!
   autocmd CursorHold,FocusGained,WinEnter * checktime
   autocmd BufEnter,BufWrite,CursorHold * syntax sync fromstart
-augroup END
-
-augroup Coc
-  autocmd!
-  autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup END
 
 augroup RemeberLastPosition
@@ -161,4 +156,4 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 imap <C-l> <Plug>(coc-snippets-expand)
-inoremap <silent><expr> <c-x>o coc#refresh()
+inoremap <silent><expr> <c-x><c-o> coc#refresh()
