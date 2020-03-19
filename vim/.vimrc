@@ -2,7 +2,6 @@ filetype off
 packadd! vim-startify
 packadd! fzf
 packadd! fzf.vim
-packadd! emmet-vim
 packadd! vim-better-whitespace
 packadd! vim-styled-components
 packadd! traces.vim
@@ -136,9 +135,6 @@ nnoremap <backspace> <c-^>
 
 " Make Y like P
 nnoremap Y y$
-
-" emmet
-inoremap <silent> <c-e> <c-r>=emmet#expandAbbr(0, "")<cr>
 
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
