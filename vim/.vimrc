@@ -1,44 +1,38 @@
-call plug#begin('~/.vim/plugged')
-Plug 'mhinz/vim-startify'
-Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'mattn/emmet-vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'styled-components/vim-styled-components', {'branch': 'main'}
-Plug 'markonm/traces.vim'
+filetype off
+packadd! vim-startify
+packadd! fzf
+packadd! fzf.vim
+packadd! emmet-vim
+packadd! vim-better-whitespace
+packadd! vim-styled-components
+packadd! traces.vim
 
-Plug 'yuezk/vim-js'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'othree/html5.vim'
-Plug 'hail2u/vim-css3-syntax'
+packadd! vim-js
+packadd! yats.vim
+packadd! vim-jsx-pretty
+packadd! html5.vim
+packadd! vim-css3-syntax
 
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+packadd! vim-commentary
+packadd! vim-eunuch
+packadd! vim-surround
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+packadd! vim-airline
+packadd! vim-airline-themes
 
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'jacoborus/tender.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'srcery-colors/srcery-vim'
+packadd! srcery-vim
 
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install'}
-Plug 'neoclide/coc-emmet', {'do': 'yarn install'}
-Plug 'neoclide/coc-json', {'do': 'yarn install'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install'}
-call plug#end()
+packadd! coc.nvim
+packadd! coc-snippets
+packadd! coc-emmet
+packadd! coc-json
+packadd! coc-tsserver
+packadd! coc-html
+packadd! coc-css
+packadd! coc-prettier
+
+filetype plugin indent on
+syntax on
 
 set autoindent
 set autoread
