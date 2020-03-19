@@ -16,6 +16,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -25,9 +26,9 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'jacoborus/tender.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
+Plug 'srcery-colors/srcery-vim'
 
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
-" Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install'}
 Plug 'neoclide/coc-emmet', {'do': 'yarn install'}
@@ -95,16 +96,11 @@ scriptencoding utf-8
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-" highlight default link CocHighlightText NONE
-
 filetype plugin indent on
-colorscheme tender
+colorscheme srcery
 let g:airline_powerline_fonts = 1
-" let g:airline_theme = 'palenight'
 
 let g:any_jump_search_prefered_engine = 'rg'
-
-" highlight CocHighlightText guibg=#34394e
 
 augroup AutoUpdateFiles
   autocmd!
