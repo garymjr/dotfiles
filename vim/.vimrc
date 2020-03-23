@@ -1,4 +1,6 @@
 filetype off
+
+let &packpath = &packpath . ',$HOME/.vim'
 packadd! vim-startify
 packadd! fzf
 packadd! fzf.vim
