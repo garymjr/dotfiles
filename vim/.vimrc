@@ -23,14 +23,11 @@ packadd! vim-airline-themes
 
 packadd! srcery-vim
 
-packadd! coc.nvim
-packadd! coc-snippets
-packadd! coc-emmet
-packadd! coc-json
-packadd! coc-tsserver
-packadd! coc-html
-packadd! coc-css
-packadd! coc-prettier
+packadd! async.vim
+packadd! vim-lsp
+packadd! vim-lsp-settings
+packadd! vim-vsnip
+packadd! vim-vsnip-integ
 
 filetype plugin indent on
 syntax on
@@ -100,25 +97,37 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = "\ue0b8"
 let g:airline_right_sep = "\ue0be"
 
-augroup AutoUpdateFiles
+let g:vsnip_snippet_dir = '~/.vim/snippets'
+
+augroup auto_update_files
   autocmd!
   autocmd CursorHold,FocusGained,WinEnter * checktime
   autocmd BufEnter,BufWrite,CursorHold * syntax sync fromstart
 augroup END
 
-augroup RemeberLastPosition
+augroup remember_last_position
   autocmd!
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-augroup Css
+augroup css_syntax_fix
   autocmd!
   autocmd FileType css setlocal iskeyword+=-
 augroup END
 
-augroup QuickFix
+augroup quickfix_on_bottom
   autocmd!
   autocmd FileType qf wincmd J
+augroup END
+
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  nmap <buffer> gd <plug>(lsp-definition)
+endfunction
+
+augroup lsp_install
+  autocmd!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
 let g:startify_change_to_dir = 0
@@ -148,10 +157,4 @@ nnoremap <silent> <leader>f :Files<cr>
 nnoremap <silent> <leader><leader> :Files<cr>
 nnoremap <silent> <leader>h :Helptags<cr>
 nnoremap <silent> <leader>lg :term ++close lazygit<cr>
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-imap <C-l> <Plug>(coc-snippets-expand)
-inoremap <silent><expr> <c-x><c-o> coc#refresh()
+imap <expr> <C-j> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-j>'

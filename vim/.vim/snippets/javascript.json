@@ -1,0 +1,20 @@
+{
+  "import": {
+    "prefix": ["imp"],
+    "body": "import ${2:module} from '${1:package}';$0",
+    "description": "import package"
+  },
+  "destructured import": {
+    "prefix": ["imd"],
+    "body": "import { ${2:module} } from '${1:package}';$0",
+    "description": "destructure and import package"
+  },
+  "debugger": {
+    "prefix": ["debug"],
+    "body": [
+      "/* eslint-disable-next-line",
+      "debugger;"
+    ],
+    "description": "insert breakpoint"
+  }
+}
