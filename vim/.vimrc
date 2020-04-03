@@ -6,6 +6,8 @@ packadd! vim-better-whitespace
 packadd! vim-styled-components
 packadd! traces.vim
 
+packadd! vim-polygot
+
 packadd! vim-commentary
 packadd! vim-eunuch
 packadd! vim-surround
