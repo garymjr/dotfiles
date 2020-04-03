@@ -6,12 +6,6 @@ packadd! vim-better-whitespace
 packadd! vim-styled-components
 packadd! traces.vim
 
-packadd! vim-js
-packadd! yats.vim
-packadd! vim-jsx-pretty
-packadd! html5.vim
-packadd! vim-css3-syntax
-
 packadd! vim-commentary
 packadd! vim-eunuch
 packadd! vim-surround
