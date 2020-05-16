@@ -1,9 +1,0 @@
-src
-tsconfig.json
-tslint.json
-*.map
-tests
-.DS_Store
-.ignore
-.netrwhist
-yarn.lock
