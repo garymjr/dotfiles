@@ -34,6 +34,7 @@ Plug 'edkolev/tmuxline.vim'
 
 Plug 'ntk148v/vim-horizon'
 Plug 'sainnhe/sonokai'
+Plug 'sainnhe/edge'
 
 Plug 'psliwka/vim-smoothie'
 Plug 'justinmk/vim-sneak'

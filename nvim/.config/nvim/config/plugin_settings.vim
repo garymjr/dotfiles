@@ -18,5 +18,7 @@ let g:completion_enable_snippet = 'UltiSnips'
 
 let g:startify_change_to_dir = 0
 
-let g:completion_confirm_key = "\<CR>"
-let g:completion_enable_auto_popup = 1
+" let g:completion_confirm_key = "\<CR>"
+" let g:completion_enable_auto_popup = 1
+
+let g:edge_enable_italic = 1

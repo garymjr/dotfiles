@@ -82,4 +82,10 @@ augroup insert_cursorline
   autocmd InsertLeave,WinEnter * :setlocal cursorline
 augroup END
 
-colorscheme sonokai
+colorscheme edge
+
+lua vim.api.nvim_command [[autocmd CursorHold   * lua require'git_lens'.blameVirtText()]]
+lua vim.api.nvim_command [[autocmd CursorMoved  * lua require'git_lens'.clearBlameVirtText()]]
+lua vim.api.nvim_command [[autocmd CursorMovedI * lua require'git_lens'.clearBlameVirtText()]]
+
+hi! link GitLens Comment
