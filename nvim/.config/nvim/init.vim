@@ -1,55 +1,65 @@
-if exists('g:vscode')
-  xmap gc  <Plug>VSCodeCommentary
-  vmap gc  <Plug>VSCodeCommentary
-  omap gc  <Plug>VSCodeCommentary
-  nmap gcc <Plug>VSCodeCommentaryLine
-  nnoremap <silent> K <Cmd>call VSCodeCall('editor.action.showHover')<CR>
-  nnoremap <silent> <TAB> <Cmd>call VSCodeCall('workbench.action.showAllEditors')<CR>
-  nnoremap <silent> gr <Cmd>call VSCodeCall('references-view.find')<CR>
-  nnoremap <silent> - <Cmd>call VSCodeCall('workbench.files.action.showActiveFileInExplorer')<CR>
-  finish
-endif
-
-scriptencoding utf-8
-filetype plugin indent on
-
-syntax enable
-syntax on
-
-let mapleader=' '
-
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+scriptencoding utf-8
+filetype plugin indent on
+
+if exists('g:vscode')
+  call plug#begin('~/.local/share/nvim/site/plugged')
+    Plug 'asvetliakov/vim-easymotion'
+    Plug 'tpope/vim-surround'
+  call plug#end()
+
+  xmap gc  <Plug>VSCodeCommentary
+  vmap gc  <Plug>VSCodeCommentary
+  omap gc  <Plug>VSCodeCommentary
+  nmap gcc <Plug>VSCodeCommentaryLine
+  nnoremap <silent> K <Cmd>call VSCodeCall('editor.action.showHover')<cr>
+  nnoremap <silent> gr <Cmd>call VSCodeCall('references-view.find')<cr>
+  nnoremap <silent> - <Cmd>call VSCodeCall('workbench.files.action.showActiveFileInExplorer')<cr>
+  nnoremap <silent> <space> <Cmd>call VSCodeCall('whichkey.show')<cr>
+  nnoremap <silent> <tab> <Cmd>call VSCodeCall('workbench.action.nextEditor')<cr>
+  nnoremap <silent> <s-tab> <Cmd>call VSCodeCall('workbench.action.previousEditor')<cr>
+  nnoremap <silent> <c-h> <Cmd>call VSCodeCall('workbench.action.navigateLeft')<cr>
+  nnoremap <silent> <c-j> <Cmd>call VSCodeCall('workbench.action.navigateDown')<cr>
+  nnoremap <silent> <c-k> <Cmd>call VSCodeCall('workbench.action.navigateUp')<cr>
+  nnoremap <silent> <c-l> <Cmd>call VSCodeCall('workbench.action.navigateRight')<cr>
+
+  nmap s <Plug>(easymotion-s2)
+  vmap < <gv
+  vmap > >gv
+  finish
+endif
+
+let mapleader = ' '
+
 call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-startify'
-Plug 'SirVer/ultisnips'
-Plug 'voldikss/vim-floaterm'
-
-Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components', {'branch': 'main'}
-Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
-
-Plug 'ntk148v/vim-horizon'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/edge'
 
-Plug 'psliwka/vim-smoothie'
 Plug 'justinmk/vim-sneak'
+Plug 'justinmk/vim-dirvish'
 
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'bluz71/vim-moonfly-statusline'
+
+Plug 'SirVer/ultisnips'
+Plug 'voldikss/vim-floaterm'
+Plug 'sheerun/vim-polyglot'
+Plug 'styled-components/vim-styled-components', {'branch': 'main'}
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'ntk148v/vim-horizon'
+Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
@@ -138,31 +148,18 @@ augroup insert_cursorline
   autocmd InsertLeave,WinEnter,BufEnter * :setlocal cursorline
 augroup END
 
-colorscheme edge
+augroup coc_nvim
+  autocmd!
+  autocmd CursorHold * :call CocActionAsync('highlight')
+  autocmd BufWritePost *.js :CocCommand prettier.formatFile
+augroup END
+
+colorscheme nightfly
 
 hi! link GitLens Comment
 
-let g:airline_theme = 'edge'
-" let g:airline_powerline_fonts = 1
-" let g:airline_left_sep = "\ue0b8"
-" let g:airline_right_sep = "\ue0be"
-
-let g:tmuxline_separators = {
-      \ 'left': '',
-      \ 'left_alt': '',
-      \ 'right': '',
-      \ 'right_alt': '',
-      \ 'space': ' ',
-      \ }
-
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-
 let g:UltiSnipsSnippetDirectories = ['ultisnips']
 let g:completion_enable_snippet = 'UltiSnips'
-
-let g:startify_change_to_dir = 0
-
-let g:edge_enable_italic = 1
 
 let g:floaterm_wintitle = v:false
 let g:floaterm_autoclose = v:true
@@ -172,6 +169,9 @@ inoremap <silent><expr> <tab>
       \ coc#expandableOrJumpable() ? "\<c-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<c-r>" :
       \ <SID>check_back_space() ? "\<tab>" :
       \ coc#refresh()
+
+inoremap <silent><expr> <c-j> pumvisible() ? "\<c-n>" : "\<c-j>"
+inoremap <silent><expr> <c-k> pumvisible() ? "\<c-p>" : "\<c-k>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -191,6 +191,9 @@ nnoremap <leader>g :Lazygit<cr>
 
 command! GBlame lua require'git_lens'.blameVirtText()
 
+vmap < <gv
+vmap > >gv
+
 " Make Y like P
 nnoremap Y y$
 
@@ -208,7 +211,5 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <leader>e :CocCommand explorer<cr>
 
 " Keep visual selection when shifting
-vmap < <gv
-vmap > >gv
 
 nnoremap <leader>n :NnnPicker '%:p:h'<cr>
