@@ -48,7 +48,6 @@ Plug 'sainnhe/sonokai'
 Plug 'sainnhe/edge'
 
 Plug 'justinmk/vim-sneak'
-Plug 'justinmk/vim-dirvish'
 
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'bluz71/vim-moonfly-statusline'
@@ -58,7 +57,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'ntk148v/vim-horizon'
 Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
@@ -151,7 +149,6 @@ augroup END
 augroup coc_nvim
   autocmd!
   autocmd CursorHold * :call CocActionAsync('highlight')
-  autocmd BufWritePost *.js :CocCommand prettier.formatFile
 augroup END
 
 colorscheme nightfly
@@ -190,6 +187,7 @@ command! Lazygit FloatermNew --height=0.9 --width=0.9 lazygit
 nnoremap <leader>g :Lazygit<cr>
 
 command! GBlame lua require'git_lens'.blameVirtText()
+command! Prettier CocCommand prettier.formatFile
 
 vmap < <gv
 vmap > >gv
@@ -209,6 +207,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <leader>e :CocCommand explorer<cr>
+
+" use escape in terminal
+tnoremap <esc> <c-\><c-n>
+
 
 " Keep visual selection when shifting
 

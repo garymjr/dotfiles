@@ -1,4 +1,4 @@
 {
-  "coc.preferences.colorSupport": false,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"]
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"],
+  "prettier.stylelintIntegration": true
 }
