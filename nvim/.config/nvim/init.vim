@@ -146,11 +146,6 @@ augroup insert_cursorline
   autocmd InsertLeave,WinEnter,BufEnter * :setlocal cursorline
 augroup END
 
-augroup coc_nvim
-  autocmd!
-  autocmd CursorHold * :call CocActionAsync('highlight')
-augroup END
-
 colorscheme nightfly
 
 hi! link GitLens Comment
