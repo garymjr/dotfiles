@@ -44,10 +44,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 
-Plug 'sainnhe/sonokai'
-Plug 'sainnhe/edge'
-
 Plug 'justinmk/vim-sneak'
+Plug 'justinmk/vim-dirvish'
 
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'bluz71/vim-moonfly-statusline'
@@ -209,4 +207,3 @@ tnoremap <esc> <c-\><c-n>
 
 " Keep visual selection when shifting
 
-nnoremap <leader>n :NnnPicker '%:p:h'<cr>
