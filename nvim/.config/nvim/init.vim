@@ -17,10 +17,10 @@ filetype plugin indent on
 "   vmap gc  <Plug>VSCodeCommentary
 "   omap gc  <Plug>VSCodeCommentary
 "   nmap gcc <Plug>VSCodeCommentaryLine
+"   nnoremap <silent> <space>e <cmd>call VSCodeCall('workbench.view.explorer')<cr>
 "   nnoremap <silent> K <Cmd>call VSCodeCall('editor.action.showHover')<cr>
 "   nnoremap <silent> gr <Cmd>call VSCodeCall('references-view.find')<cr>
 "   nnoremap <silent> - <Cmd>call VSCodeCall('workbench.files.action.showActiveFileInExplorer')<cr>
-"   nnoremap <silent> <space> <Cmd>call VSCodeCall('whichkey.show')<cr>
 "   nnoremap <silent> <tab> <Cmd>call VSCodeCall('workbench.action.nextEditor')<cr>
 "   nnoremap <silent> <s-tab> <Cmd>call VSCodeCall('workbench.action.previousEditor')<cr>
 "   nnoremap <silent> <c-h> <Cmd>call VSCodeCall('workbench.action.navigateLeft')<cr>
@@ -53,7 +53,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
