@@ -7,33 +7,6 @@ endif
 scriptencoding utf-8
 filetype plugin indent on
 
-" if exists('g:vscode')
-"   call plug#begin('~/.local/share/nvim/site/plugged')
-"     Plug 'asvetliakov/vim-easymotion'
-"     Plug 'tpope/vim-surround'
-"   call plug#end()
-
-"   xmap gc  <Plug>VSCodeCommentary
-"   vmap gc  <Plug>VSCodeCommentary
-"   omap gc  <Plug>VSCodeCommentary
-"   nmap gcc <Plug>VSCodeCommentaryLine
-"   nnoremap <silent> <space>e <cmd>call VSCodeCall('workbench.view.explorer')<cr>
-"   nnoremap <silent> K <Cmd>call VSCodeCall('editor.action.showHover')<cr>
-"   nnoremap <silent> gr <Cmd>call VSCodeCall('references-view.find')<cr>
-"   nnoremap <silent> - <Cmd>call VSCodeCall('workbench.files.action.showActiveFileInExplorer')<cr>
-"   nnoremap <silent> <tab> <Cmd>call VSCodeCall('workbench.action.nextEditor')<cr>
-"   nnoremap <silent> <s-tab> <Cmd>call VSCodeCall('workbench.action.previousEditor')<cr>
-"   nnoremap <silent> <c-h> <Cmd>call VSCodeCall('workbench.action.navigateLeft')<cr>
-"   nnoremap <silent> <c-j> <Cmd>call VSCodeCall('workbench.action.navigateDown')<cr>
-"   nnoremap <silent> <c-k> <Cmd>call VSCodeCall('workbench.action.navigateUp')<cr>
-"   nnoremap <silent> <c-l> <Cmd>call VSCodeCall('workbench.action.navigateRight')<cr>
-
-"   nmap s <Plug>(easymotion-s2)
-"   vmap < <gv
-"   vmap > >gv
-"   finish
-" endif
-
 let mapleader = ' '
 
 call plug#begin('~/.local/share/nvim/site/plugged')
@@ -41,13 +14,14 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 
 Plug 'justinmk/vim-sneak'
 
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'bluz71/vim-moonfly-statusline'
+
+Plug 'AhmedAbdulrahman/aylin.vim'
 
 Plug 'voldikss/vim-floaterm'
 Plug 'sheerun/vim-polyglot'
@@ -75,6 +49,7 @@ set fileformats=unix
 set hidden
 set history=10000
 set ignorecase
+set inccommand=nosplit
 set incsearch
 set laststatus=2
 set mouse=a
@@ -91,7 +66,6 @@ set path+=**
 set re=2
 set ruler
 set scrolloff=3 sidescrolloff=3
-set shada=
 set shiftwidth=2
 set shortmess+=I
 set shortmess+=W
@@ -137,7 +111,7 @@ augroup insert_cursorline
   autocmd InsertLeave,WinEnter,BufEnter * :setlocal cursorline
 augroup END
 
-colorscheme nightfly
+colorscheme aylin
 
 let g:floaterm_wintitle = v:false
 let g:floaterm_autoclose = v:true
@@ -161,13 +135,19 @@ vmap > >gv
 nnoremap Y y$
 
 " fzf
-" nnoremap <silent> <tab> :Buffers<cr>
 nnoremap <silent> <leader>f :Files<cr>
 nnoremap <silent> <leader>h :Helptags<cr>
 nnoremap <silent> <backspace> :Buffers<cr>
 
 nnoremap <silent> <leader>e :CocCommand explorer<cr>
 nnoremap <silent> gp :CocCommand prettier.formatFile<cr>
+
+" movement
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <tab> <c-w>p
 
 " use escape in terminal
 tnoremap <esc> <c-\><c-n>
