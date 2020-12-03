@@ -21,8 +21,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'bluz71/vim-moonfly-statusline'
 
-Plug 'AhmedAbdulrahman/aylin.vim'
-
 Plug 'voldikss/vim-floaterm'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
@@ -111,7 +109,7 @@ augroup insert_cursorline
   autocmd InsertLeave,WinEnter,BufEnter * :setlocal cursorline
 augroup END
 
-colorscheme aylin
+colorscheme nightfly
 
 let g:floaterm_wintitle = v:false
 let g:floaterm_autoclose = v:true
