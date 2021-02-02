@@ -4,35 +4,20 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-scriptencoding utf-8
-filetype plugin indent on
-
 let mapleader = ' '
 
-call plug#begin('~/.local/share/nvim/site/plugged')
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+filetype plugin indent on
 
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-
-Plug 'justinmk/vim-sneak'
-
-Plug 'bluz71/vim-nightfly-guicolors'
-Plug 'bluz71/vim-moonfly-statusline'
-
-Plug 'adrian5/oceanic-next-vim'
-
-Plug 'voldikss/vim-floaterm'
-Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components', {'branch': 'main'}
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-call plug#end()
+" call plug#begin('~/.local/share/nvim/site/plugged')
+" Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf.vim'
+" Plug 'bluz71/vim-nightfly-guicolors'
+" Plug 'adrian5/oceanic-next-vim'
+" Plug 'voldikss/vim-floaterm'
+" call plug#end()
 
 set autoindent
 set autoread
-set background=dark
 set backspace=indent,eol,start
 set belloff=all
 set clipboard^=unnamed,unnamedplus
@@ -47,7 +32,7 @@ set grepprg=rg\ --color=never
 set guifont=Dank\ Mono:h18
 set fileformats=unix
 set hidden
-set history=10000
+set history=1000
 set ignorecase
 set inccommand=nosplit
 set incsearch
@@ -56,17 +41,16 @@ set mouse=a
 set nobackup
 set nohlsearch
 set nomodeline
+set nonumber
 set noshowcmd
 set noshowmode
 set noswapfile
 set noundofile
 set nowrap
-set number
 set path+=**
-set re=2
+" set re=2
 set ruler
 set scrolloff=3 sidescrolloff=3
-set shada=
 set shiftwidth=2
 set shortmess+=I
 set shortmess+=W
@@ -86,6 +70,8 @@ set wildignore+=*/node_modules/*
 set wildmenu
 set wildmode=list:longest,list:full
 
+lua require('init')
+
 augroup sync_colors
   autocmd!
   autocmd BufEnter,BufWrite * syntax sync fromstart
@@ -98,16 +84,23 @@ augroup END
 
 augroup neovim_terminal
   autocmd!
-  autocmd TermOpen * :setlocal nonumber norelativenumber
+  autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
 augroup insert_cursorline
   autocmd!
-  autocmd InsertEnter,WinLeave,BufLeave * :setlocal nocursorline
-  autocmd InsertLeave,WinEnter,BufEnter * :setlocal cursorline
+  autocmd InsertEnter,WinLeave,BufLeave * setlocal nocursorline
+  autocmd InsertLeave,WinEnter,BufEnter * setlocal cursorline
 augroup END
 
-colorscheme nightfly
+augroup vimrc
+  autocmd!
+  autocmd VimEnter * ++once ++nested set bg=dark
+  autocmd BufWritePost $MYVIMRC so $MYVIMRC
+augroup END
+
+let g:oceanic_for_polyglot = 1
+let g:oceanic_italic_comments = 1
 
 let g:floaterm_wintitle = v:false
 let g:floaterm_autoclose = v:true
@@ -121,8 +114,19 @@ command! -bang -nargs=? -complete=dir Files
 command! -bang -nargs=? -complete=dir GFiles
     \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-command! Lazygit FloatermNew --height=0.9 --width=0.9 lazygit
-nnoremap <leader>g :Lazygit<cr>
+" command! Lazygit FloatermNew --height=0.9 --width=0.9 lazygit
+command! GitBranch FloatermNew --height=0.9 --width=0.9 gitin branch
+nnoremap <leader>gb :GitBranch<cr>
+
+command! GitStatus FloatermNew --height=0.9 --width=0.9 gitin status
+nnoremap <leader>gs :GitStatus<cr>
+
+
+let g:chadtree_settings = {
+      \ 'theme.text_colour_set': 'nerdtree_syntax_dark',
+      \ }
+
+colorscheme zenburn
 
 vmap < <gv
 vmap > >gv
@@ -131,33 +135,36 @@ vmap > >gv
 nnoremap Y y$
 
 " fzf
-nnoremap <silent> <leader>f :Files<cr>
-nnoremap <silent> <leader>h :Helptags<cr>
-nnoremap <silent> <backspace> :Buffers<cr>
+" nnoremap <silent> <leader>f :Files<cr>
+" nnoremap <silent> <leader>h :Helptags<cr>
+" nnoremap <silent> <tab> :Buffers<cr>
 
-nnoremap <silent> <leader>e :CocCommand explorer<cr>
-nnoremap <silent> gp :CocCommand prettier.formatFile<cr>
+" Telescope
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <tab> <cmd>lua require('telescope.builtin').buffers()<cr>
+
+nnoremap <silent> <leader>e :CHADopen<cr>
+nnoremap <silent> gp :%!npx prettier --stdin-filepath %<cr>
 
 " movement
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
-nnoremap <tab> <c-w>p
+nnoremap <backspace> <c-w>p
 
 " use escape in terminal
 tnoremap <esc> <c-\><c-n>
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gh <cmd>lua require('lspsaga.provider').lsp_finder()<cr>
+nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<cr>
+nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<cr>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<cr>
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+imap <expr> <tab> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<Tab>'
+imap <expr> <s-tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
+
+inoremap <expr> <c-j> pumvisible() ? '<c-n>' : '<c-j>'
+inoremap <expr> <c-k> pumvisible() ? '<c-p>' : '<c-k>'
