@@ -1,3 +1,4 @@
 .netrwhist
 **/.vim/plugged
 **/node_modules
+packer_compiled.vim
