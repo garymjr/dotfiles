@@ -65,3 +65,5 @@ require 'gwm.lsp_config'
 require 'gwm.telescope_config'
 require 'gwm.mappings'
 require 'gwm.autocommands'
+
+require'colorbuddy'.colorscheme('onebuddy')

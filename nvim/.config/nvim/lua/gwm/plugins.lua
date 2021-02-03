@@ -40,4 +40,11 @@ return require('packer').startup(function()
   use {'styled-components/vim-styled-components', branch = 'main'}
 
   use {'ms-jpq/chadtree', branch = 'chad'}
+
+  use {
+    'tjdevries/colorbuddy.nvim',
+    requires = {
+      {'Th3Whit3Wolf/onebuddy', branch = 'main'}
+    }
+  }
 end)

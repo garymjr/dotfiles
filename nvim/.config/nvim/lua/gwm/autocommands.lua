@@ -5,7 +5,8 @@ local autogroups = {
     {'InsertLeave,WinEnter', '*', 'set cursorline'}
   },
   vimrc = {{'BufWritePost', '$MYVIMRC', 'so $MYVIMRC'}},
-  packer = {{'BufWritePost', '**/gwm/plugins.lua', 'PackerCompile'}}
+  packer = {{'BufWritePost', '**/gwm/plugins.lua', 'PackerCompile'}},
+  signcolumn = {{'VimEnter', '*', 'set signcolumn=no'}}
 }
 
 require'gwm.utils'.nvim_create_autogroups(autogroups)
