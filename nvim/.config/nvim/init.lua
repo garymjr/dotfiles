@@ -51,8 +51,6 @@ local wildignore = {
 vim.api.nvim_set_option('wildignore', table.concat(wildignore, ','))
 vim.api.nvim_set_option('wildmode', 'list:longest,list:full')
 
-vim.g.colors_name = 'zenburn'
-
 local chadtree_settings = {
   theme = {
     text_colour_set = 'nerdtree_syntax_dark'
@@ -65,5 +63,7 @@ require 'gwm.lsp_config'
 require 'gwm.telescope_config'
 require 'gwm.mappings'
 require 'gwm.autocommands'
+require 'gwm.statusline'
 
-require'colorbuddy'.colorscheme('onebuddy')
+vim.o.background = 'dark'
+vim.cmd([[colorscheme gruvbox]])

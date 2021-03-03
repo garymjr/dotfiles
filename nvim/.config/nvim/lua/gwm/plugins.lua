@@ -3,20 +3,19 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'}
+      'nvim-telescope/telescope-fzy-native.nvim'
     }
   }
 
-  use {
-    'neovim/nvim-lspconfig',
-    requires = {
-      {'glepnir/lspsaga.nvim', branch = 'main'}
-    }
-  }
+  use 'neovim/nvim-lspconfig'
+  use 'wbthomason/lsp-status.nvim'
+  use {'glepnir/lspsaga.nvim', branch = 'main'}
 
   use {
     'hrsh7th/nvim-compe',
@@ -26,25 +25,34 @@ return require('packer').startup(function()
     }
   }
 
-  use {'tpope/vim-commentary'}
-  use {'tpope/vim-surround'}
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-surround'
 
-  use {'justinmk/vim-sneak'}
+  use 'justinmk/vim-sneak'
 
-  use {'bluz71/vim-moonfly-statusline'}
+  use {'glepnir/galaxyline.nvim', branch = 'main'}
 
-  use {'jnurmine/Zenburn'}
-
-  use {'sheerun/vim-polyglot'}
+  use 'sheerun/vim-polyglot'
 
   use {'styled-components/vim-styled-components', branch = 'main'}
 
-  use {'ms-jpq/chadtree', branch = 'chad'}
+  -- use {
+  --   'tjdevries/colorbuddy.nvim',
+  --   requires = {
+  --     {'Th3Whit3Wolf/onebuddy', branch = 'main'}
+  --   }
+  -- }
 
   use {
-    'tjdevries/colorbuddy.nvim',
+    'npxbr/gruvbox.nvim',
     requires = {
-      {'Th3Whit3Wolf/onebuddy', branch = 'main'}
+      {'rktjmp/lush.nvim', branch = 'main'}
     }
   }
+
+  use 'google/vim-searchindex'
+  use 'norcalli/snippets.nvim'
+  use 'norcalli/ui.nvim'
+
+  use 'kyazdani42/nvim-web-devicons'
 end)
