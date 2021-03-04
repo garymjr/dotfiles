@@ -1,6 +1,5 @@
 local galaxyline = require 'galaxyline'
-local gsl = galaxyline.section.left
-local gsr = galaxyline.section.right
+local gs = galaxyline.section
 
 local colors = {
   fg = '#bbbbbb',
@@ -49,14 +48,14 @@ local get_mode = function()
   return {mode, colors.fg}
 end
 
-gsl[1] = {
+gs.left[1] = {
   Space = {
     provider = function() return ' ' end,
     highlight = {colors.fg, colors.bg}
   }
 }
 
-gsl[2] = {
+gs.left[2] = {
   ViMode = {
     provider = function()
       local mode = get_mode()
@@ -68,7 +67,7 @@ gsl[2] = {
   }
 }
 
-gsl[3] = {
+gs.left[3] = {
   BufName = {
     provider = function()
       local bufname = vim.api.nvim_buf_get_name(0)
@@ -84,7 +83,7 @@ gsl[3] = {
   }
 }
 
-gsl[4] = {
+gs.left[4] = {
   BufStatus = {
     provider = function()
       local modified = vim.bo.modifiable and vim.bo.modified
@@ -105,7 +104,7 @@ gsl[4] = {
   }
 }
 
-gsr[1] = {
+gs.right[1] = {
   CurrentFunction = {
     provider = function()
       local current_function = vim.b.lsp_current_function
@@ -120,14 +119,14 @@ gsr[1] = {
   }
 }
 
-gsr[2] = {
+gs.right[2] = {
   Space = {
     provider = function() return ' ' end,
     highlight = {colors.fg, colors.bg}
   }
 }
 
-gsr[3] = {
+gs.right[3] = {
   LineColumn = {
     provider = 'LineColumn',
     highlight = {colors.fg, colors.bg},
@@ -136,11 +135,54 @@ gsr[3] = {
   }
 }
 
-gsr[4] = {
+gs.right[4] = {
   LinePercent = {
     provider = 'LinePercent',
     highlight = {colors.fg, colors.bg},
     separator = ' ',
     separator_highlight = {colors.fg, colors.bg}
+  }
+}
+
+gs.short_line_left[1] = {
+  Space = {
+    provider = function() return ' ' end
+  }
+}
+
+gs.short_line_left[2] = {
+  ViModeNC = {
+    provider = function() return ' ' end,
+    separator = ' ',
+    separator_highlight = {colors.inactive, colors.bg}
+  }
+}
+
+gs.short_line_left[3] = {
+  BufNameNC = {
+    provider = function()
+      local bufname = vim.api.nvim_buf_get_name(0)
+      if bufname == nil then
+        return ''
+      end
+      local parts = vim.split(bufname, '/')
+      return parts[#parts]
+    end,
+    highlight = {colors.inactive, colors.bg, 'italic'},
+    separator = ' ',
+    separator_highlight = {colors.fg, colors.bg}
+  }
+}
+
+gs.short_line_right[1] = {
+  LineColumnNC = {
+    provider = 'LineColumn',
+    highlight = {colors.inactive, colors.bg}
+  }
+}
+
+gs.short_line_right[2] = {
+  Space = {
+    provider = function() return ' ' end,
   }
 }

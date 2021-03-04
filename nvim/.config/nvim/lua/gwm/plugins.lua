@@ -36,15 +36,15 @@ return require('packer').startup(function()
 
   use {'styled-components/vim-styled-components', branch = 'main'}
 
-  -- use {
-  --   'tjdevries/colorbuddy.nvim',
-  --   requires = {
-  --     {'Th3Whit3Wolf/onebuddy', branch = 'main'}
-  --   }
-  -- }
+  use 'kyazdani42/nvim-tree.lua'
+
+  use 'tjdevries/colorbuddy.nvim'
+  use 'tjdevries/gruvbuddy.nvim'
+  use 'Th3Whit3Wolf/onebuddy'
 
   use {
     'npxbr/gruvbox.nvim',
+    disable = true,
     requires = {
       {'rktjmp/lush.nvim', branch = 'main'}
     }

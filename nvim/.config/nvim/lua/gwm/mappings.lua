@@ -18,7 +18,7 @@ set_normal_map('<leader>fh', '<cmd>lua require"telescope.builtin".help_tags()<cr
 set_normal_map('<tab>', '<cmd>lua require"telescope.builtin".buffers()<cr>')
 
 -- chadtree
-set_normal_map('<leader>e', '<cmd>CHADopen<cr>')
+set_normal_map('<leader>e', '<cmd>NvimTreeToggle<cr>')
 
 -- prettier
 set_normal_map('gp', '<cmd>%!npx prettier --stdin-filepath %<cr>')

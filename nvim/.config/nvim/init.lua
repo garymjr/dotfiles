@@ -66,4 +66,6 @@ require 'gwm.autocommands'
 require 'gwm.statusline'
 
 vim.o.background = 'dark'
-vim.cmd([[colorscheme gruvbox]])
+vim.g.nvim_tree_disable_netrw = 1
+
+require('colorbuddy').colorscheme('onebuddy')
