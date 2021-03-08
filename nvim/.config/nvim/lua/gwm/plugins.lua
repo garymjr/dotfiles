@@ -3,6 +3,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
+  -- my plugins
+  use '~/.config/nvim/plugins/onedark'
+
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
 
@@ -44,7 +47,6 @@ return require('packer').startup(function()
 
   use {
     'npxbr/gruvbox.nvim',
-    disable = true,
     requires = {
       {'rktjmp/lush.nvim', branch = 'main'}
     }
@@ -55,4 +57,6 @@ return require('packer').startup(function()
   use 'norcalli/ui.nvim'
 
   use 'kyazdani42/nvim-web-devicons'
+
+  use 'nvim-treesitter/nvim-treesitter'
 end)

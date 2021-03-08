@@ -64,8 +64,12 @@ require 'gwm.telescope_config'
 require 'gwm.mappings'
 require 'gwm.autocommands'
 require 'gwm.statusline'
+require 'gwm.treesitter'
 
 vim.o.background = 'dark'
 vim.g.nvim_tree_disable_netrw = 1
+vim.cmd [[colorscheme onedark]]
 
-require('colorbuddy').colorscheme('onebuddy')
+vim.cmd [[
+  command! TSHighlightsUnderCursor :lua require('gwm.utils').show_hl_captures()<cr>
+]]
