@@ -13,8 +13,9 @@ set_normal_map('k', 'gk')
 
 -- telescope
 set_normal_map('<leader>ff', '<cmd>lua require"telescope.builtin".find_files()<cr>')
-set_normal_map('<leader>fg', '<cmd>lua require"telescope.builtin".live_grep()<cr>')
+set_normal_map('<leader>fg', '<cmd>lua require"telescope".extensions.fzf_writer.grep()<cr>')
 set_normal_map('<leader>fh', '<cmd>lua require"telescope.builtin".help_tags()<cr>')
+set_normal_map('<leader>fd', '<cmd>lua require"gwm.telescope_config".search_dotfiles()<cr>')
 set_normal_map('<tab>', '<cmd>lua require"telescope.builtin".buffers()<cr>')
 
 -- chadtree
