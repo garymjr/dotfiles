@@ -1,9 +1,12 @@
 local galaxyline = require 'galaxyline'
+local get_icon = require('nvim-web-devicons').get_icon
 local gs = galaxyline.section
+
+local api = vim.api
 
 local colors = {
   fg = '#bbbbbb',
-  bg = '#313335',
+  bg = '#373c45',
   blue = '#3592c4',
   green = '#499c54',
   red = '#c75450',
@@ -12,58 +15,22 @@ local colors = {
   inactive = '#787878'
 }
 
-local modes = {
-  normal = { ' ', colors.fg },
-  insert = { 'i', colors.green },
-  replace = { 'r', colors.red },
-  visual = { 'v', colors.blue },
-  ['v-line'] = { 'l', colors.blue },
-  ['v-block'] = { 'b', colors.blue },
-  command = { 'c', colors.brown },
-  terminal = { 't', colors.green },
-  ['shell-ex'] = { '!', colors.green }
-}
-
-local get_mode = function()
-  local mode = vim.fn.mode()
-  if mode:find('^n') ~= nil then
-    return modes.normal
-  elseif mode:find('^i') ~= nil then
-    return modes.insert
-  elseif mode:find('^R') ~= nil then
-    return modes.replace
-  elseif mode == 'v' then
-    return modes.visual
-  elseif mode == 'V' then
-    return modes['v-line']
-  elseif mode == '' then
-    return modes['v-block']
-  elseif mode:find('^c') ~= nil then
-    return modes.command
-  elseif mode == 't' then
-    return modes.terminal
-  elseif mode == '!' then
-    return modes['shell-ex']
-  end
-  return { mode, colors.fg }
-end
-
 gs.left[1] = {
-  Space = {
-    provider = function() return ' ' end,
-    highlight = { colors.fg, colors.bg }
+  LeftRounded = {
+    provider = function()
+      return '  '
+    end,
+    separator = ' ',
+    separator_highlight = { colors.bg, colors.bg },
+    highlight = { colors.bg }
   }
 }
 
 gs.left[2] = {
-  ViMode = {
-    provider = function()
-      local mode = get_mode()
-      vim.api.nvim_command('hi GalaxyViMode guifg='..mode[2]..' guibg='..colors.bg..' gui=bold')
-      return mode[1]
-    end,
-    separator = ' ',
-    separator_highlight = { colors.fg, colors.bg }
+  FileIcon = {
+    provider = "FileIcon",
+    condition = buffer_not_empty,
+    highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg}
   }
 }
 
@@ -90,13 +57,13 @@ gs.left[4] = {
       local readonly = vim.bo.readonly
 
       if modified then
-        vim.api.nvim_command('hi GalaxyBufStatus guifg='..colors.brown..' guibg='..colors.bg)
-        return '*'
+        vim.api.nvim_command('hi GalaxyBufStatus guifg='..colors.fg..' guibg='..colors.bg)
+        return ' '
       end
 
       if readonly then
         vim.api.nvim_command('hi GalaxyBufStatus guifg='..colors.red..' guibg='..colors.bg)
-        return 'ro'
+        return ' '
       end
     end,
     separator = ' ',
@@ -104,7 +71,25 @@ gs.left[4] = {
   }
 }
 
+gs.left[5] = {
+  RightRounded = {
+    provider = function()
+      return ''
+    end,
+    highlight = { colors.bg }
+  }
+}
+
 gs.right[1] = {
+  LeftRounded = {
+    provider = function()
+      return ''
+    end,
+    highlight = { colors.bg }
+  }
+}
+
+gs.right[2] = {
   CurrentFunction = {
     provider = function()
       local current_function = vim.b.lsp_current_function
@@ -115,18 +100,18 @@ gs.right[1] = {
     end,
     highlight = { colors.fg, colors.bg },
     separator = ' ',
-    separator_highlight = { colors.fg, colors.bg }
+    separator_highlight = { colors.bg, colors.bg }
   }
 }
 
-gs.right[2] = {
+gs.right[3] = {
   Space = {
     provider = function() return ' ' end,
     highlight = { colors.fg, colors.bg }
   }
 }
 
-gs.right[3] = {
+gs.right[4] = {
   LineColumn = {
     provider = 'LineColumn',
     highlight = { colors.fg, colors.bg },
@@ -135,54 +120,11 @@ gs.right[3] = {
   }
 }
 
-gs.right[4] = {
+gs.right[5] = {
   LinePercent = {
     provider = 'LinePercent',
     highlight = { colors.fg, colors.bg },
     separator = ' ',
     separator_highlight = { colors.fg, colors.bg }
-  }
-}
-
-gs.short_line_left[1] = {
-  Space = {
-    provider = function() return ' ' end
-  }
-}
-
-gs.short_line_left[2] = {
-  ViModeNC = {
-    provider = function() return ' ' end,
-    separator = ' ',
-    separator_highlight = { colors.inactive, colors.bg }
-  }
-}
-
-gs.short_line_left[3] = {
-  BufNameNC = {
-    provider = function()
-      local bufname = vim.api.nvim_buf_get_name(0)
-      if bufname == nil then
-        return ''
-      end
-      local parts = vim.split(bufname, '/')
-      return parts[#parts]
-    end,
-    highlight = { colors.inactive, colors.bg, 'italic' },
-    separator = ' ',
-    separator_highlight = { colors.fg, colors.bg }
-  }
-}
-
-gs.short_line_right[1] = {
-  LineColumnNC = {
-    provider = 'LineColumn',
-    highlight = { colors.inactive, colors.bg }
-  }
-}
-
-gs.short_line_right[2] = {
-  Space = {
-    provider = function() return ' ' end,
   }
 }
