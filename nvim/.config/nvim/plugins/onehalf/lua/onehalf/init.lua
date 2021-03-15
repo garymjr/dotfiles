@@ -211,26 +211,26 @@ local theme = lush(function()
     -- TSError -> Error for example, so you do not have to define these unless
     -- you explicitly want to support Treesitter's improved syntax awareness.
 
-    -- TSError              { }, -- For syntax/parser errors.
+   -- TSError              { }, -- For syntax/parser errors.
     -- TSPunctDelimiter     { }, -- For delimiters ie: `.`
     -- TSPunctBracket       { }, -- For brackets and parens.
     -- TSPunctSpecial       { }, -- For special punctutation that does not fall in the catagories before.
-    -- TSConstant           { }, -- For constants
+    TSConstant           { fg = yellow }, -- For constants
     -- TSConstBuiltin       { }, -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro         { }, -- For constants that are defined by macros: `NULL` in C.
-    -- TSString             { }, -- For strings.
+    TSString             { fg = green }, -- For strings.
     -- TSStringRegex        { }, -- For regexes.
     -- TSStringEscape       { }, -- For escape characters within a string.
     -- TSCharacter          { }, -- For characters.
-    -- TSNumber             { }, -- For integers.
-    -- TSBoolean            { }, -- For booleans.
-    -- TSFloat              { }, -- For floats.
-    -- TSFunction           { }, -- For function (calls and definitions).
+    TSNumber             { fg = yellow }, -- For integers.
+    TSBoolean            { fg = yellow }, -- For booleans.
+    TSFloat              { fg = yellow }, -- For floats.
+    TSFunction           { fg = blue }, -- For function (calls and definitions).
     -- TSFuncBuiltin        { }, -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    -- TSParameter          { }, -- For parameters of a function.
+    TSParameter          { fg = fg }, -- For parameters of a function.
     -- TSParameterReference { }, -- For references to parameters of a function.
-    -- TSMethod             { }, -- For method calls and definitions.
+    TSMethod             { fg = blue }, -- For method calls and definitions.
     -- TSField              { }, -- For fields.
     TSProperty           { fg = cyan }, -- Same as `TSField`.
     -- TSConstructor        { }, -- For constructor calls and definitions: `{ }` in Lua, and Java constructors.
@@ -238,10 +238,10 @@ local theme = lush(function()
     -- TSRepeat             { }, -- For keywords related to loops.
     -- TSLabel              { }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSOperator           { }, -- For any operator: `+`, but also `->` and `*` in C.
-    -- TSKeyword            { }, -- For keywords that don't fall in previous categories.
+    TSKeyword            { fg = purple }, -- For keywords that don't fall in previous categories.
     -- TSKeywordFunction    { }, -- For keywords used to define a fuction.
     -- TSException          { }, -- For exception related keywords.
-    -- TSType               { }, -- For types.
+    TSType               { fg = yellow }, -- For types.
     -- TSTypeBuiltin        { }, -- For builtin types (you guessed it, right ?).
     -- TSNamespace          { }, -- For identifiers referring to modules and namespaces.
     -- TSInclude            { }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
@@ -253,7 +253,7 @@ local theme = lush(function()
     -- TSTitle              { }, -- Text that is part of a title.
     -- TSLiteral            { }, -- Literal text.
     -- TSURI                { }, -- Any URI like a link or email.
-    -- TSVariable           { }, -- Any variable name that does not have another highlight.
+    TSVariable           { fg = red }, -- Any variable name that does not have another highlight.
     -- TSVariableBuiltin    { }, -- Variable names that are defined by the languages, like `this` or `self`.
   }
 end)
