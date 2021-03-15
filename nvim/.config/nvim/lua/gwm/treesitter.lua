@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
-    'c',
+    'bash',
     'css',
     'graphql',
     'html',
@@ -9,5 +9,8 @@ require('nvim-treesitter.configs').setup {
     'lua',
     'typescript'
   },
-  highlight = { enable = true }
+  highlight = {
+    enable = true,
+    use_languagetree = true
+  }
 }

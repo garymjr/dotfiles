@@ -1,38 +1,46 @@
-vim.api.nvim_set_option('background', 'dark')
-vim.api.nvim_set_option('clipboard', 'unnamed,unnamedplus')
+local set_option = require('gwm.utils').set_option
 
--- complete
-local complete = {'.','w','b','u'}
-vim.api.nvim_set_option('complete', table.concat(complete, ','))
+require 'gwm.plugins'
+require 'gwm.devicons'
+require 'gwm.nvim-tree'
+require 'gwm.lsp_config'
+require 'gwm.telescope_config'
+require 'gwm.statusline'
+require 'gwm.treesitter'
+require 'gwm.autocommands'
+require 'gwm.mappings'
 
-vim.api.nvim_set_option('completeopt', 'menuone,noinsert,noselect')
-vim.api.nvim_set_option('expandtab', true)
-vim.api.nvim_set_option('fileformats', 'unix')
-vim.api.nvim_set_option('hidden', true)
-vim.api.nvim_set_option('ignorecase', true)
-vim.api.nvim_set_option('inccommand', 'nosplit')
-vim.api.nvim_set_option('laststatus', 2)
-vim.api.nvim_set_option('mouse', 'a')
-vim.api.nvim_set_option('backup', false)
-vim.api.nvim_set_option('modeline', false)
-vim.api.nvim_set_option('showmode', false)
-vim.api.nvim_set_option('swapfile', false)
-vim.api.nvim_set_option('undofile', false)
-vim.api.nvim_set_option('wrap', false)
-vim.api.nvim_set_option('path', '.,/usr/include,**')
-vim.api.nvim_set_option('scrolloff', 3)
-vim.api.nvim_set_option('sidescrolloff', 3)
-vim.api.nvim_set_option('shiftwidth', 2)
-vim.api.nvim_set_option('shortmess', 'filnxtToOFAIWac')
-vim.api.nvim_set_option('smartcase', true)
-vim.api.nvim_set_option('splitbelow', true)
-vim.api.nvim_set_option('splitright', true)
-vim.api.nvim_set_option('tabstop', 2)
-vim.api.nvim_set_option('termguicolors', true)
-vim.api.nvim_set_option('ttimeoutlen', 0)
-vim.api.nvim_set_option('updatetime', 1000)
+set_option('background', 'dark')
+set_option('clipboard', { 'unnamed', 'unnamedplus' })
+set_option('complete', { '.','w','b','u' })
+set_option('completeopt', { 'menuone', 'noinsert', 'noinsert' })
+set_option('expandtab', true)
+set_option('fileformats', 'unix')
+set_option('hidden', true)
+set_option('ignorecase', true)
+set_option('inccommand', 'nosplit')
+set_option('laststatus', 2)
+set_option('mouse', 'a')
+set_option('backup', false)
+set_option('modeline', false)
+set_option('showmode', false)
+set_option('swapfile', false)
+set_option('undofile', false)
+set_option('wrap', false)
+set_option('path', { '.', '/usr/include', '**' })
+set_option('scrolloff', 3)
+set_option('sidescrolloff', 3)
+set_option('shiftwidth', 2)
+set_option('shortmess', 'filnxtToOFAIWac')
+set_option('signcolumn', 'no')
+set_option('smartcase', true)
+set_option('splitbelow', true)
+set_option('splitright', true)
+set_option('tabstop', 2)
+set_option('termguicolors', true)
+set_option('ttimeoutlen', 0)
+set_option('updatetime', 1000)
 
--- wildignore
 local wildignore = {
   '*/tmp/*',
   '*.so',
@@ -48,28 +56,14 @@ local wildignore = {
   '__pycache__',
   '*/node_modules/*'
 }
-vim.api.nvim_set_option('wildignore', table.concat(wildignore, ','))
-vim.api.nvim_set_option('wildmode', 'list:longest,list:full')
+set_option('wildignore', wildignore)
+set_option('wildmode', 'list:longest,list:full')
 
-local chadtree_settings = {
-  theme = {
-    text_colour_set = 'nerdtree_syntax_dark'
-  }
-}
-vim.api.nvim_set_var('chadtree_settings', chadtree_settings)
-
-require 'gwm.plugins'
-require 'gwm.lsp_config'
-require 'gwm.telescope_config'
-require 'gwm.mappings'
-require 'gwm.autocommands'
-require 'gwm.statusline'
-require 'gwm.treesitter'
-
-vim.o.background = 'dark'
-vim.g.nvim_tree_disable_netrw = 1
-vim.cmd [[colorscheme onedark]]
-
+vim.cmd [[colorscheme onehalf]]
 vim.cmd [[
-  command! TSHighlightsUnderCursor :lua require('gwm.utils').show_hl_captures()<cr>
+  command! TSHighlightsUnderCursor :lua require('gwm.utils').show_hl_captures()
 ]]
+vim.cmd [[
+  command! TerminalTab :-tabnew term://zsh
+]]
+-- require('colorbuddy').colorscheme('onedark');

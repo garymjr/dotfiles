@@ -13,15 +13,15 @@ local colors = {
 }
 
 local modes = {
-  normal = {' ', colors.fg},
-  insert = {'i', colors.green},
-  replace = {'r', colors.red},
-  visual = {'v', colors.blue},
-  ['v-line'] = {'l', colors.blue},
-  ['v-block'] = {'b', colors.blue},
-  command = {'c', colors.brown},
-  terminal = {'t', colors.green},
-  ['shell-ex'] = {'!', colors.green}
+  normal = { ' ', colors.fg },
+  insert = { 'i', colors.green },
+  replace = { 'r', colors.red },
+  visual = { 'v', colors.blue },
+  ['v-line'] = { 'l', colors.blue },
+  ['v-block'] = { 'b', colors.blue },
+  command = { 'c', colors.brown },
+  terminal = { 't', colors.green },
+  ['shell-ex'] = { '!', colors.green }
 }
 
 local get_mode = function()
@@ -45,13 +45,13 @@ local get_mode = function()
   elseif mode == '!' then
     return modes['shell-ex']
   end
-  return {mode, colors.fg}
+  return { mode, colors.fg }
 end
 
 gs.left[1] = {
   Space = {
     provider = function() return ' ' end,
-    highlight = {colors.fg, colors.bg}
+    highlight = { colors.fg, colors.bg }
   }
 }
 
@@ -63,7 +63,7 @@ gs.left[2] = {
       return mode[1]
     end,
     separator = ' ',
-    separator_highlight = {colors.fg, colors.bg}
+    separator_highlight = { colors.fg, colors.bg }
   }
 }
 
@@ -77,9 +77,9 @@ gs.left[3] = {
       local parts = vim.split(bufname, '/')
       return parts[#parts]
     end,
-    highlight = {colors.fg, colors.bg, 'italic'},
+    highlight = { colors.fg, colors.bg, 'italic' },
     separator = ' ',
-    separator_highlight = {colors.fg, colors.bg}
+    separator_highlight = { colors.fg, colors.bg }
   }
 }
 
@@ -100,7 +100,7 @@ gs.left[4] = {
       end
     end,
     separator = ' ',
-    separator_highlight = {colors.fg, colors.bg}
+    separator_highlight = { colors.fg, colors.bg }
   }
 }
 
@@ -113,34 +113,34 @@ gs.right[1] = {
       end
       return ''
     end,
-    highlight = {colors.fg, colors.bg},
+    highlight = { colors.fg, colors.bg },
     separator = ' ',
-    separator_highlight = {colors.fg, colors.bg}
+    separator_highlight = { colors.fg, colors.bg }
   }
 }
 
 gs.right[2] = {
   Space = {
     provider = function() return ' ' end,
-    highlight = {colors.fg, colors.bg}
+    highlight = { colors.fg, colors.bg }
   }
 }
 
 gs.right[3] = {
   LineColumn = {
     provider = 'LineColumn',
-    highlight = {colors.fg, colors.bg},
+    highlight = { colors.fg, colors.bg },
     separator = ' ',
-    separator_highlight = {colors.fg, colors.bg}
+    separator_highlight = { colors.fg, colors.bg }
   }
 }
 
 gs.right[4] = {
   LinePercent = {
     provider = 'LinePercent',
-    highlight = {colors.fg, colors.bg},
+    highlight = { colors.fg, colors.bg },
     separator = ' ',
-    separator_highlight = {colors.fg, colors.bg}
+    separator_highlight = { colors.fg, colors.bg }
   }
 }
 
@@ -154,7 +154,7 @@ gs.short_line_left[2] = {
   ViModeNC = {
     provider = function() return ' ' end,
     separator = ' ',
-    separator_highlight = {colors.inactive, colors.bg}
+    separator_highlight = { colors.inactive, colors.bg }
   }
 }
 
@@ -168,16 +168,16 @@ gs.short_line_left[3] = {
       local parts = vim.split(bufname, '/')
       return parts[#parts]
     end,
-    highlight = {colors.inactive, colors.bg, 'italic'},
+    highlight = { colors.inactive, colors.bg, 'italic' },
     separator = ' ',
-    separator_highlight = {colors.fg, colors.bg}
+    separator_highlight = { colors.fg, colors.bg }
   }
 }
 
 gs.short_line_right[1] = {
   LineColumnNC = {
     provider = 'LineColumn',
-    highlight = {colors.inactive, colors.bg}
+    highlight = { colors.inactive, colors.bg }
   }
 }
 

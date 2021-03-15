@@ -79,4 +79,18 @@ function M.show_hl_captures()
   vim.lsp.util.open_floating_preview(matches, 'treesitter-hl-captures')
 end
 
+function M.set_option(key, value)
+  local scope = api.nvim_get_option_info(key).scope
+  if type(value) == 'table' then
+    value = table.concat(value, ',')
+  end
+
+  if scope == 'win' then
+    vim.wo[key] = value
+  elseif scope == 'buf' then
+    vim.bo[key] = value
+  end
+  vim.o[key] = value
+end
+
 return M

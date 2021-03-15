@@ -72,14 +72,14 @@ local theme = lush(function()
     DiffChange   { fg = colors.yellow, gui = 'underline' }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { bg = colors.red, fg = colors.black }, -- diff mode: Deleted line |diff.txt|
     DiffText     { bg = colors.yellow, fg = colors.black }, -- diff mode: Changed text within a changed line |diff.txt|
-    -- EndOfBuffer  {}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer  { fg = colors.black }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = colors.red }, -- error messages on the command line
     VertSplit    { fg = colors.vertsplit }, -- the column separating vertically split windows
     Folded       { fg = colors.comment_grey }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    -- SignColumn   { }, -- column where |signs| are displayed
+    SignColumn   { }, -- column where |signs| are displayed
     IncSearch    { bg = colors.comment_grey, fg = colors.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     LineNr       { fg = colors.gutter_fg_grey }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -102,11 +102,11 @@ local theme = lush(function()
     Search       { bg = colors.yellow, fg = colors.black }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpecialKey   { bg = colors.special_grey }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace| SpellBad  Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.  SpellCap  Word that should start with a capital. |spell| Combined with the highlighting used otherwise.  SpellLocal  Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare    { fg = colors.dark_yellow }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    -- StatusLine   { }, -- status line of current window
-    -- StatusLineNC { }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    -- TabLine      { }, -- tab pages line, not active tab page label
-    -- TabLineFill  { }, -- tab pages line, where there are no labels
-    -- TabLineSel   { }, -- tab pages line, active tab page label
+    StatusLine   {}, -- status line of current window
+    StatusLineNC {}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine      { fg = colors.comment_grey }, -- tab pages line, not active tab page label
+    TabLineFill  {}, -- tab pages line, where there are no labels
+    TabLineSel   { fg = colors.white }, -- tab pages line, active tab page label
     Title        { fg = colors.green }, -- titles for output from ":set all", ":autocmd" etc.
     Visual       { bg = colors.visual_grey, fg = colors.visual_black }, -- Visual mode selection
     VisualNOS    { bg = colors.visual_grey }, -- Visual mode selection when vim is "Not Owning the Selection".

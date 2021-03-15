@@ -3,8 +3,8 @@ local saga = require 'lspsaga'
 local compe = require 'compe'
 local lsp_status = require 'lsp-status'
 
-lsp.tsserver.setup {on_attach=lsp_status.on_attach}
-lsp.vimls.setup {on_attach=lsp_status.on_attach}
+lsp.tsserver.setup { on_attach=lsp_status.on_attach }
+lsp.vimls.setup { on_attach=lsp_status.on_attach }
 
 local function get_lua_runtime()
   local result = {}
@@ -28,7 +28,7 @@ end
 local sumneko_root_path = os.getenv('HOME') .. '/Code/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/macOS/lua-language-server'
 lsp.sumneko_lua.setup {
-  cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
+  cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
   settings = {
     Lua = {
       runtime = {
@@ -39,7 +39,7 @@ lsp.sumneko_lua.setup {
       },
       diagnostics = {
         enable = true,
-        globals = {'vim', 'use'}
+        globals = { 'vim', 'use' }
       },
       workspace = {
         library = get_lua_runtime(),
@@ -48,17 +48,17 @@ lsp.sumneko_lua.setup {
       }
     }
   },
-  filetypes = {'lua'},
+  filetypes = { 'lua' },
   on_attach=lsp_status.on_attach
 }
 
-lsp.diagnosticls.setup{
-  filetypes={'javascript'},
+lsp.diagnosticls.setup {
+  filetypes={ 'javascript' },
   init_options = {
     linters = {
       eslint = {
         command = './node_modules/.bin/eslint',
-        rootPatterns = {'.git'},
+        rootPatterns = { '.git' },
         debounce = 100,
         args = {
           '--stdin',

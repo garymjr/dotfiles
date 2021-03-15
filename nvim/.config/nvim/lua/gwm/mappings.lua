@@ -8,6 +8,8 @@ vim.api.nvim_set_keymap('v', '<', '<gv', {})
 vim.api.nvim_set_keymap('v', '>', '>gv', {})
 vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
 
+vim.api.nvim_set_keymap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true })
+
 set_normal_map('j', 'gj')
 set_normal_map('k', 'gk')
 
@@ -16,7 +18,8 @@ set_normal_map('<leader>ff', '<cmd>lua require"telescope.builtin".find_files()<c
 set_normal_map('<leader>fg', '<cmd>lua require"telescope".extensions.fzf_writer.grep()<cr>')
 set_normal_map('<leader>fh', '<cmd>lua require"telescope.builtin".help_tags()<cr>')
 set_normal_map('<leader>fd', '<cmd>lua require"gwm.telescope_config".search_dotfiles()<cr>')
-set_normal_map('<tab>', '<cmd>lua require"telescope.builtin".buffers()<cr>')
+-- set_normal_map('<tab>', '<cmd>lua require"telescope.builtin".buffers()<cr>')
+set_normal_map('<tab>', '<cmd>lua require"gwm.telescope_config".find_buffers({sort_lastused = true, ignore_current_buffer = true})<cr>')
 
 -- chadtree
 set_normal_map('<leader>e', '<cmd>NvimTreeToggle<cr>')
@@ -37,6 +40,7 @@ vim.api.nvim_set_keymap('t', '<esc>', '<c-\\><c-n>', {noremap = true})
 set_normal_map('gh', '<cmd>lua require"lspsaga.provider".lsp_finder()<cr>')
 set_normal_map('<leader>ca', '<cmd>lua require"lspsaga.codeaction".code_action()<cr>')
 set_normal_map('K', '<cmd>lua require"lspsaga.provider".preview_definition()<cr>')
+set_normal_map('gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
 
 -- vsnip
 vim.api.nvim_set_keymap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', {expr = true})
