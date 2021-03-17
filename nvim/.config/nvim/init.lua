@@ -9,6 +9,7 @@ require 'gwm.statusline'
 require 'gwm.treesitter'
 require 'gwm.autocommands'
 require 'gwm.mappings'
+require 'gwm.snippets'
 
 set_option('background', 'dark')
 set_option('clipboard', { 'unnamed', 'unnamedplus' })
@@ -59,11 +60,11 @@ local wildignore = {
 set_option('wildignore', wildignore)
 set_option('wildmode', 'list:longest,list:full')
 
-vim.cmd [[colorscheme onehalf]]
 vim.cmd [[
   command! TSHighlightsUnderCursor :lua require('gwm.utils').show_hl_captures()
 ]]
 vim.cmd [[
   command! TerminalTab :-tabnew term://zsh
 ]]
--- require('colorbuddy').colorscheme('onedark');
+require('colorbuddy').colorscheme('ocean')
+require 'colorizer'.setup()

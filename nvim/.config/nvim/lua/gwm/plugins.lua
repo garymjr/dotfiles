@@ -7,6 +7,7 @@ require('packer').startup {
     -- my plugins
     use '~/.config/nvim/plugins/onedark'
     use '~/.config/nvim/plugins/onehalf'
+    use '~/.config/nvim/plugins/ocean'
 
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -24,10 +25,14 @@ require('packer').startup {
     use { 'glepnir/lspsaga.nvim', branch = 'main' }
 
     use {
-      'hrsh7th/nvim-compe',
+      'hrsh7th/nvim-compe'
+    }
+
+    use {
+      disable = true,
+      'hrsh7th/vim-vsnip',
       requires = {
-        { 'hrsh7th/vim-vsnip' },
-        { 'hrsh7th/vim-vsnip-integ' }
+        'hrsh7th/vim-vsnip-integ'
       }
     }
 
@@ -58,5 +63,6 @@ require('packer').startup {
     use 'kyazdani42/nvim-web-devicons'
 
     use 'nvim-treesitter/nvim-treesitter'
+    use 'norcalli/nvim-colorizer.lua'
   end
 }

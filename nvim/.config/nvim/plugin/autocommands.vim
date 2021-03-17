@@ -14,3 +14,7 @@ augroup startup
 	" enter insert mode whenever we're in a terminal
 	autocmd TermOpen,BufWinEnter,BufEnter term://* startinsert
 augroup END
+
+
+" -- vim.api.nvim_set_keymap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', {expr = true})
+inoremap <expr> <tab> luaeval('require("gwm.snippets").snippet_available()') ? '<cmd>lua require("snippets").expand_or_advance()<cr>' : "<tab>"

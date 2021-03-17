@@ -43,8 +43,8 @@ set_normal_map('K', '<cmd>lua require"lspsaga.provider".preview_definition()<cr>
 set_normal_map('gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
 
 -- vsnip
-vim.api.nvim_set_keymap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<s-tab>', 'vsnip#jumpable(-1) ? "<plug>(vsnip-jump-prev)" : "<s-tab>"', {expr = true})
+-- vim.api.nvim_set_keymap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', {expr = true})
+-- vim.api.nvim_set_keymap('i', '<s-tab>', 'vsnip#jumpable(-1) ? "<plug>(vsnip-jump-prev)" : "<s-tab>"', {expr = true})
 
 vim.api.nvim_set_keymap('i', '<c-j>', 'pumvisible() ? "<c-n>" : "<c-j>"', {expr = true})
 vim.api.nvim_set_keymap('i', '<c-k>', 'pumvisible() ? "<c-p>" : "<c-k>"', {expr = true})

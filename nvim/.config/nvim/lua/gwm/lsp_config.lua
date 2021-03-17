@@ -102,6 +102,5 @@ compe.setup {
     buffer = true;
     nvim_lsp = true;
     nvim_lua = true;
-    vsnip = true;
   };
 }
