@@ -9,7 +9,6 @@ require 'gwm.statusline'
 require 'gwm.treesitter'
 require 'gwm.autocommands'
 require 'gwm.mappings'
-require 'gwm.snippets'
 
 set_option('background', 'dark')
 set_option('clipboard', { 'unnamed', 'unnamedplus' })
@@ -41,6 +40,7 @@ set_option('tabstop', 2)
 set_option('termguicolors', true)
 set_option('ttimeoutlen', 0)
 set_option('updatetime', 1000)
+set_option('grepprg', 'rg --vimgrep --no-heading --smart-case')
 
 local wildignore = {
   '*/tmp/*',
@@ -66,5 +66,7 @@ vim.cmd [[
 vim.cmd [[
   command! TerminalTab :-tabnew term://zsh
 ]]
-require('colorbuddy').colorscheme('ocean')
+
+-- require('gwm.colors').setup()
+require('colorbuddy').colorscheme('parsec')
 require 'colorizer'.setup()

@@ -90,17 +90,24 @@ lsp.diagnosticls.setup {
 }
 
 
-saga.init_lsp_saga()
+saga.init_lsp_saga {
+  code_action_prompt = {
+    enable = false
+  }
+}
 
 compe.setup {
-  enabled = true;
-  autocomplete = true;
-  preselect = 'enable';
+  enabled = true,
+  autocomplete = true,
+  debug = true,
+  preselect = 'enable',
+  documentation = true,
 
   source = {
-    path = true;
-    buffer = true;
-    nvim_lsp = true;
-    nvim_lua = true;
+    path = true,
+    buffer = true,
+    nvim_lsp = true,
+    nvim_lua = true,
+    treesitter = true
   };
 }

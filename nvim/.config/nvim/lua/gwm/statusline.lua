@@ -1,11 +1,15 @@
-local galaxyline = require 'galaxyline'
-local gs = galaxyline.section
+local galaxyline = require('galaxyline')
+local condition = require('galaxyline.condition')
+
+local section = galaxyline.section
+local buffer_not_empty = condition.buffer_not_empty
 
 local api = vim.api
 
 local colors = {
-  fg = '#bbbbbb',
-  bg = '#373c45',
+  fg = '#cccccc',
+  fg_dark = '#999999',
+  bg = '#393939',
   blue = '#3592c4',
   green = '#499c54',
   red = '#c75450',
@@ -14,28 +18,32 @@ local colors = {
   inactive = '#787878'
 }
 
-gs.left[1] = {
+section.left[1] = {
   LeftSpace = {
-    provider = function()
-      return '  '
-    end,
+    provider = function() return '  ' end,
     highlight = { colors.bg, colors.bg }
   }
 }
 
-gs.left[2] = {
-  FileIcon = {
-    provider = "FileIcon",
+section.left[2] = {
+  BufNameHead = {
+    provider = function()
+      local bufname = vim.fn.expand('%:h')
+      local home = os.getenv('HOME')
+      return bufname:gsub(home, '~')
+    end,
     condition = buffer_not_empty,
-    highlight = { require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg }
+    highlight = { colors.fg_dark, colors.bg },
+    separator = '/',
+    separator_highlight = { colors.fg_dark, colors.bg }
   }
 }
 
-gs.left[3] = {
-  BufName = {
+section.left[3] = {
+  BufNameTail = {
     provider = function()
-      local bufname = api.nvim_eval([[expand('%')]])
-      return bufname
+      local tail = vim.fn.expand('%:t')
+      return tail
     end,
     condition = buffer_not_empty,
     highlight = { colors.fg, colors.bg },
@@ -44,14 +52,29 @@ gs.left[3] = {
   }
 }
 
-gs.left[4] = {
+section.left[4] = {
+  FileType = {
+    provider = function()
+      local filetype = vim.bo.filetype
+      if filetype and filetype ~= '' then
+        return '['..filetype..']'
+      end
+      return ''
+    end,
+    separator = ' ',
+    separator_highlight = { colors.bg, colors.bg },
+    highlight = { colors.fg_dark, colors.bg }
+  }
+}
+
+section.left[5] = {
   BufStatus = {
     provider = function()
       local modified = vim.bo.modifiable and vim.bo.modified
       local readonly = vim.bo.readonly
 
       if modified then
-        vim.api.nvim_command('hi GalaxyBufStatus guifg='..colors.fg..' guibg='..colors.bg)
+        vim.api.nvim_command('hi GalaxyBufStatus guifg='..colors.fg_dark..' guibg='..colors.bg)
         return ' '
       end
 
@@ -66,23 +89,7 @@ gs.left[4] = {
   }
 }
 
-gs.right[1] = {
-  CurrentFunction = {
-    provider = function()
-      local current_function = vim.b.lsp_current_function
-      if current_function and current_function ~= '' then
-        return '  ' .. current_function
-      end
-      return ''
-    end,
-    condition = buffer_not_empty,
-    highlight = { colors.fg, colors.bg },
-    separator = ' ',
-    separator_highlight = { colors.bg, colors.bg }
-  }
-}
-
-gs.right[2] = {
+section.right[1] = {
   LineColumn = {
     provider = 'LineColumn',
     condition = buffer_not_empty,
@@ -92,7 +99,7 @@ gs.right[2] = {
   }
 }
 
-gs.right[3] = {
+section.right[2] = {
   LinePercent = {
     provider = 'LinePercent',
     condition = buffer_not_empty,
@@ -102,7 +109,23 @@ gs.right[3] = {
   }
 }
 
-gs.right[4] = {
+section.right[3] = {
+  BufNumber = {
+    provider = function()
+      local bufnr = api.nvim_get_current_buf()
+      if bufnr and bufnr ~= nil then
+        return '['..bufnr..']'
+      end
+      return ''
+    end,
+    condition = buffer_not_empty,
+    highlight = { colors.fg_dark, colors.bg },
+    separator = ' ',
+    separator_highlight = { colors.fg, colors.bg }
+  }
+}
+
+section.right[4] = {
   RightSpace = {
     provider = function() return '  ' end,
     condition = buffer_not_empty,

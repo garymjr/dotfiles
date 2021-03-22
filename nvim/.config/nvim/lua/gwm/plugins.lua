@@ -5,9 +5,7 @@ require('packer').startup {
     use { 'wbthomason/packer.nvim', opt = true }
 
     -- my plugins
-    use '~/.config/nvim/plugins/onedark'
-    use '~/.config/nvim/plugins/onehalf'
-    use '~/.config/nvim/plugins/ocean'
+    use '~/.config/nvim/plugins/parsec'
 
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -16,7 +14,6 @@ require('packer').startup {
       'nvim-telescope/telescope.nvim',
       requires = {
         'nvim-telescope/telescope-fzy-native.nvim',
-        'nvim-telescope/telescope-fzf-writer.nvim'
       }
     }
 
@@ -24,17 +21,9 @@ require('packer').startup {
     use 'wbthomason/lsp-status.nvim'
     use { 'glepnir/lspsaga.nvim', branch = 'main' }
 
-    use {
-      'hrsh7th/nvim-compe'
-    }
+    use 'hrsh7th/nvim-compe'
 
-    use {
-      disable = true,
-      'hrsh7th/vim-vsnip',
-      requires = {
-        'hrsh7th/vim-vsnip-integ'
-      }
-    }
+    use 'hrsh7th/vim-vsnip'
 
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
@@ -47,22 +36,25 @@ require('packer').startup {
 
     use { 'styled-components/vim-styled-components', branch = 'main' }
 
-    use 'kyazdani42/nvim-tree.lua'
+    use {
+      disable = true,
+      'kyazdani42/nvim-tree.lua'
+    }
+
+    use 'justinmk/vim-dirvish'
 
     use 'tjdevries/colorbuddy.nvim'
     use 'tjdevries/gruvbuddy.nvim'
-    use 'Th3Whit3Wolf/onebuddy'
 
     use { 'rktjmp/lush.nvim', branch = 'main' }
-    use { 'npxbr/gruvbox.nvim', branch = 'main' }
 
     use 'google/vim-searchindex'
-    use 'norcalli/snippets.nvim'
-    use 'norcalli/ui.nvim'
 
     use 'kyazdani42/nvim-web-devicons'
 
     use 'nvim-treesitter/nvim-treesitter'
     use 'norcalli/nvim-colorizer.lua'
+
+    use 'mfussenegger/nvim-dap'
   end
 }
