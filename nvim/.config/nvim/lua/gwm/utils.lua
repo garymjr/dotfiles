@@ -1,22 +1,45 @@
-local parsers = require "nvim-treesitter.parsers"
-local queries = require'nvim-treesitter.query'
-local ts_utils = require'nvim-treesitter.ts_utils'
+local parsers = require 'nvim-treesitter.parsers'
+local queries = require 'nvim-treesitter.query'
+local ts_utils = require 'nvim-treesitter.ts_utils'
 
 local hlmap = vim.treesitter.highlighter.hl_map
 local api = vim.api
 
 local M = {}
 
-function M.nvim_create_autogroups(definitions)
-  for group_name, definition in pairs(definitions) do
-    vim.cmd('augroup ' .. group_name)
-    vim.cmd('autocmd!')
-    for _, def in ipairs(definition) do
-      local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
-      vim.cmd(command)
-    end
-    vim.cmd('augroup END')
+M.create_autogroup = function(config)
+  local group_name = config.group_name
+  local definition = config.definition
+  vim.cmd('augroup ' .. group_name)
+  vim.cmd [[ autocmd! ]]
+  for _, def in ipairs(definition) do
+    local command = table.concat(vim.tbl_flatten { 'autocmd ', def }, ' ')
+    vim.cmd(command)
   end
+  vim.cmd [[ augroup END ]]
+end
+
+M.hilite = function(group, opts)
+  local bg = 'NONE'
+  if opts.bg then
+    bg = opts.bg
+  end
+  local fg = 'NONE'
+  if opts.fg then
+    fg = opts.fg
+  end
+
+  local hi_opts = ' guibg='..bg..' guifg='..fg
+  if opts.gui then
+    hi_opts = hi_opts .. ' gui='..opts.gui
+  end
+
+  if opts.sp then
+    hi_opts = hi_opts .. ' guisp='..opts.sp
+  end
+
+  local cmd = 'hi ' .. group .. hi_opts
+  vim.cmd(cmd)
 end
 
 function M.get_highlight_group()
@@ -33,14 +56,12 @@ function M.get_highlight_group()
     row = 1
   }
 
-  if group ~= '' or base_group ~= '' then
-    local bufnr = api.nvim_create_buf(false, true)
-    api.nvim_buf_set_lines(bufnr, 0, -1, true, content)
-    api.nvim_buf_set_option(bufnr, 'modifiable', false)
-    api.nvim_buf_set_option(bufnr, 'bufhidden', 'wipe')
-    api.nvim_buf_set_option(bufnr, 'buftype', 'nofile')
-    api.nvim_open_win(bufnr, true, opts)
-  end
+  local bufnr = api.nvim_create_buf(false, true)
+  api.nvim_buf_set_lines(bufnr, 0, -1, true, content)
+  api.nvim_buf_set_option(bufnr, 'modifiable', false)
+  api.nvim_buf_set_option(bufnr, 'bufhidden', 'wipe')
+  api.nvim_buf_set_option(bufnr, 'buftype', 'nofile')
+  api.nvim_open_win(bufnr, true, opts)
 end
 
 function M.show_hl_captures()

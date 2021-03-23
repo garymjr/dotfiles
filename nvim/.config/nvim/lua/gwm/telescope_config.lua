@@ -11,7 +11,8 @@ local conf = require('telescope.config').values
 require'telescope'.setup {
   defaults = {
     file_sorter = sorters.get_fzy_sorter,
-    file_previewer = previewers.vim_buffer_cat.new,
+    -- file_previewer = previewers.vim_buffer_cat.new,
+    file_previewer = previewers.cat.new,
     grep_previewer = previewers.vim_buffer_vimgrep.new,
     mappings = {
       i = {
@@ -82,6 +83,22 @@ M.find_buffers = function(opts)
     },
     sorter = conf.generic_sorter(opts),
     default_selection_index = default_selection_idx,
+  }):find()
+end
+
+M.find_files = function()
+  local find_command = { 'fd', '--type', 'f' }
+
+  local opts = {}
+  opts.entry_maker = opts.entry_maker or make_entry.gen_from_file(opts)
+
+  pickers.new(opts, {
+    prompt_title = 'Find Files',
+    finder = finders.new_oneshot_job(
+      find_command,
+      opts
+    ),
+    sorter = conf.file_sorter(opts)
   }):find()
 end
 

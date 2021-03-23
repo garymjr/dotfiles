@@ -10,6 +10,8 @@ require('packer').startup {
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
 
+    use 'ajmwagar/vim-deus'
+
     use {
       'nvim-telescope/telescope.nvim',
       requires = {

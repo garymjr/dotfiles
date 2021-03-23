@@ -1,12 +1,16 @@
-local autogroups = {
-  quickfix = {{ 'FileType', 'qf', 'wincmd J' }},
-  no_cursorline_in_insert_mode = {
-    { 'InsertEnter,WinLeave', '*', 'set nocursorline' },
-    { 'InsertLeave,WinEnter', '*', 'set cursorline' }
-  },
-  vimrc = {{ 'BufWritePost', '$MYVIMRC', 'so $MYVIMRC' }},
-  packer = {{ 'BufWritePost', '**/gwm/plugins.lua', 'PackerCompile' }},
-  -- signcolumn = {{ 'VimEnter', '*', 'set signcolumn=no' }}
+local create_autogroup = require 'gwm.utils'.create_autogroup
+
+create_autogroup {
+  group_name = 'quickfix',
+  definition = {{ 'FileType', 'qf', 'wincmd J' }}
 }
 
-require'gwm.utils'.nvim_create_autogroups(autogroups)
+create_autogroup {
+  group_name = 'packer',
+  definition = {{ 'BufWritePost', '**/gwm/plugins.lua', 'PackerCompile' }}
+}
+
+create_autogroup {
+  group_name = 'highlight_yank',
+  definition = {{ 'TextYankPost', '*', [[ silent! lua require('vim.highlight').on_yank { timeout = 40 } ]]  }}
+}

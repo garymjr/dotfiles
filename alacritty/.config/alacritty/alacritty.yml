@@ -111,10 +111,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: 'OperatorMono Nerd Font'
+    family: 'agave Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    style: Book
+    style: r
 
   # Bold font face
   #bold:
@@ -128,15 +128,15 @@ font:
     #style: Bold
 
   # Italic font face
-  italics:
+  # italics:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: 'OperatorMono Nerd Font'
+    # family: 'OperatorMono Nerd Font'
 
   #  # The `style` can be specified to pick a specific face.
-    style: 'Book Italic'
+    # style: 'Book Italic'
 
   # Bold italic font face
   #bold_italic:
@@ -150,7 +150,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 16.0
+  size: 18.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -175,90 +175,27 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 #
-# Colors (One Dark)
 colors:
-  # Default colors
   primary:
-    background: '#1e2127'
-    foreground: '#abb2bf'
-    background: '#272c35'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not
-    # present. If the bright foreground color is not set, or
-    # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
-    # color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  #search:
-    # Allowed values are CellForeground/CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    #matches:
-    #  foreground: '#000000'
-    #  background: '#ffffff'
-    #focused_match:
-    #  foreground: CellBackground
-    #  background: CellForeground
-
-    #bar:
-    #  background: '#c5c8c6'
-    #  foreground: '#1d1f21'
-
-  # Line indicator
-  #
-  # Color used for the indicator displaying the position in history during
-  # search and vi mode.
-  #
-  # By default, these will use the opposing primary color.
-  #line_indicator:
-  #  foreground: None
-  #  background: None
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
-
-  # Normal colors
+    background: '#2c323b'
+    foreground: '#eaeaea'
   normal:
-    black:   '#1e2127'
-    red:     '#e06c75'
+    black:   '#242a32'
+    red:     '#d54e53'
     green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
+    yellow:  '#e5c07b'
+    blue:    '#83a598'
     magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#abb2bf'
-
-  # Bright colors
+    cyan:    '#70c0ba'
+    white:   '#eaeaea'
   bright:
-    black:   '#5c6370'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
+    black:   '#666666'
+    red:     '#ec3e45'
+    green:   '#90c966'
+    yellow:  '#edbf69'
+    blue:    '#73ba9f'
+    magenta: '#c858e9'
+    cyan:    '#2bcec2'
     white:   '#ffffff'
 
 # Bell

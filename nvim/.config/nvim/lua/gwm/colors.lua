@@ -1,29 +1,25 @@
-local Color, c, Group, g, s = require('colorbuddy').setup()
-
-vim.cmd [[ colorscheme candid ]]
+local hilite = require 'gwm.utils'.hilite
+local create_autogroup = require 'gwm.utils'.create_autogroup
 
 local M = {}
 
 M.setup = function()
-  vim.cmd [[ augroup Colors ]]
-  vim.cmd [[ autocmd! ]]
-  vim.cmd [[ autocmd ColorScheme * lua require('gwm.colors').reload() ]]
-  vim.cmd [[ augroup END ]]
+  create_autogroup {
+    group_name = 'colors',
+    definition = {{ 'ColorScheme', 'deus', [[ lua require'gwm.colors'.reload() ]] }}
+  }
+
+  vim.cmd [[ colorscheme deus ]]
 end
 
 
 M.reload = function()
-  -- Color.new('error', '#DC657D')
-  -- Color.new('warning', '#D4B261')
-  -- Color.new('info', '#72C7D1')
-  -- Color.new('hint', '#444444');
-
-  -- Group.new('Comment', g.Comment, g.Comment, s.italic)
-  -- Group.new('LspDiagnosticsDefaultHint', c.hint)
-  -- Group.new('LspDiagnosticsDefaultError', c.error)
-  -- Group.new('LspDiagnosticsDefaultWarning', c.warning)
-  -- Group.new('LspDiagnosticsDefaultInformation', c.info)
-  -- Group.new('LspDiagnosticsDefaultHint', c.hint)
+  hilite('LspDiagnosticsDefaultError', { fg = '#fb4934' })
+  hilite('LspDiagnosticsUnderlineError', { gui = 'underline', sp = '#fb4934' })
+  hilite('LspDiagnosticsDefaultWarning', { fg = '#fabd2f' })
+  hilite('LspDiagnosticsUnderlineWarning', { gui = 'underline', sp = '#fabd2f' })
+  hilite('LspDiagnosticsDefaultInformation', { fg = '#8ec07c' })
+  hilite('LspDiagnosticsDefaultHint', { fg = '#665c54' })
 end
 
 return M

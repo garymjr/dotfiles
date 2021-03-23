@@ -41,6 +41,7 @@ set_option('termguicolors', true)
 set_option('ttimeoutlen', 0)
 set_option('updatetime', 1000)
 set_option('grepprg', 'rg --vimgrep --no-heading --smart-case')
+set_option('guicursor', '')
 
 local wildignore = {
   '*/tmp/*',
@@ -67,6 +68,9 @@ vim.cmd [[
   command! TerminalTab :-tabnew term://zsh
 ]]
 
+-- vim.cmd [[ colorscheme gruvbit ]]
 -- require('gwm.colors').setup()
-require('colorbuddy').colorscheme('parsec')
+-- require('colorbuddy').colorscheme('parsec')
+-- vim.cmd [[ colorscheme deus ]]
+require 'gwm.colors'.setup()
 require 'colorizer'.setup()

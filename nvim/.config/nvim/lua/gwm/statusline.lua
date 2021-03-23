@@ -110,22 +110,6 @@ section.right[2] = {
 }
 
 section.right[3] = {
-  BufNumber = {
-    provider = function()
-      local bufnr = api.nvim_get_current_buf()
-      if bufnr and bufnr ~= nil then
-        return '['..bufnr..']'
-      end
-      return ''
-    end,
-    condition = buffer_not_empty,
-    highlight = { colors.fg_dark, colors.bg },
-    separator = ' ',
-    separator_highlight = { colors.fg, colors.bg }
-  }
-}
-
-section.right[4] = {
   RightSpace = {
     provider = function() return '  ' end,
     condition = buffer_not_empty,

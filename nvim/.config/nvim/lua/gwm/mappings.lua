@@ -9,13 +9,13 @@ vim.api.nvim_set_keymap('v', '>', '>gv', {})
 vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
 
 vim.api.nvim_set_keymap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Search Files: ') })<cr>", { noremap = true })
 
 set_normal_map('j', 'gj')
 set_normal_map('k', 'gk')
 
 -- telescope
-set_normal_map('<leader>ff', '<cmd>lua require"telescope.builtin".find_files()<cr>')
-set_normal_map('<leader>fg', '<cmd>lua require"telescope".extensions.fzf_writer.grep()<cr>')
+set_normal_map('<leader>ff', '<cmd>lua require"gwm.telescope_config".find_files()<cr>')
 set_normal_map('<leader>fh', '<cmd>lua require"telescope.builtin".help_tags()<cr>')
 set_normal_map('<leader>fd', '<cmd>lua require"gwm.telescope_config".search_dotfiles()<cr>')
 -- set_normal_map('<tab>', '<cmd>lua require"telescope.builtin".buffers()<cr>')
