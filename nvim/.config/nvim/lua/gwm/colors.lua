@@ -20,6 +20,10 @@ M.reload = function()
   hilite('LspDiagnosticsUnderlineWarning', { gui = 'underline', sp = '#fabd2f' })
   hilite('LspDiagnosticsDefaultInformation', { fg = '#8ec07c' })
   hilite('LspDiagnosticsDefaultHint', { fg = '#665c54' })
+  hilite('SignColumn', { bg = '#2C323B' })
+  hilite('GitSignsAdd', { fg = '#98C379' })
+  hilite('GitSignsChange', { fg = '#fabd2f' })
+  hilite('GitSignsDelete', { fg = '#fb4934' })
 end
 
 return M

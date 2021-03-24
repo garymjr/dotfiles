@@ -9,6 +9,7 @@ require 'gwm.statusline'
 require 'gwm.treesitter'
 require 'gwm.autocommands'
 require 'gwm.mappings'
+require 'gwm.git'
 
 set_option('background', 'dark')
 set_option('clipboard', { 'unnamed', 'unnamedplus' })
@@ -32,7 +33,7 @@ set_option('scrolloff', 3)
 set_option('sidescrolloff', 3)
 set_option('shiftwidth', 2)
 set_option('shortmess', 'filnxtToOFAIWac')
-set_option('signcolumn', 'no')
+set_option('signcolumn', 'yes')
 set_option('smartcase', true)
 set_option('splitbelow', true)
 set_option('splitright', true)

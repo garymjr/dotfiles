@@ -4,12 +4,10 @@ local condition = require('galaxyline.condition')
 local section = galaxyline.section
 local buffer_not_empty = condition.buffer_not_empty
 
-local api = vim.api
-
 local colors = {
   fg = '#cccccc',
   fg_dark = '#999999',
-  bg = '#393939',
+  bg = '#242a32',
   blue = '#3592c4',
   green = '#499c54',
   red = '#c75450',

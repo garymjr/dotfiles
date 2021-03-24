@@ -10,7 +10,7 @@ require('packer').startup {
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
 
-    use 'ajmwagar/vim-deus'
+    use { 'ajmwagar/vim-deus' }
 
     use {
       'nvim-telescope/telescope.nvim',
@@ -43,7 +43,10 @@ require('packer').startup {
       'kyazdani42/nvim-tree.lua'
     }
 
-    use 'justinmk/vim-dirvish'
+    use { 'justinmk/vim-dirvish', disable = true }
+
+    use 'tpope/vim-vinegar'
+    use 'tpope/vim-eunuch'
 
     use 'tjdevries/colorbuddy.nvim'
     use 'tjdevries/gruvbuddy.nvim'
@@ -58,5 +61,7 @@ require('packer').startup {
     use 'norcalli/nvim-colorizer.lua'
 
     use 'mfussenegger/nvim-dap'
+
+    use { 'lewis6991/gitsigns.nvim', branch = 'main' }
   end
 }
