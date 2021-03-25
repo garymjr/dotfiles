@@ -3,8 +3,65 @@ local saga = require 'lspsaga'
 local compe = require 'compe'
 local lsp_status = require 'lsp-status'
 
+local function eslint_config_exists()
+  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
+
+  if not vim.tbl_isempty(eslintrc) then
+    return true
+  end
+
+  if vim.fn.filereadable("package.json") then
+    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
+      return true
+    end
+  end
+
+  return false
+end
+
+local eslint = {
+  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+  lintIgnoreExitCode = true,
+  lintStdin = true,
+  lintFormats = {"%f:%l:%c: %m"},
+  -- formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}",
+  -- formatStdin = true
+}
+
 lsp.tsserver.setup { on_attach=lsp_status.on_attach }
 lsp.vimls.setup { on_attach=lsp_status.on_attach }
+
+lsp.efm.setup {
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = true
+    client.resolved_capabilities.goto_definition = false
+  end,
+  root_dir = function()
+    if not eslint_config_exists() then
+      print('oops, i dun messed up')
+      return nil
+    end
+    return vim.fn.getcwd()
+  end,
+  settings = {
+    languages = {
+      javascript = {eslint},
+      javascriptreact = {eslint},
+      ["javascript.jsx"] = {eslint},
+      typescript = {eslint},
+      ["typescript.tsx"] = {eslint},
+      typescriptreact = {eslint}
+    }
+  },
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  }
+}
 
 local function get_lua_runtime()
   local result = {}
@@ -52,42 +109,42 @@ lsp.sumneko_lua.setup {
   on_attach=lsp_status.on_attach
 }
 
-lsp.diagnosticls.setup {
-  filetypes={ 'javascript' },
-  init_options = {
-    linters = {
-      eslint = {
-        command = './node_modules/.bin/eslint',
-        rootPatterns = { '.git' },
-        debounce = 100,
-        args = {
-          '--stdin',
-          '--stdin-filename',
-          '%filepath',
-          '--format',
-          'json'
-        },
-        sourceName = 'eslint',
-        parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '${message} [${ruleId}]',
-          security = 'severity'
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning',
-        },
-      },
-    },
-    filetypes = {
-      javascript = 'eslint'
-    }
-  }
-}
+-- lsp.diagnosticls.setup {
+--   filetypes={ 'javascript' },
+--   init_options = {
+--     linters = {
+--       eslint = {
+--         command = 'eslint_d',
+--         rootPatterns = { '.git' },
+--         debounce = 100,
+--         args = {
+--           '--stdin',
+--           '--stdin-filename',
+--           '%filepath',
+--           '--format',
+--           'json'
+--         },
+--         sourceName = 'eslint',
+--         parseJson = {
+--           errorsRoot = '[0].messages',
+--           line = 'line',
+--           column = 'column',
+--           endLine = 'endLine',
+--           endColumn = 'endColumn',
+--           message = '${message} [${ruleId}]',
+--           security = 'severity'
+--         },
+--         securities = {
+--           [2] = 'error',
+--           [1] = 'warning',
+--         },
+--       },
+--     },
+--     filetypes = {
+--       javascript = 'eslint'
+--     }
+--   }
+-- }
 
 
 saga.init_lsp_saga {

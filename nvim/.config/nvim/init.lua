@@ -57,7 +57,8 @@ local wildignore = {
   '.git',
   '*.rbc',
   '__pycache__',
-  '*/node_modules/*'
+  'node_modules/**',
+  '**/node_modules/**'
 }
 set_option('wildignore', wildignore)
 set_option('wildmode', 'list:longest,list:full')
@@ -69,9 +70,9 @@ vim.cmd [[
   command! TerminalTab :-tabnew term://zsh
 ]]
 
--- vim.cmd [[ colorscheme gruvbit ]]
--- require('gwm.colors').setup()
+vim.g.netrw_keepdir = 0
+vim.g.netrw_localrmdir = 'rm -r'
+
 -- require('colorbuddy').colorscheme('parsec')
--- vim.cmd [[ colorscheme deus ]]
 require 'gwm.colors'.setup()
 require 'colorizer'.setup()

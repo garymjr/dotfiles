@@ -10,6 +10,7 @@ vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
 
 vim.api.nvim_set_keymap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Search Files: ') })<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>ch', ':term curl https://cht.sh/', { noremap = true })
 
 set_normal_map('j', 'gj')
 set_normal_map('k', 'gk')

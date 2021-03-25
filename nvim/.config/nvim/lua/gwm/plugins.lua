@@ -22,6 +22,7 @@ require('packer').startup {
     use 'neovim/nvim-lspconfig'
     use 'wbthomason/lsp-status.nvim'
     use { 'glepnir/lspsaga.nvim', branch = 'main' }
+    use 'onsails/lspkind-nvim'
 
     use 'hrsh7th/nvim-compe'
 
