@@ -28,7 +28,11 @@ local eslint = {
   -- formatStdin = true
 }
 
-lsp.tsserver.setup { on_attach=lsp_status.on_attach }
+lsp.tsserver.setup {
+  on_attach=lsp_status.on_attach,
+  cmd = { 'typescript-language-server', '--stdio', '--tsserver-path='..os.getenv('HOME')..'/.nvm/versions/node/v14.15.1/bin/tsserver' }
+}
+
 lsp.vimls.setup { on_attach=lsp_status.on_attach }
 
 lsp.efm.setup {

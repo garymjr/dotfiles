@@ -1,4 +1,5 @@
 local set_option = require('gwm.utils').set_option
+require('dap').set_log_level('TRACE')
 
 require 'gwm.plugins'
 require 'gwm.devicons'
@@ -10,6 +11,7 @@ require 'gwm.treesitter'
 require 'gwm.autocommands'
 require 'gwm.mappings'
 require 'gwm.git'
+require 'gwm.dap'
 
 set_option('background', 'dark')
 set_option('clipboard', { 'unnamed', 'unnamedplus' })
