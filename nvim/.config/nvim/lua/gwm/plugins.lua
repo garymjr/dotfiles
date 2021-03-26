@@ -19,20 +19,21 @@ require('packer').startup {
       }
     }
 
+    use 'nvim-treesitter/nvim-treesitter'
+
     use 'neovim/nvim-lspconfig'
     use 'wbthomason/lsp-status.nvim'
     use { 'glepnir/lspsaga.nvim', branch = 'main' }
-    use 'onsails/lspkind-nvim'
 
     use 'hrsh7th/nvim-compe'
-
     use 'hrsh7th/vim-vsnip'
 
+    -- tpope plugins
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
     use 'tpope/vim-fugitive'
-
-    use 'justinmk/vim-sneak'
+    use 'tpope/vim-vinegar'
+    use 'tpope/vim-eunuch'
 
     use { 'glepnir/galaxyline.nvim', branch = 'main' }
 
@@ -47,19 +48,16 @@ require('packer').startup {
 
     use { 'justinmk/vim-dirvish', disable = true }
 
-    use 'tpope/vim-vinegar'
-    use 'tpope/vim-eunuch'
 
+    -- TODO: I should really decide on colorbuddy or lush
     use 'tjdevries/colorbuddy.nvim'
     use 'tjdevries/gruvbuddy.nvim'
-
     use { 'rktjmp/lush.nvim', branch = 'main' }
 
     use 'google/vim-searchindex'
 
     use 'kyazdani42/nvim-web-devicons'
 
-    use 'nvim-treesitter/nvim-treesitter'
     use 'norcalli/nvim-colorizer.lua'
 
     use 'mfussenegger/nvim-dap'

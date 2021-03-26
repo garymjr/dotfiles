@@ -2,15 +2,19 @@ local set_normal_map = function(before, after)
   vim.api.nvim_set_keymap('n', before, after, {noremap = true, silent = true})
 end
 
+local remap = function(mode, before, after, opts)
+  vim.api.nvim_set_keymap(mode, before, after, opts or {})
+end
+
 vim.g.mapleader = ' '
 
-vim.api.nvim_set_keymap('v', '<', '<gv', {})
-vim.api.nvim_set_keymap('v', '>', '>gv', {})
-vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
+remap('v', '<', '<gv')
+remap('v', '>', '>gv')
+remap('n', 'Y', 'y$', { noremap = true })
 
-vim.api.nvim_set_keymap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true })
-vim.api.nvim_set_keymap('n', '<leader>fg', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Search Files: ') })<cr>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>ch', ':term curl https://cht.sh/', { noremap = true })
+remap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true })
+remap('n', '<leader>fg', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Search Files: ') })<cr>", { noremap = true })
+remap('n', '<leader>ch', ':term curl https://cht.sh/', { noremap = true })
 
 set_normal_map('j', 'gj')
 set_normal_map('k', 'gk')
@@ -43,9 +47,12 @@ set_normal_map('<leader>ca', '<cmd>lua require"lspsaga.codeaction".code_action()
 set_normal_map('K', '<cmd>lua require"lspsaga.provider".preview_definition()<cr>')
 set_normal_map('gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
 
--- vsnip
-vim.api.nvim_set_keymap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<s-tab>', 'vsnip#jumpable(-1) ? "<plug>(vsnip-jump-prev)" : "<s-tab>"', {expr = true})
+-- git
+remap('n', '<leader>gs', [[ <cmd>Gstatus<cr> ]], { noremap = true })
 
-vim.api.nvim_set_keymap('i', '<c-j>', 'pumvisible() ? "<c-n>" : "<c-j>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<c-k>', 'pumvisible() ? "<c-p>" : "<c-k>"', {expr = true})
+-- vsnip
+remap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', {expr = true})
+remap('i', '<s-tab>', 'vsnip#jumpable(-1) ? "<plug>(vsnip-jump-prev)" : "<s-tab>"', {expr = true})
+
+remap('i', '<c-j>', 'pumvisible() ? "<c-n>" : "<c-j>"', {expr = true})
+remap('i', '<c-k>', 'pumvisible() ? "<c-p>" : "<c-k>"', {expr = true})
