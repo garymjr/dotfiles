@@ -9,8 +9,8 @@ dap.adapters.node2 = {
 dap.configurations.javascript = {
   {
     type = 'node2',
-    request = 'lanuch',
-    program = '${file}',
+    request = 'launch',
+    program = '${workspaceFolder}/${file}',
     cwd = vim.fn.getcwd(),
     sourceMaps = true,
     protocol = 'inspector',
@@ -26,9 +26,10 @@ M.run_cnva_ssr_debug = function()
     name = 'Server Debug',
     cwd = vim.fn.getcwd(),
     sourceMaps = true,
-    program = vim.fn.getcwd() .. '/build/server.js',
+    program = '${workspaceFolder}/build/server.js',
     skipFiles = { '<node_internals>/**' },
-    console = 'integratedTerminal'
+    console = 'integratedTerminal',
+    continueOnAttach = true
   }
   require'dap'.run(config)
 end
