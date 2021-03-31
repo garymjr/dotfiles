@@ -6,17 +6,17 @@ dap.adapters.node2 = {
   args = { os.getenv('HOME') .. '/.dap/vscode-node-debug2/out/src/nodeDebug.js' }
 }
 
-dap.configurations.javascript = {
-  {
-    type = 'node2',
-    request = 'launch',
-    program = '${workspaceFolder}/${file}',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal'
-  }
-}
+-- dap.configurations.javascript = {
+--   {
+--     type = 'node2',
+--     request = 'launch',
+--     program = '${workspaceFolder}/${file}',
+--     cwd = vim.fn.getcwd(),
+--     sourceMaps = true,
+--     protocol = 'inspector',
+--     console = 'integratedTerminal'
+--   }
+-- }
 
 local M = {}
 M.run_cnva_ssr_debug = function()
@@ -29,7 +29,8 @@ M.run_cnva_ssr_debug = function()
     program = '${workspaceFolder}/build/server.js',
     skipFiles = { '<node_internals>/**' },
     console = 'integratedTerminal',
-    continueOnAttach = true
+    continueOnAttach = true,
+    protocol = 'auto'
   }
   require'dap'.run(config)
 end

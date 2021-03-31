@@ -10,7 +10,4 @@ augroup startup
 		\ |call rpcrequest(g:r, "nvim_command", "edit ".g:f)
 		\ |qa
 		\ |endif
-
-	" enter insert mode whenever we're in a terminal
-	autocmd TermOpen,BufWinEnter,BufEnter term://* startinsert
 augroup END

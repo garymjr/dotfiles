@@ -1,5 +1,4 @@
-local set_option = require('gwm.utils').set_option
-require('dap').set_log_level('TRACE')
+local set_option = require 'gwm.utils'.set_option
 
 require 'gwm.plugins'
 require 'gwm.devicons'
@@ -65,15 +64,12 @@ local wildignore = {
 set_option('wildignore', wildignore)
 set_option('wildmode', 'list:longest,list:full')
 
-vim.cmd [[
-  command! TSHighlightsUnderCursor :lua require('gwm.utils').show_hl_captures()
-]]
+-- vim.cmd [[
+--   command! TSHighlightsUnderCursor :lua require('gwm.utils').show_hl_captures()
+-- ]]
 vim.cmd [[
   command! TerminalTab :-tabnew term://zsh
 ]]
-
-vim.g.netrw_keepdir = 0
-vim.g.netrw_localrmdir = 'rm -r'
 
 -- require('colorbuddy').colorscheme('parsec')
 require 'gwm.colors'.setup()
