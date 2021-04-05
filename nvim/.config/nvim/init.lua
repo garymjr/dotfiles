@@ -25,7 +25,7 @@ set_option('laststatus', 2)
 set_option('mouse', 'a')
 set_option('backup', false)
 set_option('modeline', false)
-set_option('showmode', false)
+set_option('showmode', true)
 set_option('swapfile', false)
 set_option('undofile', false)
 set_option('wrap', false)
@@ -72,5 +72,6 @@ vim.cmd [[
 ]]
 
 -- require('colorbuddy').colorscheme('parsec')
-require 'gwm.colors'.setup()
+-- require 'gwm.colors'.setup()
+vim.cmd [[colorscheme apprentice]]
 require 'colorizer'.setup()

@@ -26,9 +26,6 @@ set_normal_map('<leader>fd', '<cmd>lua require"gwm.telescope_config".search_dotf
 -- set_normal_map('<tab>', '<cmd>lua require"telescope.builtin".buffers()<cr>')
 set_normal_map('<tab>', '<cmd>lua require"gwm.telescope_config".find_buffers({sort_lastused = true, ignore_current_buffer = true})<cr>')
 
--- chadtree
-set_normal_map('<leader>e', '<cmd>NvimTreeToggle<cr>')
-
 -- prettier
 set_normal_map('gp', '<cmd>%!npx prettier --stdin-filepath %<cr>')
 
@@ -56,3 +53,5 @@ remap('i', '<s-tab>', 'vsnip#jumpable(-1) ? "<plug>(vsnip-jump-prev)" : "<s-tab>
 
 remap('i', '<c-j>', 'pumvisible() ? "<c-n>" : "<c-j>"', {expr = true})
 remap('i', '<c-k>', 'pumvisible() ? "<c-p>" : "<c-k>"', {expr = true})
+
+remap('v', 'p', '"_dP', { noremap = true })

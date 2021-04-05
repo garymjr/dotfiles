@@ -178,25 +178,25 @@ font:
 #
 colors:
   primary:
-    background: '#2c323b'
-    foreground: '#eaeaea'
+    background: '#262626'
+    foreground: '#bcbcbc'
   normal:
-    black:   '#242a32'
-    red:     '#d54e53'
-    green:   '#98c379'
-    yellow:  '#e5c07b'
-    blue:    '#83a598'
-    magenta: '#c678dd'
-    cyan:    '#70c0ba'
-    white:   '#eaeaea'
+    black:   '#262626'
+    red:     '#af5f5f'
+    green:   '#5f875f'
+    yellow:  '#87875f'
+    blue:    '#5f87af'
+    magenta: '#5f5f87'
+    cyan:    '#5f8787'
+    white:   '#6c6c6c'
   bright:
-    black:   '#666666'
-    red:     '#ec3e45'
-    green:   '#90c966'
-    yellow:  '#edbf69'
-    blue:    '#73ba9f'
-    magenta: '#c858e9'
-    cyan:    '#2bcec2'
+    black:   '#444444'
+    red:     '#ff8700'
+    green:   '#87af87'
+    yellow:  '#ffffaf'
+    blue:    '#8fafd7'
+    magenta: '#8787af'
+    cyan:    '#5fafaf'
     white:   '#ffffff'
 
 # Bell

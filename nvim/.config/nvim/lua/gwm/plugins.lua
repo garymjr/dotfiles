@@ -6,7 +6,7 @@ require('packer').startup {
 
     -- my plugins
     use '~/.config/nvim/plugins/parsec'
-    use '~/.config/nvim/plugins/treesitter-todo'
+    use '~/.config/nvim/plugins/apprentice'
 
     -- utilities
     use 'nvim-lua/popup.nvim'
