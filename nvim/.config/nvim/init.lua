@@ -12,6 +12,8 @@ require 'gwm.mappings'
 require 'gwm.git'
 require 'gwm.dap'
 
+require 'garymjr.netrw'
+
 set_option('background', 'dark')
 set_option('clipboard', { 'unnamed', 'unnamedplus' })
 set_option('complete', { '.','w','b','u' })
@@ -64,14 +66,7 @@ local wildignore = {
 set_option('wildignore', wildignore)
 set_option('wildmode', 'list:longest,list:full')
 
--- vim.cmd [[
---   command! TSHighlightsUnderCursor :lua require('gwm.utils').show_hl_captures()
--- ]]
-vim.cmd [[
-  command! TerminalTab :-tabnew term://zsh
-]]
-
--- require('colorbuddy').colorscheme('parsec')
 -- require 'gwm.colors'.setup()
 vim.cmd [[colorscheme apprentice]]
 require 'colorizer'.setup()
+require 'numb'.setup()

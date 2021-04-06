@@ -7,6 +7,7 @@ require('packer').startup {
     -- my plugins
     use '~/.config/nvim/plugins/parsec'
     use '~/.config/nvim/plugins/apprentice'
+    use '~/.config/nvim/plugins/neotrix'
 
     -- utilities
     use 'nvim-lua/popup.nvim'
@@ -50,9 +51,6 @@ require('packer').startup {
       'kyazdani42/nvim-tree.lua'
     }
 
-    use 'justinmk/vim-dirvish'
-
-
     -- TODO: I should really decide on colorbuddy or lush
     use 'tjdevries/colorbuddy.nvim'
     use 'tjdevries/gruvbuddy.nvim'
@@ -61,6 +59,7 @@ require('packer').startup {
     use 'google/vim-searchindex'
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
+    use 'nacro90/numb.nvim'
     use { 'lewis6991/gitsigns.nvim', branch = 'main' }
   end
 }
