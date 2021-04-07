@@ -1,18 +1,15 @@
-local set_option = require 'gwm.utils'.set_option
+local set_option = require 'garymjr.utils'.set_option
 
-require 'gwm.plugins'
-require 'gwm.devicons'
-require 'gwm.nvim-tree'
-require 'gwm.lsp_config'
--- require 'gwm.telescope_config'
-require 'gwm.statusline'
-require 'gwm.treesitter'
-require 'gwm.autocommands'
-require 'gwm.mappings'
-require 'gwm.git'
-require 'gwm.dap'
-
-require 'garymjr.netrw'
+require 'garymjr.plugins'
+require 'garymjr.mappings'
+-- require 'garymjr.netrw'
+require 'garymjr.statusline'
+require 'garymjr.devicons'
+require 'garymjr.gitsigns'
+require 'garymjr.dap'
+require 'garymjr.lsp'
+require 'garymjr.treesitter'
+require 'garymjr.autocommands'
 require 'garymjr.fzf'
 
 set_option('background', 'dark')

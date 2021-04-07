@@ -7,7 +7,9 @@ require('packer').startup {
     -- my plugins
     use '~/.config/nvim/plugins/parsec'
     use '~/.config/nvim/plugins/apprentice'
+    use '~/.config/nvim/plugins/hypsteria'
 
+    -- fzf
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'
 
@@ -19,6 +21,11 @@ require('packer').startup {
     use 'ajmwagar/vim-deus'
     use 'sainnhe/everforest'
 
+    -- TODO: I should really decide on colorbuddy or lush
+    use 'tjdevries/colorbuddy.nvim'
+    use 'tjdevries/gruvbuddy.nvim'
+    use { 'rktjmp/lush.nvim', branch = 'main' }
+
     -- treesitter
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
@@ -27,9 +34,14 @@ require('packer').startup {
     use 'neovim/nvim-lspconfig'
     use 'wbthomason/lsp-status.nvim'
     use { 'glepnir/lspsaga.nvim', branch = 'main' }
+
+    -- dap
     use 'mfussenegger/nvim-dap'
 
+    -- completion
     use 'hrsh7th/nvim-compe'
+
+    -- snippets
     use 'hrsh7th/vim-vsnip'
 
     -- tpope plugins
@@ -38,26 +50,21 @@ require('packer').startup {
     use 'tpope/vim-fugitive'
     use 'tpope/vim-eunuch'
 
-    use { 'glepnir/galaxyline.nvim', branch = 'main' }
+    -- statusline
+    use { 'glepnir/galaxyline.nvim', branch = 'main', disable = true }
 
     -- languages
     use 'sheerun/vim-polyglot'
     use { 'styled-components/vim-styled-components', branch = 'main' }
 
-    use {
-      disable = true,
-      'kyazdani42/nvim-tree.lua'
-    }
+    -- git
+    use { 'lewis6991/gitsigns.nvim', branch = 'main' }
 
-    -- TODO: I should really decide on colorbuddy or lush
-    use 'tjdevries/colorbuddy.nvim'
-    use 'tjdevries/gruvbuddy.nvim'
-    use { 'rktjmp/lush.nvim', branch = 'main' }
-
+    -- misc
     use 'google/vim-searchindex'
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
     use 'nacro90/numb.nvim'
-    use { 'lewis6991/gitsigns.nvim', branch = 'main' }
+    use 'justinmk/vim-dirvish'
   end
 }

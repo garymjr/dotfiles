@@ -1,4 +1,4 @@
-local create_autogroup = require 'gwm.utils'.create_autogroup
+local create_autogroup = require 'garymjr.utils'.create_autogroup
 
 create_autogroup {
   group_name = 'quickfix',
