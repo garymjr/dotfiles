@@ -1,9 +1,7 @@
+local remap = require 'garymjr.utils'.remap
+
 local set_normal_map = function(before, after)
   vim.api.nvim_set_keymap('n', before, after, {noremap = true, silent = true})
-end
-
-local remap = function(mode, before, after, opts)
-  vim.api.nvim_set_keymap(mode, before, after, opts or {})
 end
 
 vim.g.mapleader = ' '
@@ -12,19 +10,17 @@ remap('v', '<', '<gv')
 remap('v', '>', '>gv')
 remap('n', 'Y', 'y$', { noremap = true })
 
+remap('n', '<leader>y', '"+yy', { noremap = true })
+remap('n', '<leader>p', '"+p', { noremap = true })
+remap('v', '<leader>y', '"+y', { noremap = true })
+remap('v', '<leader>p', '"_d"+P', { noremap = true })
+
 remap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true })
 remap('n', '<leader>fg', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Search Files: ') })<cr>", { noremap = true })
 remap('n', '<leader>ch', ':term curl https://cht.sh/', { noremap = true })
 
 set_normal_map('j', 'gj')
 set_normal_map('k', 'gk')
-
--- telescope
-set_normal_map('<leader>ff', '<cmd>lua require"gwm.telescope_config".find_files()<cr>')
-set_normal_map('<leader>fh', '<cmd>lua require"telescope.builtin".help_tags()<cr>')
-set_normal_map('<leader>fd', '<cmd>lua require"gwm.telescope_config".search_dotfiles()<cr>')
--- set_normal_map('<tab>', '<cmd>lua require"telescope.builtin".buffers()<cr>')
-set_normal_map('<tab>', '<cmd>lua require"gwm.telescope_config".find_buffers({sort_lastused = true, ignore_current_buffer = true})<cr>')
 
 -- prettier
 set_normal_map('gp', '<cmd>%!npx prettier --stdin-filepath %<cr>')

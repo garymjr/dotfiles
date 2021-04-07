@@ -7,19 +7,17 @@ require('packer').startup {
     -- my plugins
     use '~/.config/nvim/plugins/parsec'
     use '~/.config/nvim/plugins/apprentice'
-    use '~/.config/nvim/plugins/neotrix'
+
+    use 'junegunn/fzf'
+    use 'junegunn/fzf.vim'
 
     -- utilities
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
+    use { 'nvim-lua/popup.nvim', disable = false }
+    use { 'nvim-lua/plenary.nvim', disable = false }
 
     -- themes
     use 'ajmwagar/vim-deus'
     use 'sainnhe/everforest'
-
-    -- telescope
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-telescope/telescope-fzy-native.nvim'
 
     -- treesitter
     use 'nvim-treesitter/nvim-treesitter'

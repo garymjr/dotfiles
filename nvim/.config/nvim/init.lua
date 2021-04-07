@@ -4,7 +4,7 @@ require 'gwm.plugins'
 require 'gwm.devicons'
 require 'gwm.nvim-tree'
 require 'gwm.lsp_config'
-require 'gwm.telescope_config'
+-- require 'gwm.telescope_config'
 require 'gwm.statusline'
 require 'gwm.treesitter'
 require 'gwm.autocommands'
@@ -13,9 +13,9 @@ require 'gwm.git'
 require 'gwm.dap'
 
 require 'garymjr.netrw'
+require 'garymjr.fzf'
 
 set_option('background', 'dark')
-set_option('clipboard', { 'unnamed', 'unnamedplus' })
 set_option('complete', { '.','w','b','u' })
 set_option('completeopt', { 'menuone', 'noinsert', 'noinsert' })
 set_option('expandtab', true)
@@ -66,7 +66,6 @@ local wildignore = {
 set_option('wildignore', wildignore)
 set_option('wildmode', 'list:longest,list:full')
 
--- require 'gwm.colors'.setup()
 vim.cmd [[colorscheme apprentice]]
 require 'colorizer'.setup()
 require 'numb'.setup()
