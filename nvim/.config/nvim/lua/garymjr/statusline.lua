@@ -64,7 +64,7 @@ function M.active_statusline()
 
   local status = bufname..' '..filetype..' '..modified..readonly..'%='..branch..location..' | '..percentage
 
-  local buffer_not_empty = vim.fn.expand('%:t') ~= '' and vim.bo.filetype ~= ''
+  local buffer_not_empty = vim.fn.expand('%:t') ~= '' or vim.bo.filetype ~= ''
   if buffer_not_empty then
     return '  ' .. status .. '  '
   end

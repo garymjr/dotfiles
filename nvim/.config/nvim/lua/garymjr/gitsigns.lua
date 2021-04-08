@@ -20,5 +20,6 @@ require 'gitsigns'.setup {
       hl = 'GitSignsChange',
       text = '▌'
     }
-  }
+  },
+  current_line_blame = false
 }

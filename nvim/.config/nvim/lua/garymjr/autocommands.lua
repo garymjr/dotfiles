@@ -7,10 +7,15 @@ create_autogroup {
 
 create_autogroup {
   group_name = 'packer',
-  definition = {{ 'BufWritePost', '**/gwm/plugins.lua', 'PackerCompile' }}
+  definition = {{ 'BufWritePost', '**/garymjr/plugins.lua', 'PackerCompile' }}
 }
 
 create_autogroup {
   group_name = 'highlight_yank',
-  definition = {{ 'TextYankPost', '*', [[ silent! lua require('vim.highlight').on_yank { timeout = 40 } ]]  }}
+  definition = {{ 'TextYankPost', '*', [[silent! lua require('vim.highlight').on_yank { timeout = 40 }]]  }}
+}
+
+create_autogroup {
+  group_name = 'terminal',
+  definition = {{ 'TermOpen', '*', 'setlocal norelativenumber nonumber' }}
 }

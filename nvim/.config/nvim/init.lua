@@ -29,6 +29,7 @@ set_option('swapfile', false)
 set_option('undofile', false)
 set_option('wrap', false)
 set_option('path', { '.', '/usr/include', '**' })
+set_option('relativenumber', true)
 set_option('scrolloff', 3)
 set_option('sidescrolloff', 3)
 set_option('shiftwidth', 2)
@@ -63,6 +64,5 @@ local wildignore = {
 set_option('wildignore', wildignore)
 set_option('wildmode', 'list:longest,list:full')
 
-vim.cmd [[colorscheme apprentice]]
+require 'garymjr.colors'.setup({ colorscheme = 'apprentice' })
 require 'colorizer'.setup()
-require 'numb'.setup()

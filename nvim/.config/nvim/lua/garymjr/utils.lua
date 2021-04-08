@@ -19,6 +19,12 @@ function M.create_autogroup(config)
 end
 
 function M.hilite(group, opts)
+  if opts.link then
+    local cmd = 'hi! link '..group..' '..opts.link
+    vim.cmd(cmd)
+    return
+  end
+
   local bg = 'NONE'
   if opts.bg then
     bg = opts.bg
@@ -76,6 +82,23 @@ function M.set_option(key, value)
     vim.bo[key] = value
   end
   vim.o[key] = value
+end
+
+function M.extract_colors(groups)
+  local colors = {}
+
+  local highlights = vim.api.nvim__get_hl_defs(0)
+  for _, group in ipairs(groups) do
+    colors[group] = {}
+    if highlights[group].foreground then
+      colors[group].fg = string.format('#%06x', highlights[group].foreground)
+    end
+
+    if highlights[group].background then
+      colors[group].bg = string.format('#%06x', highlights[group].background)
+    end
+  end
+  return colors
 end
 
 return M
