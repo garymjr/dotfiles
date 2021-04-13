@@ -177,6 +177,9 @@ font:
 #draw_bold_text_with_bright_colors: false
 #
 colors:
+  cursor:
+    text: '#262626'
+    cursor: '#bcbcbc'
   primary:
     background: '#262626'
     foreground: '#bcbcbc'

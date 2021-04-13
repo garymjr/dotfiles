@@ -21,12 +21,6 @@ remap('n', 'k', 'gk')
 -- prettier
 remap('n', 'gp', '<cmd>%!npx prettier --stdin-filepath %<cr>', { noremap = true })
 
--- easier movements
-remap('n', '<c-h>', '<c-w>h', { noremap = true })
-remap('n', '<c-j>', '<c-w>j', { noremap = true })
-remap('n', '<c-k>', '<c-w>k', { noremap = true })
-remap('n', '<c-l>', '<c-w>l', { noremap = true })
-
 -- allow escape to enter normal mode in terminal
 remap('t', '<esc>', '<c-\\><c-n>', { noremap = true })
 

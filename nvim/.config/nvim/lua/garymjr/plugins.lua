@@ -7,7 +7,7 @@ require('packer').startup {
     -- my plugins
     use '~/.config/nvim/plugins/parsec'
     use '~/.config/nvim/plugins/apprentice'
-    use '~/.config/nvim/plugins/colorscheme-extractor'
+    use '~/.config/nvim/plugins/cosmic_latte'
 
     -- fzf
     use 'junegunn/fzf'
@@ -24,6 +24,9 @@ require('packer').startup {
     use 'junegunn/seoul256.vim'
     use 'sff1019/hogwarts.vim'
     use 'senran101604/neotrix.vim'
+    use 'doums/darcula'
+    use 'habamax/vim-saturnite'
+    use 'glepnir/zephyr-nvim'
 
     -- TODO: I should really decide on colorbuddy or lush
     use 'tjdevries/colorbuddy.nvim'
@@ -53,9 +56,11 @@ require('packer').startup {
     use 'tpope/vim-surround'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-eunuch'
+    use 'tpope/vim-vinegar'
 
     -- languages
     use { 'styled-components/vim-styled-components', branch = 'main', disable = true }
+    use 'jxnblk/vim-mdx-js'
 
     -- git
     use { 'lewis6991/gitsigns.nvim', branch = 'main' }
@@ -65,6 +70,5 @@ require('packer').startup {
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
     use 'nacro90/numb.nvim'
-    use 'justinmk/vim-dirvish'
   end
 }

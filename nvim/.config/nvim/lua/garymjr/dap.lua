@@ -19,23 +19,34 @@ dap.adapters.node2 = {
 -- }
 
 local M = {}
-M.run_cnva_ssr_debug = function()
+M.attach_to_mockapi = function()
   local config = {
     type = 'node2',
-    request = 'launch',
-    name = 'Server Debug',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    program = '${workspaceFolder}/build/server.js',
-    skipFiles = { '<node_internals>/**' },
-    console = 'integratedTerminal',
-    continueOnAttach = true,
-    protocol = 'auto'
+    request = 'attach',
+    port = '9239',
+    name = 'MockApi Debug',
+    localRoot = '${workspaceFolder}/mockapi',
+    remoteRoot = '/mockapi',
+    console = 'integratedTerminal'
   }
   require'dap'.run(config)
 end
 
-vim.api.nvim_set_keymap('n', '<leader>csdb', [[ :lua require'gwm.dap'.run_cnva_ssr_debug()<cr> ]], { noremap = true })
+M.attach_to_serenityui = function()
+  local config = {
+    type = 'node2',
+    request = 'attach',
+    port = '9229',
+    name = 'Server Debug',
+    localRoot = '${workspaceFolder}/serenity-ui',
+    remoteRoot = '/home/node/app/serenity-ui',
+    console = 'integratedTerminal'
+  }
+  require'dap'.run(config)
+end
+
+vim.cmd [[command! MockDebug lua require'garymjr.dap'.attach_to_mockapi()]]
+vim.cmd [[command! SerenityDebug lua require'garymjr.dap'.attach_to_serenityui()]]
 
 return M
 

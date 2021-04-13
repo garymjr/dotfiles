@@ -11,6 +11,7 @@ require 'garymjr.lsp'
 require 'garymjr.treesitter'
 require 'garymjr.autocommands'
 require 'garymjr.fzf'
+require 'garymjr.terminal'
 
 set_option('background', 'dark')
 set_option('complete', { '.','w','b','u' })
@@ -64,5 +65,6 @@ local wildignore = {
 set_option('wildignore', wildignore)
 set_option('wildmode', 'list:longest,list:full')
 
-require 'garymjr.colors'.setup({ colorscheme = 'apprentice' })
+-- require 'garymjr.colors'.setup({ colorscheme = 'zephyr' })
+vim.cmd [[colors cosmic_latte]]
 require 'colorizer'.setup()

@@ -101,4 +101,28 @@ function M.extract_colors(groups)
   return colors
 end
 
+function M.yarn_helper(...)
+  local args = {...}
+  local cmd = string.format('term yarn %s', table.concat(args, ' '))
+  vim.cmd(cmd)
+end
+
+vim.cmd [[command! -nargs=+ Yarn lua require'garymjr.utils'.yarn_helper(<f-args>)]]
+
+function M.yarn_workspace_helper(...)
+  local args = {...}
+  local cmd = string.format('term yarn workspace %s', table.concat(args, ' '))
+  vim.cmd(cmd)
+end
+
+vim.cmd [[command! -nargs=+ Workspace lua require'garymjr.utils'.yarn_workspace_helper(<f-args>)]]
+
+function M.docker_helper(...)
+  local args = {...}
+  local cmd = string.format('term docker %s', table.concat(args, ' '))
+  vim.cmd(cmd)
+end
+
+vim.cmd [[command! -nargs=+ Docker lua require'garymjr.utils'.docker_helper(<f-args>)]]
+
 return M
