@@ -1,4 +1,4 @@
-local remap = require 'garymjr.utils'.remap
+local remap = require('core.utils').remap
 
 local M = {}
 

@@ -1,6 +1,7 @@
+local remap = require('core.utils').remap
+
 local api = vim.api
 local fn = vim.fn
-local remap = require 'garymjr.utils'.remap
 
 local terminal = {
   bufnr = nil,

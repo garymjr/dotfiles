@@ -1,4 +1,4 @@
-local create_autogroup = require 'garymjr.utils'.create_autogroup
+local create_autogroup = require('core.utils').create_autogroup
 
 create_autogroup {
   group_name = 'quickfix',
@@ -17,5 +17,8 @@ create_autogroup {
 
 create_autogroup {
   group_name = 'terminal',
-  definition = {{ 'TermOpen', '*', 'setlocal norelativenumber nonumber' }}
+  definition = {
+    { 'TermOpen', '*', 'setlocal norelativenumber nonumber' },
+    { 'BufEnter', 'term://*', 'stopinsert' }
+  }
 }

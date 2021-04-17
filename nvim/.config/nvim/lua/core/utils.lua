@@ -107,7 +107,7 @@ function M.yarn_helper(...)
   vim.cmd(cmd)
 end
 
-vim.cmd [[command! -nargs=+ Yarn lua require'garymjr.utils'.yarn_helper(<f-args>)]]
+vim.cmd [[command! -nargs=+ Yarn lua require('core.utils').yarn_helper(<f-args>)]]
 
 function M.yarn_workspace_helper(...)
   local args = {...}
@@ -115,7 +115,7 @@ function M.yarn_workspace_helper(...)
   vim.cmd(cmd)
 end
 
-vim.cmd [[command! -nargs=+ Workspace lua require'garymjr.utils'.yarn_workspace_helper(<f-args>)]]
+vim.cmd [[command! -nargs=+ Workspace lua require('core.utils').yarn_workspace_helper(<f-args>)]]
 
 function M.docker_helper(...)
   local args = {...}
@@ -123,6 +123,6 @@ function M.docker_helper(...)
   vim.cmd(cmd)
 end
 
-vim.cmd [[command! -nargs=+ Docker lua require'garymjr.utils'.docker_helper(<f-args>)]]
+vim.cmd [[command! -nargs=+ Docker lua require('core.utils').docker_helper(<f-args>)]]
 
 return M

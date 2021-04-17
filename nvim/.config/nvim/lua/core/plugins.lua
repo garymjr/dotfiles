@@ -56,7 +56,6 @@ require('packer').startup {
     use 'tpope/vim-surround'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-eunuch'
-    use 'tpope/vim-vinegar'
 
     -- languages
     use { 'styled-components/vim-styled-components', branch = 'main', disable = true }
@@ -69,6 +68,7 @@ require('packer').startup {
     use 'google/vim-searchindex'
     use 'kyazdani42/nvim-web-devicons'
     use 'norcalli/nvim-colorizer.lua'
-    use 'nacro90/numb.nvim'
+    use 'mhartington/formatter.nvim'
+    use 'justinmk/vim-dirvish'
   end
 }

@@ -1,9 +1,9 @@
 function! ActiveStatusLine()
-	return luaeval("require'garymjr.statusline'.active_statusline()")
+	return luaeval("require'modules.statusline'.active_statusline()")
 endfunction
 
 function! InActiveStatusLine()
-	return luaeval("require'garymjr.statusline'.inactive_statusline()")
+	return luaeval("require'modules.statusline'.inactive_statusline()")
 endfunction
 
 augroup StatusLine
