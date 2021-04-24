@@ -19,12 +19,7 @@ require('packer').startup {
 
     -- themes
     use 'ajmwagar/vim-deus'
-    use 'sainnhe/everforest'
     use 'metalelf0/jellybeans-nvim'
-    use 'junegunn/seoul256.vim'
-    use 'sff1019/hogwarts.vim'
-    use 'senran101604/neotrix.vim'
-    use 'doums/darcula'
     use 'habamax/vim-saturnite'
     use 'glepnir/zephyr-nvim'
 

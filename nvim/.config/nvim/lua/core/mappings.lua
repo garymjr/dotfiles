@@ -22,7 +22,8 @@ remap('n', 'k', 'gk')
 remap('t', '<esc>', '<c-\\><c-n>', { noremap = true })
 
 -- git
-remap('n', '<leader>gs', '<cmd>Gstatus<cr>', { noremap = true })
+remap('n', '<leader>gs', '<cmd>Git<cr>', { noremap = true })
+remap('n', '<leader>gb', '<cmd>Git blame<cr>', { noremap = true })
 
 -- vsnip
 remap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', { expr = true })

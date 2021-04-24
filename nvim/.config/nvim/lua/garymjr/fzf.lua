@@ -7,6 +7,7 @@ function M.find_dots()
 end
 
 remap('n', '<leader>ff', '<cmd>Files<cr>', { noremap = true })
+remap('n', '<c-p>', '<cmd>GFiles<cr>', { noremap = true })
 remap('n', '<leader>fg', '<cmd>Rg<cr>', { noremap = true })
 remap('n', '<leader>fh', '<cmd>Helptags<cr>', { noremap = true })
 remap('n', '<leader>fb', '<cmd>Buffers<cr>', { noremap = true })

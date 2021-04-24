@@ -54,23 +54,15 @@ local function get_percentage()
   return '%p%%'
 end
 
-local function get_branch()
-  local status_dict = vim.b.gitsigns_status_dict or {}
-
-  local branch = status_dict.head
-  if branch ~= nil and #branch > 0 then
-    return branch..' | '
+local function get_filetype()
+  local ft = vim.bo.ft
+  local bt = vim.bo.buftype
+  if ft and ft ~= '' then
+    return ' ['..ft..']'
+  elseif bt and bt ~= '' then
+    return ' ['..bt..']'
   end
   return ''
-end
-
-local function get_file_icon()
-  local filename = vim.fn.expand('%:t')
-  local ext = vim.fn.expand('%:e')
-  local icon = get_icon(filename, ext)
-
-  hi('LineIcon', { fg = icon.color, bg = '#1F2329' })
-  return '%#LineIcon#'..icon.icon..'  %*'
 end
 
 function M.active_statusline()
@@ -79,10 +71,9 @@ function M.active_statusline()
   local readonly = get_readonly()
   local location = get_location()
   local percentage = get_percentage()
-  local branch = get_branch()  -- honestly not sure if I want this or not??
-  local icon = get_file_icon()
+  local filetype = get_filetype()
 
-  local status = icon..bufname..' '..modified..readonly..'%='..branch..location..' | '..percentage
+  local status = bufname..filetype..' '..modified..readonly..'%='..location..' | '..percentage
 
   local buffer_not_empty = vim.fn.expand('%:t') ~= '' or vim.bo.filetype ~= ''
   if buffer_not_empty then
