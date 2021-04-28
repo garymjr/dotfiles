@@ -20,8 +20,10 @@ require('packer').startup {
     -- themes
     use 'ajmwagar/vim-deus'
     use 'metalelf0/jellybeans-nvim'
-    use 'habamax/vim-saturnite'
     use 'glepnir/zephyr-nvim'
+    use 'owozsh/amora'
+    use 'junegunn/seoul256.vim'
+    use 'romgrk/doom-one.vim'
 
     -- TODO: I should really decide on colorbuddy or lush
     use 'tjdevries/colorbuddy.nvim'

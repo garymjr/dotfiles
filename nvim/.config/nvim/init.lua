@@ -9,7 +9,7 @@ require('modules.statusline')
 require('modules.lsp')
 require('modules.treesitter')
 require('modules.formatter')
-require('modules.colors').colorscheme('saturnite')
+require('modules.colors').colorscheme('doom-one')
 
 require('garymjr.fzf')
 require('garymjr.terminal')

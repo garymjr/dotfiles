@@ -18,34 +18,18 @@ function M.create_autogroup(config)
   vim.cmd [[augroup END]]
 end
 
-function M.hilite(group, opts)
-  if opts.link then
-    local cmd = 'hi! link '..group..' '..opts.link
-    vim.cmd(cmd)
+function M.highlight(group, colors)
+  local fg = colors.fg and 'guifg='..colors.fg or 'guifg=NONE'
+  local bg = colors.bg and 'guibg='..colors.bg or 'guibg=NONE'
+  local gui = colors.style and 'gui='..colors.style or 'gui=NONE'
+  local sp = colors.sp and ' guisp='..colors.sp or ''
+
+  if colors.link then
+    vim.cmd(string.format('hi! link %s %s', group, colors.link))
     return
   end
 
-  local bg = 'NONE'
-  if opts.bg then
-    bg = opts.bg
-  end
-  local fg = 'NONE'
-  if opts.fg then
-    fg = opts.fg
-  end
-  local gui = 'NONE'
-  if opts.gui then
-    gui = opts.gui
-  end
-
-  local hi_opts = ' guibg='..bg..' guifg='..fg..' gui='..gui
-
-  if opts.sp then
-    hi_opts = hi_opts .. ' guisp='..opts.sp
-  end
-
-  local cmd = 'hi ' .. group .. hi_opts
-  vim.cmd(cmd)
+  vim.cmd(string.format('hi %s %s %s %s%s', group, bg, fg, gui, sp))
 end
 
 function M.get_highlight_group()
