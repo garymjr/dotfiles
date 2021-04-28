@@ -1,4 +1,8 @@
+local create_autogroup = require('core.utils').create_autogroup
+
 local M = {}
+
+_G.statusline = {}
 
 local function get_bufname()
   local head = ''
@@ -63,33 +67,56 @@ local function get_filetype()
 end
 
 local function get_branch()
-  local branch = vim.api.nvim_exec('echo fugitive#Head()', true)
-  if branch then
-    return string.format('%s | ', branch)
+  if vim.bo.buftype == '' then
+    local dir = vim.fn.expand('%:p:h')
+    local cmd = string.format([[echo fugitive#Head('%s')]], dir)
+    local branch = vim.api.nvim_exec(cmd, true)
+    if branch and branch ~= '' then
+      return string.format('%s | ', branch)
+    end
   end
   return ''
 end
 
 function M.active_statusline()
-  local bufname = get_bufname()
-  local modified = get_modified()
-  local readonly = get_readonly()
-  local location = get_location()
-  local percentage = get_percentage()
-  local filetype = get_filetype()
-  local branch = get_branch()
+  local async
+  async = vim.loop.new_async(vim.schedule_wrap(function()
+    local bufname = get_bufname()
+    local modified = get_modified()
+    local readonly = get_readonly()
+    local location = get_location()
+    local percentage = get_percentage()
+    local filetype = get_filetype()
+    local branch = get_branch()
 
-  local status = bufname..filetype..' '..modified..readonly..'%=%<'..branch..location..' | '..percentage
+    local status = bufname..filetype..' '..modified..readonly..'%=%<'..branch..location..' | '..percentage
 
-  local buffer_not_empty = vim.fn.expand('%:t') ~= '' or vim.bo.filetype ~= ''
-  if buffer_not_empty then
-    return '  '..status .. '  '
-  end
-  return ' '
+    local buffer_not_empty = vim.fn.expand('%:t') ~= '' or vim.bo.filetype ~= ''
+    if buffer_not_empty then
+      vim.wo.statusline = ' '..status..' '
+    else
+      vim.wo.statusline = ' '
+      -- return '  '..status .. '  '
+    end
+    -- return ' '
+    async:close()
+  end))
+  async:send()
 end
 
 function M.inactive_statusline()
-  return ' '
+  vim.wo.statusline = ' '
+  -- return ' '
+end
+
+function M.setup()
+  create_autogroup {
+    group_name = 'StatusLine',
+    definition = {
+      {'BufEnter,WinEnter', '*', [[lua require('modules.statusline').active_statusline()]]},
+      {'BufLeave,WinLeave', '*', [[lua require('modules.statusline').inactive_statusline()]]}
+    }
+  }
 end
 
 return M
