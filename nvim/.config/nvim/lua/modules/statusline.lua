@@ -1,6 +1,3 @@
-local get_icon = require('plugins.devicons').get_icon
-local hi = require('core.utils').hilite
-
 local M = {}
 
 local function get_bufname()
@@ -20,12 +17,12 @@ local function get_bufname()
   end
   local bufname = vim.fn.expand('%:t')
   if bufname ~= '' then
-    return '%#StatusLineBufName#'..head..bufname..'%*'
+    return head..bufname
   end
 
   local filetype = vim.bo.filetype
   if filetype ~= '' then
-    return '%#StatusLineBufName#'..filetype..'%*'
+    return filetype
   end
   return ''
 end
@@ -33,7 +30,7 @@ end
 local function get_modified()
   local modified = vim.bo.modifiable and vim.bo.modified
   if modified then
-    return '%#LineModified# %*'
+    return ' '
   end
   return ''
 end
@@ -41,7 +38,7 @@ end
 local function get_readonly()
   local readonly = vim.bo.readonly
   if readonly then
-    return '%#LineReadOnly# %*'
+    return ' '
   end
   return ''
 end
@@ -65,6 +62,14 @@ local function get_filetype()
   return ''
 end
 
+local function get_branch()
+  local branch = vim.api.nvim_exec('echo fugitive#Head()', true)
+  if branch then
+    return string.format('%s | ', branch)
+  end
+  return ''
+end
+
 function M.active_statusline()
   local bufname = get_bufname()
   local modified = get_modified()
@@ -72,8 +77,9 @@ function M.active_statusline()
   local location = get_location()
   local percentage = get_percentage()
   local filetype = get_filetype()
+  local branch = get_branch()
 
-  local status = bufname..filetype..' '..modified..readonly..'%='..location..' | '..percentage
+  local status = bufname..filetype..' '..modified..readonly..'%=%<'..branch..location..' | '..percentage
 
   local buffer_not_empty = vim.fn.expand('%:t') ~= '' or vim.bo.filetype ~= ''
   if buffer_not_empty then

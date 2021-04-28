@@ -4,11 +4,6 @@ require('packer').startup {
   function(use)
     use { 'wbthomason/packer.nvim', opt = true }
 
-    -- my plugins
-    use '~/.config/nvim/plugins/parsec'
-    use '~/.config/nvim/plugins/apprentice'
-    use '~/.config/nvim/plugins/cosmic_latte'
-
     -- fzf
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'
@@ -19,16 +14,12 @@ require('packer').startup {
 
     -- themes
     use 'ajmwagar/vim-deus'
-    use 'metalelf0/jellybeans-nvim'
     use 'glepnir/zephyr-nvim'
     use 'owozsh/amora'
-    use 'junegunn/seoul256.vim'
     use 'romgrk/doom-one.vim'
-
-    -- TODO: I should really decide on colorbuddy or lush
-    use 'tjdevries/colorbuddy.nvim'
-    use 'tjdevries/gruvbuddy.nvim'
-    use { 'rktjmp/lush.nvim', branch = 'main' }
+    use 'nightsense/cosmic_latte'
+    use 'romainl/Apprentice'
+    use 'srcery-colors/srcery-vim'
 
     -- treesitter
     use 'nvim-treesitter/nvim-treesitter'
