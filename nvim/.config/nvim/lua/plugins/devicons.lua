@@ -1,7 +1,3 @@
-require('nvim-web-devicons').setup {
-  default = true
-}
-
 local icons = require('nvim-web-devicons').get_icons()
 
 local default_icon = {
@@ -10,9 +6,8 @@ local default_icon = {
   name = "Default",
 }
 
-local M = {}
 
-M.get_icon = function(name, ext)
+local function get_icon(name, ext)
   local icon_data = icons[name]
   local by_name = icon_data
 
@@ -32,4 +27,4 @@ M.get_icon = function(name, ext)
   end
 end
 
-return M
+return { get_icon = get_icon }

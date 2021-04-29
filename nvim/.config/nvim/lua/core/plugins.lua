@@ -4,13 +4,41 @@ require('packer').startup {
   function(use)
     use { 'wbthomason/packer.nvim', opt = true }
 
-    -- fzf
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
-
     -- utilities
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
+
+    -- telescope
+    use {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      run = 'make'
+    }
+
+    use {
+      'nvim-telescope/telescope.nvim',
+      config = function()
+        local actions = require('telescope.actions')
+        require('telescope').setup({
+          defaults = {
+            mappings = {
+              i = {
+                ['<C-q>'] = actions.send_to_qflist,
+                ['<C-j>'] = actions.move_selection_next,
+                ['<C-k>'] = actions.move_selection_previous
+              }
+            }
+          },
+          extensions = {
+            fzf = {
+              override_generic_sorter = false,
+              override_file_sorter = true,
+              case_mode = 'smart_case'
+            }
+          }
+        })
+        require('telescope').load_extension('fzf')
+      end
+    }
 
     -- themes
     use 'ajmwagar/vim-deus'
@@ -22,19 +50,78 @@ require('packer').startup {
     use 'srcery-colors/srcery-vim'
 
     -- treesitter
-    use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      config = function()
+        require('nvim-treesitter.configs').setup {
+          ensure_installed = {
+            'bash',
+            'css',
+            'graphql',
+            'html',
+            'javascript',
+            'json',
+            'lua',
+            'php',
+            'query',
+            'svelte',
+            'tsx',
+            'typescript'
+          },
+          highlight = {
+            enable = true,
+            use_languagetree = true
+          },
+          indent = {
+            enable = true
+          },
+          playground = {
+            enable = true,
+            updatetime = 25
+          }
+        }
+      end
+    }
 
     -- lsp
     use 'neovim/nvim-lspconfig'
     use 'wbthomason/lsp-status.nvim'
-    use { 'glepnir/lspsaga.nvim', branch = 'main' }
+    use {
+      'folke/lsp-trouble.nvim',
+      config = function()
+        local remap = require('core.utils').remap
+        require('trouble').setup({
+          mode = 'document'
+        })
+        remap('n', '<leader>xx', '<cmd>LspTroubleToggle<cr>', { silent = true, noremap = true })
+      end
+    }
 
     -- dap
     use 'mfussenegger/nvim-dap'
 
     -- completion
-    use 'hrsh7th/nvim-compe'
+    use {
+      'hrsh7th/nvim-compe',
+      config = function()
+        require('compe').setup {
+          enabled = true,
+          autocomplete = true,
+          debug = false,
+          preselect = 'enable',
+          documentation = true,
+          min_length = 1,
+          throttle_time = 80,
+
+          source = {
+            buffer = true,
+            nvim_lsp = true,
+            nvim_lua = true
+          }
+        }
+      end
+    }
 
     -- snippets
     use 'hrsh7th/vim-vsnip'
@@ -50,12 +137,54 @@ require('packer').startup {
     use 'jxnblk/vim-mdx-js'
 
     -- git
-    use { 'lewis6991/gitsigns.nvim', branch = 'main' }
+    use {
+      'lewis6991/gitsigns.nvim',
+      branch = 'main',
+      config = function()
+        require 'gitsigns'.setup({
+          signs = {
+            add = {
+              hl = 'GitSignsAdd',
+              text = '▎'
+            },
+            change = {
+              hl = 'GitSignsChange',
+              text = '▎'
+            },
+            delete = {
+              hl = 'GitSignsDelete',
+              text = '◢'
+            },
+            topdelete = {
+              hl = 'GitSignsDelete',
+              text = '◥'
+            },
+            changedelete = {
+              hl = 'GitSignsChange',
+              text = '▌'
+            }
+          },
+          current_line_blame = false
+        })
+      end
+    }
 
     -- misc
     use 'google/vim-searchindex'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'norcalli/nvim-colorizer.lua'
+    use {
+      'kyazdani42/nvim-web-devicons',
+      config = function()
+        require('nvim-web-devicons').setup({
+          default = true
+        })
+      end
+    }
+    use {
+      'norcalli/nvim-colorizer.lua',
+      config = function()
+        require('colorizer').setup()
+      end
+    }
     use 'mhartington/formatter.nvim'
     use 'justinmk/vim-dirvish'
   end
