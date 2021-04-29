@@ -1,9 +1,5 @@
 local create_autogroup = require('core.utils').create_autogroup
 
-local M = {}
-
-_G.statusline = {}
-
 local function get_bufname()
   local head = ''
   if vim.bo.buftype == '' then
@@ -78,45 +74,45 @@ local function get_branch()
   return ''
 end
 
-function M.active_statusline()
+local function active_statusline()
   local async
   async = vim.loop.new_async(vim.schedule_wrap(function()
     local bufname = get_bufname()
+    local filetype = get_filetype()
     local modified = get_modified()
     local readonly = get_readonly()
+    local branch = get_branch()
     local location = get_location()
     local percentage = get_percentage()
-    local filetype = get_filetype()
-    local branch = get_branch()
-
-    local status = bufname..filetype..' '..modified..readonly..'%=%<'..branch..location..' | '..percentage
 
     local buffer_not_empty = vim.fn.expand('%:t') ~= '' or vim.bo.filetype ~= ''
     if buffer_not_empty then
-      vim.wo.statusline = ' '..status..' '
+      local status = ' '..bufname..filetype..modified..readonly..'%=%<'..branch..location..' '..percentage..' '
+      vim.wo.statusline = status
     else
       vim.wo.statusline = ' '
-      -- return '  '..status .. '  '
     end
-    -- return ' '
     async:close()
   end))
   async:send()
 end
 
-function M.inactive_statusline()
+local function inactive_statusline()
   vim.wo.statusline = ' '
-  -- return ' '
 end
 
-function M.setup()
+local function setup()
   create_autogroup {
     group_name = 'StatusLine',
     definition = {
-      {'BufEnter,WinEnter', '*', [[lua require('modules.statusline').active_statusline()]]},
-      {'BufLeave,WinLeave', '*', [[lua require('modules.statusline').inactive_statusline()]]}
+      {'BufEnter,WinEnter,BufReadPost,BufWritePost,VimResized,TermOpen,InsertLeave', '*', [[lua require('modules.statusline').active_statusline()]]},
+      {'WinLeave', '*', [[lua require('modules.statusline').inactive_statusline()]]}
     }
   }
 end
 
-return M
+return {
+  active_statusline = active_statusline,
+  inactive_statusline = inactive_statusline,
+  setup = setup
+}
