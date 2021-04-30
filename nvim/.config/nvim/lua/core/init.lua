@@ -2,7 +2,7 @@ local set_option = require('core.utils').set_option
 
 set_option('background', 'dark')
 set_option('complete', { '.','w','b','u' })
-set_option('completeopt', { 'menuone', 'noinsert', 'noinsert' })
+set_option('completeopt', { 'menuone', 'noselect' })
 set_option('expandtab', true)
 set_option('fileformats', 'unix')
 set_option('hidden', true)

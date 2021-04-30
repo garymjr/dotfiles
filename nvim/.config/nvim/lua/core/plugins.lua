@@ -20,6 +20,7 @@ require('packer').startup {
         local actions = require('telescope.actions')
         require('telescope').setup({
           defaults = {
+            prompt_prefix = ' >',
             mappings = {
               i = {
                 ['<C-q>'] = actions.send_to_qflist,
@@ -186,6 +187,59 @@ require('packer').startup {
       end
     }
     use 'mhartington/formatter.nvim'
-    use 'justinmk/vim-dirvish'
+    use { 'justinmk/vim-dirvish', disable = true }
+    use {
+      'tamago324/lir.nvim',
+      config = function()
+        local actions = require'lir.actions'
+        local mark_actions = require 'lir.mark.actions'
+        local clipboard_actions = require'lir.clipboard.actions'
+
+        require('lir').setup({
+          show_hidden_files = false,
+          devicons_enable = true,
+          mappings = {
+            ['l']     = actions.edit,
+            ['<C-s>'] = actions.split,
+            ['<C-v>'] = actions.vsplit,
+            ['<C-t>'] = actions.tabedit,
+
+            ['h']     = actions.up,
+            ['q']     = actions.quit,
+
+            ['K']     = actions.mkdir,
+            ['N']     = actions.newfile,
+            ['R']     = actions.rename,
+            ['@']     = actions.cd,
+            ['Y']     = actions.yank_path,
+            ['.']     = actions.toggle_show_hidden,
+            ['D']     = actions.delete,
+
+            ['J'] = function()
+              mark_actions.toggle_mark()
+              vim.cmd('normal! j')
+            end,
+            ['C'] = clipboard_actions.copy,
+            ['X'] = clipboard_actions.cut,
+            ['P'] = clipboard_actions.paste,
+          }
+        })
+      end
+    }
+
+    use {
+      'akinsho/nvim-toggleterm.lua',
+      config = function()
+        require('toggleterm').setup({
+          size = 20,
+          open_mapping = '<c-\\>',
+          hide_numers = true,
+          shade_terminals = true,
+          start_in_insert = false,
+          persist_in_size = true,
+          direction = 'horizontal'
+        })
+      end
+    }
   end
 }
