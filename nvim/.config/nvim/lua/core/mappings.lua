@@ -13,7 +13,7 @@ remap('n', '<leader>P', '"+P', { noremap = true })
 remap('v', '<leader>y', '"+y', { noremap = true })
 remap('v', '<leader>p', '"_d"+P', { noremap = true })
 
-remap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true })
+remap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true, silent = true })
 
 remap('n', 'j', 'gj')
 remap('n', 'k', 'gk')
@@ -33,3 +33,5 @@ remap('i', '<c-j>', 'pumvisible() ? "<c-n>" : "<c-j>"', { expr = true })
 remap('i', '<c-k>', 'pumvisible() ? "<c-p>" : "<c-k>"', { expr = true })
 
 remap('v', 'p', '"_dP', { noremap = true })
+
+remap('n', '-', '<cmd>edit .<cr>', { noremap = true, silent = true })

@@ -44,11 +44,10 @@ require('packer').startup {
     -- themes
     use 'ajmwagar/vim-deus'
     use 'glepnir/zephyr-nvim'
-    use 'owozsh/amora'
     use 'romgrk/doom-one.vim'
-    use 'nightsense/cosmic_latte'
     use 'romainl/Apprentice'
     use 'srcery-colors/srcery-vim'
+    use 'sainnhe/gruvbox-material'
 
     -- treesitter
     use 'nvim-treesitter/playground'
