@@ -7,7 +7,7 @@ create_autogroup {
 
 create_autogroup {
   group_name = 'packer',
-  definition = {{ 'BufWritePost', '**/core/plugins.lua', 'PackerCompile' }}
+  definition = {{ 'BufWritePost', 'plugins.lua', 'PackerCompile' }}
 }
 
 create_autogroup {

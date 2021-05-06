@@ -2,19 +2,19 @@ local create_autogroup = require('core.utils').create_autogroup
 
 local function get_bufname()
   local head = ''
-  if vim.bo.buftype == '' then
-    head = vim.fn.expand('%:p:h')
-    head = head:gsub(os.getenv('HOME'), '~')
-    local head_parts = vim.split(head, '/')
-    head = ''
-    for _, part in ipairs(head_parts) do
-      local piece = string.sub(part, 1, 1)
-      if piece == '.' then
-        piece = string.sub(part, 1, 2)
-      end
-      head = head .. piece .. '/'
-    end
-  end
+  -- if vim.bo.buftype == '' then
+  --   head = vim.fn.expand('%:p:h')
+  --   head = head:gsub(os.getenv('HOME'), '~')
+  --   local head_parts = vim.split(head, '/')
+  --   head = ''
+  --   for _, part in ipairs(head_parts) do
+  --     local piece = string.sub(part, 1, 1)
+  --     if piece == '.' then
+  --       piece = string.sub(part, 1, 2)
+  --     end
+  --     head = head .. piece .. '/'
+  --   end
+  -- end
   local bufname = vim.fn.expand('%:t')
   if bufname ~= '' then
     return head..bufname

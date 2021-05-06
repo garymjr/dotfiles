@@ -34,4 +34,4 @@ remap('i', '<c-k>', 'pumvisible() ? "<c-p>" : "<c-k>"', { expr = true })
 
 remap('v', 'p', '"_dP', { noremap = true })
 
-remap('n', '-', '<cmd>edit .<cr>', { noremap = true, silent = true })
+remap('n', '-', [[<cmd>edit %:p:h<cr>]], { noremap = true, silent = true })

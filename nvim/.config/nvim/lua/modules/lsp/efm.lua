@@ -1,18 +1,11 @@
 local lspconfig = require 'lspconfig'
 
 local function eslint_config_exists()
-  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
-
-  if not vim.tbl_isempty(eslintrc) then
+  local cmd = string.format('`fd --hidden -1 ^.git$ %s`', vim.fn.getcwd())
+  local git = vim.fn.glob(cmd, 0, 1)
+  if not vim.tbl_isempty(git) then
     return true
   end
-
-  if vim.fn.filereadable("package.json") then
-    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
-      return true
-    end
-  end
-
   return false
 end
 
@@ -31,11 +24,10 @@ lspconfig.efm.setup {
     client.resolved_capabilities.goto_definition = false
   end,
   root_dir = function()
-    if not eslint_config_exists() then
-      print('oops, i dun messed up')
-      return nil
+    if eslint_config_exists() then
+      return vim.fn.getcwd()
     end
-    return vim.fn.getcwd()
+    return nil
   end,
   settings = {
     languages = {
