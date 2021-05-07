@@ -10,14 +10,18 @@ vim.g.dashboard_custom_header = {
 vim.g.dashboard_custom_section = {
   find_file = {
     description = {'  Find File          SPC f f'},
-    command = 'Files'
+    command = 'Telescope file_files'
   },
   recent_files = {
     description = {'ﭯ  Recent Files       SPC f r'},
-    command = 'History'
+    command = 'Telescope oldfiles'
   },
   find_word = {
-    description = {'  Find Word          SPC f w'},
-    command = 'Rg'
+    description = {'  Recent Search      SPC f w'},
+    command = 'Telescope search_history'
+  },
+  help_tags = {
+    description = {'ﲉ  Help               SPC f h'},
+    command = 'Telescope help_tags'
   }
 }

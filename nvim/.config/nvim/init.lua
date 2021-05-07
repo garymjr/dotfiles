@@ -2,7 +2,7 @@ require('core')
 
 require('plugins.devicons')
 require('plugins.dap')
-require('plugins.fzf')
+require('plugins.telescope')
 require('plugins.trouble')
 require('plugins.compe')
 require('plugins.gitsigns')
