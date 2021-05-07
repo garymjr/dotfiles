@@ -2,9 +2,6 @@
 
 local M = {}
 
--- function M.find_dots()
---   vim.cmd(string.format([[call fzf#vim#files('%s/.config/nvim', fzf#vim#with_preview())]], os.getenv('HOME')))
--- end
 
 -- remap('n', '<leader>ff', '<cmd>Files<cr>', { noremap = true })
 -- remap('n', '<c-p>', '<cmd>GFiles<cr>', { noremap = true })

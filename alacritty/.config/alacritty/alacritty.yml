@@ -103,30 +103,12 @@ window:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    # family: 'agave Nerd Font'
-    family: 'JetBrainsMono Nerd Font'
-
-    # The `style` can be specified to pick a specific face.
-    style: Regular
-
-  # Bold font face
-  #bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+    family: 'agave Nerd Font'
+    style: r
+  # bold:
+  #   family: 'JetBrainsMono Nerd Font'
+  #   style: Bold
 
   # Italic font face
   # italics:
@@ -176,31 +158,57 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 #
+# colors:
+#   cursor:
+#     text: '#262626'
+#     cursor: '#bcbcbc'
+#   primary:
+#     background: '#262626'
+#     foreground: '#bcbcbc'
+#   normal:
+#     black:   '#262626'
+#     red:     '#af5f5f'
+#     green:   '#5f875f'
+#     yellow:  '#87875f'
+#     blue:    '#5f87af'
+#     magenta: '#5f5f87'
+#     cyan:    '#5f8787'
+#     white:   '#6c6c6c'
+#   bright:
+#     black:   '#444444'
+#     red:     '#ff8700'
+#     green:   '#87af87'
+#     yellow:  '#ffffaf'
+#     blue:    '#8fafd7'
+#     magenta: '#8787af'
+#     cyan:    '#5fafaf'
+#     white:   '#ffffff'
+
 colors:
   cursor:
-    text: '#262626'
-    cursor: '#bcbcbc'
+    background: '#dedbeb'
+    foreground: '#2a2331'
   primary:
-    background: '#262626'
-    foreground: '#bcbcbc'
+    background: '#2a2331'
+    foreground: '#dedbeb'
   normal:
-    black:   '#262626'
-    red:     '#af5f5f'
-    green:   '#5f875f'
-    yellow:  '#87875f'
-    blue:    '#5f87af'
-    magenta: '#5f5f87'
-    cyan:    '#5f8787'
-    white:   '#6c6c6c'
+    black:   '#28222d'
+    red:     '#ed3f7f'
+    green:   '#a2baa8'
+    yellow:  '#eacac0'
+    blue:    '#9985d1'
+    magenta: '#e68ac1'
+    cyan:    '#aabae7'
+    white:   '#dedbeb'
   bright:
-    black:   '#444444'
-    red:     '#ff8700'
-    green:   '#87af87'
-    yellow:  '#ffffaf'
-    blue:    '#8fafd7'
-    magenta: '#8787af'
-    cyan:    '#5fafaf'
-    white:   '#ffffff'
+    black:   '#302838'
+    red:     '#fb5c8e'
+    green:   '#bfd1c3'
+    yellow:  '#f0ddd8'
+    blue:    '#b4a4de'
+    magenta: '#edabd2'
+    cyan:    '#c4d1f5'
+    white:   '#edebf7'
 
 # Bell
 #

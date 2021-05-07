@@ -10,17 +10,11 @@ require('packer').startup {
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
 
-    -- telescope
     use {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      run = 'make'
-    }
-
-    use {
-      'nvim-telescope/telescope.nvim',
-      config = function()
-        require('telescope').load_extension('fzf')
-      end
+      'junegunn/fzf.vim',
+      requires = {
+        'junegunn/fzf'
+      }
     }
 
     -- themes
@@ -29,6 +23,7 @@ require('packer').startup {
     use 'folke/tokyonight.nvim'
     use 'sainnhe/sonokai'
     use 'lucastrvsn/kikwis'
+    use 'owozsh/amora'
 
     -- treesitter
     use 'nvim-treesitter/playground'
@@ -80,5 +75,6 @@ require('packer').startup {
     use 'mhartington/formatter.nvim'
     use 'tamago324/lir.nvim'
     use 'akinsho/nvim-toggleterm.lua'
+    use 'glepnir/dashboard-nvim'
   end
 }
