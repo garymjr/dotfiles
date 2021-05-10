@@ -31,8 +31,8 @@ remap('n', '<c-p>', [[<cmd>lua require('telescope.builtin').git_files()<cr>]], {
 remap('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<cr>]], { noremap = true, silent = true })
 remap('n', '<leader>fb', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], { noremap = true, silent = true })
 remap('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').help_tags()<cr>]], { noremap = true, silent = true })
--- remap('n', '<leader>fr', [[<cmd>History<cr>]], { noremap = true, silent = true })
--- remap('n', '<leader>fw', [[<cmd>Rg<cr>]], { noremap = true, silent = true })
+remap('n', '<leader>fs', [[<cmd>lua require('telescope.builtin').search_history()<cr>]], { noremap = true, silent = true })
+remap('n', '<leader>fr', [[<cmd>lua require('telescope.builtin').oldfiles()<cr>]], { noremap = true, silent = true })
 remap('n', '<leader>fd', [[<cmd>lua require('plugins.telescope').find_dots()<cr>]], { noremap = true, silent = true })
 
 return { find_dots = find_dots }

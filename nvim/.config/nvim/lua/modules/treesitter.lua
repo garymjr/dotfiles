@@ -1,21 +1,7 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = {
-    'bash',
-    'css',
-    'graphql',
-    'html',
-    'javascript',
-    'json',
-    'lua',
-    'php',
-    'query',
-    'svelte',
-    'tsx',
-    'typescript'
-  },
+  ensure_installed = 'maintained',
   highlight = {
-    enable = true,
-    use_languagetree = true
+    enable = true
   },
   indent = {
     enable = true

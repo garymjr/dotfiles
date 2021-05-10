@@ -14,8 +14,6 @@ require('packer').startup {
   function(use)
     use { 'wbthomason/packer.nvim', opt = true }
 
-    use '~/.config/nvim/plugins/parsec'
-
     -- utilities
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -32,7 +30,6 @@ require('packer').startup {
     use 'romgrk/doom-one.vim'
     use 'folke/tokyonight.nvim'
     use 'sainnhe/sonokai'
-    use 'lucastrvsn/kikwis'
     use 'owozsh/amora'
 
     -- treesitter
@@ -60,7 +57,7 @@ require('packer').startup {
     use 'tpope/vim-eunuch'
 
     -- languages
-    use { 'styled-components/vim-styled-components', branch = 'main', disable = true }
+    use { 'styled-components/vim-styled-components', branch = 'main' }
     use 'jxnblk/vim-mdx-js'
 
     -- git
@@ -86,5 +83,6 @@ require('packer').startup {
     use 'tamago324/lir.nvim'
     use 'akinsho/nvim-toggleterm.lua'
     use 'glepnir/dashboard-nvim'
+    use { 'glepnir/galaxyline.nvim', branch = 'main' }
   end
 }

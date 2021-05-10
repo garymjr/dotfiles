@@ -1,10 +1,9 @@
 vim.g.dashboard_custom_header = {
-  [[    _                _ _    __     ___           ]],
-  [[   / \   _ __   ___ | | | __\ \   / (_)_ __ ___  ]],
-  [[  / _ \ | '_ \ / _ \| | |/ _ \ \ / /| | '_ ` _ \ ]],
-  [[ / ___ \| |_) | (_) | | | (_) \ V / | | | | | | |]],
-  [[/_/   \_\ .__/ \___/|_|_|\___/ \_/  |_|_| |_| |_|]],
-  [[        |_|                                      ]]
+  [[                       _           ]],
+  [[ _ __   ___  _____   _(_)_ __ ___  ]],
+  [[| '_ \ / _ \/ _ \ \ / / | '_ ` _ \ ]],
+  [[| | | |  __/ (_) \ V /| | | | | | |]],
+  [[|_| |_|\___|\___/ \_/ |_|_| |_| |_|]]
 }
 
 vim.g.dashboard_custom_section = {
@@ -17,7 +16,7 @@ vim.g.dashboard_custom_section = {
     command = 'Telescope oldfiles'
   },
   find_word = {
-    description = {'  Recent Search      SPC f w'},
+    description = {'  Recent Search      SPC f s'},
     command = 'Telescope search_history'
   },
   help_tags = {
