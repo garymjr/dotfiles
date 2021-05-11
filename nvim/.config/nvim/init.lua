@@ -10,7 +10,7 @@ require('plugins.lir')
 require('plugins.toggleterm')
 require('plugins.dashboard')
 
-require('modules.statusline').setup()
+require('modules.statusline')
 require('modules.treesitter')
 require('modules.lsp')
 require('modules.formatter')
