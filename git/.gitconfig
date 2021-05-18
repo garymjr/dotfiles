@@ -1,0 +1,24 @@
+[user]
+	name = Gary Murray
+	email = gary.murray@carvana.com
+[core]
+  editor = $EDITOR
+	pager = delta
+[delta]
+  features = side-by-side
+  line-numbers = true
+  hunk-header-style = omit
+[merge]
+	conflictstyle = diff3
+[alias]
+	aa = add -A
+  bd = branch -d
+  bdd = git branch -D $(git branch | fzf --multi --info=inline)
+  bD = branch -D
+	cb = checkout -b
+  co = !git checkout $(git branch | fzf --info=inline)
+	st = status
+	puo = !git push -u origin $(git branch --show-current)
+	unstage = reset --soft HEAD^
+	master = !git checkout master && git pull origin
+	dev = !git checkout develop && git pull origin develop
