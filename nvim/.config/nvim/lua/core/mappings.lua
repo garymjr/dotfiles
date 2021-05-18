@@ -2,8 +2,8 @@ local remap = require('core.utils').remap
 
 vim.g.mapleader = ' '
 
-remap('v', '<', '<gv')
-remap('v', '>', '>gv')
+remap('v', '<', '<gv', { silent = true })
+remap('v', '>', '>gv', { silent = true })
 remap('n', 'Y', 'y$', { noremap = true })
 
 -- copy/paste from clipboard
@@ -15,15 +15,15 @@ remap('v', '<leader>p', '"_d"+P', { noremap = true })
 
 remap('n', '<cr>', [[ {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}() ]], { noremap = true, expr = true, silent = true })
 
-remap('n', 'j', 'gj')
-remap('n', 'k', 'gk')
+remap('n', 'j', 'gj', { silent = true })
+remap('n', 'k', 'gk', { silent = true })
 
 -- allow escape to enter normal mode in terminal
 remap('t', '<esc>', '<c-\\><c-n>', { noremap = true })
 
 -- git
-remap('n', '<leader>gs', '<cmd>Git<cr>', { noremap = true })
-remap('n', '<leader>gb', '<cmd>Git blame<cr>', { noremap = true })
+remap('n', '<leader>gs', [[<cmd>G<cr>]], { noremap = true })
+remap('n', '<leader>gm', [[<cmd>GitMessenger<cr>]], { noremap = true })
 
 -- vsnip
 remap('i', '<tab>', 'vsnip#available(1) ? "<plug>(vsnip-expand-or-jump)" : "<tab>"', { expr = true })

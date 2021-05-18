@@ -31,6 +31,7 @@ require('packer').startup {
     use 'folke/tokyonight.nvim'
     use 'sainnhe/sonokai'
     use 'owozsh/amora'
+    use 'bluz71/vim-nightfly-guicolors'
 
     -- treesitter
     use 'nvim-treesitter/playground'
@@ -84,5 +85,12 @@ require('packer').startup {
     use 'akinsho/nvim-toggleterm.lua'
     use 'glepnir/dashboard-nvim'
     use { 'glepnir/galaxyline.nvim', branch = 'main' }
+    use 'rhysd/git-messenger.vim'
+    use {
+      'folke/todo-comments.nvim',
+      config = function()
+        require('todo-comments').setup({})
+      end
+    }
   end
 }

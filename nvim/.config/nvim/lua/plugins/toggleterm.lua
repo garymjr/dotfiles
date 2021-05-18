@@ -1,3 +1,5 @@
+local remap = require('core.utils').remap
+
 require('toggleterm').setup({
   size = 20,
   open_mapping = '<c-\\>',
@@ -12,3 +14,8 @@ require('toggleterm').setup({
     width = 175
   }
 })
+
+remap('n', '<leader>tt', '<cmd>ToggleTerm<cr>', { noremap = true, silent = true })
+remap('n', '<leader>t1', '<cmd>ToggleTerm<cr>', { noremap = true, silent = true })
+remap('n', '<leader>t2', '<cmd>2ToggleTerm<cr>', { noremap = true, silent = true })
+remap('n', '<leader>t3', '<cmd>3ToggleTerm<cr>', { noremap = true, silent = true })
