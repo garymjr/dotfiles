@@ -41,6 +41,7 @@ require('packer').startup {
     use 'neovim/nvim-lspconfig'
     use 'wbthomason/lsp-status.nvim'
     use 'folke/lsp-trouble.nvim'
+    use 'glepnir/lspsaga.nvim'
 
     -- dap
     use 'mfussenegger/nvim-dap'
@@ -49,7 +50,14 @@ require('packer').startup {
     use 'hrsh7th/nvim-compe'
 
     -- snippets
-    use 'hrsh7th/vim-vsnip'
+    use {
+      'hrsh7th/vim-vsnip',
+      config = function()
+        vim.g.vsnip_filetypes = {
+          typescript = {'javascript'}
+        }
+      end
+    }
 
     -- tpope plugins
     use 'tpope/vim-commentary'

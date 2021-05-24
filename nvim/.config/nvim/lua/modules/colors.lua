@@ -2,10 +2,11 @@ local hi = require('core.utils').highlight
 local create_autogroup = require('core.utils').create_autogroup
 
 local colors = {
-  bg = '#2a2331',
-  green = '#a2baa8',
+  bg = '#2c2e34',
+  green = '#9ed072',
   yellow = '#eacac0',
-  red = '#fb5c8e'
+  red = '#fb5c8e',
+  blue = '#76cce0'
 }
 
 local function colorscheme(name)
@@ -20,9 +21,10 @@ end
 local async
 async = vim.loop.new_async(vim.schedule_wrap(function()
   hi('EndOfBuffer', { fg = colors.bg })
-  hi('GitSignsAdd', { fg = colors.green })
-  hi('GitSignsChange', { fg = colors.yellow })
-  hi('GitSignsDelete', { fg = colors.red })
+  hi('SignColumn', {})
+  hi('GreenSign', { fg = colors.green, bg = colors.bg })
+  hi('BlueSign', { fg = colors.blue, bg = colors.bg })
+  hi('RedSign', { fg = colors.red, bg = colors.bg })
 end))
 
 local function reload()

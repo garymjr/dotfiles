@@ -12,11 +12,10 @@ local check_git_workspace = condition.check_git_workspace
 local hide_in_width = condition.hide_in_width
 
 local colors = {
-  green = '#a2baa8',
-  yellow = '#eacac0',
-  red = '#fb5c8e',
-  bg = '#211c26',
-  rose_gray = '#634e75'
+  green = '#9ed072',
+  yellow = '#e7c664',
+  red = '#fc5d7c',
+  bg = '#3b3e48'
 }
 
 left[1] = {
@@ -50,7 +49,7 @@ left[4] = {
       return ''
     end,
     condition = buffer_not_empty,
-    highlight = {colors.rose_gray, colors.bg}
+    highlight = {nil, colors.bg}
   }
 }
 
@@ -81,7 +80,7 @@ right[1] = {
       return ''
     end,
     condition = buffer_not_empty,
-    highlight = {colors.rose_gray, colors.bg}
+    highlight = {nil, colors.bg}
   }
 }
 
@@ -91,7 +90,7 @@ right[2] = {
       return ' '
     end,
     condition = check_git_workspace,
-    highlight = {colors.rose_gray, colors.bg},
+    highlight = {nil, colors.bg},
     separator = ' ',
     separator_highlight = {nil, colors.bg}
   }
@@ -101,7 +100,7 @@ right[3] = {
   GitBranch = {
     provider = vcs.get_git_branch,
     condition = check_git_workspace,
-    highlight = {colors.rose_gray, colors.bg}
+    highlight = {nil, colors.bg}
   }
 }
 
@@ -145,7 +144,7 @@ right[8] = {
   LineColumn = {
     provider = fileinfo.line_column,
     condition = buffer_not_empty,
-    highlight = {colors.rose_gray, colors.bg},
+    highlight = {nil, colors.bg},
     separator = '',
     separator_highlight = {nil, colors.bg}
   }

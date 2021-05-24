@@ -35,5 +35,5 @@ vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
 remap('i', '<cr>', [[compe#confirm('<CR>')]], { noremap = true, expr = true })
 remap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { noremap = true })
 -- remap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', { noremap = true })
-remap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true })
+-- remap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true })
 remap('n', 'gr', [[<cmd>LspTrouble lsp_references<cr>]], { noremap = true, silent = true })

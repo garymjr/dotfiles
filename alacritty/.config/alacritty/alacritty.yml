@@ -104,11 +104,12 @@ window:
 # Font configuration
 font:
   normal:
-    family: 'agave Nerd Font'
-    style: r
+    family: 'FuraCode Nerd Font'
+    style: Regular
   bold:
-    family: 'agave Nerd Font'
-  #   style: Bold
+    family: 'FuraCode Nerd Font'
+    style: Bold
+  size: 14.0
 
   # Italic font face
   # italics:
@@ -133,7 +134,6 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -184,31 +184,31 @@ draw_bold_text_with_bright_colors: true
 #     cyan:    '#5fafaf'
 #     white:   '#ffffff'
 #
-colors:
-  cursor:
-    background: '#dedbeb'
-    foreground: '#2a2331'
-  primary:
-    background: '#2a2331'
-    foreground: '#dedbeb'
-  normal:
-    black:   '#28222d'
-    red:     '#ed3f7f'
-    green:   '#a2baa8'
-    yellow:  '#eacac0'
-    blue:    '#9985d1'
-    magenta: '#e68ac1'
-    cyan:    '#aabae7'
-    white:   '#dedbeb'
-  bright:
-    black:   '#302838'
-    red:     '#fb5c8e'
-    green:   '#bfd1c3'
-    yellow:  '#f0ddd8'
-    blue:    '#b4a4de'
-    magenta: '#edabd2'
-    cyan:    '#c4d1f5'
-    white:   '#edebf7'
+# colors:
+#   cursor:
+#     background: '#dedbeb'
+#     foreground: '#2a2331'
+#   primary:
+#     background: '#2a2331'
+#     foreground: '#dedbeb'
+#   normal:
+#     black:   '#28222d'
+#     red:     '#ed3f7f'
+#     green:   '#a2baa8'
+#     yellow:  '#eacac0'
+#     blue:    '#9985d1'
+#     magenta: '#e68ac1'
+#     cyan:    '#aabae7'
+#     white:   '#dedbeb'
+#   bright:
+#     black:   '#302838'
+#     red:     '#fb5c8e'
+#     green:   '#bfd1c3'
+#     yellow:  '#f0ddd8'
+#     blue:    '#b4a4de'
+#     magenta: '#edabd2'
+#     cyan:    '#c4d1f5'
+#     white:   '#edebf7'
 
 # colors:
 #   primary:
@@ -239,6 +239,34 @@ colors:
 #     magenta: '#ae81ff'
 #     cyan:    '#7fdbca'
 #     white:   '#d6deeb'
+#
+colors:
+  cursor:
+    background: "#e2e2e3"
+    foreground: "#2c2e34"
+  primary:
+    background: "#2c2e34"
+    foreground: "#e2e2e3"
+
+  normal:
+    black:   "#181819"
+    red:     "#fc5d7c"
+    green:   "#9ed072"
+    yellow:  "#e7c664"
+    blue:    "#76cce0"
+    magenta: "#b39df3"
+    cyan:    "#f39660"
+    white:   "#e2e2e3"
+
+  bright:
+    black:   "#181819"
+    red:     "#fc5d7c"
+    green:   "#9ed072"
+    yellow:  "#e7c664"
+    blue:    "#76cce0"
+    magenta: "#b39df3"
+    cyan:    "#f39660"
+    white:   "#e2e2e3"
 
 # Bell
 #
