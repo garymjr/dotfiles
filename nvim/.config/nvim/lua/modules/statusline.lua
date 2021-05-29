@@ -12,10 +12,10 @@ local check_git_workspace = condition.check_git_workspace
 local hide_in_width = condition.hide_in_width
 
 local colors = {
-  green = '#9ed072',
-  yellow = '#e7c664',
-  red = '#fc5d7c',
-  bg = '#3b3e48'
+  green = '#a9b665',
+  yellow = '#d8a657',
+  red = '#ea6962',
+  bg = '#282828'
 }
 
 left[1] = {
@@ -30,7 +30,12 @@ left[1] = {
 left[2] = {
   BufName = {
     provider = function()
-      return vim.fn.expand('%:t')
+      local name = vim.fn.expand('%:t')
+      if vim.bo.ft == 'toggleterm' then
+        local name_parts = vim.split(name, ';')
+        return string.format('terminal[%s] %s', vim.b.toggle_number, name_parts[1])
+      end
+      return name
     end,
     condition = buffer_not_empty,
     highlight = {nil, colors.bg},

@@ -10,11 +10,12 @@ require('plugins.lir')
 require('plugins.toggleterm')
 require('plugins.dashboard')
 require('plugins.lspsaga')
+require('plugins.nvim-tree')
 
 require('modules.statusline')
 require('modules.treesitter')
 require('modules.lsp')
 require('modules.formatter')
-require('modules.colors').colorscheme('sonokai')
+require('modules.colors').colorscheme('gruvbox-flat')
 
 require('garymjr.fzf')

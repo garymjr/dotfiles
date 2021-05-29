@@ -13,12 +13,10 @@
 [alias]
 	aa = add -A
   bd = branch -d
-  bdd = git branch -D $(git branch | fzf --multi --info=inline)
+  bdd = !git branch | fzf --multi --info=inline | xargs git branch -D
   bD = branch -D
 	cb = checkout -b
-  co = !git checkout $(git branch | fzf --info=inline)
-	st = status
+  co = checkout
+  find = !git checkout $(git branch | fzf --info=inline)
 	track = !git branch --show-current | xargs git push -u origin
 	unstage = reset --soft HEAD^
-	master = !git checkout master && git pull origin
-	dev = !git checkout develop && git pull origin develop

@@ -26,12 +26,9 @@ require('packer').startup {
     }
 
     -- themes
-    use 'glepnir/zephyr-nvim'
-    use 'romgrk/doom-one.vim'
     use 'folke/tokyonight.nvim'
     use 'sainnhe/sonokai'
-    use 'owozsh/amora'
-    use 'bluz71/vim-nightfly-guicolors'
+    use 'eddyekofo94/gruvbox-flat.nvim'
 
     -- treesitter
     use 'nvim-treesitter/playground'
@@ -100,5 +97,6 @@ require('packer').startup {
         require('todo-comments').setup({})
       end
     }
+    use 'kyazdani42/nvim-tree.lua'
   end
 }
