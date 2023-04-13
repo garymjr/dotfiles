@@ -1,0 +1,9 @@
+[[language]]
+name = "go"
+indent = { tab-width = 4, unit = "  " }
+formatter = { command = "goimports" }
+auto-format = true
+
+[[grammer]]
+name = "sql"
+source = { git = "https://github.com/DerekStride/tree-sitter-sql" }

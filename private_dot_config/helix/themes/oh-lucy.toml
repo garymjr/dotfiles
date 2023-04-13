@@ -1,0 +1,11 @@
+"ui.background" = { bg = "bg" }
+"ui.cursor" = { fg = "bg", bg = "yellow" }
+"ui.cursor.match" = { fg = "white1", bg = "black" }
+"ui.linenr" = { bg = "line_bg" }
+
+[palette]
+bg = "#1B1D26"
+yellow = "#E3CF65"
+white1 = "#D7D7D7"
+black = "#14161D"
+line_bg = "#1B1D26"

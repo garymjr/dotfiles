@@ -1,0 +1,45 @@
+inherits = "nord"
+
+"ui.linenr" = "nord3"
+"ui.virtual.whitespace" = "nord3"
+"ui.statusline" = { fg = "white", bg = "gray1" }
+"ui.statusline.inactive" = "nord3"
+"ui.statusline.normal" = { fg = "gray1", bg = "nord12" }
+"ui.statusline.insert" = { fg = "gray1", bg = "nord14" }
+"ui.statusline.select" = { fg = "gray1", bg = "nord15" }
+"ui.window" = { bg = "nord0" }
+
+"error" = "nord11_bright"
+"hint" = "nord14_bright"
+
+"attribute" = "nord11"
+"comment" = { fg = "nord3", modifiers = ["italic"] }
+"constant" = "magenta_bright"
+"constant.builtin" = "magenta_bright"
+"constant.numeric" = "magenta_bright"
+"constructor" = "white"
+"keyword" = "nord12"
+"keyword.directive" = "nord12"
+"variable.parameter" = "nord12"
+"label" = "nord9"
+"namespace" = "nord13_dim"
+"operator" = "nord12"
+"type" = "nord13"
+"type.builtin" = "nord13"
+"variable" = "white"
+"variable.builtin" = "white"
+
+"diagnostic.error" = { underline = { color = "nord11_bright", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "nord14_bright", style = "curl" } }
+
+"diff.delta" = "nord9"
+
+[palette]
+gray1 = "#2e3440"
+magenta_bright = "#c895bf"
+nord0 = "#242933"
+nord3 = "#4c566a"
+nord11_bright = "#d06f79"
+nord13_dim = "#d9b263"
+nord14_bright = "#b1d196"
+white = "#bbc3d4"

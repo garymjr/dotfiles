@@ -1,0 +1,38 @@
+[user]
+  name = Gary Murray
+  email = gamurray@fanatics.com
+[core]
+  pager = delta
+  excludesFile = ~/.config/git/ignore
+[delta]
+  features = side-by-side
+  line-numbers = true
+  hunk-header-style = omit
+[merge]
+  conflictstyle = zdiff3
+[pull]
+  rebase = true
+[branch]
+  autosetupmerge = always
+  autosetuprebase = always
+[alias]
+  a = add
+  aa = add -A
+  b = branch
+  bd = !git branch -D $(git branch | grep -v '^*\\|master' | fzf --height ${FZF_TMUX_HEIGHT:-20%} --reverse --no-separator --multi)
+  c = commit -v
+  ca = commit -v --amend
+  co = checkout
+  d = diff
+  f = fetch --prune
+  l = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  ll = log --oneline
+  p = pull
+  pu = push
+  puf = push -f --force-with-lease
+  puo = !git branch --show-current | xargs git push -u origin
+  s = status
+  st = stash
+  sw = !git switch $(git branch | grep -v '^*' | fzf --height ${FZF_TMUX_HEIGHT:-20%} --reverse --no-separator)
+[safe]
+	directory = /Users/gamurray/code/neovim

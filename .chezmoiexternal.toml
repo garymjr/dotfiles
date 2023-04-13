@@ -1,0 +1,7 @@
+[".zsh/fast-syntax-highlighting"]
+    type = "git-repo"
+    url = "https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
+
+[".zsh/pure"]
+    type = "git-repo"
+    url = "https://github.com/sindresorhus/pure.git"

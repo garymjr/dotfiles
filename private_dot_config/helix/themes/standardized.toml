@@ -1,0 +1,55 @@
+"ui.background" = { bg = "base00" }
+"ui.menu" = { bg = "base01", fg = "base05" }
+"ui.menu.selected" = { bg = "base05", fg = "base01" }
+"ui.linenr" = { fg = "base04" }
+"ui.selection" = { bg = "base02" }
+"comment" = { fg = "base03" }
+"ui.cursorline" = { bg = "base01" }
+"ui.statusline" = { bg = "base02", fg = "base05" }
+"ui.statusline.inactive" = { bg = "base01", fg = "base04" }
+"ui.cursor" = { bg = "base05", fg = "base00" }
+"ui.text" = { fg = "base05" }
+"ui.cursor.match" = { bg = "base03" }
+"operator" = "base05"
+"variable" = "base08"
+"constant.numeric" = "base09"
+"constant" = "base09"
+"attribute" = "base0A"
+"type" = "base0A"
+"string" = "base0B"
+"function" = "base0D"
+"function.builtin" = "base0D"
+"function.method" = "base0D"
+"constructor" = "base0D"
+"special" = "base0F"
+"keyword" = "base0E"
+"label" = "base0A"
+"namespace" = "base08"
+"ui.popup" = { bg = "base01" }
+"ui.popup.info" = { bg = "base01" }
+"diff.plus" = "base0B"
+"diff.delta" = "base0E"
+"diff.minus" = "base08"
+
+"diagnostic.error" = "base08"
+"diagnostic.warning" = "base0E"
+"diagnostic.info" = "base05"
+"diagnostic.hint" = "base0C"
+
+[palette]
+base00 = "#222222"
+base01 = "#303030"
+base02 = "#555555"
+base03 = "#898989"
+base04 = "#898989"
+base05 = "#c0c0c0"
+base06 = "#e0e0e0"
+base07 = "#ffffff"
+base08 = "#e15d67"
+base09 = "#fc804e"
+base0A = "#e1b31a"
+base0B = "#5db129"
+base0C = "#21c992"
+base0D = "#00a3f2"
+base0E = "#b46ee0"
+base0F = "#b87d28"
