@@ -11,7 +11,7 @@ local diagnostics = require("plugins.statusline.components.diagnostics")
 return {
     condition = conditions.is_active,
     hl = { bg = colors.bg, fg = colors.fg },
-    { provider = " " },
+    { provider = "  " },
     buffer_name,
     { provider = "%< " },
     buffer_status,

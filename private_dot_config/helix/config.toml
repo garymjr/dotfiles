@@ -1,4 +1,4 @@
-theme = "gruvy"
+theme = "nordic"
 
 [editor]
 scroll-lines = 1
@@ -7,6 +7,7 @@ idle-timeout = 50
 line-number = "relative"
 true-color = true
 color-modes = true
+rulers = [100]
 
 [editor.lsp]
 display-messages = true

@@ -32,6 +32,6 @@ return {
             end
             return true
         end,
-        provider = " ",
+        provider = "  ",
     },
 }

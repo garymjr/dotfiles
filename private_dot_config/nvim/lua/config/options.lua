@@ -1,6 +1,6 @@
 vim.opt.background = "dark"
 vim.opt.backup = false
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 vim.opt.complete = {".", "w", "b", "u"}
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 vim.opt.expandtab = true

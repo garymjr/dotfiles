@@ -16,6 +16,7 @@ PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 PATH=$GOPATH/bin:$PATH
 PATH=$HOME/bin:$PATH
+PATH=$HOME/code/zigup/zig-out/bin:$PATH
 export PATH=$PATH
 export SHELL=/bin/zsh
 export GOPROXY=direct
@@ -80,5 +81,7 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gbd='git branch -d'
 alias gpu='git push -u'
+
+bindkey -s '^f' "$HOME/bin/tmux-sessions\n"
 
 eval "$(zoxide init zsh)"

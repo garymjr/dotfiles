@@ -2,7 +2,7 @@
 "ui.menu.selected" = {bg = "black_bright"}
 "ui.menu.scroll" = {fg = "black", bg = "black"}
 "ui.window" = "black"
-"ui.linenr" = {fg = "black"}
+"ui.linenr" = {fg = "black_bright"}
 "ui.linenr.selected" = {fg = "white"}
 "ui.popup" = {fg = "white", bg = "black"}
 "ui.popup.info" = {fg = "white", bg = "none"}

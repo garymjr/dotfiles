@@ -17,13 +17,14 @@ return {
         fallthrough = false,
         {
             condition = conditions.is_active,
-            provider = function()
-                return "%f"
+            provider = function(self)
+                local home = os.getenv("HOME")
+                return vim.fn.fnamemodify(self.name, ":."):gsub(home, "~")
             end,
         },
         {
-            provider = function()
-                return "%t"
+            provider = function(self)
+                return vim.fn.fnamemodify(self.name, ":t")
             end,
         },
     },

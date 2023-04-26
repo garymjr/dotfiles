@@ -16,7 +16,7 @@ require("lazy").setup({
         -- { import = "config.plugins" },
         { import = "plugins" },
     },
-    install = { colorscheme = {"gruvbox"} },
+    install = { colorscheme = {"nordic"} },
     defaults = { lazy = true },
     checker = { enabled = true, notify = false },
     performace = {

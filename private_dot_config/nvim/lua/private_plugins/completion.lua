@@ -24,7 +24,6 @@ return {
             "hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-path",
-            "hrsh7th/cmp-nvim-lsp-signature-help",
             "saadparwaiz1/cmp_luasnip",
         },
         opts = function()
@@ -48,17 +47,31 @@ return {
                 },
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lua" },
                     { name = "luasnip" },
                     { name = "buffer" },
                     { name = "path" },
                 }),
                 experimental = {
-					ghost_text = false,
+                    ghost_text = false,
                     -- ghost_text = {
                     --     hl_group = "LspCodeLens",
                     -- },
+                },
+                window = {
+                    completion = cmp.config.window.bordered({
+                        winhighlight = "Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None",
+                        scrollbar = true,
+                        border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+                        col_offset = -1,
+                        side_padding = 0,
+                    }),
+                    documentation = cmp.config.window.bordered({
+                        winhighlight = "Normal:Pmenu,FloatBorder:PmenuDocBorder,CursorLine:PmenuSel,Search:None",
+                        scrollbar = true,
+                        border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+                        side_padding = 1,
+                    }),
                 },
             }
         end,
@@ -74,7 +87,10 @@ return {
                 enabled = true,
                 auto_trigger = true,
                 keymap = {
-                    accept = "<C-e>",
+                    accept = "<c-e>",
+                    accept_line = "<c-E>",
+                    next = "<c-j>",
+                    prev = "<c-k>",
                 },
             },
         },

@@ -25,7 +25,7 @@
   co = checkout
   d = diff
   f = fetch --prune
-  l = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  l = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
   ll = log --oneline
   p = pull
   pu = push
@@ -33,6 +33,5 @@
   puo = !git branch --show-current | xargs git push -u origin
   s = status
   st = stash
-  sw = !git switch $(git branch | grep -v '^*' | fzf --height ${FZF_TMUX_HEIGHT:-20%} --reverse --no-separator)
 [safe]
 	directory = /Users/gamurray/code/neovim

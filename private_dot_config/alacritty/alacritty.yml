@@ -9,7 +9,7 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
-  - ~/.config/alacritty/gruvbox.yml
+  - ~/.config/alacritty/nordic.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -1054,7 +1054,9 @@ key_bindings:
   - { key: Key3,      mods: Alt|Shift, chars: "\x1b#"  } # Alt + #
   - { key: Period,    mods: Alt|Shift, chars: "\x1b>"  } # Alt + >
   - { key: Comma,     mods: Alt,       chars: "\x1b,"  } # Alt + ,
-  - { key: Comma,     mods: Alt|Shift, chars: "\x1b<"  } # Alt + <
+  - { key: Comma,     mods: Alt|Shift, chars: "\x1b<"  } # Alt + ,
+  - { key: Semicolon, mods: Alt,       chars: "\x1b;"  } # Alt + ;
+  - { key: Semicolon, mods: Alt|Shift, chars: "\x1b;"  } # Alt + :
   - { key: Minus,     mods: Alt|Shift, chars: "\x1b_"  } # Alt + _
   - { key: Key5,      mods: Alt|Shift, chars: "\x1b%"  } # Alt + %
   - { key: Key6,      mods: Alt|Shift, chars: "\x1b^"  } # Alt + ^

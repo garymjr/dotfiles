@@ -62,6 +62,23 @@ return {
         end,
     },
     {
+        "tamago324/lir-git-status.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "tamago324/lir.nvim",
+        },
+        config = function()
+            require("lir.git_status").setup({
+                show_ignored = false,
+            })
+        end,
+        init = function()
+            vim.cmd("hi link LirGitStatusBracket WhiteSpace")
+            vim.cmd("hi link LirGitStatusUntracked WhiteSpace")
+            vim.cmd("hi link LirGitStatusIgnored WhiteSpace")
+        end,
+    },
+    {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -167,6 +184,12 @@ return {
                         ["<C-r>"] = "to_fuzzy_refine",
                     },
                 },
+                borderchars = {
+                    prompt = { "▔", "▕", "▁", "▏", "🭽", "🭾", "🭿", "🭼" },
+                    results = { "▔", "▕", "▁", "▏", "🭽", "🭾", "🭿", "🭼" },
+                    preview = { "▔", "▕", "▁", "▏", "🭽", "🭾", "🭿", "🭼" },
+                },
+                border = true,
             },
             extentions = {
                 fzf = {

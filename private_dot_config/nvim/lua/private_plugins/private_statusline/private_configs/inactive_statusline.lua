@@ -8,8 +8,8 @@ return {
     condition = function()
         return not conditions.is_active()
     end,
-    hl = { bg = colors.bg, fg = colors.fg },
-    { provider = " " },
+    hl = { bg = colors.inactive_bg, fg = colors.fg },
+    { provider = "  " },
     buffer_name,
     { provider = "%=" },
     ruler,

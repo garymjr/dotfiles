@@ -10,8 +10,9 @@ local Keyword = utils.get_highlight("Keyword")
 local Constant = utils.get_highlight("Constant")
 
 return {
-    fg = StatusLine.bg,
-    bg = StatusLine.fg,
+    fg = Normal.fg,
+    bg = StatusLine.bg,
+    inactive_bg = Normal.bg,
     accent = Boolean.fg,
     bright = Normal.fg,
     normal = Function.fg,
