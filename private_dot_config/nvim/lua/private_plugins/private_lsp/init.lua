@@ -86,7 +86,7 @@ return {
                     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buf, silent = true })
                     vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, { buffer = buf, silent = true })
                     vim.keymap.set("n", "gr", require('telescope.builtin').lsp_references, { buffer = buf, silent = true })
-                    vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = buf, silent = true })
+                    vim.keymap.set("n", "gI", require('telescope.builtin').lsp_implementations, { buffer = buf, silent = true })
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = buf, silent = true })
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = buf, silent = true })
 					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = buf, silent = true })
@@ -99,9 +99,11 @@ return {
     {
         "j-hui/fidget.nvim",
         event = "VeryLazy",
-		config = function(_, opts)
-			require("fidget").setup(opts)
-		end,
+        opts = {
+            window = {
+                blend = 0,
+            },
+        },
     },
     {
         "jose-elias-alvarez/null-ls.nvim",

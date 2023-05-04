@@ -29,9 +29,9 @@ source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOME/.zsh/completion.zsh
 autoload -Uz compinit
 
-fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
-prompt pure
+# fpath+=$HOME/.zsh/pure
+# prompt pure
 
 # Cache completion if nothing changed - faster startup time
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -46,7 +46,7 @@ zmodload -i zsh/complist
 
 alias ls=exa
 alias vi=nvim
-alias nv=nvim
+alias nv=$EDITOR
 alias zel=zellij
 alias zl="zellij list-sessions"
 alias zs="zellij --session"
@@ -81,7 +81,18 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gbd='git branch -d'
 alias gpu='git push -u'
+alias fanauth='TERM=xterm-256color fanauth'
+alias ssh='TERM=xterm-256color ssh'
 
-bindkey -s '^f' "$HOME/bin/tmux-sessions\n"
+# tmux
+_tmux_sessions() {
+    compadd $(tmux list-sessions -F '#S' 2> /dev/null)
+}
+
+compdef _tmux_sessions tmux-sessions
+
+alias tm=tmux-sessions
+bindkey -s '^f' 'tmux-sessions\n'
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"

@@ -184,12 +184,6 @@ return {
                         ["<C-r>"] = "to_fuzzy_refine",
                     },
                 },
-                borderchars = {
-                    prompt = { "▔", "▕", "▁", "▏", "🭽", "🭾", "🭿", "🭼" },
-                    results = { "▔", "▕", "▁", "▏", "🭽", "🭾", "🭿", "🭼" },
-                    preview = { "▔", "▕", "▁", "▏", "🭽", "🭾", "🭿", "🭼" },
-                },
-                border = true,
             },
             extentions = {
                 fzf = {
@@ -339,7 +333,7 @@ return {
         "chrisgrieser/nvim-genghis",
 		event = "VeryLazy",
         config = function()
-            vim.api.nvim_create_user_command("Rename", require("genghis").renameFile, {})
+            vim.api.nvim_create_user_command("Rename", require("genghis").moveAndRenameFile, {})
             vim.api.nvim_create_user_command("Move", require("genghis").moveAndRenameFile, {})
             vim.api.nvim_create_user_command("Duplicate", require("genghis").duplicateFile, {})
             vim.api.nvim_create_user_command("Delete", require("genghis").trashFile, {})
