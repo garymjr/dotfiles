@@ -41,6 +41,6 @@ return {
         condition = function(self)
             return #self.diagnostics.errors > 0 or #self.diagnostics.warnings > 0
         end,
-        provider = " | ",
+        provider = " ",
     },
 }

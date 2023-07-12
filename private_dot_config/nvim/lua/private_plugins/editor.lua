@@ -2,6 +2,7 @@ return {
     {
         "tamago324/lir.nvim",
         event = "VeryLazy",
+        enabled = false,
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
@@ -63,6 +64,7 @@ return {
     },
     {
         "tamago324/lir-git-status.nvim",
+        enabled = false,
         event = "VeryLazy",
         dependencies = {
             "tamago324/lir.nvim",
@@ -184,6 +186,12 @@ return {
                         ["<C-r>"] = "to_fuzzy_refine",
                     },
                 },
+                -- borderchars = {
+                --     prompt = { '▔', '▕', '▁', '▏', '🭽', '🭾', '🭿', '🭼' },
+                --     results = { '▔', '▕', '▁', '▏', '🭽', '🭾', '🭿', '🭼' },
+                --     preview = { '▔', '▕', '▁', '▏', '🭽', '🭾', '🭿', '🭼' },
+                -- },
+                -- border = true,
             },
             extentions = {
                 fzf = {
@@ -234,7 +242,6 @@ return {
     },
     {
         "ThePrimeagen/harpoon",
-        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
@@ -297,50 +304,7 @@ return {
         },
     },
     {
-        "numToStr/Navigator.nvim",
-        event = "VeryLazy",
-        keys = {
-            {
-                "<c-h>",
-                function()
-                    require("Navigator").left()
-                end,
-            },
-            {
-                "<c-j>",
-                function()
-                    require("Navigator").down()
-                end,
-            },
-            {
-                "<c-k>",
-                function()
-                    require("Navigator").up()
-                end,
-            },
-            {
-                "<c-l>",
-                function()
-                    require("Navigator").right()
-                end,
-            },
-        },
-        config = function(_, opts)
-            require("Navigator").setup(opts)
-        end,
-    },
-    {
-        "chrisgrieser/nvim-genghis",
-		event = "VeryLazy",
-        config = function()
-            vim.api.nvim_create_user_command("Rename", require("genghis").moveAndRenameFile, {})
-            vim.api.nvim_create_user_command("Move", require("genghis").moveAndRenameFile, {})
-            vim.api.nvim_create_user_command("Duplicate", require("genghis").duplicateFile, {})
-            vim.api.nvim_create_user_command("Delete", require("genghis").trashFile, {})
-        end,
-    },
-    {
         "Bekaboo/deadcolumn.nvim",
-        event = "VeryLazy",
+        event = "BufReadPre",
     },
 }

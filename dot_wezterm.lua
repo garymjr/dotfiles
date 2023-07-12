@@ -1,5 +1,13 @@
 local wezterm = require("wezterm")
-local colors = require("lua/kanagawa").colors()
+
+local HOME = os.getenv("HOME")
+local colors, _ = wezterm.color.load_scheme(string.format("%s/.local/share/nvim/lazy/bamboo.nvim/extras/wezterm/bamboo.toml", HOME))
+
+colors.tab_bar.background = colors.background
+colors.tab_bar.active_tab.bg_color = colors.background
+colors.tab_bar.active_tab.fg_color = colors.ansi[3]
+colors.tab_bar.inactive_tab.bg_color = colors.background
+colors.tab_bar.inactive_tab.fg_color = colors.foreground
 
 local function get_process_name(tab)
     local process_name = tab.active_pane.foreground_process_name
@@ -28,21 +36,19 @@ wezterm.on("update-right-status", function(window)
 end)
 
 wezterm.on("format-tab-title", function(tab)
-    if tab.is_active then
-        return wezterm.format({
-            { Text = " " },
-            { Text = string.format("%d: ", tab.tab_index + 1) },
-            { Text = get_process_name(tab) },
-            { Text = " " },
-        })
-    end
-
-    return wezterm.format({
+    local format = {
         { Text = " " },
         { Text = string.format("%d: ", tab.tab_index + 1) },
-        { Text = get_process_name(tab) },
-        { Text = " " },
-    })
+    }
+
+    if tab.tab_title ~= "" then
+        table.insert(format, { Text = tab.tab_title })
+    else
+        table.insert(format, { Text = get_process_name(tab) })
+    end
+
+    table.insert(format, { Text = " " })
+    return wezterm.format(format)
 end)
 
 return {
@@ -93,14 +99,27 @@ return {
         { key = "p", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = -1 }) },
         { key = "n", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = 1 }) },
         { key = "&", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+        { key = "w", mods = "SUPER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
         { key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
         { key = "o", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = {"/opt/homebrew/bin/lf"} }) },
-        { key = "g", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = {"/usr/local/bin/gitui"} }) },
+        { key = "g", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = {"/opt/homebrew/bin/lazygit"} }) },
         { key = "/", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = '' }) },
         { key = "c", mods = "SUPER", action = wezterm.action({ CopyTo = "Clipboard" }) },
         { key = "v", mods = "SUPER", action = wezterm.action({ PasteFrom = "Clipboard" }) },
         { key = "-", mods = "SUPER", action = "DecreaseFontSize" },
         { key = "=", mods = "SUPER", action = "IncreaseFontSize" },
         { key = "q", mods = "SUPER", action = wezterm.action.QuitApplication },
+        {
+            key = ".",
+            mods = "LEADER",
+            action = wezterm.action.PromptInputLine({
+                description = "Rename tab",
+                action = wezterm.action_callback(function(window, _, line)
+                    if line then
+                        window:active_tab():set_title(line)
+                    end
+                end),
+            }),
+        },
     },
 }

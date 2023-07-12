@@ -1,8 +1,8 @@
 return {
-    {
-        condition = function()
-            return vim.bo.modified or vim.bo.readonly
-        end,
-        provider = "%m%r%h",
-    },
+    condition = function()
+        return vim.bo.modified or vim.bo.readonly
+    end,
+    { provider = " " },
+    { provider = "%m%r%h" },
+    { provider = " " },
 }

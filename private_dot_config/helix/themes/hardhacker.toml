@@ -1,0 +1,96 @@
+"attribute" = "red"
+"function" = "red"
+
+"type" = "cyan"
+"tag" = "cyan"
+"function.macro" = "cyan"
+
+"string" = "green"
+
+"constant" = "purple"
+"identifier" = "purple"
+"special" = "purple"
+"keyword.directive" = "purple"
+"variable" = "purple"
+"namespace" = "purple"
+
+"constructor" = "yellow"
+"constant.character" = "yellow"
+"constant.numeric" = "yellow"
+"constant.builtin" = "yellow"
+"string.regexp" = "yellow"
+"string.special" = "yellow"
+"variable.builtin" = "yellow"
+
+"puncuation.delimiter" = "fg"
+
+"keyword" = "blue"
+"label" = "blue"
+"operator" = "blue"
+
+"comment" = { fg = "comment", modifiers = ["italic"] }
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+"warning" = "yellow"
+"error" = "red"
+"info" = "cyan"
+"hint" = "purple"
+
+"diagnostic" = { bg = "bg" }
+"diagnostic.hint" = { fg = "purple", bg = "purple_blend" }
+"diagnostic.info" = { fg = "cyan", bg = "cyan_blend" }
+"diagnostic.error" = { fg = "red", bg = "red_blend" }
+"diagnostic.warning" = { fg = "yellow", bg = "yellow_blend" }
+
+"ui.background" = { bg = "bg" }
+"ui.background.separator" = "#ffffff"
+"ui.linenr" = { fg = "comment", bg = "bg" }
+"ui.linenr.selected" = { fg = "purple", bg = "bg" }
+"ui.statusline" = { fg = "fg", bg = "selection" }
+"ui.statusline.normal" = { fg = "black", bg = "purple" }
+"ui.statusline.insert" = { fg = "black", bg = "green" }
+"ui.statusline.select" = { fg = "black", bg = "yellow" }
+"ui.statusline.inactive" = { fg = "fg", bg = "bg" }
+
+"ui.selection" = { fg = "fg", bg = "selection" }
+"ui.selection.primary" = { fg = "bg", bg = "yellow" }
+"ui.cursor" = { fg = "fg", bg = "red" }
+"ui.cursor.match" = { fg = "yellow", modifiers = ["bold"] }
+
+"ui.text" = "fg"
+"ui.text.focus" = { bg = "selection" }
+"ui.text.inactive" = "black"
+"ui.virtual" = "comment"
+"ui.highlight" = "red"
+
+"ui.menu" = { fg = "fg", bg = "purple_blend" }
+"ui.menu.selected" = { fg = "black", bg = "purple" }
+"ui.menu.scroll" = { fg = "fg", bg = "purple_blend" }
+
+"ui.popup" = { fg = "fg", bg = "purple_blend" }
+"ui.popup.info" = { fg = "fg", bg = "purple_blend" }
+
+"ui.window" = { fg = "fg", bg = "purple_blend" }
+"ui.help" = { fg = "fg", bg = "purple_blend" }
+
+[palette]
+"red" = "#e965a5"
+"red_blend" = "#3b2a3e"
+"purple" = "#e192ef"
+"purple_blend" = "#3a2f45"
+"blue" = "#b1baf4"
+"blue2" = "#8f94c4"
+"yellow" = "#ebde76"
+"yellow_blend" = "#3b3639"
+"cyan" = "#b3f4f3"
+"cyan_blend" = "#353846"
+"green" = "#b1f2a7"
+"fg" = "#e4dee9"
+"comment" = "#938aad"
+"border" = "#613755"
+"bg" = "#282433"
+"selection" = "#3f3951"
+"black" = "#19181f"

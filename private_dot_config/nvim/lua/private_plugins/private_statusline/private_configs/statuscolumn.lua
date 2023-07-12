@@ -6,8 +6,7 @@ local utils = require("heirline.utils")
 return {
     hl = function()
         local Normal = utils.get_highlight("Normal")
-        local Comment = utils.get_highlight("Comment")
-        return { bg = Normal.bg, fg = Comment.fg }
+        return { bg = Normal.bg }
     end,
     diagnostic_sign,
     { provider = "%=" },

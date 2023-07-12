@@ -12,7 +12,13 @@ return {
         fallthrough = false,
         {
             condition = function(self)
-                return #self.signs > 0 and self.signs[1].name == "GitSignsDelete"
+                return #self.signs == 0
+            end,
+            provider = " ",
+        },
+        {
+            condition = function(self)
+                return self.signs[1].name == "GitSignsDelete"
             end,
             provider = "▁",
             hl = function(self)
@@ -22,7 +28,7 @@ return {
         },
         {
             condition = function(self)
-                return #self.signs > 0 and self.signs[1].name == "GitSignsTopdelete"
+                return self.signs[1].name == "GitSignsTopdelete"
             end,
             provider = "▔",
             hl = function(self)
@@ -41,10 +47,4 @@ return {
             end,
         },
     },
-    {
-        condition = function(self)
-            return #self.signs == 0
-        end,
-        provider = " ",
-    }
 }

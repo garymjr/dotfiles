@@ -2,12 +2,7 @@
   name = Gary Murray
   email = gamurray@fanatics.com
 [core]
-  pager = delta
   excludesFile = ~/.config/git/ignore
-[delta]
-  features = side-by-side
-  line-numbers = true
-  hunk-header-style = omit
 [merge]
   conflictstyle = diff3
 [pull]
@@ -25,11 +20,13 @@
   co = checkout
   d = diff
   f = fetch --prune
-  l = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  l = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  la = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
   ll = log --oneline
+  lx = log --pretty=format:\"%s\"
   p = pull
   pu = push
-  puf = push -f --force-with-lease
+  puf = push --force-with-lease
   puo = !git branch --show-current | xargs git push -u origin
   s = status
   st = stash

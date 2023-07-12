@@ -1,16 +1,14 @@
 return {
-    { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
     {
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects"
         },
         build = ":TSUpdate",
-        event = "BufReadPost",
+        event = {"BufReadPre", "BufNewFile"},
         opts = {
             highlight = { enable = true },
             indent = { enable = true },
-            context_commentstring = { enable = true, enable_autocmd = false },
             ensure_installed = {
                 "html",
                 "javascript",

@@ -1,4 +1,5 @@
 export NVM_DIR="$HOME/.nvm"
+export TERM=xterm-kitty
 
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -15,8 +16,7 @@ PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 PATH=$GOPATH/bin:$PATH
-PATH=$HOME/bin:$PATH
-PATH=$HOME/code/zigup/zig-out/bin:$PATH
+PATH=$HOME/zig/bin:$PATH
 export PATH=$PATH
 export SHELL=/bin/zsh
 export GOPROXY=direct
@@ -24,14 +24,9 @@ export GOSUMDB=off
 
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
-source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 source $HOME/.zsh/completion.zsh
 autoload -Uz compinit
-
-autoload -U promptinit; promptinit
-# fpath+=$HOME/.zsh/pure
-# prompt pure
 
 # Cache completion if nothing changed - faster startup time
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -47,21 +42,14 @@ zmodload -i zsh/complist
 alias ls=exa
 alias vi=nvim
 alias nv=$EDITOR
-alias zel=zellij
-alias zl="zellij list-sessions"
-alias zs="zellij --session"
-alias za="zellij attach"
 
 alias yw='yarn workspace'
 alias chez=chezmoi
 alias lg=lazygit
 
 alias ta='tmux attach -t'
-alias tad='tmux attach -d -t'
 alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
-alias tksv='tmux kill-server'
-alias tkss='tmux kill-session -t'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -81,18 +69,19 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gbd='git branch -d'
 alias gpu='git push -u'
+
 alias fanauth='TERM=xterm-256color fanauth'
 alias ssh='TERM=xterm-256color ssh'
-
-# tmux
-_tmux_sessions() {
-    compadd $(tmux list-sessions -F '#S' 2> /dev/null)
-}
-
-compdef _tmux_sessions tmux-sessions
-
+alias mods='mods -m gpt-3.5-turbo'
 alias tm=tmux-sessions
+
 bindkey -s '^f' 'tmux-sessions\n'
 
+# bindkey -s '^o' 'edit_file\n'
+
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit
+promptinit
+prompt pure
+
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"

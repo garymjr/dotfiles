@@ -1,13 +1,14 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        event = "BufReadPre",
+        event = {"BufReadPre", "BufNewFile"},
         dependencies = {
             "folke/neodev.nvim",
             "mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             "hrsh7th/cmp-nvim-lsp",
             "nvim-telescope/telescope.nvim",
+            "j-hui/fidget.nvim",
         },
         opts = {
             diagnostics = {
@@ -77,11 +78,12 @@ return {
                 end
             end
 
-            require("mason-lspconfig").setup({ ensure_installed = ensure_installed })
-            require("mason-lspconfig").setup_handlers({ setup })
+            require("mason-lspconfig").setup({ ensure_installed = ensure_installed, handlers = { setup } })
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(args)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    client.server_capabilities.semanticTokensProvider = nil
                     local buf = args.buf
                     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buf, silent = true })
                     vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, { buffer = buf, silent = true })
@@ -98,7 +100,6 @@ return {
     },
     {
         "j-hui/fidget.nvim",
-        event = "VeryLazy",
         opts = {
             window = {
                 blend = 0,
@@ -107,6 +108,7 @@ return {
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
+        enabled = false,
         event = "BufReadPre",
         dependencies = {"mason.nvim"},
         opts = function()

@@ -6,7 +6,7 @@ return {
         provider = function()
             local gitsigns = vim.b.gitsigns_status_dict
             if gitsigns then
-                return " " .. gitsigns.head
+                return gitsigns.head
             end
         end,
     },
