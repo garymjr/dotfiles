@@ -21,9 +21,11 @@ right =  ["diagnostics", "version-control", "spacer", "selections", "position", 
 [keys.normal]
 X = "extend_line_above"
 a = ["append_mode", "collapse_selection"]
+esc = ["keep_primary_selection", "collapse_selection"]
+";" = "repeat_last_motion"
 
 [keys.insert]
-esc = ["collapse_selection", "normal_mode"]
+esc = "normal_mode"
 
 [keys.select]
-esc = ["collapse_selection", "normal_mode"]
+esc = ["normal_mode", "keep_primary_selection"]

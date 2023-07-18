@@ -1,6 +1,7 @@
 return {
     {
         "echasnovski/mini.files",
+        enabled = false,
         keys = {
             {
                 "-",
@@ -35,14 +36,12 @@ return {
     },
     {
         "chrisgrieser/nvim-genghis",
-        -- event = "VeryLazy",
-		cmd = {"Rename", "Move", "Duplicate", "Delete"},
-        init = function()
-            vim.api.nvim_create_user_command("Rename", function() require("genghis").renameFile() end, {})
-            vim.api.nvim_create_user_command("Move", function() require("genghis").moveAndRenameFile() end, {})
-            vim.api.nvim_create_user_command("Delete", function() require("genghis").trashFile() end, {})
-            vim.api.nvim_create_user_command("Duplicate", function() require("genghis").duplicateFile() end, {})
-        end,
+        keys = {
+            { "<leader>rf", function() require("genghis").renameFile() end, silent = true },
+            { "<leader>mf", function() require("genghis").moveAndRenameFile() end, silent = true },
+            { "<leader>yf", function() require("genghis").duplicateFile() end, silent = true },
+            { "<leader>df", function() require("genghis").trashFile() end, silent = true },
+        },
     },
     {
         "numToStr/Navigator.nvim",

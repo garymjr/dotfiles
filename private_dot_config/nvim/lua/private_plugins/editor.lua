@@ -2,7 +2,6 @@ return {
     {
         "tamago324/lir.nvim",
         event = "VeryLazy",
-        enabled = false,
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
@@ -12,8 +11,7 @@ return {
                 "-",
                 function()
                     local buf = vim.api.nvim_buf_get_name(0)
-                    local dir = vim.fn.fnamemodify(buf, ":h")
-                    vim.cmd(string.format("edit %s", dir))
+                    vim.cmd(string.format("edit %s", vim.fn.fnamemodify(buf, ":h")))
                 end,
                 silent = true,
             }
@@ -306,5 +304,26 @@ return {
     {
         "Bekaboo/deadcolumn.nvim",
         event = "BufReadPre",
+    },
+    {
+        "echasnovski/mini.bufremove",
+        keys = {
+            {"<leader>x", function() require("mini.bufremove").delete(0, false) end, silent = true},
+            {"<leader>X", function() require("mini.bufremove").delete(0, true) end, silent = true},
+        },
+    },
+    {
+        "NeogitOrg/neogit",
+        keys = {
+            { "<leader>gs", function() require("neogit").open({ kind = "split" }) end, silent = true },
+        },
+        opts = {
+            commit_popup = {
+                kind = "floating",
+            },
+        },
+        config = function(_, opts)
+            require("neogit").setup(opts)
+        end,
     },
 }
