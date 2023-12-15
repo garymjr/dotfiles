@@ -1,5 +1,0 @@
-[[language]]
-name = "go"
-indent = { tab-width = 4, unit = "  " }
-formatter = { command = "goimports" }
-auto-format = true

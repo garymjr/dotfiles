@@ -1,5 +1,0 @@
-inherits = "gruvbox"
-
-"ui.statusline.normal" = { fg = "bg1", bg = "fg4" }
-"ui.statusline.insert" = { fg = "fg1", bg = "blue0" }
-"ui.statusline.select" = { fg = "fg1", bg = "orange0" }

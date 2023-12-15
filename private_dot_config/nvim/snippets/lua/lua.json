@@ -1,0 +1,10 @@
+{
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) then",
+      "\t$0",
+      "end"
+    ]
+  }
+}

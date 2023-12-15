@@ -1,0 +1,10 @@
+{
+  "Import default": {
+    "prefix": "imp",
+    "body": "import ${2:name} from '${1:package}'${0}"
+  },
+  "Import with destructuring": {
+    "prefix": "imd",
+    "body": "import { ${2:name} } from '${1:package}'${0}"
+  }
+}

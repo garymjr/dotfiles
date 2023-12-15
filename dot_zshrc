@@ -1,5 +1,4 @@
 export NVM_DIR="$HOME/.nvm"
-export TERM=xterm-kitty
 
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -9,7 +8,8 @@ export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
 export GOPATH=$HOME/go
-PATH=/opt/homebrew/Cellar/bash/5.2.9/bin:$PATH
+PATH=$HOME/bin:$PATH
+PATH=/usr/local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
 PATH=/opt/homebrew/bin:$PATH
 PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
@@ -17,13 +17,17 @@ PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 PATH=$GOPATH/bin:$PATH
 PATH=$HOME/zig/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH
 export SHELL=/bin/zsh
+
 export GOPROXY=direct
 export GOSUMDB=off
 
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
+source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $HOME/.zsh/completion.zsh
 autoload -Uz compinit
@@ -39,11 +43,10 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
-alias ls=exa
+alias ls=eza
 alias vi=nvim
 alias nv=$EDITOR
 
-alias yw='yarn workspace'
 alias chez=chezmoi
 alias lg=lazygit
 
@@ -75,9 +78,7 @@ alias ssh='TERM=xterm-256color ssh'
 alias mods='mods -m gpt-3.5-turbo'
 alias tm=tmux-sessions
 
-bindkey -s '^f' 'tmux-sessions\n'
-
-# bindkey -s '^o' 'edit_file\n'
+bindkey '^f' autosuggest-accept
 
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit

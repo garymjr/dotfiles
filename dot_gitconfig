@@ -14,21 +14,25 @@
   a = add
   aa = add -A
   b = branch
-  bd = !git branch -D $(git branch | grep -v '^*\\|master' | fzf --height ${FZF_TMUX_HEIGHT:-20%} --reverse --no-separator --multi)
+  bd = !git branch -d $(git branch | grep -v '^*\\|master' | fzf --height ${FZF_TMUX_HEIGHT:-20%} --reverse --no-separator --multi)
   c = commit -v
   ca = commit -v --amend
   co = checkout
-  d = diff
   f = fetch --prune
-  l = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
-  la = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
-  ll = log --oneline
+  fix = commit --fixup
+  l = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  ll = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  lo = log --oneline
   lx = log --pretty=format:\"%s\"
   p = pull
-  pu = push
-  puf = push --force-with-lease
+  pu = !git branch --show-current | xargs git push origin
+  puf = !git branch --show-current | xargs git push --force-with-lease origin
   puo = !git branch --show-current | xargs git push -u origin
+  ras = rebase -i --autosquash
   s = status
+  so = spinoff
+  squash = commit --squash
   st = stash
+  sw = switch
 [safe]
 	directory = /Users/gamurray/code/neovim
