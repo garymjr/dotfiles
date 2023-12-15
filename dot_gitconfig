@@ -1,6 +1,8 @@
 [user]
   name = Gary Murray
-  email = gamurray@fanatics.com
+  email = garymjr@gmail.com
+[includeIf "gitdir:~/fanatics/"]
+  path = ~/.config/git/fanatics.config
 [core]
   excludesFile = ~/.config/git/ignore
 [merge]
