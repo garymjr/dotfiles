@@ -23,7 +23,6 @@ require("lazy").setup({
 		-- { import = "gwm.extras.oil" },
 		{ import = "gwm.extras.copilot" },
 		{ import = "gwm.extras.chatgpt" },
-		{ import = "gwm.extras.harpoon" },
 		{ import = "gwm.extras.diffview" },
 		-- import/override with your plugins
 		{ import = "plugins" },

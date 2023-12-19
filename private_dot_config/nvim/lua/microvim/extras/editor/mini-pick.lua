@@ -4,6 +4,7 @@ return {
 		dependencies = {
 			{ "echasnovski/mini.extra", opts = {} },
 		},
+		cmd = { "Pick" },
 		keys = {},
 		opts = {
 			mappings = {
