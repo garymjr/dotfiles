@@ -16,6 +16,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.go" },
+		{ import = "microvim.plugins.lsp" },
 		{ import = "microvim.extras.editor.mini-files" },
 		{ import = "microvim.extras.editor.mini-pick" },
 		{ import = "microvim.extras.util.mini-visits" },
