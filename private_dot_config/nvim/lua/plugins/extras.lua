@@ -1,26 +1,20 @@
 return {
-	{
-		"leoluz/nvim-dap-go",
-		enabled = false,
-	},
-	{
-		"nvim-neotest/neotest-go",
-		enabled = false,
-	},
-	{
-		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				eslint = {
-					settings = {
-						format = false,
-						run = "onType",
-						workingDirectory = { mode = "location" },
-					},
-				},
-			},
-		},
-	},
+	{ "leoluz/nvim-dap-go", enabled = false },
+	{ "nvim-neotest/neotest-go", enabled = false },
+	-- {
+	-- 	"neovim/nvim-lspconfig",
+	-- 	opts = {
+	-- 		servers = {
+	-- 			eslint = {
+	-- 				settings = {
+	-- 					format = false,
+	-- 					run = "onType",
+	-- 					workingDirectory = { mode = "location" },
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
@@ -30,88 +24,6 @@ return {
 				"dockerfile",
 				"proto",
 			})
-		end,
-	},
-	{
-		"ahmedkhalf/project.nvim",
-		opts = {
-			show_hidden = true,
-		},
-	},
-	{
-		"garymjr/nvim-snippets",
-		event = "InsertEnter",
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-		},
-		opts = {
-			create_cmp_source = true,
-			extended_filetypes = {
-				typescript = { "javascript" },
-				typescriptreact = { "javascript", "javascriptreact" },
-			},
-		},
-		keys = {
-			{
-				"<Tab>",
-				function()
-					if vim.snippet.jumpable(1) then
-						vim.schedule(function()
-							vim.snippet.jump(1)
-						end)
-						return
-					end
-					return "<Tab>"
-				end,
-				expr = true,
-				silent = true,
-				mode = "i",
-			},
-			{
-				"<Tab>",
-				function()
-					vim.schedule(function()
-						vim.snippet.jump(1)
-					end)
-				end,
-				expr = true,
-				silent = true,
-				mode = "s",
-			},
-			{
-				"<S-Tab>",
-				function()
-					if vim.snippet.jumpable(-1) then
-						vim.schedule(function()
-							vim.snippet.jump(-1)
-						end)
-						return
-					end
-					return "<S-Tab>"
-				end,
-				expr = true,
-				silent = true,
-				mode = { "i", "s" },
-			},
-		},
-	},
-	{
-		"hrsh7th/nvim-cmp",
-		opts = function(_, opts)
-			local cmp = require("cmp")
-			opts.sources = cmp.config.sources({
-				{
-					name = "copilot",
-					group_index = 1,
-					priority = 100,
-				},
-				{ name = "snippets" },
-				{ name = "nvim_lsp" },
-				{ name = "path" },
-			}, {
-				{ name = "buffer" },
-			})
-			return opts
 		end,
 	},
 	{
@@ -151,5 +63,25 @@ return {
 			},
 		},
 		opts = {},
+	},
+	{
+		"garymjr/native_snippets_extended",
+		dev = true,
+		event = "InsertEnter",
+		opts = {},
+		config = function()
+			require("native_snippets_extended").setup()
+			require("native_snippets_extended.cmp").register()
+		end,
+	},
+	{
+		"nvim-cmp",
+		opts = function(_, opts)
+			local source = require("cmp").config.sources({
+				{ name = "native_snippets" },
+			})[1]
+			table.insert(opts.sources, 2, source)
+			return opts
+		end,
 	},
 }

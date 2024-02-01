@@ -43,6 +43,10 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\033' edit-command-line
+
 alias ls=eza
 alias vi=nvim
 alias nv=$EDITOR
@@ -50,9 +54,9 @@ alias nv=$EDITOR
 alias chez=chezmoi
 alias lg=lazygit
 
-alias ta='tmux attach -t'
-alias ts='tmux new-session -s'
+alias tm=tmux-sessions
 alias tl='tmux list-sessions'
+alias ta='tmux attach -t'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -73,12 +77,15 @@ alias gaa='git add -A'
 alias gbd='git branch -d'
 alias gpu='git push -u'
 
-alias fanauth='TERM=xterm-256color fanauth'
-alias ssh='TERM=xterm-256color ssh'
+# alias fanauth='TERM=xterm-256color fanauth'
+# alias ssh='TERM=xterm-256color ssh'
 alias mods='mods -m gpt-3.5-turbo'
-alias tm=tmux-sessions
 
 bindkey '^f' autosuggest-accept
+# bindkey -s '^s' 'tmux-sessions\n'
+# bindkey -s '^x' 'tmux-zoxide\n'
+
+fpath+=$HOME/.zsh_functions
 
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit

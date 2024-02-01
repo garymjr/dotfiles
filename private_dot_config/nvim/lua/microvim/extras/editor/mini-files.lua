@@ -8,14 +8,10 @@ return {
 			},
 			windows = {
 				preview = false,
+				window_focus = "auto",
 			},
-		},
-		keys = {
-			{
-				"-",
-				function()
-					require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
-				end,
+			mappings = {
+				go_in_plus = "<CR>",
 			},
 		},
 	},

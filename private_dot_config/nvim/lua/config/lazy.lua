@@ -10,20 +10,22 @@ require("lazy").setup({
 	spec = {
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
-		{ import = "lazyvim.plugins.extras.coding.copilot" },
-		{ import = "lazyvim.plugins.extras.util.project" },
-		{ import = "lazyvim.plugins.extras.linting.eslint" },
+		-- { import = "lazyvim.plugins.extras.coding.copilot" },
+		-- { import = "lazyvim.plugins.extras.util.project" },
+		{ import = "lazyvim.plugins.extras.coding.native_snippets" },
+		-- { import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.go" },
-		{ import = "microvim.plugins.lsp" },
-		{ import = "microvim.extras.editor.mini-files" },
-		{ import = "microvim.extras.editor.mini-pick" },
+		-- { import = "microvim.plugins.lsp" },
+		-- { import = "microvim.extras.editor.mini-pick" },
 		{ import = "microvim.extras.util.mini-visits" },
+		-- { import = "microvim.extras.ui.mini-clue" },
+		-- { import = "microvim.extras.coding.mini-completion" },
 		{ import = "gwm.extras.neogit" },
-		-- { import = "gwm.extras.oil" },
-		{ import = "gwm.extras.copilot" },
-		{ import = "gwm.extras.chatgpt" },
+		{ import = "gwm.extras.oil" },
+		-- { import = "gwm.extras.copilot" },
+		-- { import = "gwm.extras.chatgpt" },
 		{ import = "gwm.extras.diffview" },
 		-- import/override with your plugins
 		{ import = "plugins" },
@@ -42,7 +44,10 @@ require("lazy").setup({
 		fallback = false,
 	},
 	install = { colorscheme = { "catppuccin" } },
-	checker = { enabled = true }, -- automatically check for plugin updates
+	checker = {
+		enabled = true,
+		notify = false,
+	},
 	performance = {
 		rtp = {
 			-- disable some rtp plugins
@@ -59,4 +64,17 @@ require("lazy").setup({
 			},
 		},
 	},
+})
+
+vim.api.nvim_create_autocmd("User", {
+	group = group,
+	pattern = "VeryLazy",
+	callback = function()
+		require("config.autocmds")
+		require("config.keymaps")
+
+		-- Util.format.setup()
+		-- Util.news.setup()
+		-- Util.root.setup()
+	end,
 })

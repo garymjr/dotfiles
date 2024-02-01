@@ -2,11 +2,18 @@ return {
 	"stevearc/oil.nvim",
 	keys = {
 		{
-			"-",
+			"<leader>fm",
 			function()
 				require("oil").open()
 			end,
-			desc = "Open parent directory",
+			desc = "Open directory (cwd)",
+		},
+		{
+			"<leader>fM",
+			function()
+				require("oil").open(require("lazyvim.util.root").get())
+			end,
+			desc = "Open directory (root dir)",
 		},
 	},
 	opts = {

@@ -1,14 +1,6 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		init = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps").get()
-			keys[#keys + 1] = {
-				"<leader>cD",
-				require("telescope.builtin").diagnostics,
-				desc = "Workspace Diagnostics",
-			}
-		end,
 		opts = {
 			diagnostics = {
 				virtual_text = {

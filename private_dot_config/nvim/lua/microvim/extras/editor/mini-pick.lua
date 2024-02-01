@@ -1,4 +1,5 @@
 return {
+	{ "nvim-telescope/telescope.nvim", enabled = false },
 	{
 		"echasnovski/mini.pick",
 		dependencies = {
@@ -147,22 +148,47 @@ return {
 			{ "<leader>ss", "<cmd>Pick lsp scope='document_symbol'<cr>", desc = "Goto Symbol" },
 			{ "<leader>sS", "<cmd>Pick lsp scope='workspace_symbol'<cr>", desc = "Goto Symbol (Workspace)" },
 		},
-		opts = {
-			mappings = {
+		opts = function(_, opts)
+			local win_config = function()
+				local height = math.floor(0.8 * vim.o.lines)
+				local width = math.floor(0.8 * vim.o.columns)
+				return {
+					anchor = "NW",
+					height = height,
+					width = width,
+					row = math.floor(0.5 * (vim.o.lines - height)),
+					col = math.floor(0.5 * (vim.o.columns - width)),
+				}
+			end
+			opts.window = { config = win_config }
+			opts.mappings = {
 				choose_marked = "<M-q>",
 				scroll_down = "<C-d>",
 				scroll_up = "<C-u>",
-				toggle_info = "<M-/>",
-				toggle_preview = "<C-/>",
-				mark = "<Tab>",
-			},
-		},
+				mark = "<C-x>",
+			}
+		end,
 	},
 	{
-		"nvim-telescope/telescope.nvim",
-		keys = {
-			{ "<leader>ff", false },
-			{ "<leader>gs", false },
-		},
+		"neovim/nvim-lspconfig",
+		init = function()
+			local keys = require("lazyvim.plugins.lsp.keymaps").get()
+			keys[#keys + 1] =
+				{ "gd", "<cmd>Pick lsp scope='definition'<cr>", desc = "Goto Definition", has = "definition" }
+			keys[#keys + 1] = { "gr", "<cmd>Pick lsp scope='references'<cr>", desc = "References" }
+			keys[#keys + 1] = { "gI", "<cmd>Pick lsp scope='implementation'<cr>", desc = "Goto Implementation" }
+			keys[#keys + 1] = { "gy", "<cmd>Pick lsp scope='type_definition'<cr>", desc = "Goto T[y]pe Definition" }
+		end,
+	},
+	{
+		"nvimdev/dashboard-nvim",
+		opts = function(_, opts)
+			local center = opts.config.center
+			center[1].action = "Pick files"
+			center[3].action = "Pick oldfiles"
+			center[4].action = "Pick grep_live"
+			center[5].action =
+				[[lua require("mini.pick").builtin.files(nil, { source = { cwd = vim.fn.stdpath("config") } }) ]]
+		end,
 	},
 }

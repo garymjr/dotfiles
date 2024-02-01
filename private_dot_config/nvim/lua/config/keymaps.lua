@@ -36,6 +36,3 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "[c", function()
 	require("treesitter-context").go_to_context()
 end, { silent = true, desc = "Previous context" })
-
-vim.keymap.del({ "n", "i", "v" }, "<A-j>")
-vim.keymap.del({ "n", "i", "v" }, "<A-k>")
