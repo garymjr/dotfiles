@@ -22,8 +22,10 @@
   co = checkout
   f = fetch --prune
   fix = commit --fixup
-  l = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
-  ll = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  l = log --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
+  la = l --all
+  ; l = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
+  ; ll = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
   lo = log --oneline
   lx = log --pretty=format:\"%s\"
   p = pull

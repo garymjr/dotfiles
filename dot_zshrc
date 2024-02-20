@@ -58,6 +58,9 @@ alias tm=tmux-sessions
 alias tl='tmux list-sessions'
 alias ta='tmux attach -t'
 
+alias fanauth='TERM=screen-256color fanauth'
+alias ssh='TERM=screen-256color ssh'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
@@ -82,7 +85,7 @@ alias gpu='git push -u'
 alias mods='mods -m gpt-3.5-turbo'
 
 bindkey '^f' autosuggest-accept
-# bindkey -s '^s' 'tmux-sessions\n'
+bindkey -s '^s' 'tmux-sessions\n'
 # bindkey -s '^x' 'tmux-zoxide\n'
 
 fpath+=$HOME/.zsh_functions

@@ -1,31 +1,4 @@
 return {
-	{ "leoluz/nvim-dap-go", enabled = false },
-	{ "nvim-neotest/neotest-go", enabled = false },
-	-- {
-	-- 	"neovim/nvim-lspconfig",
-	-- 	opts = {
-	-- 		servers = {
-	-- 			eslint = {
-	-- 				settings = {
-	-- 					format = false,
-	-- 					run = "onType",
-	-- 					workingDirectory = { mode = "location" },
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
-	{
-		"nvim-treesitter/nvim-treesitter",
-		opts = function(_, opts)
-			vim.list_extend(opts.ensure_installed, {
-				"sql",
-				"comment",
-				"dockerfile",
-				"proto",
-			})
-		end,
-	},
 	{
 		"numToStr/Navigator.nvim",
 		keys = {
