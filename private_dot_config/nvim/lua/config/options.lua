@@ -1,29 +1,23 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 local opt = vim.opt
 
+opt.autowrite = true
 opt.clipboard = "unnamedplus"
-opt.completeopt = "menu,menuone,noselect,popup"
+opt.completeopt = { "menu", "menuone", "noselect", "popup" }
 opt.conceallevel = 2
 opt.confirm = true
 opt.cursorline = false
 opt.expandtab = true
-opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  -- fold = "⸱",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
-}
+opt.foldlevel = 99
 opt.formatoptions = "jcroqlnt"
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
-opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor"
 opt.ignorecase = true
 opt.inccommand = "nosplit"
-opt.laststatus = 2
-opt.list = false
-opt.mouse = "nvr"
+opt.laststatus = 3
+opt.mouse = "nvi"
 opt.number = true
 opt.pumblend = 10
 opt.pumheight = 10
@@ -39,6 +33,7 @@ opt.signcolumn = "yes"
 opt.smartcase = true
 opt.smartindent = true
 opt.smoothscroll = true
+opt.spelllang = { "en" }
 opt.splitbelow = true
 opt.splitkeep = "screen"
 opt.splitright = true
@@ -54,4 +49,5 @@ opt.wildmode = "longest:full,full"
 opt.winminwidth = 5
 opt.wrap = false
 
+-- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
