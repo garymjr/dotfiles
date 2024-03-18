@@ -54,7 +54,7 @@ alias nv=$EDITOR
 alias chez=chezmoi
 alias lg=lazygit
 
-alias tm=tmux-sessions
+alias tm=tmux-open
 alias tl='tmux list-sessions'
 alias ta='tmux attach -t'
 
@@ -74,19 +74,12 @@ alias luamake=/Users/gamurray/Code/lua-language-server/3rd/luamake/luamake
 
 # git
 alias g=git
-alias gi=git
-alias ga='git add'
-alias gaa='git add -A'
-alias gbd='git branch -d'
-alias gpu='git push -u'
 
 # alias fanauth='TERM=xterm-256color fanauth'
 # alias ssh='TERM=xterm-256color ssh'
 alias mods='mods -m gpt-3.5-turbo'
 
 bindkey '^f' autosuggest-accept
-bindkey -s '^s' 'tmux-sessions\n'
-# bindkey -s '^x' 'tmux-zoxide\n'
 
 fpath+=$HOME/.zsh_functions
 
