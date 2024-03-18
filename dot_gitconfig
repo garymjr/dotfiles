@@ -16,16 +16,16 @@
   a = add
   aa = add -A
   b = branch
-  bd = !git branch -d $(git branch | grep -v '^*\\|master' | fzf --height ${FZF_TMUX_HEIGHT:-20%} --reverse --no-separator --multi)
+  bd = branch -d
   c = commit -v
   ca = commit -v --amend
+  cf = commit --fixup
   co = checkout
+  cp = cherry-pick
+  cs = commit --squash
   f = fetch --prune
-  fix = commit --fixup
   l = log --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   la = l --all
-  ; l = log --graph --all --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
-  ; ll = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d %Creset%s %C(green)%cr%Creset (%C(magenta)%an%Creset)\"
   lo = log --oneline
   lx = log --pretty=format:\"%s\"
   p = pull
@@ -33,10 +33,16 @@
   puf = !git branch --show-current | xargs git push --force-with-lease origin
   puo = !git branch --show-current | xargs git push -u origin
   ras = rebase -i --autosquash
+  rt = !cd \"$(git rev-parse --show-toplevel || echo .)\"
   s = status
   so = spinoff
-  squash = commit --squash
   st = stash
+  stl = stash list
+  stm = stash -m
+  stp = stash pop
+  stu = stash -u
+  stum = stash -um
   sw = switch
+  swc = switch -c
 [safe]
 	directory = /Users/gamurray/code/neovim
