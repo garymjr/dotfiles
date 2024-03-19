@@ -17,7 +17,7 @@ MiniDeps.now(function()
         MiniCursorwordCurrent = { style = { "underline" } },
 
         MiniIndentscopeSymbol = { fg = colors.text },
-        MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
+        MiniIndentscopePrefix = { style = { "nocombine" } },   -- Make it invisible
 
         MiniJump = { fg = colors.overlay2, bg = colors.pink },
 
