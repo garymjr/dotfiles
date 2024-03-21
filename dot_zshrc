@@ -22,7 +22,7 @@ export PATH=$PATH
 export SHELL=/bin/zsh
 
 export GOPROXY=direct
-export GOSUMDB=off
+export GOSUMDB=
 
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
