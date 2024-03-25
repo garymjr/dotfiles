@@ -99,3 +99,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
+
+vim.api.nvim_create_autocmd("TermClose", {
+  group = vim.api.nvim_create_augroup("termclose", { clear = true }),
+  pattern = "term://*",
+  callback = function(args)
+    vim.schedule(function()
+      vim.cmd.tabclose()
+    end)
+  end,
+})

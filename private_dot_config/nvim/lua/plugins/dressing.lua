@@ -1,5 +1,7 @@
-MiniDeps.add("stevearc/dressing.nvim")
+if false then
+  MiniDeps.add("stevearc/dressing.nvim")
 
-MiniDeps.later(function()
-  require("dressing").setup()
-end)
+  MiniDeps.later(function()
+    require("dressing").setup()
+  end)
+end

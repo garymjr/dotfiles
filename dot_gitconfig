@@ -3,6 +3,10 @@
   email = garymjr@gmail.com
 [includeIf "gitdir:~/fanatics/"]
   path = ~/.config/git/fanatics.config
+[includeIf "gitdir:~/go/src/github.com/fancom-d2c-product/"]
+  path = ~/.config/git/fanatics.config
+[includeIf "gitdir:~/go/src/jaxf-github.fanatics.corp/mdm/"]
+  path = ~/.config/git/fanatics.config
 [core]
   excludesFile = ~/.config/git/ignore
 [merge]
@@ -12,6 +16,14 @@
 [branch]
   autosetupmerge = always
   autosetuprebase = always
+[diff]
+  tool = difft
+[difftool]
+  prompt = false
+[difftool "difft"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
 [alias]
   a = add
   aa = add -A
