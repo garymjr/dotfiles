@@ -24,7 +24,7 @@ later(function()
   end, { silent = true, desc = "Delete buffer (force)" })
 end)
 
-later(function()
+now(function()
   local clue = require("mini.clue")
   clue.setup({
     triggers = {

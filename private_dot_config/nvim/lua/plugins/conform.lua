@@ -13,7 +13,7 @@ MiniDeps.later(function()
           "--indent-style",
           "space",
           "--line-width",
-          "120",
+          "100",
           "--stdin-file-path",
           "$FILENAME",
         },

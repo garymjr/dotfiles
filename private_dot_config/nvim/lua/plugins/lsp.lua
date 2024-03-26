@@ -66,7 +66,7 @@ MiniDeps.add({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "folke/neodev.nvim",
-    "hrsh7th/cmp-nvim-lsp",
+    -- "hrsh7th/cmp-nvim-lsp",
   },
 })
 
@@ -169,11 +169,12 @@ MiniDeps.later(function()
     handlers = {
       function(server_name)
         local server = servers[server_name] or {}
+        local has_cmp, cmp = pcall(require, "cmp")
         server.capabilities = vim.tbl_deep_extend(
           "force",
           {},
           vim.lsp.protocol.make_client_capabilities(),
-          require("cmp_nvim_lsp").default_capabilities() or {}
+          has_cmp and require("cmp_nvim_lsp").default_capabilities() or {}
         )
         local on_attach = server.on_attach
         server.on_attach = function(client, bufnr)

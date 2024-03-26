@@ -35,6 +35,7 @@
   co = checkout
   cp = cherry-pick
   cs = commit --squash
+  dt = difftool
   f = fetch --prune
   l = log --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   la = l --all
