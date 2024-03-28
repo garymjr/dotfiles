@@ -169,7 +169,7 @@ MiniDeps.later(function()
     handlers = {
       function(server_name)
         local server = servers[server_name] or {}
-        local has_cmp, cmp = pcall(require, "cmp")
+        local has_cmp, _ = pcall(require, "cmp")
         server.capabilities = vim.tbl_deep_extend(
           "force",
           {},

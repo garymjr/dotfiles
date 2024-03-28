@@ -1,6 +1,7 @@
 require("config.deps")
 
 _G.Config = {
+  cmp = false,
   gitsigns = false,
 }
 

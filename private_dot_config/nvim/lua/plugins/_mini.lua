@@ -89,6 +89,12 @@ later(function()
   require("mini.comment").setup()
 end)
 
+if not Config.cmp then
+  later(function()
+    require("mini.completion").setup()
+  end)
+end
+
 if not Config.gitsigns then
   later(function()
     require("mini.diff").setup()
