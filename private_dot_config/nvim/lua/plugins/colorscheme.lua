@@ -90,14 +90,24 @@ if false then
   end)
 end
 
-MiniDeps.add("ribru17/bamboo.nvim")
+MiniDeps.add("rebelot/kanagawa.nvim")
 MiniDeps.now(function()
-  require("bamboo").setup({
-    code_style = {
-      conditionals = { italic = false },
-      namespace = { italic = false },
-      parameter = { italic = false },
-    },
+  require("kanagawa").setup({
+    keywordStyle = { italic = false },
   })
-  require("bamboo").load()
+  vim.cmd.colorscheme("kanagawa")
 end)
+
+if false then
+  MiniDeps.add("ribru17/bamboo.nvim")
+  MiniDeps.now(function()
+    require("bamboo").setup({
+      code_style = {
+        conditionals = { italic = false },
+        namespace = { italic = false },
+        parameter = { italic = false },
+      },
+    })
+    require("bamboo").load()
+  end)
+end

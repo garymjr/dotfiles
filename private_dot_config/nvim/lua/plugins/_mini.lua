@@ -89,6 +89,12 @@ later(function()
   require("mini.comment").setup()
 end)
 
+if not Config.gitsigns then
+  later(function()
+    require("mini.diff").setup()
+  end)
+end
+
 later(function()
   local hipatterns = require('mini.hipatterns')
   local hi_words = MiniExtra.gen_highlighter.words
