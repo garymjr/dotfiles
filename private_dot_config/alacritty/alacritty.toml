@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/bamboo.toml"]
+import = ["~/.config/alacritty/themes/kanagawa.toml"]
 
 [scrolling]
 history = 0
