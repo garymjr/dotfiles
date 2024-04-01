@@ -201,10 +201,6 @@ later(function()
     { silent = true, desc = "Workspace symbol" })
 end)
 
-now(function()
-  require("mini.starter").setup()
-end)
-
 later(function()
   require("mini.surround").setup({
     mappings = {

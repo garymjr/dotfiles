@@ -28,6 +28,7 @@ MiniDeps.later(function()
       "markdown_inline",
       "query",
       "regex",
+      "sql",
       "toml",
       "tsx",
       "typescript",

@@ -10,13 +10,36 @@ if Config.cmp then
   })
 
   MiniDeps.later(function()
-    vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
-
-    local copilot_cmp = require("copilot_cmp")
-    copilot_cmp.setup()
-
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
+    vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+
+    local sources = cmp.config.sources(
+      {
+        {
+          name = "copilot",
+          priority = 100,
+        },
+        { name = "nvim_lsp" },
+        { name = "path" },
+      },
+      {
+        { name = "buffer" },
+      }
+    )
+
+    local has_copilot, _ = pcall(require, "copilot")
+    if has_copilot then
+      local copilot_cmp = require("copilot_cmp")
+      copilot_cmp.setup()
+
+      table.insert(sources, 1, {
+        name = "copilot",
+        priority = 100,
+        group_index = 1,
+      })
+    end
+
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,noinsert",
@@ -31,29 +54,9 @@ if Config.cmp then
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<S-CR>"] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        }),
-        ["<C-CR>"] = function(fallback)
-          cmp.abort()
-          fallback()
-        end,
+        -- ["<C-Space>"] = cmp.mapping.complete(),
       }),
-      sources = cmp.config.sources({
-        {
-          name = "copilot",
-          group_index = 1,
-          priority = 100,
-        },
-        { name = "nvim_lsp", group_index = 1 },
-        { name = "path",     group_index = 1 },
-      }, {
-        { name = "buffer", group_index = 1 },
-      }),
+      sources = sources,
       experimental = {
         ghost_text = {
           hl_group = "CmpGhostText",
