@@ -5,7 +5,7 @@ local opt = vim.opt
 
 opt.autowrite = true
 opt.clipboard = "unnamedplus"
-opt.completeopt = { "menu", "menuone", "noselect", "popup" }
+opt.completeopt = { "menu", "menuone", "noinsert", "popup" }
 opt.conceallevel = 2
 opt.confirm = true
 opt.cursorline = false
