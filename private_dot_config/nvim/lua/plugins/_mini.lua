@@ -4,6 +4,11 @@ now(function()
   require("mini.statusline").setup()
 end)
 
+now(function()
+  require("mini.notify").setup()
+  vim.notify = MiniNotify.make_notify()
+end)
+
 later(function()
   require("mini.extra").setup()
 end)

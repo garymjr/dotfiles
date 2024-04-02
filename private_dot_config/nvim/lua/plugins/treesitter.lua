@@ -5,6 +5,8 @@ MiniDeps.add({
   },
 })
 
+MiniDeps.add("nvim-treesitter/nvim-treesitter-context")
+
 MiniDeps.later(function()
   require("nvim-treesitter.configs").setup({
     highlight = { enable = true },
@@ -17,6 +19,7 @@ MiniDeps.later(function()
       "gomod",
       "gowork",
       "gosum",
+      "graphql",
       "html",
       "javascript",
       "jsdoc",
@@ -29,11 +32,19 @@ MiniDeps.later(function()
       "query",
       "regex",
       "sql",
+      "templ",
       "toml",
       "tsx",
       "typescript",
       "vimdoc",
       "yaml",
     },
+  })
+end)
+
+MiniDeps.later(function()
+  require("treesitter-context").setup({
+    enable = true,
+    max_lines = 1,
   })
 end)

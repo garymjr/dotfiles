@@ -137,6 +137,7 @@ MiniDeps.later(function()
         },
       },
     },
+    templ = {},
     tsserver = {
       settings = {
         completions = {
@@ -166,6 +167,7 @@ MiniDeps.later(function()
   require("neodev").setup()
 
   require("mason-lspconfig").setup({
+    ensure_installed = vim.tbl_keys(servers),
     handlers = {
       function(server_name)
         local server = servers[server_name] or {}
