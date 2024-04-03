@@ -105,23 +105,15 @@ config.force_reverse_video_cursor = true
 config.leader = { key = "Space", mods = "CTRL" }
 
 config.keys = {
-  -- { key = "Space", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\0" }) },
-  -- { key = "-",     mods = "LEADER",      action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-  { key = "-",     mods = "SUPER|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-  -- {
-  --   key = "\\",
-  --   mods = "LEADER",
-  --   action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
-  -- },
+  { key = "Space", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\0" }) },
+  { key = "-",     mods = "LEADER",      action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
   {
     key = "\\",
-    mods = "SUPER|SHIFT",
-    action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+    mods = "LEADER",
+    action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
   },
-  -- { key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
-  { key = "z", mods = "SUPER|SHIFT", action = wezterm.action.TogglePaneZoomState },
-  -- { key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-  { key = "n", mods = "SUPER", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+  { key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
+  { key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
   -- { key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
   -- { key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
   -- { key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
@@ -131,54 +123,21 @@ config.keys = {
   -- { key = "7", mods = "LEADER", action = wezterm.action({ ActivateTab = 6 }) },
   -- { key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
   -- { key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
-  -- { key = "p", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = -1 }) },
-  { key = "[", mods = "SUPER", action = wezterm.action.ActivateTabRelative(-1) },
-  -- { key = "n", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = 1 }) },
-  { key = "]", mods = "SUPER", action = wezterm.action.ActivateTabRelative(1) },
-  -- { key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-  { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
-  -- { key = "[", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
+  { key = "p", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = -1 }) },
+  { key = "n", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = 1 }) },
+  { key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+  { key = "w", mods = "SUPER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+  { key = "[", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
   -- { key = "-", mods = "SUPER",  action = "DecreaseFontSize" },
   -- { key = "=", mods = "SUPER",  action = "IncreaseFontSize" },
   -- { key = "c", mods = "SUPER", action = wezterm.action({ CopyTo = "Clipboard" }) },
   { key = "x", mods = "SUPER|SHIFT", action = wezterm.action.ActivateCopyMode },
   -- { key = "v", mods = "SUPER", action = wezterm.action({ PasteFrom = "Clipboard" }) },
-  -- { key = "q", mods = "SUPER",  action = wezterm.action.QuitApplication },
-  { key = "p", mods = "SUPER",  action = wezterm.action.ShowLauncher },
-  -- {
-  --   key = "s",
-  --   mods = "LEADER",
-  --   action = wezterm.action_callback(function(window, pane)
-  --     local workspaces = {}
-  --     for i, workspace in ipairs(wezterm.mux.get_workspace_names()) do
-  --       table.insert(workspaces, { id = string.format("%d", i), label = workspace })
-  --     end
-  --
-  --     window:perform_action(
-  --       wezterm.action.InputSelector({
-  --         action = wezterm.action_callback(function(w, p, _, label)
-  --           if not label then
-  --             return
-  --           end
-  --
-  --           w:perform_action(
-  --             wezterm.action.SwitchToWorkspace({
-  --               name = label,
-  --             }),
-  --             p
-  --           )
-  --         end),
-  --         choices = workspaces,
-  --         title = "Select workspace",
-  --         fuzzy = true,
-  --       }),
-  --       pane
-  --     )
-  --   end),
-  -- },
+  { key = "q", mods = "SUPER",  action = wezterm.action.QuitApplication },
+  { key = "?", mods = "LEADER",  action = wezterm.action.ShowLauncher },
   {
-    key = "p",
-    mods = "SUPER|SHIFT",
+    key = "s",
+    mods = "LEADER",
     action = wezterm.action_callback(function(window, pane)
       local workspaces = {}
       for i, workspace in ipairs(wezterm.mux.get_workspace_names()) do
