@@ -114,25 +114,21 @@ config.keys = {
   },
   { key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
   { key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-  -- { key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
-  -- { key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
-  -- { key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
-  -- { key = "4", mods = "LEADER", action = wezterm.action({ ActivateTab = 3 }) },
-  -- { key = "5", mods = "LEADER", action = wezterm.action({ ActivateTab = 4 }) },
-  -- { key = "6", mods = "LEADER", action = wezterm.action({ ActivateTab = 5 }) },
-  -- { key = "7", mods = "LEADER", action = wezterm.action({ ActivateTab = 6 }) },
-  -- { key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
-  -- { key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
+  { key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
+  { key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
+  { key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
+  { key = "4", mods = "LEADER", action = wezterm.action({ ActivateTab = 3 }) },
+  { key = "5", mods = "LEADER", action = wezterm.action({ ActivateTab = 4 }) },
+  { key = "6", mods = "LEADER", action = wezterm.action({ ActivateTab = 5 }) },
+  { key = "7", mods = "LEADER", action = wezterm.action({ ActivateTab = 6 }) },
+  { key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
+  { key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
   { key = "p", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = -1 }) },
   { key = "n", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = 1 }) },
   { key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
   { key = "w", mods = "SUPER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
   { key = "[", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
-  -- { key = "-", mods = "SUPER",  action = "DecreaseFontSize" },
-  -- { key = "=", mods = "SUPER",  action = "IncreaseFontSize" },
-  -- { key = "c", mods = "SUPER", action = wezterm.action({ CopyTo = "Clipboard" }) },
   { key = "x", mods = "SUPER|SHIFT", action = wezterm.action.ActivateCopyMode },
-  -- { key = "v", mods = "SUPER", action = wezterm.action({ PasteFrom = "Clipboard" }) },
   { key = "q", mods = "SUPER",  action = wezterm.action.QuitApplication },
   { key = "?", mods = "LEADER",  action = wezterm.action.ShowLauncher },
   {
@@ -166,25 +162,25 @@ config.keys = {
       )
     end),
   },
-  -- {
-  --   key = "w",
-  --   mods = "LEADER",
-  --   action = wezterm.action.PromptInputLine({
-  --     description = "New workspace",
-  --     action = wezterm.action_callback(function(window, pane, line)
-  --       if not line then
-  --         return
-  --       end
-  --
-  --       window:perform_action(
-  --         wezterm.action.SwitchToWorkspace({
-  --           name = line,
-  --         }),
-  --         pane
-  --       )
-  --     end),
-  --   }),
-  -- },
+  {
+    key = "w",
+    mods = "LEADER",
+    action = wezterm.action.PromptInputLine({
+      description = "New workspace",
+      action = wezterm.action_callback(function(window, pane, line)
+        if not line then
+          return
+        end
+
+        window:perform_action(
+          wezterm.action.SwitchToWorkspace({
+            name = line,
+          }),
+          pane
+        )
+      end),
+    }),
+  },
   {
     key = "n",
     mods = "SUPER|SHIFT",
