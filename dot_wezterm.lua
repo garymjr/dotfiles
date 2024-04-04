@@ -8,7 +8,7 @@ end
 wezterm.on("update-status", function(window)
   window:set_left_status(wezterm.format({
     { Attribute = { Intensity = "Bold" } },
-    { Background = { Color = "#c34043" } },
+    { Background = { Color = "#e0dcc0" } },
     { Foreground = { Color = "#1f1f28" } },
     { Text = " " },
     { Text = window:active_workspace() },
