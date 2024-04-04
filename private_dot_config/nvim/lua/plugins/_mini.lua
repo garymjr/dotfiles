@@ -103,6 +103,11 @@ end
 if not Config.gitsigns then
   later(function()
     require("mini.diff").setup()
+
+    local line = vim.api.nvim_get_hl(0, { name = "LineNr" })
+    vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { bg = line.bg, fg = "NvimLightGreen" })
+    vim.api.nvim_set_hl(0, "MiniDiffSignChange", { bg = line.bg, fg = "NvimLightCyan" })
+    vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { bg = line.bg, fg = "NvimLightRed" })
   end)
 end
 
