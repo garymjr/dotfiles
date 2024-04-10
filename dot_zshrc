@@ -12,6 +12,7 @@ PATH=$HOME/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
 PATH=/opt/homebrew/bin:$PATH
+PATH=/opt/homebrew/sbin:$PATH
 PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
@@ -61,7 +62,9 @@ alias ta='tmux attach -t'
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

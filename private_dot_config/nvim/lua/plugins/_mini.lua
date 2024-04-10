@@ -77,6 +77,7 @@ now(function()
       { mode = "n", keys = "<leader>f",     desc = "+Find" },
       { mode = "n", keys = "<leader>g",     desc = "+Git" },
       { mode = "n", keys = "<leader>s",     desc = "+Search" },
+      { mode = "n", keys = "<leader>t",     desc = "+Toggle" },
       { mode = "n", keys = "<leader>u",     desc = "+UI" },
       { mode = "n", keys = "<leader>w",     desc = "+Windows" },
       { mode = "n", keys = "<leader>x",     desc = "+Lists" },
@@ -90,9 +91,11 @@ now(function()
   })
 end)
 
-later(function()
-  require("mini.comment").setup()
-end)
+if not Config.native_comments then
+  later(function()
+    require("mini.comment").setup()
+  end)
+end
 
 if not Config.cmp then
   later(function()

@@ -133,6 +133,37 @@ config.keys = {
   { key = "?", mods = "LEADER",  action = wezterm.action.ShowLauncher },
   {
     key = "s",
+    mods = "SUPER",
+    action = wezterm.action_callback(function(window, pane)
+      local workspaces = {}
+      for i, workspace in ipairs(wezterm.mux.get_workspace_names()) do
+        table.insert(workspaces, { id = string.format("%d", i), label = workspace })
+      end
+
+      window:perform_action(
+        wezterm.action.InputSelector({
+          action = wezterm.action_callback(function(w, p, _, label)
+            if not label then
+              return
+            end
+
+            w:perform_action(
+              wezterm.action.SwitchToWorkspace({
+                name = label,
+              }),
+              p
+            )
+          end),
+          choices = workspaces,
+          title = "Select workspace",
+          fuzzy = true,
+        }),
+        pane
+      )
+    end),
+  },
+  {
+    key = "s",
     mods = "LEADER",
     action = wezterm.action_callback(function(window, pane)
       local workspaces = {}

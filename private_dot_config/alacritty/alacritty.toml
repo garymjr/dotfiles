@@ -1,5 +1,9 @@
 import = ["~/.config/alacritty/themes/kanagawa.toml"]
 
+[shell]
+program = "zsh"
+args = ["-l", "-c", "/opt/homebrew/bin/tmux new-session -A -s scratch -c $HOME"]
+
 [scrolling]
 history = 0
 
