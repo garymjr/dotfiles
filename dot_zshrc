@@ -83,7 +83,8 @@ alias g=git
 
 bindkey '^f' autosuggest-accept
 
-fpath+=$HOME/.zsh_functions
+fpath+=($HOME/.zsh_functions)
+fpath+=(/opt/homebrew/share/zsh/site-functions)
 
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit

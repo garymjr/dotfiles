@@ -87,6 +87,8 @@ config.colors = {
   },
 }
 
+config.default_workspace = "scratch"
+
 -- config.debug_key_events = true
 -- config.disable_default_key_bindings = true
 config.enable_tab_bar = true
