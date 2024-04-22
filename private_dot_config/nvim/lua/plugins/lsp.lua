@@ -66,7 +66,7 @@ MiniDeps.add({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "folke/neodev.nvim",
-    -- "hrsh7th/cmp-nvim-lsp",
+    Config.use_epo and "nvimdev/epo.nvim" or "hrsh7th/cmp-nvim-lsp",
   },
 })
 
@@ -172,11 +172,13 @@ MiniDeps.later(function()
       function(server_name)
         local server = servers[server_name] or {}
         local has_cmp, _ = pcall(require, "cmp")
+        local has_epo, _ = pcall(require, "epo")
         server.capabilities = vim.tbl_deep_extend(
           "force",
           {},
           vim.lsp.protocol.make_client_capabilities(),
-          has_cmp and require("cmp_nvim_lsp").default_capabilities() or {}
+          has_cmp and require("cmp_nvim_lsp").default_capabilities() or {},
+          has_epo and require("epo").register_cap() or {}
         )
         local on_attach = server.on_attach
         server.on_attach = function(client, bufnr)

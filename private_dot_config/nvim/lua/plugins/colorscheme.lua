@@ -97,17 +97,3 @@ MiniDeps.now(function()
   })
   vim.cmd.colorscheme("kanagawa")
 end)
-
-if false then
-  MiniDeps.add("ribru17/bamboo.nvim")
-  MiniDeps.now(function()
-    require("bamboo").setup({
-      code_style = {
-        conditionals = { italic = false },
-        namespace = { italic = false },
-        parameter = { italic = false },
-      },
-    })
-    require("bamboo").load()
-  end)
-end

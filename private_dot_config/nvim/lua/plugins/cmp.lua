@@ -1,4 +1,4 @@
-if Config.cmp then
+if not Config.use_epo then
   MiniDeps.add({
     source = "hrsh7th/nvim-cmp",
     depends = {

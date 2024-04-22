@@ -97,11 +97,11 @@ if not Config.native_comments then
   end)
 end
 
-if not Config.cmp then
-  later(function()
-    require("mini.completion").setup()
-  end)
-end
+-- if not Config.cmp then
+--   later(function()
+--     require("mini.completion").setup()
+--   end)
+-- end
 
 if not Config.gitsigns then
   later(function()

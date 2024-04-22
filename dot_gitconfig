@@ -11,15 +11,22 @@
   excludesFile = ~/.config/git/ignore
 [merge]
   conflictstyle = diff3
+  tool = difftastic
+[rebase]
+  tool = difftastic
 [pull]
   rebase = true
 [branch]
   autosetupmerge = always
   autosetuprebase = always
 [diff]
-  tool = difft
+  external = difft
 [difftool]
   prompt = false
+  tool = difftastic
+[mergetool]
+  prompt = false
+  tool = difftastic
 [difftool "difft"]
   cmd = difft "$LOCAL" "$REMOTE"
 [pager]

@@ -102,7 +102,7 @@ config.font_rules = {
 }
 
 config.harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" }
-config.font_size = 14
+config.font_size = 16
 config.force_reverse_video_cursor = true
 config.leader = { key = "Space", mods = "CTRL" }
 
