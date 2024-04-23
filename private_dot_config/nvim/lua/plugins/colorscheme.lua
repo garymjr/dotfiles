@@ -90,10 +90,17 @@ if false then
   end)
 end
 
-MiniDeps.add("rebelot/kanagawa.nvim")
+if false then
+  MiniDeps.add("rebelot/kanagawa.nvim")
+  MiniDeps.now(function()
+    require("kanagawa").setup({
+      keywordStyle = { italic = false },
+    })
+    vim.cmd.colorscheme("kanagawa")
+  end)
+end
+
+MiniDeps.add("mcauley-penney/ice-cave.nvim")
 MiniDeps.now(function()
-  require("kanagawa").setup({
-    keywordStyle = { italic = false },
-  })
-  vim.cmd.colorscheme("kanagawa")
+  vim.cmd.colorscheme("ice-cave")
 end)
