@@ -66,3 +66,5 @@
   swc = switch -c
 [safe]
 	directory = /Users/gamurray/code/neovim
+[init]
+	defaultBranch = main
