@@ -132,93 +132,15 @@ config.keys = {
   { key = "[", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
   { key = "x", mods = "SUPER|SHIFT", action = wezterm.action.ActivateCopyMode },
   { key = "q", mods = "SUPER",  action = wezterm.action.QuitApplication },
-  { key = "?", mods = "LEADER",  action = wezterm.action.ShowLauncher },
-  {
-    key = "s",
-    mods = "SUPER",
-    action = wezterm.action_callback(function(window, pane)
-      local workspaces = {}
-      for i, workspace in ipairs(wezterm.mux.get_workspace_names()) do
-        table.insert(workspaces, { id = string.format("%d", i), label = workspace })
-      end
-
-      window:perform_action(
-        wezterm.action.InputSelector({
-          action = wezterm.action_callback(function(w, p, _, label)
-            if not label then
-              return
-            end
-
-            w:perform_action(
-              wezterm.action.SwitchToWorkspace({
-                name = label,
-              }),
-              p
-            )
-          end),
-          choices = workspaces,
-          title = "Select workspace",
-          fuzzy = true,
-        }),
-        pane
-      )
-    end),
-  },
-  {
-    key = "s",
-    mods = "LEADER",
-    action = wezterm.action_callback(function(window, pane)
-      local workspaces = {}
-      for i, workspace in ipairs(wezterm.mux.get_workspace_names()) do
-        table.insert(workspaces, { id = string.format("%d", i), label = workspace })
-      end
-
-      window:perform_action(
-        wezterm.action.InputSelector({
-          action = wezterm.action_callback(function(w, p, _, label)
-            if not label then
-              return
-            end
-
-            w:perform_action(
-              wezterm.action.SwitchToWorkspace({
-                name = label,
-              }),
-              p
-            )
-          end),
-          choices = workspaces,
-          title = "Select workspace",
-          fuzzy = true,
-        }),
-        pane
-      )
-    end),
-  },
+  { key = "p", mods = "SUPER",  action = wezterm.action.ShowLauncher },
+  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+  { key = "t", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|TABS" }) },
+  { key = "?", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|COMMANDS" }) },
   {
     key = "w",
     mods = "LEADER",
     action = wezterm.action.PromptInputLine({
-      description = "New workspace",
-      action = wezterm.action_callback(function(window, pane, line)
-        if not line then
-          return
-        end
-
-        window:perform_action(
-          wezterm.action.SwitchToWorkspace({
-            name = line,
-          }),
-          pane
-        )
-      end),
-    }),
-  },
-  {
-    key = "n",
-    mods = "SUPER|SHIFT",
-    action = wezterm.action.PromptInputLine({
-      description = "New workspace",
+      description = "Create workspace",
       action = wezterm.action_callback(function(window, pane, line)
         if not line then
           return
@@ -247,6 +169,11 @@ config.keys = {
     key = "Enter",
     mods = "ALT",
     action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = "g",
+    mods = "LEADER",
+    action = wezterm.action.SplitVertical({ args = { "/opt/homebrew/bin/lazygit" } }),
   },
   -- move between split panes
   split_nav("move", "h"),
