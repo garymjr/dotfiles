@@ -6,15 +6,15 @@ export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
 export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
 PATH=$HOME/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
 PATH=/opt/homebrew/bin:$PATH
+PATH=/opt/homebrew/sbin:$PATH
 PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
-PATH=$GOBIN:$PATH
+PATH=$GOPATH/bin:$PATH
 PATH=$HOME/zig/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH
@@ -44,7 +44,7 @@ zmodload -i zsh/complist
 
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^k' edit-command-line
+bindkey '^e' edit-command-line
 
 alias ls=eza
 alias vi=nvim
@@ -60,8 +60,9 @@ alias ta='tmux attach -t'
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fzf --zsh)"
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -78,14 +79,15 @@ alias g=git
 # alias fanauth='TERM=xterm-256color fanauth'
 # alias ssh='TERM=xterm-256color ssh'
 
-bindkey '^f' autosuggest-accept
+bindkey '^y' autosuggest-accept
 
-fpath+=$HOME/.zsh_functions
+fpath+=($HOME/.zsh_functions)
+fpath+=(/opt/homebrew/share/zsh/site-functions)
 
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit
 promptinit
 prompt pure
 
-eval "$(/Users/garymjr/.local/bin/mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
 eval "$(zoxide init zsh)"

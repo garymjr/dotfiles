@@ -8,7 +8,7 @@ end
 wezterm.on("update-status", function(window)
   window:set_left_status(wezterm.format({
     { Attribute = { Intensity = "Bold" } },
-    { Background = { Color = "#e0dcc0" } },
+    { Background = { Color = "#ff5d62" } },
     { Foreground = { Color = "#1f1f28" } },
     { Text = " " },
     { Text = window:active_workspace() },
@@ -87,20 +87,22 @@ config.colors = {
   },
 }
 
+config.default_workspace = "scratch"
+
 -- config.debug_key_events = true
 -- config.disable_default_key_bindings = true
 config.enable_tab_bar = true
-config.font = wezterm.font({ family = "MonaspiceNe Nerd Font" })
+config.font = wezterm.font({ family = "Maple Mono NF" })
 
-config.font_rules = {
-  {
-    italic = true,
-    font = wezterm.font({ family = "MonaspiceRn Nerd Font" }),
-  },
-}
+-- config.font_rules = {
+--   {
+--     italic = true,
+--     font = wezterm.font({ family = "Maple Mono NF", style = "Italic" }),
+--   },
+-- }
 
-config.harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" }
-config.font_size = 14
+-- config.harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" }
+config.font_size = 16
 config.force_reverse_video_cursor = true
 config.leader = { key = "Space", mods = "CTRL" }
 
@@ -130,62 +132,15 @@ config.keys = {
   { key = "[", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
   { key = "x", mods = "SUPER|SHIFT", action = wezterm.action.ActivateCopyMode },
   { key = "q", mods = "SUPER",  action = wezterm.action.QuitApplication },
-  { key = "?", mods = "LEADER",  action = wezterm.action.ShowLauncher },
-  {
-    key = "s",
-    mods = "LEADER",
-    action = wezterm.action_callback(function(window, pane)
-      local workspaces = {}
-      for i, workspace in ipairs(wezterm.mux.get_workspace_names()) do
-        table.insert(workspaces, { id = string.format("%d", i), label = workspace })
-      end
-
-      window:perform_action(
-        wezterm.action.InputSelector({
-          action = wezterm.action_callback(function(w, p, _, label)
-            if not label then
-              return
-            end
-
-            w:perform_action(
-              wezterm.action.SwitchToWorkspace({
-                name = label,
-              }),
-              p
-            )
-          end),
-          choices = workspaces,
-          title = "Select workspace",
-          fuzzy = true,
-        }),
-        pane
-      )
-    end),
-  },
+  { key = "p", mods = "SUPER",  action = wezterm.action.ShowLauncher },
+  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+  { key = "t", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|TABS" }) },
+  { key = "?", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|COMMANDS" }) },
   {
     key = "w",
     mods = "LEADER",
     action = wezterm.action.PromptInputLine({
-      description = "New workspace",
-      action = wezterm.action_callback(function(window, pane, line)
-        if not line then
-          return
-        end
-
-        window:perform_action(
-          wezterm.action.SwitchToWorkspace({
-            name = line,
-          }),
-          pane
-        )
-      end),
-    }),
-  },
-  {
-    key = "n",
-    mods = "SUPER|SHIFT",
-    action = wezterm.action.PromptInputLine({
-      description = "New workspace",
+      description = "Create workspace",
       action = wezterm.action_callback(function(window, pane, line)
         if not line then
           return
@@ -214,6 +169,11 @@ config.keys = {
     key = "Enter",
     mods = "ALT",
     action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = "g",
+    mods = "LEADER",
+    action = wezterm.action.SplitVertical({ args = { "/opt/homebrew/bin/lazygit" } }),
   },
   -- move between split panes
   split_nav("move", "h"),
