@@ -11,22 +11,15 @@
   excludesFile = ~/.config/git/ignore
 [merge]
   conflictstyle = diff3
-  tool = difftastic
-[rebase]
-  tool = difftastic
 [pull]
   rebase = true
 [branch]
   autosetupmerge = always
   autosetuprebase = always
 [diff]
-  external = difft
+  tool = difft
 [difftool]
   prompt = false
-  tool = difftastic
-[mergetool]
-  prompt = false
-  tool = difftastic
 [difftool "difft"]
   cmd = difft "$LOCAL" "$REMOTE"
 [pager]
@@ -53,7 +46,7 @@
   puf = !git branch --show-current | xargs git push --force-with-lease origin
   puo = !git branch --show-current | xargs git push -u origin
   ras = rebase -i --autosquash
-  rt = !cd $(git rev-parse --show-toplevel)
+  rt = !cd \"$(git rev-parse --show-toplevel || echo .)\"
   s = status
   so = spinoff
   st = stash
@@ -66,5 +59,3 @@
   swc = switch -c
 [safe]
 	directory = /Users/gamurray/code/neovim
-[init]
-	defaultBranch = main
