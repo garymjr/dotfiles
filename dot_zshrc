@@ -44,7 +44,7 @@ zmodload -i zsh/complist
 
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey '^o' edit-command-line
 
 alias ls=eza
 alias vi=nvim

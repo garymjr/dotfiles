@@ -1,3 +1,4 @@
+--- @type Wezterm
 local wezterm = require("wezterm")
 
 local function get_process_name(tab)
@@ -17,16 +18,17 @@ wezterm.on("update-status", function(window)
   }))
 end)
 
-wezterm.on("format-tab-title", function(tab)
+wezterm.on("format-tab-title", function(tab) ---@param tab TabInformation
   local format = {
     { Text = " " },
     { Text = string.format("%d: ", tab.tab_index + 1) },
   }
 
   if tab.is_active then
-    table.insert(format, 1, { Background = { Color = "#1f1f28" } })
+    table.insert(format, 1, { Background = { Color = "#252623" } })
+    table.insert(format, 1, { Foreground = { Color = "#efe5ce" } })
   else
-    table.insert(format, 1, { Background = { Color = "#0c0c0f" } })
+    table.insert(format, 1, { Background = { Color = "#1e1e2f" } })
   end
 
   if tab.tab_title ~= "" then
@@ -79,7 +81,8 @@ end
 
 local config = wezterm.config_builder()
 
-config.color_scheme = "Kanagawa (Gogh)"
+-- config.color_scheme = "Kanagawa (Gogh)"
+config.color_scheme = "Bamboo"
 
 config.colors = {
   tab_bar = {
@@ -101,6 +104,8 @@ config.font = wezterm.font({ family = "Maple Mono NF" })
 --   },
 -- }
 
+-- NOTE: this is for monaspace fonts
+--
 -- config.harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" }
 config.font_size = 16
 config.force_reverse_video_cursor = true
