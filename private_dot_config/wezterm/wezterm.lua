@@ -1,6 +1,7 @@
---- @type Wezterm
+--- @type wezterm
 local wezterm = require("wezterm")
 
+--- @param tab TabInformation
 local function get_process_name(tab)
   local process_name = tab.active_pane.foreground_process_name
   return string.format("%s", string.gsub(process_name, "(.*[/\\])(.*)", "%2"))
@@ -18,14 +19,14 @@ wezterm.on("update-status", function(window)
   }))
 end)
 
-wezterm.on("format-tab-title", function(tab) ---@param tab TabInformation
+wezterm.on("format-tab-title", function(tab)
   local format = {
     { Text = " " },
     { Text = string.format("%d: ", tab.tab_index + 1) },
   }
 
   if tab.is_active then
-    table.insert(format, 1, { Background = { Color = "#252623" } })
+    table.insert(format, 1, { Background = { Color = "#1f1f28" } })
     table.insert(format, 1, { Foreground = { Color = "#efe5ce" } })
   else
     table.insert(format, 1, { Background = { Color = "#1e1e2f" } })
@@ -81,12 +82,11 @@ end
 
 local config = wezterm.config_builder()
 
--- config.color_scheme = "Kanagawa (Gogh)"
-config.color_scheme = "Bamboo"
+config.color_scheme = "Kanagawa (Gogh)"
 
 config.colors = {
   tab_bar = {
-    background = "#1e1e2e",
+    background = "#2a2a38",
   },
 }
 
