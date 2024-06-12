@@ -3,20 +3,22 @@ return {
 	{ "catppuccin", enabled = false },
 	{
 		"rebelot/kanagawa.nvim",
-		dependencies = {
-			{
-				"LazyVim",
-				opts = {
-					colorscheme = "kanagawa",
-				},
-			},
-			{
-				"lazy.nvim",
-				opts = { install = { colorscheme = { "kanagawa" } } },
-			},
-		},
 		opts = {
 			keywordStyle = { italic = false },
 		},
+	},
+	{
+		"savq/melange-nvim",
+		config = false,
+	},
+	{
+		"LazyVim",
+		opts = {
+			colorscheme = "melange",
+		},
+	},
+	{
+		"lazy.nvim",
+		opts = { install = { colorscheme = { "melange" } } },
 	},
 }
