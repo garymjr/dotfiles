@@ -23,13 +23,20 @@ export SHELL=/bin/zsh
 export GOPROXY=direct
 export GOSUMDB=
 
+export NVM_DIR="$HOME/.nvm"
+
+autoload -U +X compinit && compinit
+source $HOME/.zsh/completion.zsh
+
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source $HOME/.zsh/completion.zsh
-autoload -Uz compinit
+source $HOME/.zsh/nvm.plugin.zsh
+zstyle ':omz:plugins:nvm' lazy yes
+
+source $HOME/.zsh/mise.plugin.zsh
 
 # Cache completion if nothing changed - faster startup time
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -60,16 +67,7 @@ alias ta='tmux attach -t'
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
 
-if command -v fzf >/dev/null 2>&1; then
-  eval "$(fzf --zsh)"
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# source ~/.zshrc.local
-[ -s "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
+[ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
 alias luamake=/Users/gamurray/Code/lua-language-server/3rd/luamake/luamake
 
@@ -89,5 +87,18 @@ autoload -U promptinit
 promptinit
 prompt pure
 
-eval "$(~/.local/bin/mise activate zsh)"
-eval "$(zoxide init zsh)"
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
+
+if command -v chezmoi >/dev/null 2>&1; then
+  eval "$(chezmoi completion zsh)"
+fi
+
+if command -v mise >/dev/null 2>&1; then
+  eval "$(~/.local/bin/mise activate zsh)"
+fi
+
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi

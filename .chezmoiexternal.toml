@@ -1,11 +1,36 @@
-[".zsh/fast-syntax-highlighting"]
-    type = "git-repo"
-    url = "https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
-
 [".zsh/pure"]
-    type = "git-repo"
-    url = "https://github.com/sindresorhus/pure.git"
+type = "git-repo"
+url = "https://github.com/sindresorhus/pure.git"
+
+[".zsh/fast-syntax-highlighting"]
+type = "git-repo"
+url = "https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
 
 [".zsh/zsh-autosuggestions"]
-    type = "git-repo"
-    url = "https://github.com/zsh-users/zsh-autosuggestions.git"
+type = "git-repo"
+url = "https://github.com/zsh-users/zsh-autosuggestions.git"
+
+[".zsh/completion.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/completion.zsh"
+refreshPeriod = "168h"
+
+[".zsh/key-bindings.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/key-bindings.zsh"
+refreshPeriod = "168h"
+
+[".zsh/history.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/history.zsh"
+refreshPeriod = "168h"
+
+[".zsh/mise.plugin.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/mise/mise.plugin.zsh"
+refreshPeriod = "168h"
+
+[".zsh/nvm.plugin.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/nvm/nvm.plugin.zsh"
+refreshPeriod = "168h"
