@@ -5,20 +5,24 @@ return {
 		"rebelot/kanagawa.nvim",
 		opts = {
 			keywordStyle = { italic = false },
+			overrides = function(colors)
+				return {
+					LineNr = { bg = colors.palette.sumiInk3 },
+					GitSignsAdd = { bg = colors.palette.sumiInk3 },
+					GitSignsChange = { bg = colors.palette.sumiInk3 },
+					GitSignsDelete = { bg = colors.palette.sumiInk3 },
+				}
+			end,
 		},
-	},
-	{
-		"savq/melange-nvim",
-		config = false,
 	},
 	{
 		"LazyVim",
 		opts = {
-			colorscheme = "melange",
+			colorscheme = "kanagawa",
 		},
 	},
 	{
 		"lazy.nvim",
-		opts = { install = { colorscheme = { "melange" } } },
+		opts = { install = { colorscheme = { "kanagawa" } } },
 	},
 }
