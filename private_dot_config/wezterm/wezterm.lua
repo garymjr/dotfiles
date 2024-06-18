@@ -10,7 +10,7 @@ end
 wezterm.on("update-status", function(window)
   window:set_left_status(wezterm.format({
     { Attribute = { Intensity = "Bold" } },
-    { Background = { Color = "#a3a9ce" } },
+    { Background = { Color = "#957fb8" } },
     { Foreground = { Color = "#292522" } },
     { Text = " " },
     { Text = window:active_workspace() },
@@ -26,10 +26,10 @@ wezterm.on("format-tab-title", function(tab)
   }
 
   if tab.is_active then
-    table.insert(format, 1, { Background = { Color = "#292522" } })
-    table.insert(format, 1, { Foreground = { Color = "#ebc06d" } })
+    table.insert(format, 1, { Background = { Color = "#1f1f28" } })
+    table.insert(format, 1, { Foreground = { Color = "#e6c384" } })
   else
-    table.insert(format, 1, { Background = { Color = "#2f2c29" } })
+    table.insert(format, 1, { Background = { Color = "#2f2f38" } })
   end
 
   if tab.tab_title ~= "" then
@@ -82,12 +82,11 @@ end
 
 local config = wezterm.config_builder()
 
--- config.color_scheme = "Kanagawa (Gogh)"
-config.color_scheme = "melange"
+config.color_scheme = "Kanagawa (Gogh)"
 
 config.colors = {
   tab_bar = {
-    background = "#2f2c29",
+    background = "#2f2f38",
   },
 }
 
