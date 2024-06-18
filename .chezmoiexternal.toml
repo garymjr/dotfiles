@@ -24,13 +24,3 @@ refreshPeriod = "168h"
 type = "file"
 url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/history.zsh"
 refreshPeriod = "168h"
-
-[".zsh/mise.plugin.zsh"]
-type = "file"
-url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/mise/mise.plugin.zsh"
-refreshPeriod = "168h"
-
-[".zsh/nvm.plugin.zsh"]
-type = "file"
-url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/nvm/nvm.plugin.zsh"
-refreshPeriod = "168h"
