@@ -11,10 +11,3 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 		end
 	end,
 })
-
-vim.api.nvim_create_autocmd("LspAttach", {
-	group = augroup("completion"),
-	callback = function(args)
-		vim.bo[args.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
-	end,
-})
