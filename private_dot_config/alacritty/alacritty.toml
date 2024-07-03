@@ -1,13 +1,13 @@
-import = ["~/.config/alacritty/themes/kanagawa.toml"]
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
 
 [scrolling]
 history = 0
 
 [font]
 normal = { family = "Maple Mono NF", style = "Regular" }
-bold = { family = "Maple Mono NF", style = "SemiBold" }
+bold = { family = "Maple Mono NF", style = "Bold" }
 italic = { family = "Maple Mono NF", style = "Italic" }
-bold_italic = { family = "Maple Mono NF", style = "SemiBold Italic" }
+bold_italic = { family = "Maple Mono NF", style = "Bold Italic" }
 size = 16.0
 
 [window]

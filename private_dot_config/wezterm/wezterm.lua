@@ -96,8 +96,7 @@ config.default_workspace = "scratch"
 
 -- config.debug_key_events = true
 -- config.disable_default_key_bindings = true
-config.enable_scroll_bar = false
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.font = wezterm.font({ family = "Maple Mono NF SemiBold" })
 
 config.font_rules = {

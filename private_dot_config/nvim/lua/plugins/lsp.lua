@@ -9,6 +9,7 @@ return {
 				enabled = false,
 			},
 			servers = {
+        cssls = {},
 				tailwindcss = {
 					init_options = {
 						userLanguages = {
@@ -24,7 +25,6 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		event = "VeryLazy",
-		dependencies = { "nvim-lspconfig" },
 		opts = {},
 	},
 }
