@@ -82,6 +82,8 @@ end
 
 local config = wezterm.config_builder()
 
+config.audible_bell = "Disabled"
+
 config.color_scheme = "Kanagawa (Gogh)"
 
 config.colors = {
@@ -94,21 +96,23 @@ config.default_workspace = "scratch"
 
 -- config.debug_key_events = true
 -- config.disable_default_key_bindings = true
-config.enable_tab_bar = true
-config.font = wezterm.font({ family = "Maple Mono NF" })
+config.enable_scroll_bar = false
+config.enable_tab_bar = false
+config.font = wezterm.font({ family = "Maple Mono NF SemiBold" })
 
--- config.font_rules = {
---   {
---     italic = true,
---     font = wezterm.font({ family = "Maple Mono NF", style = "Italic" }),
---   },
--- }
+config.font_rules = {
+  {
+    italic = true,
+    font = wezterm.font({ family = "Maple Mono NF SemiBold", style = "Italic" }),
+  },
+}
 
 -- NOTE: this is for monaspace fonts
 --
 -- config.harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" }
 config.font_size = 16
 config.force_reverse_video_cursor = true
+config.front_end = "WebGpu"
 config.leader = { key = "Space", mods = "CTRL" }
 
 config.keys = {
@@ -178,7 +182,7 @@ config.keys = {
   {
     key = "g",
     mods = "LEADER",
-    action = wezterm.action.SplitVertical({ args = { "/opt/homebrew/bin/lazygit" } }),
+    action = wezterm.action.SplitVertical({ args = { "lazygit" } }),
   },
   -- move between split panes
   split_nav("move", "h"),

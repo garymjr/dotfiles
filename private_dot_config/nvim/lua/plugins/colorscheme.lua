@@ -3,6 +3,7 @@ return {
 	{ "catppuccin", enabled = false },
 	{
 		"rebelot/kanagawa.nvim",
+    enabled = false,
 		opts = {
 			keywordStyle = { italic = false },
 			overrides = function(colors)
@@ -18,11 +19,19 @@ return {
 	{
 		"LazyVim",
 		opts = {
-			colorscheme = "kanagawa",
+			colorscheme = "habamax",
 		},
 	},
 	{
 		"lazy.nvim",
-		opts = { install = { colorscheme = { "kanagawa" } } },
+		opts = { install = { colorscheme = { "habamax" } } },
 	},
+  {
+    "echasnovski/mini.hues",
+    lazy = false,
+    opts = {
+      background = "#1e1e2e",
+      foreground = "#cdd6f4",
+    },
+  },
 }
