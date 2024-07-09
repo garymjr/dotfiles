@@ -13,5 +13,11 @@ return {
 			end
 		end,
 	},
-  { "indent-blankline.nvim", enabled = false }
+	{ "indent-blankline.nvim", enabled = false },
+	-- { "lualine.nvim", enabled = false },
+	-- {
+	-- 	"echasnovski/mini.statusline",
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- },
 }

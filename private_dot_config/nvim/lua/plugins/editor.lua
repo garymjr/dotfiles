@@ -4,53 +4,13 @@ return {
 	{ "flash.nvim", enabled = false },
 	{
 		"telescope.nvim",
+		keys = {
+			{ "<leader>fc", "<cmd>Telescope chezmoi find_files<cr>", desc = "Find Config File", silent = true },
+		},
 		opts = function(_, opts)
 			local actions = require("telescope.actions.layout")
 			opts.defaults.mappings.i["<c-o>"] = actions.toggle_preview
 		end,
-	},
-	{
-		"stevearc/oil.nvim",
-		cmd = "Oil",
-		keys = {
-			{
-				"<leader>fm",
-				function()
-					require("oil").open(LazyVim.root())
-				end,
-				desc = "Open Oil (Root dir)",
-			},
-			{
-				"<leader>fM",
-				"<cmd>Oil<cr>",
-				desc = "Open Oil (cwd)",
-				silent = true,
-			},
-			{
-				"-",
-				"<leader>fM",
-				silent = true,
-				remap = true,
-			},
-		},
-		opts = {
-			keymaps = {
-				["g?"] = "actions.show_help",
-				["<CR>"] = "actions.select",
-				["<C-s>"] = "actions.select_vsplit",
-				["<C-t>"] = "actions.select_tab",
-				["<C-p>"] = "actions.preview",
-				["-"] = "actions.parent",
-				["_"] = "actions.open_cwd",
-				["`"] = "actions.cd",
-				["~"] = "actions.tcd",
-				["gs"] = "actions.change_sort",
-				["gx"] = "actions.open_external",
-				["g."] = "actions.toggle_hidden",
-				["g\\"] = "actions.toggle_trash",
-				["q"] = "actions.close",
-			},
-		},
 	},
 	{
 		"otavioschwanck/arrow.nvim",
@@ -101,6 +61,6 @@ return {
 		keys = {
 			{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview", silent = true },
 		},
-    opts = {},
+		opts = {},
 	},
 }

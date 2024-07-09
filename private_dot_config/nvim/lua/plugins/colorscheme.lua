@@ -3,7 +3,7 @@ return {
 	{ "catppuccin", enabled = false },
 	{
 		"rebelot/kanagawa.nvim",
-    enabled = false,
+		enabled = false,
 		opts = {
 			keywordStyle = { italic = false },
 			overrides = function(colors)
@@ -16,22 +16,15 @@ return {
 			end,
 		},
 	},
+	{ "echasnovski/mini.hues", lazy = false },
 	{
 		"LazyVim",
 		opts = {
-			colorscheme = "habamax",
+			colorscheme = "minifox",
 		},
 	},
 	{
 		"lazy.nvim",
-		opts = { install = { colorscheme = { "habamax" } } },
+		opts = { install = { colorscheme = { "minifox" } } },
 	},
-  {
-    "echasnovski/mini.hues",
-    lazy = false,
-    opts = {
-      background = "#1e1e2e",
-      foreground = "#cdd6f4",
-    },
-  },
 }
