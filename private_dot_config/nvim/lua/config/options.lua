@@ -8,11 +8,11 @@ opt.list = false
 opt.swapfile = false
 opt.timeoutlen = 300
 
-vim.filetype.add({
+vim.filetype.add {
 	extension = {
 		mdx = "mdx",
 	},
-})
+}
 
 vim.treesitter.language.register("markdown", "mdx")
 

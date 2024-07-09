@@ -3,7 +3,7 @@ return {
 	{
 		"nvim-cmp",
 		opts = function(_, opts)
-			local cmp = require("cmp")
+			local cmp = require "cmp"
 			opts.mapping["<CR>"] = function(fallback)
 				cmp.abort()
 				fallback()

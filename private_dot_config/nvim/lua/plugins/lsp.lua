@@ -9,7 +9,7 @@ return {
 				enabled = false,
 			},
 			servers = {
-        cssls = {},
+				cssls = {},
 				tailwindcss = {
 					init_options = {
 						userLanguages = {

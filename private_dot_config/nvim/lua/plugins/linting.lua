@@ -18,11 +18,11 @@ return {
 				},
 			},
 		},
-    formatters_by_ft = {
-      typescript = {"biome"},
-      typescriptreact = {"biome"},
-      javascript = {"biome"},
-      json = {"biome"},
-    },
+		formatters_by_ft = {
+			typescript = { "biome" },
+			typescriptreact = { "biome" },
+			javascript = { "biome" },
+			json = { "biome" },
+		},
 	},
 }

@@ -3,7 +3,7 @@ return {
 		"nvim-treesitter",
 		opts = function(_, opts)
 			opts.ensure_installed = vim.tbl_deep_extend("force", {}, opts.ensure_installed, {
-        "diff",
+				"diff",
 				"eex",
 				"elixir",
 				"graphql",

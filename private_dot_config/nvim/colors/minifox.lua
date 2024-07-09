@@ -1,16 +1,13 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
 	group = vim.api.nvim_create_augroup("gwm_minicat", { clear = true }),
 	pattern = "minicat",
-	callback = function()
-		vim.api.nvim_set_hl(0, "StatusLine", { fg = "#cdcecf", bg = "#192330" })
-	end,
+	callback = function() vim.api.nvim_set_hl(0, "StatusLine", { fg = "#cdcecf", bg = "#192330" }) end,
 })
 
-require("mini.hues").setup({
+require("mini.hues").setup {
 	background = "#192330",
 	foreground = "#cdcecf",
-  plugins = {
-    default = true,
-  },
-})
-
+	plugins = {
+		default = true,
+	},
+}

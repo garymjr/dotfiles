@@ -8,7 +8,7 @@ return {
 			{ "<leader>fc", "<cmd>Telescope chezmoi find_files<cr>", desc = "Find Config File", silent = true },
 		},
 		opts = function(_, opts)
-			local actions = require("telescope.actions.layout")
+			local actions = require "telescope.actions.layout"
 			opts.defaults.mappings.i["<c-o>"] = actions.toggle_preview
 		end,
 	},
@@ -17,15 +17,11 @@ return {
 		keys = {
 			{
 				",",
-				function()
-					require("arrow.commands").commands.open()
-				end,
+				function() require("arrow.commands").commands.open() end,
 			},
 			{
 				"m",
-				function()
-					require("arrow.buffer_ui").openMenu(vim.api.nvim_get_current_buf())
-				end,
+				function() require("arrow.buffer_ui").openMenu(vim.api.nvim_get_current_buf()) end,
 			},
 		},
 		opts = {
@@ -52,9 +48,7 @@ return {
 		keys = {
 			{ "<leader>ux", "<cmd>DBUIToggle<cr>", desc = "DadBod", silent = true },
 		},
-		config = function()
-			vim.g.db_ui_use_nerd_fonts = 1
-		end,
+		config = function() vim.g.db_ui_use_nerd_fonts = 1 end,
 	},
 	{
 		"sindrets/diffview.nvim",
