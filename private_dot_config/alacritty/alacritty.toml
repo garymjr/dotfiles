@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+import = ["~/.config/alacritty/themes/nightfox.toml"]
 
 [scrolling]
 history = 0
