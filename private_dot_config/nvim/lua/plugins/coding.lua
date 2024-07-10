@@ -15,5 +15,14 @@ return {
 			opts.mapping["<C-y>"] = LazyVim.cmp.confirm()
 		end,
 	},
-	{ "nvim-snippets", enabled = false },
+	{
+		"nvim-snippets",
+		dev = true,
+		opts = {
+			extended_filetypes = {
+				typescript = { "javascript", "javascriptreact", "jsdoc" },
+				typescriptreact = { "javascript", "javascriptreact", "jsdoc" },
+			},
+		},
+	},
 }
