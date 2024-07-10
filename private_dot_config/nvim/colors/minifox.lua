@@ -4,6 +4,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function() vim.api.nvim_set_hl(0, "StatusLine", { fg = "#cdcecf", bg = "#192330" }) end,
 })
 
+vim.opt.background = "dark"
 require("mini.hues").setup {
 	background = "#192330",
 	foreground = "#cdcecf",

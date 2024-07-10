@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/nightfox.toml"]
+import = ["~/.config/alacritty/themes/dawnfox.toml"]
 
 [scrolling]
 history = 0

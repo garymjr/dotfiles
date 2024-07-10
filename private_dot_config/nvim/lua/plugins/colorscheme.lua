@@ -20,11 +20,11 @@ return {
 	{
 		"LazyVim",
 		opts = {
-			colorscheme = "minifox",
+			colorscheme = "minidawn",
 		},
 	},
 	{
 		"lazy.nvim",
-		opts = { install = { colorscheme = { "minifox" } } },
+		opts = { install = { colorscheme = { "minidawn" } } },
 	},
 }

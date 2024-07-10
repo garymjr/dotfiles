@@ -5,6 +5,9 @@ export EDITOR=nvim
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
+# for elixir/erlang support
+export KERL_BUILD_DOCS="yes"
+
 export GOPATH=$HOME/go
 PATH=$HOME/bin:$PATH
 PATH=/usr/local/bin:$PATH
