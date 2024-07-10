@@ -2,7 +2,7 @@
 [colors.primary]
 # hard contrast background = '#1d2021'
 # background = '#282828'
-background = '#32302f'
+background = '#1d2021'
 foreground = '#ebdbb2'
 
 # Normal colors
