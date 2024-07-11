@@ -55,7 +55,6 @@ alias ls=eza
 alias vi=nvim
 alias nv=$EDITOR
 
-alias chez=chezmoi
 alias lg=lazygit
 
 alias tm=tmux-open
@@ -72,6 +71,17 @@ alias luamake=/Users/gamurray/Code/lua-language-server/3rd/luamake/luamake
 # git
 alias g=git
 
+function gwip() {
+  git add -A && git commit -m "wip: $*"
+}
+
+# chezmoi
+alias chez=chezmoi
+alias cza="chez add"
+alias czcd="chez cd"
+alias czra="chez re-add"
+alias czs="chez status"
+
 # alias fanauth='TERM=xterm-256color fanauth'
 # alias ssh='TERM=xterm-256color ssh'
 
@@ -84,10 +94,6 @@ fpath+=($HOME/.zsh/pure)
 autoload -U promptinit
 promptinit
 prompt pure
-
-function gwip() {
-  git add -A && git commit -m "wip: $*"
-}
 
 if command -v fzf >/dev/null 2>&1; then
   eval "$(fzf --zsh)"
