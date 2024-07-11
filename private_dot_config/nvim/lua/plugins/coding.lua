@@ -17,7 +17,6 @@ return {
 	},
 	{
 		"nvim-snippets",
-		dev = true,
 		opts = {
 			extended_filetypes = {
 				typescript = { "javascript", "javascriptreact", "jsdoc" },

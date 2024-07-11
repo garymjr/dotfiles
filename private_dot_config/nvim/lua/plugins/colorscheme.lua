@@ -2,6 +2,7 @@ return {
 	{ "tokyonight.nvim", enabled = false },
 	{
 		"catppuccin",
+    enabled = false,
 		opts = {
 			background = {
 				light = "latte",
@@ -67,30 +68,15 @@ return {
 			},
 		},
 	},
-	{
-		"rebelot/kanagawa.nvim",
-		enabled = false,
-		opts = {
-			keywordStyle = { italic = false },
-			overrides = function(colors)
-				return {
-					LineNr = { bg = colors.palette.sumiInk3 },
-					GitSignsAdd = { bg = colors.palette.sumiInk3 },
-					GitSignsChange = { bg = colors.palette.sumiInk3 },
-					GitSignsDelete = { bg = colors.palette.sumiInk3 },
-				}
-			end,
-		},
-	},
 	{ "echasnovski/mini.hues", lazy = false },
 	{
 		"LazyVim",
 		opts = {
-			colorscheme = "catppuccin",
+			colorscheme = "minidawn",
 		},
 	},
 	{
 		"lazy.nvim",
-		opts = { install = { colorscheme = { "catppuccin" } } },
+		opts = { install = { colorscheme = { "minidawn" } } },
 	},
 }

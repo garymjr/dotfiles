@@ -24,3 +24,8 @@ refreshPeriod = "168h"
 type = "file"
 url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/history.zsh"
 refreshPeriod = "168h"
+
+[".tmux/themes/dawnfox.tmux"]
+type = "file"
+url = "https://raw.githubusercontent.com/EdenEast/nightfox.nvim/main/extra/dawnfox/dawnfox.tmux"
+refreshPeriod = "168h"
