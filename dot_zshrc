@@ -90,6 +90,8 @@ bindkey '^y' autosuggest-accept
 fpath+=($HOME/.zsh_functions)
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 
+FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit
 promptinit
@@ -110,3 +112,5 @@ fi
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
+
+rm -rf ~/.zcompdump; compinit
