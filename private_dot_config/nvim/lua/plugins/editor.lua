@@ -17,11 +17,15 @@ return {
 		keys = {
 			{
 				",",
-				function() require("arrow.commands").commands.open() end,
+				function()
+					require("arrow.commands").commands.open()
+				end,
 			},
 			{
 				"m",
-				function() require("arrow.buffer_ui").openMenu(vim.api.nvim_get_current_buf()) end,
+				function()
+					require("arrow.buffer_ui").openMenu(vim.api.nvim_get_current_buf())
+				end,
 			},
 		},
 		opts = {
@@ -41,14 +45,23 @@ return {
 		opts = {},
 	},
 	{
-		"tpope/vim-dadbod",
-		dependencies = {
-			"kristijanhusak/vim-dadbod-ui",
+		"kristijanhusak/vim-dadbod-ui",
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
 		},
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+		init = function()
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
 		keys = {
 			{ "<leader>ux", "<cmd>DBUIToggle<cr>", desc = "DadBod", silent = true },
 		},
-		config = function() vim.g.db_ui_use_nerd_fonts = 1 end,
 	},
 	{
 		"sindrets/diffview.nvim",

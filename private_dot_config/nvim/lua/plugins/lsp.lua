@@ -9,6 +9,8 @@ return {
 				enabled = false,
 			},
 			servers = {
+        elixirls = false,
+        lexical = {},
 				cssls = {},
 				tailwindcss = {
 					init_options = {
