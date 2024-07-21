@@ -1,28 +1,28 @@
 return {
 	{
 		"nvim-lspconfig",
-		opts = {
-			document_highlight = {
+		opts = function(_, opts)
+			opts.document_highlight = {
 				enabled = false,
-			},
-			inlay_hints = {
+			}
+
+			opts.inlay_hints = {
 				enabled = false,
-			},
-			servers = {
-        elixirls = false,
-        lexical = {},
-				cssls = {},
-				tailwindcss = {
-					init_options = {
-						userLanguages = {
-							elixir = "html-eex",
-							eelixir = "html-eex",
-							heex = "html-eex",
-						},
+			}
+
+			opts.servers.elixirls = false
+			opts.servers.lexical = {}
+			opts.servers.cssls = {}
+			opts.servers.tailwindcss = {
+				init_options = {
+					userLanguages = {
+						elixir = "html-eex",
+						eelixir = "html-eex",
+						heex = "html-eex",
 					},
 				},
-			},
-		},
+			}
+		end,
 	},
 	{
 		"j-hui/fidget.nvim",

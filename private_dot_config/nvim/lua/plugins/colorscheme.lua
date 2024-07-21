@@ -69,14 +69,22 @@ return {
 		},
 	},
 	{ "echasnovski/mini.hues", lazy = false },
+  {
+    "EdenEast/nightfox.nvim",
+    opts = {
+      styles = {
+        comments = "italic",
+      },
+    },
+  },
 	{
 		"LazyVim",
 		opts = {
-			colorscheme = "minidawn",
+			colorscheme = "duskfox",
 		},
 	},
 	{
 		"lazy.nvim",
-		opts = { install = { colorscheme = { "minidawn" } } },
+		opts = { install = { colorscheme = { "duskfox" } } },
 	},
 }
