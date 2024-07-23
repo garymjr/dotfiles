@@ -28,21 +28,12 @@ export GOSUMDB=
 
 export NVM_DIR="$HOME/.nvm"
 
-autoload -U +X compinit && compinit
+autoload -U +X compinit
 source $HOME/.zsh/completion.zsh
 
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Cache completion if nothing changed - faster startup time
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
-if [ $(date +'%j') != $updated_at ]; then
-  compinit -i
-else
-  compinit -C -i
-fi
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
@@ -68,28 +59,8 @@ alias ssh='TERM=screen-256color ssh'
 
 alias luamake=/Users/gamurray/Code/lua-language-server/3rd/luamake/luamake
 
-# git
-alias g=git
-
-function gwip() {
-  git add -A && git commit -m "wip: $*"
-}
-
-# chezmoi
-alias chez=chezmoi
-alias cza="chez add"
-alias czcd="chez cd"
-alias czra="chez re-add"
-alias czs="chez status"
-
-# alias fanauth='TERM=xterm-256color fanauth'
-# alias ssh='TERM=xterm-256color ssh'
-
-bindkey '^y' autosuggest-accept
-
-fpath+=($HOME/.zsh_functions)
-fpath+=(/opt/homebrew/share/zsh/site-functions)
-
+FPATH=$HOME/.zsh_functions:$FPATH
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
 fpath+=($HOME/.zsh/pure)
@@ -113,4 +84,10 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
-rm -rf ~/.zcompdump; compinit
+# Cache completion if nothing changed - faster startup time
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
