@@ -68,12 +68,21 @@ autoload -U promptinit
 promptinit
 prompt pure
 
+# Cache completion if nothing changed - faster startup time
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
+
 if command -v fzf >/dev/null 2>&1; then
   eval "$(fzf --zsh)"
 fi
 
 if command -v chezmoi >/dev/null 2>&1; then
   eval "$(chezmoi completion zsh)"
+  alias chez=chezmoi
 fi
 
 if command -v ~/.local/bin/mise >/dev/null 2>&1; then
@@ -82,12 +91,4 @@ fi
 
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
-fi
-
-# Cache completion if nothing changed - faster startup time
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
-if [ $(date +'%j') != $updated_at ]; then
-  compinit -i
-else
-  compinit -C -i
 fi
