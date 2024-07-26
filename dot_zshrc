@@ -63,10 +63,10 @@ FPATH=$HOME/.zsh_functions:$FPATH
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-fpath+=($HOME/.zsh/pure)
-autoload -U promptinit
-promptinit
-prompt pure
+# fpath+=($HOME/.zsh/pure)
+# autoload -U promptinit
+# promptinit
+# prompt pure
 
 # Cache completion if nothing changed - faster startup time
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -91,4 +91,8 @@ fi
 
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
+fi
+
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
 fi

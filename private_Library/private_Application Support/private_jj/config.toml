@@ -1,0 +1,13 @@
+[user]
+name = "Gary Murray"
+email = "garymjr@gmail.com"
+
+[ui]
+default-command = "log"
+diff-editor = ":builtin"
+
+[alias]
+evolve = ["rebase", "--skip-empty", "-d"]
+push = ["git", "push", "-r"]
+spinoff = ["branch", "create", "-r @-"]
+sync = ["git", "fetch", "--all-remotes"]

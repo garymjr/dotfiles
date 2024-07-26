@@ -68,3 +68,5 @@
 	directory = /Users/gamurray/code/neovim
 [init]
 	defaultBranch = main
+[credential]
+	helper = store

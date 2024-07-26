@@ -2,9 +2,7 @@ format = """
 $username\
 $hostname\
 $directory\
-$git_branch\
-$git_state\
-$git_status\
+$custom\
 $cmd_duration\
 $line_break\
 $python\
@@ -44,3 +42,16 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[custom.jj]
+command = '''
+jj log -r@ --no-graph --ignore-working-copy -T 'change_id.shortest()'
+'''
+detect_folders = [".jj"]
+style = "purple"
+
+# [custom.jjstate]
+# detect_folders = [".jj"]
+# command = '''
+# jj log -r@ -l1 --no-graph -T "" --stat | tail -n1 | sd "(\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(-\)" " ${1}m ${2}+ ${3}-" | sd " 0." ""
+# '''
