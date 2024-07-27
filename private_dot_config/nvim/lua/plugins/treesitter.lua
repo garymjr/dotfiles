@@ -19,4 +19,12 @@ return {
 			}
 		end,
 	},
+	{
+		"nvim-ts-autotag",
+		opts = {
+			aliases = {
+				heex = "html",
+			},
+		},
+	},
 }
