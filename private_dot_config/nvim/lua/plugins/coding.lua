@@ -2,14 +2,14 @@ return {
 	{ "mini.pairs", enabled = false },
 	{
 		"nvim-cmp",
-    enabled = false,
+		enabled = false,
 		opts = function(_, opts)
 			opts.mapping["<CR>"] = LazyVim.cmp.confirm()
 		end,
 	},
 	{
 		"nvim-snippets",
-    enabled = false,
+		enabled = false,
 		opts = {
 			extended_filetypes = {
 				typescript = { "javascript", "javascriptreact", "jsdoc" },

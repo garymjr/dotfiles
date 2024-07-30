@@ -30,7 +30,7 @@
   "mini.icons": { "branch": "main", "commit": "660f3987ebcb13e573b654362854206c72d6c024" },
   "mini.indentscope": { "branch": "main", "commit": "1222393d9c5e8d92b913ccab6701a7164b21781c" },
   "mini.surround": { "branch": "main", "commit": "57caca9525cec0ea771a67326b0ee637d056078a" },
-  "neoconf.nvim": { "branch": "main", "commit": "26d57a80602042939be76e1334151ddd65b417a6" },
+  "neoconf.nvim": { "branch": "main", "commit": "5a6e463252721ac94c9f6e664fd48a722ce89c66" },
   "nightfox.nvim": { "branch": "main", "commit": "d3e8b1acc095baf57af81bb5e89fe7c4359eb619" },
   "nui.nvim": { "branch": "main", "commit": "61574ce6e60c815b0a0c4b5655b8486ba58089a1" },
   "nvim-cmp": { "branch": "main", "commit": "d818fd0624205b34e14888358037fb6f5dc51234" },

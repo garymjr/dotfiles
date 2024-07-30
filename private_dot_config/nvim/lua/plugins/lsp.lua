@@ -10,6 +10,8 @@ return {
 				enabled = false,
 			}
 
+      opts.servers.elixirls = nil
+      opts.servers.lexical = {}
 			opts.servers.cssls = {}
 			opts.servers.tailwindcss = {
 				init_options = {
