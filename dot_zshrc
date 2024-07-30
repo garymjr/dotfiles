@@ -55,6 +55,8 @@ alias ta='tmux attach -t'
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
 
+alias jjs='jj st'
+
 [ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
 alias luamake=/Users/gamurray/Code/lua-language-server/3rd/luamake/luamake
