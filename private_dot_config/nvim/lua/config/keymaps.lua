@@ -17,5 +17,3 @@ vim.keymap.set("i", "<c-u>", "<nop>", { silent = true })
 
 vim.keymap.set("n", "gh", "^", { desc = "Goto beginging of line", silent = true })
 vim.keymap.set("n", "gl", "$", { desc = "Goto end of line", silent = true })
-
-vim.keymap.set("n", "-", "<leader>fm", { remap = true })
