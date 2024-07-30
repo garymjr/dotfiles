@@ -4,6 +4,7 @@ vim.g.trouble_lualine = false
 local opt = vim.opt
 
 opt.cursorline = false
+opt.guicursor = ""
 opt.list = false
 opt.swapfile = false
 opt.timeoutlen = 300
