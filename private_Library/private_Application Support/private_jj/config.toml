@@ -5,8 +5,10 @@ email = "garymjr@gmail.com"
 [ui]
 default-command = "log"
 diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+editor = "nvim"
 
 [alias]
+drop = ["abandon"]
 evolve = ["rebase", "--skip-empty", "-d"]
 push = ["git", "push", "-r"]
 spinoff = ["branch", "create", "-r @-"]
