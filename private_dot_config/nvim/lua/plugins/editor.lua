@@ -75,4 +75,6 @@ return {
 		cmd = "DiffEditor",
 		opts = {},
 	},
+  { "grug-far.nvim", enabled = false },
+  { "gitsigns.nvim", enabled = false },
 }
