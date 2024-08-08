@@ -2,14 +2,40 @@ return {
 	{ "neo-tree.nvim", enabled = false },
 	{ "nvim-spectre", enabled = false },
 	{ "flash.nvim", enabled = false },
+	-- {
+	-- 	"telescope.nvim",
+	-- 	keys = {
+	-- 		{ "<leader>fc", "<cmd>Telescope chezmoi find_files<cr>", desc = "Find Config File", silent = true },
+	-- 	},
+	-- 	opts = function(_, opts)
+	-- 		local actions = require("telescope.actions.layout")
+	-- 		opts.defaults.mappings.i["<c-o>"] = actions.toggle_preview
+	-- 	end,
+	-- },
 	{
-		"telescope.nvim",
-		keys = {
-			{ "<leader>fc", "<cmd>Telescope chezmoi find_files<cr>", desc = "Find Config File", silent = true },
-		},
-		opts = function(_, opts)
-			local actions = require("telescope.actions.layout")
-			opts.defaults.mappings.i["<c-o>"] = actions.toggle_preview
+		"fzf-lua",
+		keys = function(_, keys)
+			local function pick_chezmoi()
+				local fzf_lua = require("fzf-lua")
+				local results = require("chezmoi.commands").list()
+				local chezmoi = require("chezmoi.commands")
+
+				local opts = {
+					fzf_opts = {},
+					fzf_colors = true,
+					actions = {
+						["default"] = function(selected)
+							chezmoi.edit({
+								targets = { "~/" .. selected[1] },
+								args = { "--watch" },
+							})
+						end,
+					},
+				}
+				fzf_lua.fzf_exec(results, opts)
+			end
+
+			keys[#keys + 1] = { "<leader>fc", pick_chezmoi, desc = "Find Config File" }
 		end,
 	},
 	{
