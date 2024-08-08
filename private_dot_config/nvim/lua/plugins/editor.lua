@@ -78,4 +78,6 @@ return {
 	},
 	{ "grug-far.nvim", enabled = false },
 	{ "gitsigns.nvim", enabled = false },
+	{ "trouble.nvim", enabled = false },
+	{ "todo-comments.nvim", enabled = false },
 }
