@@ -1,5 +1,4 @@
 return {
-	{ "mini.pairs", enabled = false },
 	{
 		"nvim-cmp",
 		enabled = false,
