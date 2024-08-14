@@ -1,30 +1,86 @@
-return {
-	{
-		"nvim-treesitter",
-		opts = function(_, opts)
-			opts.ensure_installed = vim.tbl_deep_extend("force", {}, opts.ensure_installed, {
-				"diff",
-				"eex",
-				"elixir",
-				"graphql",
-				"heex",
-				"sql",
-			})
-
-			opts.textobjects.move = {
-				goto_next_start = { ["]f"] = "@function.outer" },
-				goto_next_end = { ["]F"] = "@function.outer" },
-				goto_previous_start = { ["[f"] = "@function.outer" },
-				goto_previous_end = { ["[F"] = "@function.outer" },
-			}
-		end,
-	},
-	{
-		"nvim-ts-autotag",
-		opts = {
-			aliases = {
-				heex = "html",
-			},
-		},
-	},
+require("mini.deps").add {
+  source = "nvim-treesitter/nvim-treesitter",
+  depends = {
+    "windwp/nvim-ts-autotag",
+    "folke/ts-comments.nvim",
+  },
+  hooks = {
+    post_checkout = function() vim.cmd "TSUpdate" end,
+  },
 }
+
+require("mini.deps").now(function() require "nvim-treesitter.query_predicates" end)
+
+require("mini.deps").later(function()
+  require("ts-comments").setup()
+end)
+
+require("mini.deps").later(
+  function()
+    require("nvim-treesitter.configs").setup {
+      highlight = { enable = true },
+      indent = { enable = true },
+      ensure_installed = {
+        "bash",
+        "c",
+        "diff",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "printf",
+        "python",
+        "query",
+        "regex",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
+      },
+      textobjects = {
+        move = {
+          enable = true,
+          goto_next_start = {
+            ["]f"] = "@function.outer",
+            ["]c"] = "@class.outer",
+            ["]a"] = "@parameter.inner",
+          },
+          goto_next_end = {
+            ["]F"] = "@function.outer",
+            ["]C"] = "@class.outer",
+            ["]A"] = "@parameter.inner",
+          },
+          goto_previous_start = {
+            ["[f"] = "@function.outer",
+            ["[c"] = "@class.outer",
+            ["[a"] = "@parameter.inner",
+          },
+          goto_previous_end = {
+            ["[F"] = "@function.outer",
+            ["[C"] = "@class.outer",
+            ["[A"] = "@parameter.inner",
+          },
+        },
+      },
+    }
+  end
+)
+
+require("mini.deps").later(
+  function()
+    require("nvim-ts-autotag").setup {
+      aliases = {
+        heex = "html",
+      },
+    }
+  end
+)

@@ -1,0 +1,18 @@
+return {
+  catppuccin = "18bab5ec4c782cdf7d7525dbe89c60bfa02fc195",
+  ["chezmoi.nvim"] = "e5d2b2f534d2a1701ea2f9a8849732b28ea4c8c3",
+  ["conform.nvim"] = "667102f26106709cddd2dff1f699610df5b94d7f",
+  harpoon = "0378a6c428a0bed6a2781d459d7943843f374bce",
+  ["lazydev.nvim"] = "491452cf1ca6f029e90ad0d0368848fac717c6d2",
+  ["luvit-meta"] = "ce76f6f6cdc9201523a5875a4471dcfe0186eb60",
+  ["mason-lspconfig.nvim"] = "f2acd4a21db1ca0a12559e7a9f7cdace3bdbfb09",
+  ["mason.nvim"] = "e2f7f9044ec30067bc11800a9e266664b88cda22",
+  ["mini.nvim"] = "cf81e70e8f1fdc36a3c684efc45c4ee561285137",
+  ["nightfox.nvim"] = "d3e8b1acc095baf57af81bb5e89fe7c4359eb619",
+  ["nvim-lint"] = "ad0fe35e80f5cd31a0f19176d7b30e5c3011119d",
+  ["nvim-lspconfig"] = "ad32182cc4a03c8826a64e9ced68046c575fdb7d",
+  ["nvim-treesitter"] = "3de418e73d5b912096229aaeea8bb7aef5094e0d",
+  ["nvim-ts-autotag"] = "dc5e1687ab76ee02e0f11c5ce137f530b36e98b3",
+  ["plenary.nvim"] = "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683",
+  ["ts-comments.nvim"] = "98d7d4dec0af1312d38e288f800bbf6ff562b6ab"
+}
