@@ -7,6 +7,7 @@ require("mini.deps").add {
     "williamboman/mason-lspconfig.nvim",
     "folke/lazydev.nvim",
     "Bilal2453/luvit-meta",
+    "b0o/SchemaStore.nvim",
   },
 }
 
