@@ -184,6 +184,42 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		if client.supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
 			vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
 
+			vim.api.nvim_create_autocmd({ "InsertCharPre" }, {
+				buffer = event.buf,
+				callback = function()
+					vim.lsp.completion.trigger()
+				end,
+			})
+
+			vim.api.nvim_create_autocmd("CompleteChanged", {
+				buffer = event.buf,
+				callback = function()
+					local info = vim.fn.complete_info({ "selected" })
+					local completionItem =
+						vim.tbl_get(vim.v.completed_item, "user_data", "nvim", "lsp", "completion_item")
+					if nil == completionItem then
+						return
+					end
+
+					client.request(vim.lsp.protocol.Methods.completionItem_resolve, completionItem, function(_, result)
+						if nil == result then
+							return
+						end
+
+						local winData =
+							vim.api.nvim__complete_set(info["selected"], { info = result.documentation.value })
+
+						if not vim.api.nvim_win_is_valid(winData.winid) then
+							return
+						end
+
+						vim.api.nvim_win_set_config(winData.winid, {})
+						vim.treesitter.start(winData.bufnr, "markdown")
+						vim.wo[winData.winid].conceallevel = 3
+					end, event.buf)
+				end,
+			})
+
 			-- Use enter to accept completions.
 			vim.keymap.set("i", "<cr>", function()
 				return Util.pumvisible() and "<C-y>" or "<cr>"
@@ -243,7 +279,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = augroup("lsp_gopls"),
-  pattern = "gopls",
+	pattern = "gopls",
 	callback = function(event)
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		if not client then
