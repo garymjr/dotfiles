@@ -6,6 +6,7 @@ $custom\
 $cmd_duration\
 $line_break\
 $python\
+$jobs\
 $character"""
 
 [directory]
@@ -42,6 +43,13 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[jobs]
+symbol = "+"
+threshold = 1
+format = "[$symbol$number]($style) "
+style = "bold blue"
+
 
 [custom.jj]
 command = '''
