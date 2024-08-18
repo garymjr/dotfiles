@@ -2,26 +2,16 @@ local Util = require("config.util")
 
 local M = {}
 
---- @param opts {buffer: number, client: vim.lsp.Client, group: number}
+--- @param opts {buffer: number, client: vim.lsp.Client}
 function M.setup(opts)
 	local client = opts.client
 	local buffer = opts.buffer
-  local group = opts.group
 
 	if client.supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
 		vim.lsp.completion.enable(true, client.id, buffer, { autotrigger = true })
 
-		-- I'm not sure I like this? But I'm going to leave it for now
-		vim.api.nvim_create_autocmd({ "InsertCharPre" }, {
-			group = group,
-			buffer = buffer,
-			callback = function()
-				vim.lsp.completion.trigger()
-			end,
-		})
-
 		vim.api.nvim_create_autocmd("CompleteChanged", {
-      group = group,
+			group = vim.api.nvim_create_augroup("minivim_complete_changed", { clear = true }),
 			buffer = buffer,
 			callback = function()
 				local info = vim.fn.complete_info({ "selected" })
@@ -31,7 +21,10 @@ function M.setup(opts)
 				end
 
 				client.request(vim.lsp.protocol.Methods.completionItem_resolve, completionItem, function(_, result)
-					if  result == nil or result.documentation == nil then
+					if result == nil or result.documentation == nil then
+						vim.api.nvim_win_set_config(info.preview_winid, {})
+						vim.treesitter.start(info.preview_bufnr, "markdown")
+						vim.wo[info.preview_winid].conceallevel = 3
 						return
 					end
 

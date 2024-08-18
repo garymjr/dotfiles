@@ -161,8 +161,6 @@ M.servers = {
 			},
 		},
 	},
-  -- disabling this for now
-	-- lexical = {},
 	lua_ls = {
 		settings = {
 			Lua = {
