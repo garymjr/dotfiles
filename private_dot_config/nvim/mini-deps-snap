@@ -2,6 +2,7 @@ return {
   ["SchemaStore.nvim"] = "0d18cb5f8faf160335b4ed4699b6b35c616de5b9",
   catppuccin = "18bab5ec4c782cdf7d7525dbe89c60bfa02fc195",
   ["chezmoi.nvim"] = "e5d2b2f534d2a1701ea2f9a8849732b28ea4c8c3",
+  ["compl.nvim"] = "4f00ea0038457b98c424775ce94a9be5c8a38f20",
   ["conform.nvim"] = "d31323db3fa4a33d203dcb05150d98bd0153c42c",
   harpoon = "0378a6c428a0bed6a2781d459d7943843f374bce",
   ["helpview.nvim"] = "c5e6446135a2ef9790f543d21a2b4aff68b6a020",
