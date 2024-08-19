@@ -2,6 +2,10 @@ require("mini.deps").now(function()
   require("mini.extra").setup()
 end)
 
+require("mini.deps").now(function()
+  require("mini.visits").setup()
+end)
+
 require "plugins.mini.notify"
 require "plugins.mini.statusline"
 
