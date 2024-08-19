@@ -130,7 +130,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		if client then
 			-- lsp.completion.setup({ buffer = event.buf, client = client })
-			lsp.elixir.setup({ client = client, buffer = event.buf })
+			-- lsp.elixir.setup({ client = client, buffer = event.buf })
 			lsp.gopls.setup({ client = client })
 		end
 

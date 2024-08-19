@@ -108,7 +108,7 @@ M.linters_by_ft = {
 }
 
 M.servers = {
-  elixirls = {},
+  -- elixirls = {},
 	gopls = {
 		settings = {
 			gopls = {
@@ -161,6 +161,7 @@ M.servers = {
 			},
 		},
 	},
+  lexical = {},
 	lua_ls = {
 		settings = {
 			Lua = {
