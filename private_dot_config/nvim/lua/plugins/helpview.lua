@@ -1,10 +1,10 @@
-require("mini.deps").add({
+MiniDeps.add({
   source = "OXY2DEV/helpview.nvim",
   depends = {
     "nvim-treesitter/nvim-treesitter",
   },
 })
 
-require("mini.deps").later(function()
+MiniDeps.later(function()
   require("helpview").setup()
 end)

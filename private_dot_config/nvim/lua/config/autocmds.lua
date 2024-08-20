@@ -162,13 +162,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			})
 		end, { desc = "Source Action", buffer = event.buf })
 
-		vim.keymap.set("n", "gd", "<cmd>Pick lsp scope='definition'<cr>", { desc = "Goto Definition", silent = true })
-		vim.keymap.set(
-			"n",
-			"gr",
-			"<cmd>Pick lsp scope='references'<cr>",
-			{ desc = "References", nowait = true, silent = true }
-		)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition", silent = true })
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "References", nowait = true, silent = true })
 		vim.keymap.set(
 			"n",
 			"gI",

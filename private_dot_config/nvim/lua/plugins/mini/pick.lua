@@ -1,7 +1,6 @@
-require("mini.deps").later(function()
+MiniDeps.later(function()
 	require("mini.pick").setup({
 		mappings = {
-			choose_marked = "<m-q>",
 			delete_left = "",
 			scroll_down = "<c-d>",
 			scroll_up = "<c-u>",

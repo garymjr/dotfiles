@@ -1,6 +1,6 @@
-require("mini.deps").now(function()
+MiniDeps.now(function()
 	require("mini.notify").setup()
-	local notify = require("mini.notify").make_notify()
+	local notify = MiniNotify.make_notify()
 
 	---@diagnostic disable-next-line: duplicate-set-field
 	vim.notify = function(msg, level)

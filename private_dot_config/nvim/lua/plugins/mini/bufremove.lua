@@ -1,4 +1,4 @@
-require("mini.deps").later(function()
+MiniDeps.later(function()
   require("mini.bufremove").setup()
 
   vim.keymap.set("n", "<leader>bd", function()

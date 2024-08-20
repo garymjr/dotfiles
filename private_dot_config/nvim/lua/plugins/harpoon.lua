@@ -1,9 +1,9 @@
-require("mini.deps").add {
+MiniDeps.add {
   source = "ThePrimeagen/harpoon",
   checkout = "harpoon2",
   depends = { "nvim-lua/plenary.nvim" },
 }
-require("mini.deps").later(function()
+MiniDeps.later(function()
   require("harpoon").setup {
     menu = {
       width = vim.api.nvim_win_get_width(0) - 4,

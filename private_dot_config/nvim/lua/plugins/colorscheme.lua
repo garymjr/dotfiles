@@ -1,10 +1,10 @@
-require("mini.deps").add {
+MiniDeps.add {
   enabled = false,
   source = "catppuccin/nvim",
   name = "catppuccin",
 }
 
-require("mini.deps").now(function()
+MiniDeps.now(function()
   if false then
     require("catppuccin").setup {
       integrations = {
@@ -30,8 +30,8 @@ require("mini.deps").now(function()
   end
 end)
 
-require("mini.deps").add "EdenEast/nightfox.nvim"
-require("mini.deps").now(function()
+MiniDeps.add "EdenEast/nightfox.nvim"
+MiniDeps.now(function()
   require("nightfox").setup {
     options = {
       styles = {

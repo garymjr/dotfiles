@@ -1,8 +1,8 @@
-require("mini.deps").add({
+MiniDeps.add({
 	source = "julienvincent/hunk.nvim",
 	depends = { "MunifTanjim/nui.nvim" },
 })
 
-require("mini.deps").later(function()
+MiniDeps.later(function()
 	require("hunk").setup()
 end)

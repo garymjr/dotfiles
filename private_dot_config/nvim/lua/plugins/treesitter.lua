@@ -1,4 +1,4 @@
-require("mini.deps").add {
+MiniDeps.add {
   source = "nvim-treesitter/nvim-treesitter",
   depends = {
     "windwp/nvim-ts-autotag",
@@ -9,13 +9,13 @@ require("mini.deps").add {
   },
 }
 
-require("mini.deps").now(function() require "nvim-treesitter.query_predicates" end)
+MiniDeps.now(function() require "nvim-treesitter.query_predicates" end)
 
-require("mini.deps").later(function()
+MiniDeps.later(function()
   require("ts-comments").setup()
 end)
 
-require("mini.deps").later(
+MiniDeps.later(
   function()
     require("nvim-treesitter.configs").setup {
       highlight = { enable = true },
@@ -50,7 +50,7 @@ require("mini.deps").later(
   end
 )
 
-require("mini.deps").later(
+MiniDeps.later(
   function()
     require("nvim-ts-autotag").setup {
       aliases = {

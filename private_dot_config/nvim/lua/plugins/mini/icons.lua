@@ -1,4 +1,4 @@
-require("mini.deps").later(function()
+MiniDeps.later(function()
   require("mini.icons").setup {
     file = {
       [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },

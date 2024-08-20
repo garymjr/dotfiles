@@ -4,6 +4,9 @@ local map = vim.keymap.set
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
+map({"n", "v"}, "gh", "^", { desc = "Beginning", silent = true })
+map({"n", "v"}, "gl", "$", { desc = "Ending", silent = true })
+
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
@@ -32,10 +35,10 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsea
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
 map(
-  "n",
-  "<leader>ur",
-  "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-  { desc = "Redraw / Clear hlsearch / Diff Update" }
+	"n",
+	"<leader>ur",
+	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+	{ desc = "Redraw / Clear hlsearch / Diff Update" }
 )
 
 -- Add undo break-points
@@ -57,8 +60,13 @@ map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
-map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
-map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
+map("n", "<leader>xl", function()
+	require("quicker").toggle({ loclist = true })
+end, { desc = "Location List" })
+
+map("n", "<leader>xq", function()
+	require("quicker").toggle()
+end, { desc = "Quickfix List" })
 
 -- formatting
 -- map({ "n", "v" }, "<leader>cf", function()
@@ -67,9 +75,11 @@ map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
-  local go = vim.diagnostic.jump
-  severity = severity and vim.diagnostic.severity[severity] or nil
-  return function() go { severity = severity, count = next and 1 or -1, float = true } end
+	local go = vim.diagnostic.jump
+	severity = severity and vim.diagnostic.severity[severity] or nil
+	return function()
+		go({ severity = severity, count = next and 1 or -1, float = true })
+	end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
@@ -107,3 +117,11 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
+-- completion
+map("i", "<cr>", function()
+	if vim.fn.pumvisible() == 1 then
+		return "<c-y>"
+	end
+	return "<cr>"
+end, { expr = true })

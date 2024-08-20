@@ -1,11 +1,11 @@
-require("mini.deps").add({
+MiniDeps.add({
 	source = "kristijanhusak/vim-dadbod-ui",
 	depends = {
 		"tpope/vim-dadbod",
 	},
 })
 
-require("mini.deps").later(function()
+MiniDeps.later(function()
 	vim.g.db_ui_auto_execute_table_helpers = 1
 	vim.g.db_ui_show_database_icon = true
 	vim.g.db_ui_use_nerd_fonts = true

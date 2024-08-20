@@ -1,4 +1,4 @@
-require("mini.deps").later(function()
+MiniDeps.later(function()
   require("mini.files").setup {
     windows = {
       preview = false,

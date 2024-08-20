@@ -1,11 +1,11 @@
-require("mini.deps").add({
+MiniDeps.add({
 	source = "OXY2DEV/markview.nvim",
 	depends = {
 		"nvim-treesitter/nvim-treesitter",
 	},
 })
 
-require("mini.deps").later(function()
+MiniDeps.later(function()
 	require("markview").setup({
 		modes = { "n", "no", "c" },
 		hybrid_modes = { "n" },

@@ -1,4 +1,4 @@
-require("mini.deps").add("brianaung/compl.nvim")
-require("mini.deps").later(function()
+MiniDeps.add("brianaung/compl.nvim")
+MiniDeps.later(function()
   require("compl").setup()
 end)

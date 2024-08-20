@@ -1,13 +1,13 @@
 local config = require("config")
 
-require("mini.deps").add({
+MiniDeps.add({
 	source = "stevearc/conform.nvim",
 	depends = {
 		"williamboman/mason.nvim",
 	},
 })
 
-require("mini.deps").later(function()
+MiniDeps.later(function()
 	require("conform").setup({
 		default_format_opts = {
 			timeout_ms = 3000,

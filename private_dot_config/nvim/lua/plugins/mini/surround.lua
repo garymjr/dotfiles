@@ -1,4 +1,4 @@
-require("mini.deps").later(function()
+MiniDeps.later(function()
   require("mini.surround").setup {
     mappings = {
       add = "gsa", -- Add surrounding in Normal and Visual modes

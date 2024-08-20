@@ -1,5 +1,5 @@
-require("mini.deps").add("xvzc/chezmoi.nvim")
-require("mini.deps").later(function()
+MiniDeps.add("xvzc/chezmoi.nvim")
+MiniDeps.later(function()
 	require("chezmoi").setup({
 		edit = {
 			watch = false,
