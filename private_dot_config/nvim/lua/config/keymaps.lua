@@ -4,8 +4,8 @@ local map = vim.keymap.set
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
-map({"n", "v"}, "gh", "^", { desc = "Beginning", silent = true })
-map({"n", "v"}, "gl", "$", { desc = "Ending", silent = true })
+map({ "n", "v" }, "gh", "^", { desc = "Beginning", silent = true })
+map({ "n", "v" }, "gl", "$", { desc = "Ending", silent = true })
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
@@ -30,7 +30,7 @@ map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 -- Clear search with <esc>
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><cmd>lua vim.snippet.stop()<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
@@ -120,7 +120,7 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- completion
 map("i", "<cr>", function()
-	if vim.fn.pumvisible() == 1 then
+	if vim.fn.pumvisible() ~= 0 then
 		return "<c-y>"
 	end
 	return "<cr>"
