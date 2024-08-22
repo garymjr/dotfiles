@@ -34,6 +34,10 @@ MiniDeps.later(function()
 	require("lazydev").setup({
 		library = {
 			{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			{
+				path = string.format("%s/site/pack/deps/start/mini.nvim/lua/mini", vim.fn.stdpath("data")),
+				words = { "Mini.*" },
+			},
 		},
 	})
 end)

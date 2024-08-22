@@ -18,13 +18,12 @@ enabled_layouts splits
 
 # font_features MonaspiceNeNFM-Regular +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +liga +calt
 
-tab_title_template "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}"
-# tab_title_template "[{index}]{tab.active_exe}"
-# active_tab_title_template "[{index}]{tab.active_exe}"
+tab_title_template "[{index}]{tab.active_exe}"
+active_tab_title_template "[{index}]{tab.active_exe}"
 tab_bar_style powerline
-tab_powerline_style slanted
-tab_bar_edge bottom
+tab_bar_edge top
 tab_bar_min_tabs 1
+tab_title_max_length 12
 
 map ctrl+space>space select_tab
 map ctrl+space>, set_tab_title
@@ -61,5 +60,4 @@ map ctrl+space>l neighboring_window right
 map ctrl+space>k neighboring_window up
 map ctrl+space>j neighboring_window down
 
-# Catppuccin-Macchiato
-include current-theme.conf
+include ./duskfox.conf
