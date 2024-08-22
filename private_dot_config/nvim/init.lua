@@ -28,7 +28,7 @@ require("plugins.treesitter")
 require("plugins.lspconfig")
 
 require("plugins.chezmoi")
--- require("plugins.completion")
+require("plugins.compl")
 require("plugins.conform")
 require("plugins.harpoon")
 require("plugins.hunk")
