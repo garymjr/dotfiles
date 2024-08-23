@@ -51,11 +51,11 @@ format = "[$symbol$number]($style) "
 style = "bold blue"
 
 
-[custom.jj]
+[custom.git_hash]
 command = '''
-jj log -r@ --no-graph --ignore-working-copy -T 'change_id.shortest()'
+git rev-parse --short HEAD
 '''
-detect_folders = [".jj"]
+detect_folders = [".git"]
 style = "purple"
 
 # [custom.jjstate]
