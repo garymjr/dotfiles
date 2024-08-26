@@ -58,6 +58,7 @@ M.grammars = {
 	"gomod",
 	"gosum",
 	"gowork",
+  "graphql",
 	"heex",
 	"html",
 	"javascript",

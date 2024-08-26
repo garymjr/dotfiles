@@ -27,7 +27,7 @@
 [mergetool]
   prompt = false
   tool = difftastic
-[difftool "difft"]
+[difftool "difftastic"]
   cmd = difft "$LOCAL" "$REMOTE"
 [pager]
   difftool = true
