@@ -13,15 +13,12 @@ end)
 require("plugins.mini.notify")
 
 MiniDeps.later(function()
-  require("mini.cursorword").setup()
-end)
-
-MiniDeps.later(function()
   require("mini.git").setup()
 end)
 
 require("plugins.mini.ai")
 require("plugins.mini.bufremove")
+require("plugins.mini.cursorword")
 require("plugins.mini.diff")
 require("plugins.mini.files")
 require("plugins.mini.hipatterns")

@@ -8,6 +8,7 @@ MiniDeps.add({
 		"folke/lazydev.nvim",
 		"Bilal2453/luvit-meta",
 		"b0o/SchemaStore.nvim",
+		"hrsh7th/cmp-nvim-lsp",
 	},
 })
 
@@ -57,8 +58,14 @@ MiniDeps.later(function()
 end)
 
 MiniDeps.later(function()
-	local capabilities =
-		vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), config.capabilities or {})
+	local has_cmp, cmp = pcall(require, "cmp_nvim_lsp")
+	local capabilities = vim.tbl_deep_extend(
+		"force",
+		{},
+		vim.lsp.protocol.make_client_capabilities(),
+		has_cmp and cmp.default_capabilities() or {},
+		config.capabilities or {}
+	)
 
 	local ensure_installed = vim.tbl_keys(config.servers)
 
