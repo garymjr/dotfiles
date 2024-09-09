@@ -2,17 +2,28 @@ MiniDeps.now(function()
 	require("mini.extra").setup()
 end)
 
-MiniDeps.now(function() require("mini.visits").setup()
+MiniDeps.now(function()
+  require("mini.statusline").setup()
+end)
+
+MiniDeps.now(function()
+	require("mini.visits").setup()
 end)
 
 require("plugins.mini.notify")
-require("plugins.mini.statusline")
+
+MiniDeps.later(function()
+  require("mini.cursorword").setup()
+end)
+
+MiniDeps.later(function()
+  require("mini.git").setup()
+end)
 
 require("plugins.mini.ai")
 require("plugins.mini.bufremove")
 require("plugins.mini.diff")
 require("plugins.mini.files")
-require("plugins.mini.git")
 require("plugins.mini.hipatterns")
 require("plugins.mini.icons")
 require("plugins.mini.indentscope")
