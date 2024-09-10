@@ -9,6 +9,9 @@ MiniDeps.add({
 	},
 })
 
+local MAX_ABBR_WIDTH = 30
+local MAX_MENU_WIDTH = 30
+
 MiniDeps.later(function()
 	local cmp = require("cmp")
 	cmp.setup({
@@ -41,6 +44,19 @@ MiniDeps.later(function()
 			entries = {
 				follow_cursor = true,
 			},
+		},
+		formatting = {
+			format = function(_, item)
+				if vim.api.nvim_strwidth(item.abbr) > MAX_ABBR_WIDTH then
+					item.abbr = vim.fn.strcharpart(item.abbr, 0, MAX_ABBR_WIDTH) .. "…"
+				end
+
+				if vim.api.nvim_strwidth(item.menu or "") > MAX_MENU_WIDTH then
+					item.menu = vim.fn.strcharpart(item.menu, 0, MAX_MENU_WIDTH) .. "…"
+				end
+
+        return item
+			end,
 		},
 	})
 end)
