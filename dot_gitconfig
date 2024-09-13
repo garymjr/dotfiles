@@ -44,7 +44,7 @@
   cs = commit --squash
   dt = difftool
   f = fetch --prune
-  l = log --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
+  l = log --graph --all --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   la = l --all
   lo = log --oneline
   lx = log --pretty=format:\"%s\"
