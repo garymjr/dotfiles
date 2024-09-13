@@ -120,14 +120,12 @@ config.default_workspace = "scratch"
 -- config.debug_key_events = true
 -- config.disable_default_key_bindings = true
 config.enable_tab_bar = true
--- config.font = wezterm.font({ family = "Maple Mono NF SemiBold" })
-config.font = wezterm.font({ family = "CommitMono" })
+config.font = wezterm.font({ family = "Maple Mono NF" })
 
 config.font_rules = {
 	{
 		italic = true,
-		-- font = wezterm.font({ family = "Maple Mono NF", style = "Italic" }),
-		font = wezterm.font({ family = "CommitMono", style = "Italic" }),
+		font = wezterm.font({ family = "Maple Mono NF", style = "Italic" }),
 	},
 }
 
