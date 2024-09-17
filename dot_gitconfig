@@ -45,9 +45,10 @@
   cs = commit --squash
   dt = difftool
   f = fetch --prune
-  l = log --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
+  l = log --reflog --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   la = l --all
   p = pull
+  po = push origin
   pu = !git branch --show-current | xargs git push origin
   puf = !git branch --show-current | xargs git push --force-with-lease origin
   puo = !git branch --show-current | xargs git push -u origin
@@ -69,3 +70,5 @@
 	defaultBranch = main
 [credential]
 	helper = store
+[advice]
+  detachedHead = false

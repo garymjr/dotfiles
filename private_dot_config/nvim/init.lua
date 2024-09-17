@@ -24,11 +24,14 @@ require("plugins.mini")
 
 require("plugins.colorscheme")
 
+require("plugins.dressing")
+
 require("plugins.treesitter")
 require("plugins.lspconfig")
 
 require("plugins.chezmoi")
 require("plugins.cmp")
+require("plugins.codecompanion")
 require("plugins.conform")
 require("plugins.dadbod")
 require("plugins.diffview")

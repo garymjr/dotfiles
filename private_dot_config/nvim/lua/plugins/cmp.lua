@@ -9,8 +9,24 @@ MiniDeps.add({
 	},
 })
 
+MiniDeps.add({
+	source = "zbirenbaum/copilot.lua",
+	depends = {
+		"zbirenbaum/copilot-cmp",
+	},
+})
+
 local MAX_ABBR_WIDTH = 30
 local MAX_MENU_WIDTH = 30
+
+MiniDeps.later(function()
+	require("copilot").setup({
+		suggestion = { enabled = false },
+		panel = { enabled = false },
+	})
+
+	require("copilot_cmp").setup()
+end)
 
 MiniDeps.later(function()
 	local cmp = require("cmp")
@@ -35,6 +51,7 @@ MiniDeps.later(function()
 			disallow_prefix_unmatching = false,
 		},
 		sources = cmp.config.sources({
+			{ name = "copilot" },
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 		}, {
@@ -55,7 +72,7 @@ MiniDeps.later(function()
 					item.menu = vim.fn.strcharpart(item.menu, 0, MAX_MENU_WIDTH) .. "…"
 				end
 
-        return item
+				return item
 			end,
 		},
 	})
