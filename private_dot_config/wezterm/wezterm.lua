@@ -132,7 +132,7 @@ config.font = wezterm.font({ family = "CommitMono" })
 -- NOTE: this is for monaspace fonts
 --
 -- config.harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" }
-config.font_size = 16
+config.font_size = 18
 config.force_reverse_video_cursor = true
 config.front_end = "WebGpu"
 config.leader = { key = "Space", mods = "CTRL" }

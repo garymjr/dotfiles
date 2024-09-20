@@ -1,0 +1,45 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+{
+  "assistant": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "mistral:latest"
+    },
+    "version": "2"
+  },
+  "buffer_font_family": "CommitMono",
+  "buffer_font_size": 16.5,
+  "current_line_highlight": "none",
+  "cursor_blink": false,
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"]
+  },
+  "format_on_save": "off",
+  "language_servers": ["!typescript-language-server", "!biome", "!eslint", "vtsls", "..."],
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "relative_line_numbers": true,
+  "restore_on_startup": "none",
+  "tab_bar": {
+    "show": false
+  },
+  "terminal": {
+    "env": {
+      "EDITOR": "zed --wait"
+    }
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Macchiato",
+    "dark": "Catppuccin Macchiato"
+  },
+  "ui_font_family": "CommitMono",
+  "vim_mode": true
+}

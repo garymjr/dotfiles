@@ -1,0 +1,214 @@
+{
+  "extensions": {
+    "catppuccin": {
+      "manifest": {
+        "id": "catppuccin",
+        "name": "Catppuccin Themes",
+        "version": "0.2.11",
+        "schema_version": 1,
+        "description": "🦀 Soothing pastel theme for Zed",
+        "repository": "https://github.com/catppuccin/zed",
+        "authors": [
+          "Andrew Tec <andrewtec@enjoi.dev>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/catppuccin-no-italics-mauve.json",
+          "themes/catppuccin-mauve.json"
+        ],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null
+      },
+      "dev": false
+    },
+    "elixir": {
+      "manifest": {
+        "id": "elixir",
+        "name": "Elixir",
+        "version": "0.0.9",
+        "schema_version": 1,
+        "description": "Elixir support.",
+        "repository": "https://github.com/zed-industries/zed",
+        "authors": [
+          "Marshall Bowers <elliott.codes@gmail.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.0.6"
+        },
+        "themes": [],
+        "languages": [
+          "languages/elixir",
+          "languages/heex"
+        ],
+        "grammars": {
+          "elixir": {
+            "repository": "https://github.com/elixir-lang/tree-sitter-elixir",
+            "rev": "a2861e88a730287a60c11ea9299c033c7d076e30",
+            "path": null
+          },
+          "heex": {
+            "repository": "https://github.com/phoenixframework/tree-sitter-heex",
+            "rev": "2e1348c3cf2c9323e87c2744796cf3f3868aa82a",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "elixir-ls": {
+            "language": null,
+            "languages": [
+              "Elixir",
+              "HEEX"
+            ],
+            "language_ids": {},
+            "code_action_kinds": null
+          },
+          "lexical": {
+            "language": null,
+            "languages": [
+              "Elixir",
+              "HEEX"
+            ],
+            "language_ids": {},
+            "code_action_kinds": null
+          },
+          "next-ls": {
+            "language": null,
+            "languages": [
+              "Elixir",
+              "HEEX"
+            ],
+            "language_ids": {},
+            "code_action_kinds": null
+          }
+        },
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null
+      },
+      "dev": false
+    },
+    "html": {
+      "manifest": {
+        "id": "html",
+        "name": "HTML",
+        "version": "0.1.2",
+        "schema_version": 1,
+        "description": "HTML support.",
+        "repository": "https://github.com/zed-industries/zed",
+        "authors": [
+          "Isaac Clayton <slightknack@gmail.com>"
+        ],
+        "lib": {
+          "kind": "Rust",
+          "version": "0.0.6"
+        },
+        "themes": [],
+        "languages": [
+          "languages/html"
+        ],
+        "grammars": {
+          "html": {
+            "repository": "https://github.com/tree-sitter/tree-sitter-html",
+            "rev": "bfa075d83c6b97cd48440b3829ab8d24a2319809",
+            "path": null
+          }
+        },
+        "language_servers": {
+          "vscode-html-language-server": {
+            "language": "HTML",
+            "languages": [],
+            "language_ids": {
+              "HTML": "html",
+              "CSS": "css"
+            },
+            "code_action_kinds": null
+          }
+        },
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null
+      },
+      "dev": false
+    }
+  },
+  "themes": {
+    "Catppuccin Frappé": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Frappé - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Catppuccin Latte": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Latte - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Catppuccin Macchiato": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Macchiato - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Catppuccin Mocha": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-mauve.json"
+    },
+    "Catppuccin Mocha - No Italics": {
+      "extension": "catppuccin",
+      "path": "themes/catppuccin-no-italics-mauve.json"
+    }
+  },
+  "languages": {
+    "Elixir": {
+      "extension": "elixir",
+      "path": "languages/elixir",
+      "matcher": {
+        "path_suffixes": [
+          "ex",
+          "exs"
+        ],
+        "first_line_pattern": null
+      },
+      "grammar": "elixir"
+    },
+    "HEEX": {
+      "extension": "elixir",
+      "path": "languages/heex",
+      "matcher": {
+        "path_suffixes": [
+          "heex"
+        ],
+        "first_line_pattern": null
+      },
+      "grammar": "heex"
+    },
+    "HTML": {
+      "extension": "html",
+      "path": "languages/html",
+      "matcher": {
+        "path_suffixes": [
+          "html",
+          "htm",
+          "shtml"
+        ],
+        "first_line_pattern": null
+      },
+      "grammar": "html"
+    }
+  }
+}

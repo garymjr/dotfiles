@@ -14,6 +14,7 @@
   tool = difftastic
 [rebase]
   tool = difftastic
+  updateRefs = true
 [pull]
   rebase = true
 [branch]
@@ -45,10 +46,10 @@
   cs = commit --squash
   dt = difftool
   f = fetch --prune
-  l = log --reflog --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
-  la = l --all
+  l = log  --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
+  ll = l --reflog
   p = pull
-  po = push origin
+  po = push origin --force-with-lease
   pu = !git branch --show-current | xargs git push origin
   puf = !git branch --show-current | xargs git push --force-with-lease origin
   puo = !git branch --show-current | xargs git push -u origin
