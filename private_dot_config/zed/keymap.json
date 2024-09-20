@@ -46,6 +46,10 @@
       "space f f": "file_finder::Toggle",
       "space f p": "projects::OpenRecent",
       "space f t": "workspace::NewTerminal",
+      "space f T": "workspace::NewCenterTerminal",
+      "space g d": "editor::ToggleHunkDiff",
+      "space g D": "editor::ExpandAllHunkDiffs",
+      "space g x": "editor::RevertSelectedHunks",
       "space s b": "buffer_search::Deploy",
       "space s g": "pane::DeploySearch",
       "space r": "workspace::ToggleRightDock",
@@ -72,14 +76,19 @@
     }
   },
   {
+    "context": "Dock && vim_mode == normal",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "space f e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
     "context": "Dock",
     "bindings": {
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "space e": "workspace::ToggleLeftDock",
-      "space f e": "workspace::ToggleLeftDock"
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
     }
   },
   {

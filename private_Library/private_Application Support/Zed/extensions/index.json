@@ -137,6 +137,42 @@
         "snippets": null
       },
       "dev": false
+    },
+    "sql": {
+      "manifest": {
+        "id": "sql",
+        "name": "SQL",
+        "version": "1.1.2",
+        "schema_version": 1,
+        "description": "SQL language support.",
+        "repository": "https://github.com/nervenes/zed-sql",
+        "authors": [
+          "nervenes",
+          "notpeter",
+          "phileix",
+          "tammyxiong"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "languages": [
+          "languages/sql"
+        ],
+        "grammars": {
+          "sql": {
+            "repository": "https://github.com/nervenes/tree-sitter-sql",
+            "rev": "6dfca8b6dcb196d943c10e9cabab25e60232d332",
+            "path": null
+          }
+        },
+        "language_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null
+      },
+      "dev": false
     }
   },
   "themes": {
@@ -209,6 +245,17 @@
         "first_line_pattern": null
       },
       "grammar": "html"
+    },
+    "SQL": {
+      "extension": "sql",
+      "path": "languages/sql",
+      "matcher": {
+        "path_suffixes": [
+          "sql"
+        ],
+        "first_line_pattern": null
+      },
+      "grammar": "sql"
     }
   }
 }

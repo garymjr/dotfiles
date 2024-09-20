@@ -40,6 +40,7 @@
   bd = branch -d
   c = commit -v
   ca = commit -v --amend
+  cb = checkout -b
   cf = commit --fixup
   co = checkout
   cp = cherry-pick
@@ -49,10 +50,9 @@
   l = log  --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   ll = l --reflog
   p = pull
-  po = push origin --force-with-lease
-  pu = !git branch --show-current | xargs git push origin
-  puf = !git branch --show-current | xargs git push --force-with-lease origin
-  puo = !git branch --show-current | xargs git push -u origin
+  po = push origin
+  pof = push --force-with-lease origin
+  puo = push -u origin
   ras = rebase -i --autosquash
   rt = !cd $(git rev-parse --show-toplevel)
   s = status

@@ -9,8 +9,8 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "ollama",
-      "model": "mistral:latest"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
     },
     "version": "2"
   },
@@ -23,7 +23,16 @@
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
   "format_on_save": "off",
-  "language_servers": ["!typescript-language-server", "!biome", "!eslint", "vtsls", "..."],
+  "language_servers": [
+    "!typescript-language-server",
+    "!biome",
+    "!eslint",
+    "vtsls",
+    "!next-ls",
+    "!elixir-ls",
+    "lexical",
+    "..."
+  ],
   "multi_cursor_modifier": "cmd_or_ctrl",
   "relative_line_numbers": true,
   "restore_on_startup": "none",
