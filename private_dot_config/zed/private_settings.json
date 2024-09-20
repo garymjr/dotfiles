@@ -15,7 +15,7 @@
     "version": "2"
   },
   "buffer_font_family": "CommitMono",
-  "buffer_font_size": 16.5,
+  "buffer_font_size": 17.25,
   "current_line_highlight": "none",
   "cursor_blink": false,
   "file_types": {
@@ -34,12 +34,27 @@
     "..."
   ],
   "multi_cursor_modifier": "cmd_or_ctrl",
+  "outline_panel": {
+    "button": false
+  },
+  "pane_split_direction_horizontal": "down",
+  "pane_split_direction_vertical": "right",
+  "project_panel": {
+    "button": false
+  },
   "relative_line_numbers": true,
   "restore_on_startup": "none",
+  "scrollbar": {
+    "show": "never"
+  },
   "tab_bar": {
     "show": false
   },
+  "toolbar": {
+    "quick_actions": false,
+  },
   "terminal": {
+    "button": false,
     "env": {
       "EDITOR": "zed --wait"
     }
@@ -50,5 +65,9 @@
     "dark": "Catppuccin Macchiato"
   },
   "ui_font_family": "CommitMono",
-  "vim_mode": true
+  "use_on_type_format": false,
+  "use_smartcase_search": true,
+  "use_system_path_prompts": false,
+  "vim_mode": true,
+  "when_closing_with_no_tabs": "close_window"
 }
