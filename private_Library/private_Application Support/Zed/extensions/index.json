@@ -138,6 +138,34 @@
       },
       "dev": false
     },
+    "nebula-pulse": {
+      "manifest": {
+        "id": "nebula-pulse",
+        "name": "Nebula Pulse",
+        "version": "0.0.3",
+        "schema_version": 1,
+        "description": "Nebula Pulse Theme for Zed",
+        "repository": "https://github.com/foxoman/nebula-pulse-zed-theme",
+        "authors": [
+          "Foxoman <sultan@foxoman.net>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/nebula-pulse.json",
+          "themes/nebula-glow.json"
+        ],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "slash_commands": {},
+        "indexed_docs_providers": {},
+        "snippets": null
+      },
+      "dev": false
+    },
     "sql": {
       "manifest": {
         "id": "sql",
@@ -207,6 +235,14 @@
     "Catppuccin Mocha - No Italics": {
       "extension": "catppuccin",
       "path": "themes/catppuccin-no-italics-mauve.json"
+    },
+    "Nebula Glow": {
+      "extension": "nebula-pulse",
+      "path": "themes/nebula-glow.json"
+    },
+    "Nebula Pulse": {
+      "extension": "nebula-pulse",
+      "path": "themes/nebula-pulse.json"
     }
   },
   "languages": {
