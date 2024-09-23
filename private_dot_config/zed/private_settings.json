@@ -18,6 +18,9 @@
   "buffer_font_size": 17.25,
   "current_line_highlight": "none",
   "cursor_blink": false,
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
@@ -29,8 +32,8 @@
     "!eslint",
     "vtsls",
     "!next-ls",
-    "!elixir-ls",
-    "lexical",
+    "elixir-ls",
+    "!lexical",
     "..."
   ],
   "multi_cursor_modifier": "cmd_or_ctrl",
