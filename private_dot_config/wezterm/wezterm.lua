@@ -136,7 +136,7 @@ config.font_size = 18
 config.force_reverse_video_cursor = true
 config.front_end = "WebGpu"
 config.leader = { key = "Space", mods = "CTRL" }
-config.line_height = 1.218
+config.line_height = 1.3
 
 config.keys = {
 	{ key = "Space", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\0" }) },
