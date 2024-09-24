@@ -87,7 +87,13 @@
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-space c": "workspace::NewTerminal",
+      "ctrl-space x": "pane::CloseActiveItem",
+      "ctrl-space n": "pane::ActivateNextItem",
+      "ctrl-space p": "pane::ActivatePrevItem",
+      "ctrl-space d": "workspace::ToggleBottomDock",
+      "ctrl-space z": "workspace::ToggleZoom"
     }
   },
   {
