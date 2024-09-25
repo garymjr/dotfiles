@@ -2,11 +2,12 @@ MiniDeps.later(function()
   require("mini.files").setup {
     windows = {
       preview = false,
-      width_focus = 30,
-      width_preview = 30,
+      width_nofocus = 25,
+      width_focus = 50,
+      max_number = 3,
     },
     options = {
-      use_as_default_explorer = false,
+      use_as_default_explorer = true,
     },
   }
 

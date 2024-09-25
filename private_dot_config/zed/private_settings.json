@@ -18,6 +18,13 @@
   "buffer_font_size": 17.5,
   "current_line_highlight": "none",
   "cursor_blink": false,
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
+      }
+    }
+  },
   "features": {
     "inline_completion_provider": "copilot"
   },
@@ -36,6 +43,24 @@
     "!lexical",
     "..."
   ],
+  "languages": {
+    "Elixir": {
+      "language_servers": [
+        "tailwindcss-language-server",
+        "!lexical",
+        "!next-ls",
+        "elixir-ls",
+        "..."
+      ]
+    }
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "includeLanguages": {
+        "elixir": "html"
+      }
+    }
+  },
   "multi_cursor_modifier": "cmd_or_ctrl",
   "outline_panel": {
     "button": false
@@ -54,18 +79,19 @@
     "show": false
   },
   "toolbar": {
-    "quick_actions": false,
+    "quick_actions": false
   },
   "terminal": {
     "button": false,
     "env": {
-      "EDITOR": "zed --wait"
+      "EDITOR": "zed --wait",
+      "GIT_EDITOR": "zed --wait"
     }
   },
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Macchiato",
-    "dark": "Catppuccin Macchiato"
+    "dark": "Nebula Pulse"
   },
   "ui_font_family": "CommitMono",
   "use_on_type_format": false,
