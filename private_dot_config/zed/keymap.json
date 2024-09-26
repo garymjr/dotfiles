@@ -15,11 +15,15 @@
   {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
+      "space f c": "zed::OpenSettings",
+      "space f C": "zed::OpenLocalSettings",
       "space f f": "file_finder::Toggle",
+      "space f k": "zed::OpenKeymap",
       "space f m": "project_panel::ToggleFocus",
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
-      "space f t": "terminal_panel::ToggleFocus"
+      "space f t": "terminal_panel::ToggleFocus",
+      "space f T": "workspace::NewCenterTerminal"
     }
   },
   {
@@ -38,6 +42,7 @@
       "shift-l": "pane::ActivateNextItem",
       "space `": "pane::AlternateFile",
       "space b d": "pane::CloseActiveItem",
+      "space b D": "pane::CloseAllItems",
       "space c a": "editor::ToggleCodeActions",
       "space c f": "editor::Format",
       "space c r": "editor::Rename",

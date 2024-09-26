@@ -3,6 +3,7 @@ MiniDeps.add {
   depends = {
     "windwp/nvim-ts-autotag",
     "folke/ts-comments.nvim",
+    "nvim-treesitter/nvim-treesitter-context",
   },
   hooks = {
     post_checkout = function() vim.cmd "TSUpdate" end,
@@ -59,3 +60,9 @@ MiniDeps.later(
     }
   end
 )
+
+MiniDeps.later(function()
+  require("treesitter-context").setup({
+    max_lines = 3,
+  })
+end)

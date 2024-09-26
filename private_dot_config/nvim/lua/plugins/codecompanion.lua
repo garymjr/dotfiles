@@ -10,13 +10,18 @@ MiniDeps.later(function()
 		strategies = {
 			chat = {
 				adapter = "copilot",
-				keymaps = {
-					regenerate = {
-						modes = {
-							n = "gr",
-						},
-					},
-				},
+        slash_commands = {
+          file = {
+            opts = {
+              provider = "mini_pick",
+            },
+          },
+          help = {
+            opts = {
+              provider = "mini_pick",
+            },
+          },
+        },
 			},
 			inline = {
 				adapter = "copilot",

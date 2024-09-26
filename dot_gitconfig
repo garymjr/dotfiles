@@ -13,6 +13,7 @@
   conflictstyle = zdiff3
   tool = difftastic
 [rebase]
+  autoSquash = true
   tool = difftastic
   updateRefs = true
 [pull]
