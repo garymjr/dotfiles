@@ -46,7 +46,7 @@
       "space f p": "projects::OpenRecent",
       "space g d": "editor::ToggleHunkDiff",
       "space g D": "editor::ExpandAllHunkDiffs",
-      "space g x": "editor::RevertSelectedHunks",
+      "space g r": "editor::RevertSelectedHunks",
       "space s b": "buffer_search::Deploy",
       "space s g": "pane::DeploySearch",
       "space s s": "outline::Toggle",

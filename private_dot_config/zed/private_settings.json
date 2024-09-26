@@ -78,6 +78,7 @@
   "tab_bar": {
     "show": false
   },
+  "tabs": { "file_icons": true },
   "toolbar": {
     "quick_actions": false
   },
