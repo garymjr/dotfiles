@@ -32,10 +32,8 @@ MiniDeps.later(function()
 		},
 	})
 
-	vim.keymap.set("n", "<leader>ct", "<cmd>CodeCompanionToggle<cr>", { silent = true })
-	vim.keymap.set("n", "<leader>cc", "<cmd>CodeCompanionChat<cr>", { silent = true })
+	vim.keymap.set("n", "<leader>ct", "<cmd>CodeCompanionChat<cr>", { silent = true })
 	vim.keymap.set("n", "<leader>cm", "<cmd>CodeCompanionActions<cr>", { silent = true })
-	vim.keymap.set("v", "ga", "<cmd>CodeCompanionAdd<cr>", { silent = true })
 
 	local function inline_prompt()
 		local mode = vim.fn.mode()
