@@ -23,7 +23,10 @@
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
       "space f t": "terminal_panel::ToggleFocus",
-      "space f T": "workspace::NewCenterTerminal"
+      "space f T": "workspace::NewCenterTerminal",
+      // tmux-like bindings
+      "ctrl-space -": "workspace::NewTerminal",
+      "ctrl-space |": "assistant::NewContext"
     }
   },
   {
@@ -57,7 +60,10 @@
       "space s s": "outline::Toggle",
       "space s S": "outline_panel::Open",
       "space u h": "editor::ToggleInlayHints",
-      "space u l": "editor::ToggleLineNumbers"
+      "space u l": "editor::ToggleLineNumbers",
+      // tmux-like bindings
+      "ctrl-space -": "workspace::NewTerminal",
+      "ctrl-space |": "assistant::NewContext"
     }
   },
   {

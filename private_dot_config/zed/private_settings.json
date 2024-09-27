@@ -31,8 +31,8 @@
     "!biome",
     "!eslint",
     "vtsls",
-    "!next-ls",
-    "elixir-ls",
+    "next-ls",
+    "!elixir-ls",
     "!lexical",
     "..."
   ],
@@ -66,8 +66,8 @@
   },
   "theme": {
     "mode": "dark",
-    "light": "Catppuccin Macchiato",
-    "dark": "Catppuccin Macchiato"
+    "light": "Nebula Glow",
+    "dark": "Nebula Pulse"
   },
   "ui_font_family": "CommitMono",
   "use_on_type_format": false,
