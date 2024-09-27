@@ -31,8 +31,8 @@
     "!biome",
     "!eslint",
     "vtsls",
-    "next-ls",
-    "!elixir-ls",
+    "!next-ls",
+    "elixir-ls",
     "!lexical",
     "..."
   ],

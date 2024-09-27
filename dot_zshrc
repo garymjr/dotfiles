@@ -1,7 +1,7 @@
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export EDITOR=nvim
+export EDITOR="zed --wait"
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
@@ -43,7 +43,7 @@ zle -N edit-command-line
 bindkey '^o' edit-command-line
 
 alias ls=eza
-alias vi=nvim
+alias vi=$EDITOR
 alias nv=$EDITOR
 
 alias lg=lazygit
