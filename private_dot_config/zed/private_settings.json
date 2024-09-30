@@ -14,7 +14,7 @@
     },
     "version": "2"
   },
-  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_family": "CommitMono",
   "buffer_font_size": 17.5,
   "current_line_highlight": "none",
   "cursor_blink": false,

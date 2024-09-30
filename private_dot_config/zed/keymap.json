@@ -19,11 +19,13 @@
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space a a": "assistant::ToggleFocus",
       "space f c": "zed::OpenSettings",
       "space f C": "zed::OpenLocalSettings",
+      "space f e": "project_panel::ToggleFocus",
       "space f f": "file_finder::Toggle",
       "space f k": "zed::OpenKeymap",
-      "space f m": "project_panel::ToggleFocus",
+      "space f m": ["workspace::SendKeystrokes", "space f T yazi enter"],
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
       "space f t": "terminal_panel::ToggleFocus",
@@ -48,6 +50,7 @@
       "shift-h": "pane::ActivatePrevItem",
       "shift-l": "pane::ActivateNextItem",
       "space `": "pane::AlternateFile",
+      "space a a": "assistant::ToggleFocus",
       "space b d": "pane::CloseActiveItem",
       "space b D": "pane::CloseAllItems",
       "space c a": "editor::ToggleCodeActions",
@@ -79,8 +82,9 @@
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "space f c": "zed::OpenSettings",
       "space f C": "zed::OpenLocalSettings",
+      "space f e": "project_panel::ToggleFocus",
       "space f k": "zed::OpenKeymap",
-      "space f m": "project_panel::ToggleFocus",
+      "space f m": ["workspace::SendKeystrokes", "space f T yazi enter"],
       "space f n": "workspace::NewFile",
       "space f t": "workspace::NewTerminal",
       "space f T": "workspace::NewCenterTerminal",
@@ -92,6 +96,8 @@
   {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
+      ">": "editor::Indent",
+      "<": "editor::Outdent",
       "space c a": "editor::ToggleCodeActions",
       "space c f": "editor::Format"
     }
