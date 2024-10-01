@@ -45,6 +45,7 @@
       "g h": "editor::MoveToBeginningOfLine",
       "g I": "editor::GoToImplementation",
       "g l": "editor::MoveToEndOfLine",
+      "g n": "vim::SelectNext",
       "g r": "editor::FindAllReferences",
       "g y": "editor::GoToTypeDefinition",
       "shift-h": "pane::ActivatePrevItem",
@@ -98,6 +99,7 @@
     "bindings": {
       ">": "editor::Indent",
       "<": "editor::Outdent",
+      "g n": "vim::SelectNext",
       "space c a": "editor::ToggleCodeActions",
       "space c f": "editor::Format"
     }
