@@ -7,39 +7,38 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "EmptyPane || SharedScreen",
     "bindings": {
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  },
+  {
+    "context": "(vim_mode == normal && !menu) || EmptyPane || SharedScreen",
+    "bindings": {
       "space a a": "assistant::ToggleFocus",
+      "space f b": "tab_switcher::Toggle",
       "space f c": "zed::OpenSettings",
       "space f C": "zed::OpenLocalSettings",
-      "space f e": "project_panel::ToggleFocus",
       "space f f": "file_finder::Toggle",
+      "space s g": "pane::DeploySearch",
       "space f k": "zed::OpenKeymap",
-      "space f m": ["workspace::SendKeystrokes", "space f T yazi enter"],
+      "space f K": "vim::OpenDefaultKeymap",
+      "space f m": "project_panel::ToggleFocus",
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
-      "space f t": "terminal_panel::ToggleFocus",
+      "space f t": "workspace::NewTerminal",
       "space f T": "workspace::NewCenterTerminal",
-      // tmux-like bindings
-      "ctrl-space -": "workspace::NewTerminal",
-      "ctrl-space |": "assistant::NewContext"
+      "space s s": "outline::Toggle",
+      "space s S": "outline_panel::Open",
+      // playing with the idea of using tmux-like bindings
+      "ctrl-space -": "workspace::NewTerminal"
     }
   },
   {
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
-      "[b": "pane::ActivatePrevItem",
-      "]b": "pane::ActivateNextItem",
       "g D": "editor::GoToDeclaration",
       "g d": "editor::GoToDefinition",
       "g h": "editor::MoveToBeginningOfLine",
@@ -51,66 +50,33 @@
       "shift-h": "pane::ActivatePrevItem",
       "shift-l": "pane::ActivateNextItem",
       "space `": "pane::AlternateFile",
-      "space a a": "assistant::ToggleFocus",
       "space b d": "pane::CloseActiveItem",
       "space b D": "pane::CloseAllItems",
       "space c a": "editor::ToggleCodeActions",
+      "space c d": "editor::Hover",
       "space c f": "editor::Format",
       "space c r": "editor::Rename",
-      "space f b": "tab_switcher::Toggle",
-      "space f f": "file_finder::Toggle",
-      "space f p": "projects::OpenRecent",
       "space g d": "editor::ToggleHunkDiff",
       "space g D": "editor::ExpandAllHunkDiffs",
       "space g r": "editor::RevertSelectedHunks",
       "space s b": "buffer_search::Deploy",
-      "space s g": "pane::DeploySearch",
-      "space s s": "outline::Toggle",
-      "space s S": "outline_panel::Open",
       "space u h": "editor::ToggleInlayHints",
       "space u l": "editor::ToggleLineNumbers",
-      // tmux-like bindings
-      "ctrl-space -": "workspace::NewTerminal",
-      "ctrl-space |": "assistant::NewContext"
-    }
-  },
-  {
-    "context": "vim_mode == normal && !menu",
-    "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "space f c": "zed::OpenSettings",
-      "space f C": "zed::OpenLocalSettings",
-      "space f e": "project_panel::ToggleFocus",
-      "space f k": "zed::OpenKeymap",
-      "space f m": ["workspace::SendKeystrokes", "space f T yazi enter"],
-      "space f n": "workspace::NewFile",
-      "space f t": "workspace::NewTerminal",
-      "space f T": "workspace::NewCenterTerminal",
-      "space t h": "workspace::ToggleLeftDock",
-      "space t l": "workspace::ToggleRightDock",
-      "space t j": "workspace::ToggleBottomDock"
+      "space w m": "workspace::ToggleZoom"
     }
   },
   {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
-      ">": "editor::Indent",
       "<": "editor::Outdent",
+      ">": "editor::Indent",
       "g n": "vim::SelectNext",
-      "space c a": "editor::ToggleCodeActions",
-      "space c f": "editor::Format"
+      "space c a": "editor::ToggleCodeActions"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "ctrl-space c": "workspace::NewTerminal",
       "ctrl-space x": "pane::CloseActiveItem",
       "ctrl-space n": "pane::ActivateNextItem",
@@ -120,16 +86,13 @@
     }
   },
   {
-    "context": "Dock",
+    "context": "ContextEditor > Editor && vim_mode == normal && !menu",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "q": "workspace::ToggleRightDock"
     }
   },
   {
-    "context": "ProjectPanel && not_editing",
+    "context": "ProjectPanel && !editing",
     "bindings": {
       "q": "workspace::ToggleLeftDock"
     }
