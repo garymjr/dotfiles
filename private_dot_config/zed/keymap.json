@@ -18,6 +18,8 @@
     "context": "(vim_mode == normal && !menu) || EmptyPane || SharedScreen",
     "bindings": {
       "space a a": "assistant::ToggleFocus",
+      "space b d": "pane::CloseActiveItem",
+      "space b D": "pane::CloseAllItems",
       "space f b": "tab_switcher::Toggle",
       "space f c": "zed::OpenSettings",
       "space f C": "zed::OpenLocalSettings",
@@ -32,6 +34,10 @@
       "space f T": "workspace::NewCenterTerminal",
       "space s s": "outline::Toggle",
       "space s S": "outline_panel::Open",
+      "space u f": "zed::ToggleFullScreen",
+      "space w m": "workspace::ToggleZoom",
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem",
       // playing with the idea of using tmux-like bindings
       "ctrl-space -": "workspace::NewTerminal"
     }
@@ -47,11 +53,7 @@
       "g n": "vim::SelectNext",
       "g r": "editor::FindAllReferences",
       "g y": "editor::GoToTypeDefinition",
-      "shift-h": "pane::ActivatePrevItem",
-      "shift-l": "pane::ActivateNextItem",
       "space `": "pane::AlternateFile",
-      "space b d": "pane::CloseActiveItem",
-      "space b D": "pane::CloseAllItems",
       "space c a": "editor::ToggleCodeActions",
       "space c d": "editor::Hover",
       "space c f": "editor::Format",
@@ -61,8 +63,7 @@
       "space g r": "editor::RevertSelectedHunks",
       "space s b": "buffer_search::Deploy",
       "space u h": "editor::ToggleInlayHints",
-      "space u l": "editor::ToggleLineNumbers",
-      "space w m": "workspace::ToggleZoom"
+      "space u l": "editor::ToggleLineNumbers"
     }
   },
   {
@@ -71,7 +72,9 @@
       "<": "editor::Outdent",
       ">": "editor::Indent",
       "g n": "vim::SelectNext",
-      "space c a": "editor::ToggleCodeActions"
+      "space c a": "editor::ToggleCodeActions",
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp"
     }
   },
   {
@@ -95,6 +98,12 @@
     "context": "ProjectPanel && !editing",
     "bindings": {
       "q": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "ProjectSearchBar",
+    "bindings": {
+      "escape": "pane::CloseActiveItem"
     }
   }
 ]

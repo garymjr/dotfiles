@@ -10,18 +10,18 @@ MiniDeps.later(function()
 		strategies = {
 			chat = {
 				adapter = "copilot",
-        slash_commands = {
-          file = {
-            opts = {
-              provider = "mini_pick",
-            },
-          },
-          help = {
-            opts = {
-              provider = "mini_pick",
-            },
-          },
-        },
+				slash_commands = {
+					file = {
+						opts = {
+							provider = "mini_pick",
+						},
+					},
+					help = {
+						opts = {
+							provider = "mini_pick",
+						},
+					},
+				},
 			},
 			inline = {
 				adapter = "copilot",
@@ -52,6 +52,5 @@ MiniDeps.later(function()
 		end
 	end
 
-	vim.keymap.set("n", "<leader>ci", inline_prompt)
-	vim.keymap.set("v", "<leader>ci", inline_prompt)
+	vim.keymap.set({ "n", "v" }, "<c-cr>", inline_prompt)
 end)

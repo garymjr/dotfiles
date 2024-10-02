@@ -67,7 +67,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Nebula Pulse"
+    "dark": "Catppuccin Macchiato"
   },
   "ui_font_family": "CommitMono",
   "use_on_type_format": false,
