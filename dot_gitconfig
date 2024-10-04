@@ -22,7 +22,7 @@
   autosetupmerge = always
   autosetuprebase = always
 [diff]
-  external = difft
+#  external = difft
 	algorithm = histogram
 [difftool]
   prompt = false

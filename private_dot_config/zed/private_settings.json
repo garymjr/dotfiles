@@ -18,6 +18,14 @@
   "buffer_font_size": 17.5,
   "current_line_highlight": "none",
   "cursor_blink": false,
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
+      }
+    },
+    "predictive": "#6A7199"
+  },
   "features": {
     "inline_completion_provider": "copilot"
   },
@@ -67,7 +75,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Catppuccin Macchiato"
+    "dark": "Nebula Pulse"
   },
   "ui_font_family": "CommitMono",
   "use_on_type_format": false,
