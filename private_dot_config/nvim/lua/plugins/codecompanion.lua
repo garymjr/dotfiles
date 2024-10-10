@@ -7,6 +7,12 @@ MiniDeps.add({
 
 MiniDeps.later(function()
 	require("codecompanion").setup({
+		adapters = {
+			ollama = require("codecompanion.adapters").extend(
+				"ollama",
+				{ schema = { model = { default = "codegemma" } } }
+			),
+		},
 		strategies = {
 			chat = {
 				adapter = "copilot",
@@ -24,10 +30,10 @@ MiniDeps.later(function()
 				},
 			},
 			inline = {
-				adapter = "copilot",
+				adapter = "ollama",
 			},
 			agent = {
-				adapter = "copilot",
+				adapter = "ollama",
 			},
 		},
 	})

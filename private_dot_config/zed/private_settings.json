@@ -23,6 +23,9 @@
     "editor.document_highlight.bracket_background": "#393f4d",
     "border.selected": "#000000",
     "syntax": {
+      "boolean": {
+        "color": "#d0679d"
+      },
       "comment": {
         "font_style": "italic"
       },
@@ -36,10 +39,11 @@
         "color": "#e4f0fb"
       }
     },
-    "predictive": "#6A7199"
+    "identifier": "#000000",
+    "predictive": "#6a7199"
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "inline_completion_provider": "supermaven"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
@@ -54,7 +58,8 @@
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
   "project_panel": {
-    "button": false
+    "button": false,
+    "indent_size": 10
   },
   "relative_line_numbers": true,
   "restore_on_startup": "none",
@@ -62,7 +67,8 @@
     "show": "never"
   },
   "tab_bar": {
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
+    "show": true
   },
   "tabs": { "file_icons": true },
   "toolbar": {

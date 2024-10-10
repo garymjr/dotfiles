@@ -11,10 +11,8 @@
   excludesFile = ~/.config/git/ignore
 [merge]
   conflictstyle = zdiff3
-  tool = difftastic
 [rebase]
   autoSquash = true
-  tool = difftastic
   updateRefs = true
 [pull]
   rebase = true
@@ -22,18 +20,7 @@
   autosetupmerge = always
   autosetuprebase = always
 [diff]
-#  external = difft
-	algorithm = histogram
-[difftool]
-  prompt = false
-  tool = difftastic
-[mergetool]
-  prompt = false
-  tool = difftastic
-[difftool "difftastic"]
-  cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-  difftool = true
+  algorithm = histogram
 [alias]
   a = add
   aa = add -A
@@ -46,15 +33,13 @@
   co = checkout
   cp = cherry-pick
   cs = commit --squash
-  dt = difftool
   f = fetch --prune
   l = log  --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   ll = l --reflog
   p = pull
-  po = push origin
-  pof = push --force-with-lease origin
-  puo = push -u origin
-  ras = rebase -i --autosquash
+  po = !git push origin $(git rev-parse --abbrev-ref HEAD)
+  pof = !git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)
+  puo = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
   rt = !cd $(git rev-parse --show-toplevel)
   s = status
   so = spinoff

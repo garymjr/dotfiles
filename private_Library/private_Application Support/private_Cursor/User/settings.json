@@ -1,0 +1,30 @@
+{
+    "window.commandCenter": true,
+    "workbench.colorTheme": "poimandres-storm",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Maple Mono NF",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSurroundingLines": 5,
+    "editor.formatOnType": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["K"],
+            "after": ["g", "h"]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.goToReferences"]
+        },
+        {
+            "before": ["g", "d"],
+            "commands": ["editor.action.revealDefinition"]
+        },
+        {
+            "before": ["g", "Y"],
+            "commands": ["editor.action.goToTypeDefinition"]
+        }
+    ],
+    "editor.renderLineHighlight": "none",
+    "window.restoreFullscreen": true,
+    "window.newWindowDimensions": "fullscreen"
+}

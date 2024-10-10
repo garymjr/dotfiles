@@ -85,10 +85,9 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "Editor",
     "bindings": {
-      "ctrl-l": "assistant::CycleNextInlineAssist",
-      "ctrl-h": "assistant::CyclePreviousInlineAssist"
+      "cmd-k": "assistant::InlineAssist"
     }
   },
   {
