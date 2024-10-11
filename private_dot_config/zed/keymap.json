@@ -22,6 +22,8 @@
       "space a a": "assistant::ToggleFocus",
       "space b d": "pane::CloseActiveItem",
       "space b D": "pane::CloseAllItems",
+      "space c l": "debug::OpenLanguageServerLogs",
+      "space c R": "editor::RestartLanguageServer",
       "space f b": "tab_switcher::Toggle",
       "space f c": "zed::OpenSettings",
       "space f C": "zed::OpenLocalSettings",

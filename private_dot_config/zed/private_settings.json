@@ -6,7 +6,7 @@
     },
     "version": "2"
   },
-  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_family": "CommitMono",
   "buffer_font_size": 17.5,
   "current_line_highlight": "none",
   "cursor_blink": false,
@@ -14,7 +14,6 @@
     "editor.document_highlight.read_background": "#2b2f39",
     "editor.document_highlight.bracket_background": "#393f4d",
     "editor.foreground": "#a5accf",
-    "editor.highlighted_line.background": "#000000",
     "players": [
       {
         "cursor": "#74ade8ff",
@@ -81,7 +80,7 @@
         "color": "#e4f0fb"
       },
       "variable": {
-        "color": "#000000"
+        "color": "#e4f0fb"
       },
       "type": {
         "color": "#e4f0fb"
