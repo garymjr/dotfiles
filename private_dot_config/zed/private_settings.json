@@ -14,14 +14,26 @@
     },
     "version": "2"
   },
-  "buffer_font_family": "CommitMono",
+  "buffer_font_family": "Maple Mono NF",
   "buffer_font_size": 17.5,
   "current_line_highlight": "none",
   "cursor_blink": false,
   "experimental.theme_overrides": {
+    "editor.document_highlight.read_background": "#2b2f39",
+    "editor.document_highlight.bracket_background": "#393f4d",
+    "border.selected": "#000000",
     "syntax": {
       "comment": {
         "font_style": "italic"
+      },
+      "constant": {
+        "color": "#d0679d"
+      },
+      "keyword": {
+        "color": "#5de4c7"
+      },
+      "string.special.symbol": {
+        "color": "#e4f0fb"
       }
     },
     "predictive": "#6A7199"
@@ -34,16 +46,7 @@
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
   "format_on_save": "off",
-  "language_servers": [
-    "!typescript-language-server",
-    "!biome",
-    "!eslint",
-    "vtsls",
-    "!next-ls",
-    "elixir-ls",
-    "!lexical",
-    "..."
-  ],
+  "language_servers": ["!elixir-ls", "!next-ls", "lexical", "!eslint", "..."],
   "multi_cursor_modifier": "cmd_or_ctrl",
   "outline_panel": {
     "button": false
@@ -59,7 +62,7 @@
     "show": "never"
   },
   "tab_bar": {
-    "show": false
+    "show_nav_history_buttons": false
   },
   "tabs": { "file_icons": true },
   "toolbar": {
@@ -67,20 +70,23 @@
   },
   "terminal": {
     "button": false,
+    "font_family": "Maple Mono NF",
     "env": {
-      "EDITOR": "zed --wait",
+      "EDITOR": "zed",
       "GIT_EDITOR": "zed --wait"
     }
   },
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Nebula Pulse"
+    "dark": "poimandres storm"
   },
-  "ui_font_family": "CommitMono",
+  "ui_font_family": "Zed Plex Mono",
+  "ui_font_size": 18,
   "use_on_type_format": false,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "vim_mode": true,
-  "when_closing_with_no_tabs": "close_window"
+  "when_closing_with_no_tabs": "close_window",
+  "start_in_fullscreen": true
 }

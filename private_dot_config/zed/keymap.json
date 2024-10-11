@@ -11,7 +11,9 @@
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "cmd-l": "assistant::NewContext",
+      "cmd-shift-l": "workspace::ToggleRightDock"
     }
   },
   {
@@ -83,6 +85,13 @@
     }
   },
   {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-l": "assistant::CycleNextInlineAssist",
+      "ctrl-h": "assistant::CyclePreviousInlineAssist"
+    }
+  },
+  {
     "context": "Terminal",
     "bindings": {
       "ctrl-space c": "workspace::NewTerminal",
@@ -109,6 +118,12 @@
     "context": "ProjectSearchBar",
     "bindings": {
       "escape": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "cmd-enter": ["picker::ConfirmInput", { "secondary": false }],
     }
   }
 ]
