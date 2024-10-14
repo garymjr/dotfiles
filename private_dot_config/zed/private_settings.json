@@ -11,82 +11,11 @@
   "current_line_highlight": "none",
   "cursor_blink": false,
   "experimental.theme_overrides": {
-    "editor.document_highlight.read_background": "#2b2f39",
-    "editor.document_highlight.bracket_background": "#393f4d",
-    "editor.foreground": "#a5accf",
-    "players": [
-      {
-        "cursor": "#74ade8ff",
-        "background": "#74ade8ff",
-        "selection": "#74ade83d"
-      },
-      {
-        "cursor": "#be5046ff",
-        "background": "#be5046ff",
-        "selection": "#be50463d"
-      },
-      {
-        "cursor": "#bf956aff",
-        "background": "#bf956aff",
-        "selection": "#bf956a3d"
-      },
-      {
-        "cursor": "#b477cfff",
-        "background": "#b477cfff",
-        "selection": "#b477cf3d"
-      },
-      {
-        "cursor": "#6eb4bfff",
-        "background": "#6eb4bfff",
-        "selection": "#6eb4bf3d"
-      },
-      {
-        "cursor": "#d07277ff",
-        "background": "#d07277ff",
-        "selection": "#d072773d"
-      },
-      {
-        "cursor": "#dec184ff",
-        "background": "#dec184ff",
-        "selection": "#dec1843d"
-      },
-      {
-        "cursor": "#a1c181ff",
-        "background": "#a1c181ff",
-        "selection": "#a1c1813d"
-      }
-    ],
     "syntax": {
-      "boolean": {
-        "color": "#d0679d"
-      },
       "comment": {
-        "color": "#868cad",
         "font_style": "italic"
-      },
-      // "constant": {
-      //   "color": "#d0679d"
-      // },
-      "function": {
-        "color": "#add7ff"
-      },
-      "keyword": {
-        "color": "#5de4c7"
-      },
-      "operator": {
-        "color": "#add7ff"
-      },
-      "string.special.symbol": {
-        "color": "#e4f0fb"
-      },
-      "variable": {
-        "color": "#e4f0fb"
-      },
-      "type": {
-        "color": "#e4f0fb"
       }
-    },
-    "predictive": "#6a7199"
+    }
   },
   "features": {
     "inline_completion_provider": "supermaven"
@@ -96,7 +25,14 @@
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
   "format_on_save": "off",
-  "language_servers": ["!elixir-ls", "!next-ls", "lexical", "!eslint", "..."],
+  "language_servers": [
+    "!elixir-ls",
+    "!next-ls",
+    "lexical",
+    "!eslint",
+    "!typescript-language-server",
+    "..."
+  ],
   "multi_cursor_modifier": "cmd_or_ctrl",
   "outline_panel": {
     "button": false
@@ -131,7 +67,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "poimandres storm"
+    "dark": "Catppuccin Macchiato - No Italics"
   },
   "ui_font_family": "Zed Plex Mono",
   "ui_font_size": 18,
