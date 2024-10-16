@@ -1,12 +1,12 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
     },
     "version": "2"
   },
-  "buffer_font_family": "CommitMono",
+  "buffer_font_family": "Maple Mono NF",
   "buffer_font_size": 17.5,
   "current_line_highlight": "none",
   "cursor_blink": false,
@@ -18,13 +18,19 @@
     }
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "inline_completion_provider": "supermaven"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
   "format_on_save": "off",
+  "gutter": {
+    "code_actions": false
+  },
+  "indent_guides": {
+    "coloring": "indent_aware"
+  },
   "language_servers": [
     "!elixir-ls",
     "!next-ls",
@@ -35,22 +41,25 @@
   ],
   "multi_cursor_modifier": "cmd_or_ctrl",
   "outline_panel": {
-    "button": false
+    "button": false,
+    "dock": "right",
+    "indent_size": 10
   },
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
   "project_panel": {
     "button": false,
+    "dock": "right",
     "indent_size": 10
   },
   "relative_line_numbers": true,
   "restore_on_startup": "none",
-  "scrollbar": {
-    "show": "never"
-  },
+  // "scrollbar": {
+  //   "show": "never"
+  // },
   "tab_bar": {
     "show_nav_history_buttons": false,
-    "show": true
+    "show": false
   },
   "tabs": { "file_icons": true },
   "toolbar": {
@@ -67,11 +76,10 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Catppuccin Macchiato - No Italics"
+    "dark": "Rosé Pine Moon"
   },
-  "ui_font_family": "Zed Plex Mono",
+  "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 18,
-  "use_on_type_format": false,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "vim_mode": true,

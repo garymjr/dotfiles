@@ -86,6 +86,12 @@
     }
   },
   {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-k": "editor::ShowSignatureHelp"
+    }
+  },
+  {
     "context": "Editor",
     "bindings": {
       "cmd-k": "assistant::InlineAssist"

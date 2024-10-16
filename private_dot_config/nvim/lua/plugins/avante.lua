@@ -20,10 +20,10 @@ MiniDeps.later(function()
   require("avante").setup({
     -- debug = true,
     provider = "copilot",
-    auto_suggestions_provider = "copilot",
+    -- auto_suggestions_provider = "copilot",
     behaviour = {
       auto_suggestions = false,
-      auto_apply_diff_after_generation = true,
+      auto_apply_diff_after_generation = false,
     },
     vendors = {
       ollama = {
