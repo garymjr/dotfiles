@@ -30,10 +30,10 @@ MiniDeps.later(function()
 				},
 			},
 			inline = {
-				adapter = "ollama",
+				adapter = "copilot",
 			},
 			agent = {
-				adapter = "ollama",
+				adapter = "copilot",
 			},
 		},
 	})
