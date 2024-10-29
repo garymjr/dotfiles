@@ -23,7 +23,7 @@ MiniDeps.later(function()
     -- auto_suggestions_provider = "copilot",
     behaviour = {
       auto_suggestions = false,
-      auto_apply_diff_after_generation = false,
+      auto_apply_diff_after_generation = true,
     },
     vendors = {
       ollama = {

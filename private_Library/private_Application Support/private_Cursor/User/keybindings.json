@@ -1,2 +1,43 @@
 // Place your key bindings in this file to override the defaults
-[]
+[
+    {
+        "key": "cmd+`",
+        "command": "workbench.action.terminal.newInActiveWorkspace",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "aiSettings.action.open",
+        "when": "!isSettingsPaneOpen && !terminalFocus"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "-aiSettings.action.open",
+        "when": "!isSettingsPaneOpen"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "aiSettings.action.openhidden",
+        "when": "!isSettingsPaneOpen && !terminalFocus"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "-aiSettings.action.openhidden",
+        "when": "!isSettingsPaneOpen"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "workbench.action.search.toggleQueryDetails",
+        "when": "!terminalFocus && inSearchEditor || searchViewletFocus"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "-workbench.action.search.toggleQueryDetails",
+        "when": "inSearchEditor || searchViewletFocus"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile && terminalFocus"
+    }
+]

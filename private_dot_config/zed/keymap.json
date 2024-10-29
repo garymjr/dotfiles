@@ -12,7 +12,8 @@
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "cmd-l": "workspace::ToggleRightDock"
+      "cmd-l": "assistant::ToggleFocus",
+      "cmd-,": "zed::OpenSettings"
     }
   },
   {
@@ -25,17 +26,23 @@
       "space c R": "editor::RestartLanguageServer",
       "space f b": "tab_switcher::Toggle",
       "space f c": "zed::OpenSettings",
-      "space f C": "zed::OpenLocalSettings",
+      "space f C": "zed::OpenProjectSettings",
       "space f E": "project_panel::ToggleFocus",
       "space f f": "file_finder::Toggle",
       "space f k": "zed::OpenKeymap",
       "space f K": "vim::OpenDefaultKeymap",
-      "space f m": ["task::Spawn", { "task_name": "yazi" }],
+      "space f m": [
+        "workspace::SendKeystrokes",
+        ": new center terminal enter yazi enter"
+      ],
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
       "space f t": "workspace::NewTerminal",
       "space f T": "workspace::NewCenterTerminal",
-      "space g g": ["task::Spawn", { "task_name": "lazygit" }],
+      "space g g": [
+        "workspace::SendKeystrokes",
+        ": new center terminal enter lazygit enter"
+      ],
       "space s g": "pane::DeploySearch",
       "space s s": "outline::Toggle",
       "space s S": "outline_panel::Open",
@@ -129,7 +136,7 @@
   {
     "context": "Picker > Editor",
     "bindings": {
-      "cmd-enter": ["picker::ConfirmInput", { "secondary": false }],
+      "cmd-enter": ["picker::ConfirmInput", { "secondary": false }]
     }
   }
 ]

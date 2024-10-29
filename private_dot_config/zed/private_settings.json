@@ -1,24 +1,50 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620"
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
     },
-    "version": "2"
+    "version": "2",
+    "enable_experimental_live_diffs": true
   },
   "buffer_font_family": "Maple Mono NF",
   "buffer_font_size": 17.5,
+  "buffer_font_features": {
+    "calt": true,
+    "ss01": true,
+    "ss02": true,
+    "ss03": true,
+    "ss05": true,
+    "ss06": true,
+    "ss07": true,
+    "ss09": true
+  },
   "current_line_highlight": "none",
   "cursor_blink": false,
   "experimental.theme_overrides": {
     "syntax": {
       "comment": {
         "font_style": "italic"
+      },
+      "function": {
+        "color": "#969bc2"
+      },
+      "keyword": {
+        "color": "#5de4c8"
+      },
+      "property": {
+        "color": "#63688c"
+      },
+      "string": {
+        "color": "#5de4c8"
+      },
+      "string.special.symbol": {
+        "color": "#5de4c8"
       }
     }
   },
   "features": {
-    "inline_completion_provider": "supermaven"
+    "inline_completion_provider": "copilot"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
@@ -29,14 +55,13 @@
     "code_actions": false
   },
   "indent_guides": {
-    "coloring": "indent_aware"
+    "enabled": false
   },
   "language_servers": [
-    "!elixir-ls",
-    "!next-ls",
-    "lexical",
     "!eslint",
     "!typescript-language-server",
+    "!lexical",
+    "!next-ls",
     "..."
   ],
   "multi_cursor_modifier": "cmd_or_ctrl",
@@ -49,7 +74,6 @@
   "pane_split_direction_vertical": "right",
   "project_panel": {
     "button": false,
-    "dock": "right",
     "indent_size": 10
   },
   "relative_line_numbers": true,
@@ -59,7 +83,7 @@
   // },
   "tab_bar": {
     "show_nav_history_buttons": false,
-    "show": false
+    "show": true
   },
   "tabs": { "file_icons": true },
   "toolbar": {

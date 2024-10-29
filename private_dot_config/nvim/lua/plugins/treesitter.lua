@@ -66,3 +66,7 @@ MiniDeps.later(function()
     max_lines = 3,
   })
 end)
+
+MiniDeps.later(function()
+  vim.treesitter.language.register("diff", "copilot-diff")
+end)

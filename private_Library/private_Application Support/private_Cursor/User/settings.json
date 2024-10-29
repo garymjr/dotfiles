@@ -26,5 +26,14 @@
     ],
     "editor.renderLineHighlight": "none",
     "window.restoreFullscreen": true,
-    "window.newWindowDimensions": "fullscreen"
+    "window.newWindowDimensions": "fullscreen",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "cursor.aipreview.enabled": true,
+    "cursor.chat.premiumChatAutoScrollWhenAtBottom": true,
+    "cursor.chat.showSuggestedFiles": true,
+    "cursor.chat.smoothStreaming": true,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "elixirLS.suggestSpecs": false,
+    "cursor.chat.defaultNoContext": true
 }

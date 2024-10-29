@@ -10,10 +10,10 @@ MiniDeps.add({
 
 MiniDeps.later(function()
   require("ai").setup({
-    debug = false,
+    debug = true,
     provider = "ollama",
     ollama = {
-      model = "llama3.1"
+      model = "starcoder2",
     },
   })
 end)
