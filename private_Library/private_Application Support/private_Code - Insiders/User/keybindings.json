@@ -21,6 +21,11 @@
         "when": "editorFocus && vim.mode == 'Normal'"
     },
     {
+      "key": "g d",
+      "command": "editor.action.revealDefinition",
+      "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
         "key": "g g",
         "command": "cursorTop",
         "when": "editorTextFocus && vim.mode == 'Normal'"
