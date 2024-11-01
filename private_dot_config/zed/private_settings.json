@@ -25,21 +25,6 @@
     "syntax": {
       "comment": {
         "font_style": "italic"
-      },
-      "function": {
-        "color": "#969bc2"
-      },
-      "keyword": {
-        "color": "#5de4c8"
-      },
-      "property": {
-        "color": "#63688c"
-      },
-      "string": {
-        "color": "#5de4c8"
-      },
-      "string.special.symbol": {
-        "color": "#5de4c8"
       }
     }
   },
@@ -81,6 +66,7 @@
   // "scrollbar": {
   //   "show": "never"
   // },
+  "start_in_fullscreen": true,
   "tab_bar": {
     "show_nav_history_buttons": false,
     "show": true
@@ -107,6 +93,5 @@
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "vim_mode": true,
-  "when_closing_with_no_tabs": "close_window",
-  "start_in_fullscreen": true
+  "when_closing_with_no_tabs": "close_window"
 }

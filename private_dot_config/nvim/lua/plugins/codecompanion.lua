@@ -117,13 +117,13 @@ MiniDeps.later(function()
 	local function inline_prompt()
 		local mode = vim.fn.mode()
 		if mode == "v" or mode == "V" then
-			vim.ui.input({ prompt = " : " }, function(input)
+			vim.ui.input({ prompt = " > " }, function(input)
 				if input then
 					vim.cmd(string.format("'<,'>CodeCompanion %s", input))
 				end
 			end)
 		else
-			vim.ui.input({ prompt = " : " }, function(input)
+			vim.ui.input({ prompt = " > " }, function(input)
 				if input then
 					vim.cmd("CodeCompanion " .. input)
 				end

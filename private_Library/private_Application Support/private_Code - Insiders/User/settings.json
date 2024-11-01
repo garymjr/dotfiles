@@ -1,0 +1,23 @@
+{
+    "workbench.colorTheme": "Rosé Pine Moon (no italics)",
+    "workbench.startupEditor": "none",
+    "workbench.activityBar.location": "hidden",
+    "editor.fontSize": 16,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.renderLineHighlight": "none",
+    "editor.minimap.enabled": false,
+    "vim.useSystemClipboard": true,
+    "workbench.iconTheme": "rose-pine-icons",
+    "elixirLS.suggestSpecs": false,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    "editor.fontFamily": "MonaspiceAr Nerd Font",
+    "editor.renderWhitespace": "none",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.indentSize": "tabSize"
+}

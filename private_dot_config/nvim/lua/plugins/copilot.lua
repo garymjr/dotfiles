@@ -13,12 +13,12 @@ MiniDeps.later(function()
 	require("copilot_cmp").setup()
 end)
 
-MiniDeps.add({ source = "CopilotC-Nvim/CopilotChat.nvim", checkout = "canary" })
-
-MiniDeps.later(function()
-	require("CopilotChat").setup({
-		question_header = " User ",
-		answer_header = " Copilot ",
-		error_header = " Error ",
-	})
-end)
+-- MiniDeps.add({ source = "CopilotC-Nvim/CopilotChat.nvim", checkout = "canary" })
+--
+-- MiniDeps.later(function()
+-- 	require("CopilotChat").setup({
+-- 		question_header = " User ",
+-- 		answer_header = " Copilot ",
+-- 		error_header = " Error ",
+-- 	})
+-- end)

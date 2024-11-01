@@ -35,7 +35,7 @@ MiniDeps.later(function()
 			disallow_prefix_unmatching = false,
 		},
 		sources = cmp.config.sources({
-			{ name = "copilot" },
+			-- { name = "copilot" },
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 		}, {

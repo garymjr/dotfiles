@@ -1,43 +1,48 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "cmd+`",
+        "key": "ctrl+space c",
         "command": "workbench.action.terminal.newInActiveWorkspace",
         "when": "terminalFocus"
     },
     {
-        "key": "shift+cmd+j",
-        "command": "aiSettings.action.open",
-        "when": "!isSettingsPaneOpen && !terminalFocus"
+        "key": "cmd+n",
+        "command": "workbench.action.terminal.newInActiveWorkspace",
+        "when": "terminalFocus"
     },
     {
-        "key": "shift+cmd+j",
-        "command": "-aiSettings.action.open",
-        "when": "!isSettingsPaneOpen"
+        "key": "ctrl+space x",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
     },
     {
-        "key": "shift+cmd+j",
-        "command": "aiSettings.action.openhidden",
-        "when": "!isSettingsPaneOpen && !terminalFocus"
+        "key": "cmd+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
     },
     {
-        "key": "shift+cmd+j",
-        "command": "-aiSettings.action.openhidden",
-        "when": "!isSettingsPaneOpen"
+        "key": "ctrl+j",
+        "command": "terminal.focus",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
     },
     {
-        "key": "shift+cmd+j",
-        "command": "workbench.action.search.toggleQueryDetails",
-        "when": "!terminalFocus && inSearchEditor || searchViewletFocus"
+        "key": "ctrl+k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
     },
     {
-        "key": "shift+cmd+j",
-        "command": "-workbench.action.search.toggleQueryDetails",
-        "when": "inSearchEditor || searchViewletFocus"
+        "key": "ctrl+h",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
     },
     {
-        "key": "shift+cmd+j",
-        "command": "workbench.action.terminal.new",
-        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile && terminalFocus"
+        "key": "ctrl+l",
+        "command": "workbench.action.focusRightGroup",
+        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    },
+    {
+        "key": "space f shift+t",
+        "command": "workbench.action.createTerminalEditor",
+        "when": "editorFocus && vim.mode == 'Normal'"
     }
 ]
