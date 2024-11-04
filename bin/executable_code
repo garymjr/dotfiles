@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+CODE="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code"
+
+if [ ! -f "$CODE" ]; then
+    echo "Code executable not found: $CODE"
+    exit 1
+fi
+
+export VSCODE_NODE_OPTIONS=$NODE_OPTIONS
+export VSCODE_NODE_REPL_EXTERNAL_MODULE=$NODE_REPL_EXTERNAL_MODULE
+unset NODE_OPTIONS
+unset NODE_REPL_EXTERNAL_MODULE
+
+exec "$CODE" "$@"
