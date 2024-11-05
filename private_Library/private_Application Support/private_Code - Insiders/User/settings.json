@@ -47,12 +47,12 @@
       ]
     }
   ],
+  "vim.smartRelativeLine": true,
   "vim.useSystemClipboard": true,
   "workbench.colorCustomizations": {
     "input.border": "#00000000"
   },
   "workbench.colorTheme": "Rosé Pine Moon",
   "workbench.iconTheme": "rose-pine-icons",
-  "workbench.startupEditor": "none",
-  "vim.smartRelativeLine": true
+  "workbench.startupEditor": "none"
 }
