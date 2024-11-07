@@ -31,6 +31,7 @@ require("plugins.lspconfig")
 
 require("plugins.chezmoi")
 require("plugins.cmp")
+require("plugins.codecompanion")
 require("plugins.copilot")
 require("plugins.conform")
 require("plugins.dadbod")
