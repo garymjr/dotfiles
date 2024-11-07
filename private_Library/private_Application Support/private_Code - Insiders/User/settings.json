@@ -1,25 +1,34 @@
 {
-  "workbench.colorTheme": "Rosé Pine Dawn (no italics)",
-  "workbench.startupEditor": "none",
-  "workbench.activityBar.location": "hidden",
-  "editor.fontSize": 16,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.renderLineHighlight": "none",
-  "editor.minimap.enabled": false,
-  "vim.useSystemClipboard": true,
-  "workbench.iconTheme": "rose-pine-icons",
-  "elixirLS.suggestSpecs": false,
-  "vim.mouseSelectionGoesIntoVisualMode": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorBlinking": "solid",
+  "editor.detectIndentation": false,
   "editor.fontFamily": "MonaspiceAr Nerd Font",
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
+  "editor.fontSize": 16,
+  "editor.indentSize": "tabSize",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
   "editor.tabSize": 2,
-  "editor.detectIndentation": false,
-  "editor.indentSize": "tabSize",
+  "elixirLS.suggestSpecs": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": false,
+    "scminput": false
+  },
+  "gitlens.codeLens.enabled": false,
+  "terminal.integrated.env.osx": {
+    "PATH": "${env:PATH}"
+  },
+  "vim.mouseSelectionGoesIntoVisualMode": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -37,5 +46,13 @@
         "redo"
       ]
     }
-  ]
+  ],
+  "vim.useSystemClipboard": true,
+  "workbench.colorCustomizations": {
+    "input.border": "#00000000"
+  },
+  "workbench.colorTheme": "Rosé Pine Moon",
+  "workbench.iconTheme": "rose-pine-icons",
+  "workbench.startupEditor": "none",
+  "vim.smartRelativeLine": true
 }

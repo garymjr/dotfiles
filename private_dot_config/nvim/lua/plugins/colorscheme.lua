@@ -29,10 +29,18 @@ if false then
 
 		vim.cmd.colorscheme("catppuccin")
 	end)
+
+	MiniDeps.add({ source = "olivercederborg/poimandres.nvim" })
+	MiniDeps.now(function()
+		require("poimandres").setup()
+		vim.cmd.colorscheme("poimandres")
+	end)
 end
 
-MiniDeps.add({ source = "olivercederborg/poimandres.nvim" })
-MiniDeps.now(function()
-	require("poimandres").setup()
-	vim.cmd.colorscheme("poimandres")
+MiniDeps.add({ source = "rose-pine/neovim" })
+MiniDeps.later(function()
+  require("rose-pine").setup({
+    variant = "moon",
+  })
+  vim.cmd.colorscheme("rose-pine")
 end)

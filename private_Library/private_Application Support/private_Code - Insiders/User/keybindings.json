@@ -1,98 +1,162 @@
 [
-    // leader shortcuts
-    {
-        "key": "space c f",
-        "command": "editor.action.format",
-        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
-    },
-    {
-        "key": "space f c",
-        "command": "workbench.action.openApplicationSettingsJson",
-        "when": "editorFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space f k",
-        "command": "workbench.action.openGlobalKeybindingsFile",
-        "when": "editorFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "space f shift+k",
-        "command": "workbench.action.openGlobalKeybindings",
-        "when": "editorFocus && vim.mode == 'Normal'"
-    },
-    {
-      "key": "g d",
-      "command": "editor.action.revealDefinition",
-      "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "g g",
-        "command": "cursorTop",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "g h",
-        "command": "cursorHome",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "g l",
-        "command": "cursorEnd",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "cmd+l",
-        "command": "-expandLineSelection",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "cmd+l",
-        "command": "workbench.panel.chat",
-        "when": "workbench.panel.chat.view.copilot.active"
-    },
-    {
-        "key": "ctrl+cmd+i",
-        "command": "-workbench.panel.chat",
-        "when": "workbench.panel.chat.view.copilot.active"
-    },
-    {
-        "key": "shift+k",
-        "command": "editor.action.showHover",
-        "when": "editorFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "-editor.action.joinLines",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "terminal.focus",
-        "when": "editorFocus && vim.mode == 'Normal'"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "cmd+w",
-        "command": "workbench.action.terminal.kill",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "shift+h",
-        "command": "workbench.action.previousEditorInGroup",
-        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
-    },
-    {
-        "key": "shift+l",
-        "command": "workbench.action.nextEditorInGroup",
-        "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
-    },
-    {
-        "key": "cmd+r",
-        "command": "workbench.action.chat.newChat",
-        "when": "chatIsEnabled && inChat && chatLocation != 'editing-session'"
-    }
+  // Space (leader) keybindings
+  {
+    "key": "space c f",
+    "command": "editor.action.format",
+    "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+  },
+  {
+    "key": "space f c",
+    "command": "workbench.action.openApplicationSettingsJson",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space f k",
+    "command": "workbench.action.openGlobalKeybindingsFile",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space f shift+k",
+    "command": "workbench.action.openGlobalKeybindings",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space g s",
+    "command": "workbench.view.scm",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space g g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "lazygit",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+
+  // Ctrl+Space (tmux-like) keybindings
+  {
+    "key": "ctrl+space z",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+space p",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+space n",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+space x",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+space c",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+
+  // Other keybindings
+  {
+    "key": "g c c",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "g d",
+    "command": "editor.action.revealDefinition",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "g g",
+    "command": "cursorTop",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "g h",
+    "command": "cursorHome",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "g l",
+    "command": "cursorEnd",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+l",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-editor.action.joinLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "terminal.focus",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.chat.newChat",
+    "when": "chatIsEnabled && inChat && chatLocation != 'editing-session'"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "workbench.panel.chatEditing"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "editorFocus && !inlineChatVisible"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.chat.newEditSession",
+    "when": "inChat && chatLocation == 'editing-session'"
+  }
 ]

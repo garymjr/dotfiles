@@ -59,5 +59,8 @@ MiniDeps.later(function()
 				return item
 			end,
 		},
+    experimental = {
+      ghost_text = false
+    },
 	})
 end)
