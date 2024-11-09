@@ -54,7 +54,6 @@
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
   "project_panel": {
-    "button": false,
     "indent_size": 10
   },
   "relative_line_numbers": true,

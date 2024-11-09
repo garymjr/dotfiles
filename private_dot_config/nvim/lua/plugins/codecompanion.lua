@@ -13,17 +13,17 @@ MiniDeps.later(function()
 	}
 
 	require("codecompanion").setup({
-    adapters = {
-      copilot = function()
-        return require("codecompanion.adapters").extend("copilot", {
-          schema = {
-            model = {
-              default = "claude-3.5-sonnet",
-            },
-          },
-        })
-      end,
-    },
+		adapters = {
+			copilot = function()
+				return require("codecompanion.adapters").extend("copilot", {
+					schema = {
+						model = {
+							default = "claude-3.5-sonnet",
+						},
+					},
+				})
+			end,
+		},
 		display = {
 			chat = {
 				window = {
@@ -56,6 +56,14 @@ MiniDeps.later(function()
 				adapter = "copilot",
 			},
 			agent = {
+      ["dev"] = {
+        description = "Developer - Can edit code and modify files",
+        system_prompt = "If the user doesn't specify a path, use their current working directory.",
+        tools = {
+          "editor",
+          "files",
+        },
+      },
 				adapter = "copilot",
 				tools = {
 					opts = {
@@ -71,22 +79,18 @@ MiniDeps.later(function()
 
 	local function inline_prompt()
 		local mode = vim.fn.mode()
-		if mode == "v" or mode == "V" then
-			vim.ui.input({ prompt = " > " }, function(input)
-				if input then
-					vim.cmd(string.format("'<,'>CodeCompanion %s", input))
-				end
-			end)
-		else
-			vim.ui.input({ prompt = " > " }, function(input)
-				if input then
-					vim.cmd("CodeCompanion " .. input)
-				end
-			end)
-		end
+		local is_visual_mode = mode == "v" or mode == "V"
+		local range = is_visual_mode and "'<,'>" or ""
+
+		vim.ui.input({ prompt = "  => " }, function(input)
+			if input then
+				local command = string.format("%sCodeCompanion %s", range, input)
+				vim.cmd(command)
+			end
+		end)
 	end
 
 	vim.keymap.set({ "n", "v" }, "<c-cr>", inline_prompt)
 	vim.keymap.set({ "n", "v" }, "<leader>ai", inline_prompt)
-	vim.keymap.set({ "n", "v" }, "ga", "<cmd>CodeCompanionAdd<cr>")
+	-- vim.keymap.set({ "n", "v" }, "ga", "<cmd>CodeCompanionAdd<cr>")
 end)

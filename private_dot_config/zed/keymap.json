@@ -99,12 +99,6 @@
     }
   },
   {
-    "context": "Editor",
-    "bindings": {
-      "cmd-k": "assistant::InlineAssist"
-    }
-  },
-  {
     "context": "Terminal",
     "bindings": {
       "ctrl-space c": "workspace::NewTerminal",
@@ -131,12 +125,6 @@
     "context": "ProjectSearchBar",
     "bindings": {
       "escape": "pane::CloseActiveItem"
-    }
-  },
-  {
-    "context": "Picker > Editor",
-    "bindings": {
-      "cmd-enter": ["picker::ConfirmInput", { "secondary": false }]
     }
   }
 ]

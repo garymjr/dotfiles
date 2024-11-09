@@ -2,98 +2,135 @@ local Util = require("config.util")
 
 local M = {}
 
+-- Constants for commonly used values
+local LSP = vim.lsp.protocol.Methods
+local api = vim.api
+
+-- Cache frequently accessed functions
+local pumvisible = Util.pumvisible
+local feedkeys = Util.feedkeys
+
 --- @param opts {buffer: number, client: vim.lsp.Client}
 function M.setup(opts)
-	local client = opts.client
-	local buffer = opts.buffer
+	local client, buffer = opts.client, opts.buffer
 
-	if client.supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-		vim.lsp.completion.enable(true, client.id, buffer, { autotrigger = true })
+	if not client.supports_method(LSP.textDocument_completion) then
+		return
+	end
 
-		vim.api.nvim_create_autocmd("CompleteChanged", {
-			group = vim.api.nvim_create_augroup("minivim_complete_changed", { clear = true }),
-			buffer = buffer,
-			callback = function()
-				local info = vim.fn.complete_info({ "selected" })
-				local completionItem = vim.tbl_get(vim.v.completed_item, "user_data", "nvim", "lsp", "completion_item")
-				if completionItem == nil then
+	-- Enable LSP completion
+	vim.lsp.completion.enable(true, client.id, buffer, { autotrigger = true })
+
+	-- Handle completion documentation
+	local function setup_preview_window(winid, bufnr)
+		if api.nvim_win_is_valid(winid) then
+			api.nvim_win_set_config(winid, {})
+			vim.treesitter.start(bufnr, "markdown")
+			vim.wo[winid].conceallevel = 3
+		end
+	end
+
+	-- CompleteChanged autocmd for documentation
+	api.nvim_create_autocmd("CompleteChanged", {
+		group = api.nvim_create_augroup("minivim_complete_changed", { clear = true }),
+		buffer = buffer,
+		callback = function()
+			local info = vim.fn.complete_info({ "selected" })
+			local completionItem = vim.tbl_get(vim.v.completed_item, "user_data", "nvim", "lsp", "completion_item")
+
+			if not completionItem then
+				return
+			end
+
+			client.request(LSP.completionItem_resolve, completionItem, function(_, result)
+				if not result or not result.documentation then
+					setup_preview_window(info.preview_winid, info.preview_bufnr)
 					return
 				end
 
-				client.request(vim.lsp.protocol.Methods.completionItem_resolve, completionItem, function(_, result)
-					if result == nil or result.documentation == nil then
-						vim.api.nvim_win_set_config(info.preview_winid, {})
-						vim.treesitter.start(info.preview_bufnr, "markdown")
-						vim.wo[info.preview_winid].conceallevel = 3
-						return
-					end
+				local winData = api.nvim__complete_set(info["selected"], { info = result.documentation.value })
+				setup_preview_window(winData.winid, winData.bufnr)
+			end, buffer)
+		end,
+	})
 
-					local winData = vim.api.nvim__complete_set(info["selected"], { info = result.documentation.value })
-
-					if not vim.api.nvim_win_is_valid(winData.winid) then
-						return
-					end
-
-					vim.api.nvim_win_set_config(winData.winid, {})
-					vim.treesitter.start(winData.bufnr, "markdown")
-					vim.wo[winData.winid].conceallevel = 3
-				end, buffer)
+	-- Keymaps for completion interaction
+	local keymaps = {
+		-- Accept completion with Enter
+		{
+			mode = "i",
+			lhs = "<cr>",
+			rhs = function()
+				return pumvisible() and "<C-y>" or "<cr>"
 			end,
-		})
+			opts = { expr = true },
+		},
 
-		-- Use enter to accept completions.
-		vim.keymap.set("i", "<cr>", function()
-			return Util.pumvisible() and "<C-y>" or "<cr>"
-		end, { expr = true })
+		-- Dismiss completion menu with slash
+		{
+			mode = "i",
+			lhs = "/",
+			rhs = function()
+				return pumvisible() and "<C-e>" or "/"
+			end,
+			opts = { expr = true },
+		},
 
-		-- Use slash to dismiss the completion menu.
-		vim.keymap.set("i", "/", function()
-			return Util.pumvisible() and "<C-e>" or "/"
-		end, { expr = true })
-
-		-- Use <C-n> to navigate to the next completion or:
-		-- - Trigger LSP completion.
-		-- - If there's no one, fallback to vanilla omnifunc.
-		vim.keymap.set("i", "<C-n>", function()
-			if Util.pumvisible() then
-				Util.feedkeys("<C-n>")
-			else
-				if next(vim.lsp.get_clients({ bufnr = 0 })) then
-					vim.lsp.completion.trigger()
+		-- Smart completion navigation with C-n
+		{
+			mode = "i",
+			lhs = "<C-n>",
+			rhs = function()
+				if pumvisible() then
+					feedkeys("<C-n>")
 				else
-					if vim.bo.omnifunc == "" then
-						Util.feedkeys("<C-x><C-n>")
+					if next(vim.lsp.get_clients({ bufnr = buffer })) then
+						vim.lsp.completion.trigger()
 					else
-						Util.feedkeys("<C-x><C-o>")
+						feedkeys(vim.bo.omnifunc == "" and "<C-x><C-n>" or "<C-x><C-o>")
 					end
 				end
-			end
-		end, { desc = "Trigger/select next completion" })
+			end,
+			opts = { desc = "Trigger/select next completion" },
+		},
 
-		-- Buffer completions.
-		vim.keymap.set("i", "<C-u>", "<C-x><C-n>", { desc = "Buffer completions" })
+		-- Buffer completions
+		{ mode = "i", lhs = "<C-u>", rhs = "<C-x><C-n>", opts = { desc = "Buffer completions" } },
 
-		-- Use <Tab> to accept a Copilot suggestion, navigate between snippet tabstops,
-		-- or select the next completion.
-		-- Do something similar with <S-Tab>.
-		vim.keymap.set({ "i", "s" }, "<Tab>", function()
-			if vim.snippet.active({ direction = 1 }) then
-				vim.snippet.jump(1)
-			else
-				Util.feedkeys("<Tab>")
-			end
-		end, { expr = true })
+		-- Snippet navigation
+		{
+			mode = { "i", "s" },
+			lhs = "<Tab>",
+			rhs = function()
+				if vim.snippet.active({ direction = 1 }) then
+					vim.snippet.jump(1)
+				else
+					feedkeys("<Tab>")
+				end
+			end,
+			opts = { expr = true },
+		},
 
-		vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-			if vim.snippet.active({ direction = -1 }) then
-				vim.snippet.jump(-1)
-			else
-				Util.feedkeys("<S-Tab>")
-			end
-		end, { expr = true })
+		{
+			mode = { "i", "s" },
+			lhs = "<S-Tab>",
+			rhs = function()
+				if vim.snippet.active({ direction = -1 }) then
+					vim.snippet.jump(-1)
+				else
+					feedkeys("<S-Tab>")
+				end
+			end,
+			opts = { expr = true },
+		},
 
-		-- Inside a snippet, use backspace to remove the placeholder.
-		vim.keymap.set("s", "<BS>", "<C-o>s")
+		-- Snippet placeholder removal
+		{ mode = "s", lhs = "<BS>", rhs = "<C-o>s" },
+	}
+
+	-- Apply all keymaps
+	for _, map in ipairs(keymaps) do
+		vim.keymap.set(map.mode, map.lhs, map.rhs, map.opts)
 	end
 end
 

@@ -21,6 +21,7 @@ require("config.keymaps")
 require("mini.deps").setup({ path = { package = path_package } })
 
 require("plugins.mini")
+require("plugins.snacks")
 
 require("plugins.colorscheme")
 
