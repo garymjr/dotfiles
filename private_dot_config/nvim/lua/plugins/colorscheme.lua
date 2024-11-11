@@ -39,8 +39,8 @@ end
 
 MiniDeps.add({ source = "rose-pine/neovim" })
 MiniDeps.later(function()
-  require("rose-pine").setup({
-    variant = "moon",
-  })
-  vim.cmd.colorscheme("rose-pine")
+	require("rose-pine").setup({
+		variant = "moon",
+	})
+	vim.cmd.colorscheme("rose-pine")
 end)
