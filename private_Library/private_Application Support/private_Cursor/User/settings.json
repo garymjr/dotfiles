@@ -1,6 +1,6 @@
 {
     "window.commandCenter": true,
-    "workbench.colorTheme": "Rosé Pine Moon (no italics)",
+    "workbench.colorTheme": "Rosé Pine Dawn",
     "editor.fontSize": 16,
     "editor.fontFamily": "MonaspiceAr Nerd Font",
     "editor.cursorBlinking": "solid",
@@ -36,5 +36,7 @@
     "cursor.cmdk.useThemedDiffBackground": true,
     "elixirLS.suggestSpecs": false,
     "workbench.iconTheme": "rose-pine-icons",
-    "vim.mouseSelectionGoesIntoVisualMode": false
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    "cursor-retrieval.canAttemptGithubLogin": false,
+    "workbench.sideBar.location": "right"
 }

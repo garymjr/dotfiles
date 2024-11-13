@@ -52,6 +52,7 @@ alias lg=lazygit
 alias tm=tmux-open
 alias tl='tmux list-sessions'
 alias ta='tmux attach -t'
+alias e=$HOME/bin/code
 
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
