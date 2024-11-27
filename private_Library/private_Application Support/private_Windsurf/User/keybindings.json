@@ -1,0 +1,33 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "shift+k",
+    "command": "editor.action.showDefinitionPreviewHover",
+    "when": "editorTextFocus && !inCompositeEditor && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space c f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "space c",
+    "command": "editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly && vim.mode == 'Visual'"
+  },
+  {
+    "key": "cmd+k cmd+f",
+    "command": "-editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+  }
+]
