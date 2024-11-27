@@ -1,7 +1,3 @@
-[".zsh/pure"]
-type = "git-repo"
-url = "https://github.com/sindresorhus/pure.git"
-
 [".zsh/fast-syntax-highlighting"]
 type = "git-repo"
 url = "https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
@@ -25,12 +21,7 @@ type = "file"
 url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/history.zsh"
 refreshPeriod = "168h"
 
-[".tmux/themes/dawnfox.tmux"]
+[".config/kitty/themes/poimandres.conf"]
 type = "file"
-url = "https://raw.githubusercontent.com/EdenEast/nightfox.nvim/main/extra/dawnfox/dawnfox.tmux"
-refreshPeriod = "168h"
-
-[".tmux/themes/duskfox.tmux"]
-type = "file"
-url = "https://raw.githubusercontent.com/EdenEast/nightfox.nvim/main/extra/duskfox/duskfox.tmux"
+url = "https://raw.githubusercontent.com/ubmit/poimandres-kitty/refs/heads/main/theme/poimandres.conf"
 refreshPeriod = "168h"

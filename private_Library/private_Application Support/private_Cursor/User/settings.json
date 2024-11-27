@@ -1,6 +1,6 @@
 {
     "window.commandCenter": true,
-    "workbench.colorTheme": "Rosé Pine Dawn",
+    "workbench.colorTheme": "poimandres-storm",
     "editor.fontSize": 16,
     "editor.fontFamily": "MonaspiceAr Nerd Font",
     "editor.cursorBlinking": "solid",
@@ -38,5 +38,9 @@
     "workbench.iconTheme": "rose-pine-icons",
     "vim.mouseSelectionGoesIntoVisualMode": false,
     "cursor-retrieval.canAttemptGithubLogin": false,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "window.zoomLevel": 0.25,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

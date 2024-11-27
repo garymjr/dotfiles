@@ -1,46 +1,36 @@
-if false then
-	MiniDeps.add({
-		enabled = false,
-		source = "catppuccin/nvim",
-		name = "catppuccin",
-	})
-
-	MiniDeps.now(function()
-		require("catppuccin").setup({
-			flavour = "macchiato",
-			integrations = {
-				mason = true,
-				markdown = true,
-				mini = true,
-				native_lsp = {
-					enabled = true,
-					underlines = {
-						errors = { "undercurl" },
-						hints = { "undercurl" },
-						warnings = { "undercurl" },
-						information = { "undercurl" },
-					},
-				},
-				semantic_tokens = true,
-				treesitter = true,
-				treesitter_context = true,
-			},
-		})
-
-		vim.cmd.colorscheme("catppuccin")
-	end)
-
-	MiniDeps.add({ source = "olivercederborg/poimandres.nvim" })
-	MiniDeps.now(function()
-		require("poimandres").setup()
-		vim.cmd.colorscheme("poimandres")
-	end)
-end
-
-MiniDeps.add({ source = "rose-pine/neovim" })
-MiniDeps.later(function()
-	require("rose-pine").setup({
-		variant = "moon",
-	})
-	vim.cmd.colorscheme("rose-pine")
-end)
+return {
+  { "tokyonight.nvim", enabled = false },
+  { "catppuccin/nvim", enabled = false },
+  {
+    "rose-pine/neovim",
+    enabled = false,
+    lazy = false,
+    priority = 1000,
+    name = "rose-pine",
+    opts = {
+      variant = "moon",
+      dark_variant = "moon",
+    },
+    config = function(_, opts)
+      require("rose-pine").setup(opts)
+    end,
+  },
+  {
+    "olivercederborg/poimandres.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      highlight_groups = {
+        MatchParen = { fg = "#506477" },
+      },
+    },
+  },
+  {
+    "LazyVim",
+    opts = {
+      colorscheme = function()
+        vim.cmd.colorscheme("poimandres")
+      end,
+    },
+  },
+}

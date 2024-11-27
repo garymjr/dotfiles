@@ -36,6 +36,7 @@
   f = fetch --prune
   l = log  --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   ll = l --reflog
+  nuke = !git clean -df && git reset --hard
   p = pull
   po = !git push origin $(git rev-parse --abbrev-ref HEAD)
   pof = !git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)

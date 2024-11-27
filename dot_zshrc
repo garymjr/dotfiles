@@ -1,7 +1,7 @@
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export EDITOR=code-insiders
+export EDITOR=nvim
 export VISUAL="$EDITOR --wait"
 export GIT_EDITOR="$EDITOR --wait"
 

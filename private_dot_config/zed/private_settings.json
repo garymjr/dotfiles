@@ -7,8 +7,8 @@
     "version": "2",
     "enable_experimental_live_diffs": true
   },
-  "buffer_font_family": "MonaspiceAr Nerd Font",
-  "buffer_font_size": 17.5,
+  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_size": 18,
   "buffer_font_features": {
     "calt": true,
     "ss01": true,
@@ -22,7 +22,17 @@
   "current_line_highlight": "none",
   "cursor_blink": false,
   "experimental.theme_overrides": {
-    "syntax": {}
+    "syntax": {
+      "keyword": {
+        "color": "#5de4c7"
+      },
+      "function": {
+        "color": "#add7ff"
+      },
+      "type": {
+        "color": "#add7ff"
+      }
+    }
   },
   "features": {
     "inline_completion_provider": "copilot"
@@ -77,7 +87,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Rosé Pine Dawn"
+    "dark": "poimandres"
   },
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 18,
