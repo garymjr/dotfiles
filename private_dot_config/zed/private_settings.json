@@ -1,11 +1,13 @@
 {
   "assistant": {
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-5-sonnet"
-    },
     "version": "2",
-    "enable_experimental_live_diffs": true
+    "enabled": true,
+    "button": true,
+    "dock": "right",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.0-flash-exp"
+    }
   },
   "buffer_font_family": "Maple Mono NF",
   "buffer_font_size": 18,
@@ -21,19 +23,7 @@
   },
   "current_line_highlight": "none",
   "cursor_blink": false,
-  "experimental.theme_overrides": {
-    "syntax": {
-      "keyword": {
-        "color": "#5de4c7"
-      },
-      "function": {
-        "color": "#add7ff"
-      },
-      "type": {
-        "color": "#add7ff"
-      }
-    }
-  },
+  "experimental.theme_overrides": {},
   "features": {
     "inline_completion_provider": "copilot"
   },
@@ -87,12 +77,48 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "poimandres"
+    "dark": "Rosé Pine Moon"
   },
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 18,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "vim_mode": true,
-  "when_closing_with_no_tabs": "close_window"
+  "when_closing_with_no_tabs": "close_window",
+  "context_servers": {
+    "postgres-context-server": {
+      "settings": {
+        "database_url": "postgres://postgres:postgres@localhost:5432/styletrack_dev"
+      }
+    }
+  },
+  "slash_commands": {
+    "docs": {
+      "enabled": true
+    },
+    "project": {
+      "enabled": true
+    }
+  },
+  "git_panel": {
+    "button": true,
+    "dock": "right"
+  },
+  "language_models": {
+    "google": {
+      "api_url": "https://generativelanguage.googleapis.com",
+      "available_models": [
+        {
+          "display_name": "Gemini 2.0 Flash",
+          "max_tokens": 1000000,
+          "name": "gemini-2.0-flash-exp"
+        },
+        {
+          "display_name": "Gemini 1.5 Flash",
+          "max_tokens": 1000000,
+          "name": "gemini-1.5-flash"
+        }
+      ]
+    }
+  }
 }

@@ -1,6 +1,6 @@
 {
     "window.commandCenter": true,
-    "workbench.colorTheme": "poimandres-storm",
+    "workbench.colorTheme": "Rosé Pine Moon",
     "editor.fontSize": 16,
     "editor.fontFamily": "MonaspiceAr Nerd Font",
     "editor.cursorBlinking": "solid",
@@ -42,5 +42,6 @@
     "window.zoomLevel": 0.25,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "cursor.composer.renderPillsInsteadOfBlocks": true
 }
