@@ -1,0 +1,10 @@
+font-family = "Monaspace Argon Var"
+font-size = 18
+font-feature = ss01
+font-feature = ss02
+font-feature = ss03
+font-feature = ss05
+font-feature = ss09
+theme = "rose-pine-moon"
+cursor-style-blink = false
+selection-invert-fg-bg = true
