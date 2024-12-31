@@ -40,8 +40,8 @@
       "space f t": "workspace::NewTerminal",
       "space f T": "workspace::NewCenterTerminal",
       "space g g": [
-        "workspace::SendKeystrokes",
-        ": new center terminal enter lazygit enter"
+        "task::Spawn",
+        { "task_name": "lazygit", "target": "center" }
       ],
       "space s g": "pane::DeploySearch",
       "space s s": "outline::Toggle",

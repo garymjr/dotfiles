@@ -2,8 +2,8 @@ export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export EDITOR=nvim
-export VISUAL="$EDITOR --wait"
-export GIT_EDITOR="$EDITOR --wait"
+export VISUAL=$EDITOR
+export GIT_EDITOR=$EDITOR
 
 # for elixir/erlang support
 export KERL_BUILD_DOCS="yes"
@@ -28,6 +28,7 @@ export GOPROXY=direct
 export GOSUMDB=
 
 export NVM_DIR="$HOME/.nvm"
+export AOC_SESSION="53616c7465645f5f9878fb63739800387aa9968584b3e42546375a925ad8805b071bef36c385558417a4b2d68c96f68a7b9b12917e5658bde4d64906878d5322"
 
 autoload -U +X compinit
 source $HOME/.zsh/completion.zsh
