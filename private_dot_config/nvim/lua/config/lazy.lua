@@ -18,9 +18,10 @@ require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { "folke/lazy.nvim", version = false },
-    { "LazyVim/LazyVim", version = false },
-    { import = "plugins.extras.copilot" },
+    { "garymjr/LazyVim", version = false },
     { import = "plugins" },
+    { import = "plugins.extras.ai.copilot" },
+    { import = "plugins.extras.ai.codecompanion" },
   },
   defaults = {
     lazy = true,

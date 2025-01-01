@@ -16,4 +16,12 @@ return {
       },
     },
   },
+  {
+    "echasnovski/mini-git",
+    cmd = "Git",
+    opts = {},
+    config = function(_, opts)
+      require("mini.git").setup(opts)
+    end,
+  },
 }
