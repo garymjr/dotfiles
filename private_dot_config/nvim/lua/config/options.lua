@@ -1,3 +1,5 @@
+vim.g.lazyvim_picker = "telescope"
+
 local opt = vim.opt
 
 vim.g.keymaps_lsp_ignore_ft = vim.list_extend(vim.g.keymaps_lsp_ignore_ft or {}, { "codecompanion" })

@@ -72,22 +72,22 @@ return {
           slash_commands = {
             buffer = {
               opts = {
-                provider = "fzf_lua",
+                provider = "telescope",
               },
             },
             file = {
               opts = {
-                provider = "fzf_lua",
+                provider = "telescope",
               },
             },
             help = {
               opts = {
-                provider = "fzf_lua",
+                provider = "telescope",
               },
             },
             symbols = {
               opts = {
-                provider = "fzf_lua",
+                provider = "telescope",
               },
             },
           },
