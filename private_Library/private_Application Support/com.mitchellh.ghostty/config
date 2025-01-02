@@ -8,4 +8,4 @@ font-feature = ss09
 theme = "rose-pine-moon"
 cursor-style-blink = false
 selection-invert-fg-bg = true
-adjust-cursor-thickness = 5
+shell-integration-features = no-cursor
