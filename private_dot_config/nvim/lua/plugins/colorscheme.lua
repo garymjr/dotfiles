@@ -1,17 +1,34 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = false,
-    priority = 1000,
+    "catppuccin",
+    dependencies = {
+      {
+        "LazyVim",
+        opts = {
+          colorscheme = "catppuccin",
+        },
+      },
+    },
     opts = {
-      variant = "moon",
+      flavour = "frappe",
     },
   },
   {
-    "LazyVim",
+    "rose-pine/neovim",
+    enabled = false,
+    name = "rose-pine",
+    lazy = false,
+    priority = 1000,
+    dependencies = {
+      {
+        "LazyVim",
+        opts = {
+          colorscheme = "rose-pine",
+        },
+      },
+    },
     opts = {
-      colorscheme = "rose-pine",
+      variant = "moon",
     },
   },
 }
