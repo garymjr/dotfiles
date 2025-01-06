@@ -10,7 +10,7 @@ return {
       },
     },
     opts = {
-      flavour = "frappe",
+      flavour = "mocha",
     },
   },
   {
