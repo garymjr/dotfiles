@@ -18,10 +18,10 @@ require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { "folke/lazy.nvim", version = false },
-    { "garymjr/LazyVim", version = false },
+    { "garymjr/LazyVim", version = false, branch = "feat/ignore-keymaps" },
     { import = "plugins" },
     { import = "plugins.extras.ai.copilot" },
-    { import = "plugins.extras.ai.codecompanion" },
+    { import = "plugins.extras.ai.copilot_chat" },
   },
   defaults = {
     lazy = true,

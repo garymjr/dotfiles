@@ -1,38 +1,41 @@
 return {
   {
     "CopilotChat.nvim",
-    enabled = false,
     opts = {
       auto_insert_mode = false,
       contexts = {
         file = {
           input = function(callback)
-            local fzf = require("fzf-lua")
-            local fzf_path = require("fzf-lua.path")
-            fzf.files({
-              complete = function(selected, opts)
-                local file = fzf_path.entry_to_file(selected[1], opts, opts._uri)
-                if file.path == "none" then
-                  return
-                end
-                vim.defer_fn(function()
-                  callback(file.path)
-                end, 100)
+            local telescope = require("telescope.builtin")
+            local actions = require("telescope.actions")
+            local action_state = require("telescope.actions.state")
+            telescope.find_files({
+              attach_mappings = function(prompt_bufnr)
+                actions.select_default:replace(function()
+                  actions.close(prompt_bufnr)
+                  local selection = action_state.get_selected_entry()
+                  callback(selection[1])
+                end)
+                return true
               end,
             })
           end,
         },
       },
       model = "claude-3.5-sonnet",
+      prompts = {
+        Commit = {
+          selection = function() end,
+        },
+      },
     },
   },
   {
     "CopilotChat.nvim",
-    enabled = false,
     opts = function(_, opts)
       opts.mappings = vim.tbl_deep_extend("force", {}, opts.mappings or {}, {
         complete = {
-          insert = "<C-y>",
+          insert = "<c-y>",
         },
         reset = {
           normal = "gx",

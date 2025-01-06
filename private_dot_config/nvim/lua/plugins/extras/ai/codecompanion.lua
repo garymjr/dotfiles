@@ -69,28 +69,6 @@ return {
               description = "Stop Request",
             },
           },
-          slash_commands = {
-            buffer = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            file = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            help = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            symbols = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-          },
         },
       },
     },
