@@ -53,5 +53,6 @@
     "chat.editor.fontSize": 16,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "workbench.activityBar.location": "top"
 }

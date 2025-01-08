@@ -17,6 +17,7 @@ end
 return {
   {
     "olimorris/codecompanion.nvim",
+    -- dir = "~/code/codecompanion.nvim",
     cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionCmd", "CodeCompanionActions" },
     keys = {
       { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
@@ -78,12 +79,6 @@ return {
     opts = {
       sources = {
         default = { "codecompanion" },
-        providers = {
-          codecompanion = {
-            name = "CodeCompanion",
-            module = "codecompanion.providers.completion.blink",
-          },
-        },
       },
     },
   },

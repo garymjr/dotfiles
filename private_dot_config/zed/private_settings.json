@@ -5,8 +5,8 @@
     "button": true,
     "dock": "right",
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.0-flash-exp"
+      "provider": "copilot_chat",
+      "model": "claude-3-5-sonnet"
     }
   },
   "buffer_font_family": "Maple Mono NF",

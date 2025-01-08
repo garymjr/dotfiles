@@ -21,7 +21,7 @@ require("lazy").setup({
     { "garymjr/LazyVim", version = false, branch = "feat/ignore-keymaps" },
     { import = "plugins" },
     { import = "plugins.extras.ai.copilot" },
-    { import = "plugins.extras.ai.copilot_chat" },
+    { import = "plugins.extras.ai.codecompanion" },
   },
   defaults = {
     lazy = true,
