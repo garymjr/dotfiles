@@ -1,47 +1,65 @@
 {
-    "window.commandCenter": true,
-    "workbench.colorTheme": "Rosé Pine Moon",
-    "editor.fontSize": 16,
-    "editor.fontFamily": "MonaspiceAr Nerd Font",
+    "cursor-retrieval.canAttemptGithubLogin": false,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.composer.renderPillsInsteadOfBlocks": true,
     "editor.cursorBlinking": "solid",
     "editor.cursorSurroundingLines": 5,
+    "editor.fontFamily": "Monaspace Argon",
+    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
     "editor.formatOnType": true,
+    "editor.guides.indentation": false,
+    "editor.renderLineHighlight": "none",
+    "elixirLS.suggestSpecs": false,
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
     "vim.normalModeKeyBindings": [
         {
-            "before": ["K"],
-            "after": ["g", "h"]
+            "after": [
+                "g",
+                "h"
+            ],
+            "before": [
+                "K"
+            ]
         },
         {
-            "before": ["g", "r"],
-            "commands": ["editor.action.goToReferences"]
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ]
         },
         {
-            "before": ["g", "d"],
-            "commands": ["editor.action.revealDefinition"]
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
         },
         {
-            "before": ["g", "Y"],
-            "commands": ["editor.action.goToTypeDefinition"]
+            "before": [
+                "g",
+                "Y"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ]
         }
     ],
-    "editor.renderLineHighlight": "none",
-    "window.restoreFullscreen": true,
+    "window.commandCenter": true,
     "window.newWindowDimensions": "fullscreen",
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "cursor.aipreview.enabled": true,
-    "cursor.chat.premiumChatAutoScrollWhenAtBottom": true,
-    "cursor.chat.showSuggestedFiles": true,
-    "cursor.chat.smoothStreaming": true,
-    "cursor.cmdk.useThemedDiffBackground": true,
-    "elixirLS.suggestSpecs": false,
-    "workbench.iconTheme": "rose-pine-icons",
-    "vim.mouseSelectionGoesIntoVisualMode": false,
-    "cursor-retrieval.canAttemptGithubLogin": false,
-    "workbench.sideBar.location": "right",
+    "window.restoreFullscreen": true,
     "window.zoomLevel": 0.25,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "cursor.composer.renderPillsInsteadOfBlocks": true
+    "workbench.colorTheme": "poimandres-storm",
+    "workbench.iconTheme": "rose-pine-icons",
+    "workbench.sideBar.location": "right"
 }
