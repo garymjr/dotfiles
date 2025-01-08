@@ -1,5 +1,6 @@
 return {
-  { "mini.pairs", enabled = false },
+  { "mini.pairs",   enabled = false },
+  { "lazydev.nvim", vscode = true },
   {
     "blink.cmp",
     opts = {
