@@ -25,7 +25,6 @@
   "workbench.colorTheme": "poimandres-storm",
   "workbench.iconTheme": "rose-pine-icons",
   "workbench.sideBar.location": "right",
-  "cursor.aipreview.enabled": true,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -35,5 +34,6 @@
     "file:///Users/gamurray/Library/Application%20Support/Cursor/User/vscode.css"
   ],
   "workbench.editor.showTabs": "none",
-  "window.commandCenter": false
+  "window.commandCenter": false,
+  "terminal.integrated.fontSize": 18
 }
