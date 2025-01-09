@@ -57,6 +57,7 @@ alias e=$HOME/bin/code
 
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
+alias mysql='docker run -it --rm mysql mysql'
 
 [ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
