@@ -1,39 +1,54 @@
 {
-  "cursor-retrieval.canAttemptGithubLogin": false,
-  "cursor.cmdk.useThemedDiffBackground": true,
-  "cursor.composer.collapsePaneInputBoxPills": true,
-  "cursor.composer.renderPillsInsteadOfBlocks": true,
-  "editor.cursorBlinking": "solid",
-  "editor.cursorSurroundingLines": 5,
-  "editor.fontFamily": "Monaspace Argon",
-  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
-  "editor.fontSize": 18,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "editor.guides.indentation": false,
-  "editor.renderLineHighlight": "none",
-  "elixirLS.suggestSpecs": false,
-  "explorer.confirmDelete": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "window.newWindowDimensions": "fullscreen",
-  "window.restoreFullscreen": true,
-  "window.zoomLevel": 0.25,
-  "workbench.colorTheme": "poimandres-storm",
-  "workbench.iconTheme": "rose-pine-icons",
-  "workbench.sideBar.location": "right",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "go.toolsManagement.autoUpdate": true,
-  "ActiveFileInStatusBar.fullpath": false,
-  "vscode_custom_css.imports": [
-    "file:///Users/gamurray/Library/Application%20Support/Cursor/User/vscode.css"
-  ],
-  "workbench.editor.showTabs": "none",
-  "window.commandCenter": false,
-  "terminal.integrated.fontSize": 18
+    "apc.stylesheet": {
+        ".quick-input-box .monaco-findInput .monaco-inputbox": {
+            "font-size": "16px !important",
+            "height": "36px !important",
+            "line-height": "36px !important",
+        },
+        ".quick-input-widget": {
+            "top": "25% !important",
+            "width": "700px !important",
+        },
+        ".quick-input-list": {
+            "border": "1px solid var(--vscode-input-border) !important"
+        },
+        ".quick-input-inline-action-bar": {
+            "margin": "auto 0"
+        }
+    },
+    "apc.listRow": {
+        "height": 28,
+        "lists": [
+            "quick-input-list"
+        ]
+    },
+    "cursor-retrieval.canAttemptGithubLogin": false,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.composer.renderPillsInsteadOfBlocks": true,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSurroundingLines": 5,
+    "editor.fontFamily": "Monaspace Argon",
+    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.guides.indentation": false,
+    "editor.renderLineHighlight": "none",
+    "elixirLS.suggestSpecs": false,
+    "explorer.confirmDelete": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "window.newWindowDimensions": "fullscreen",
+    "window.restoreFullscreen": true,
+    "window.zoomLevel": 0.25,
+    "workbench.colorTheme": "poimandres-storm",
+    "workbench.iconTheme": "rose-pine-icons",
+    "workbench.sideBar.location": "right",
+    "workbench.editor.showTabs": "none",
+    "window.commandCenter": false,
+    "terminal.integrated.fontSize": 18
 }
