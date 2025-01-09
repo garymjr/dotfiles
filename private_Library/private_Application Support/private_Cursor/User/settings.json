@@ -3,18 +3,55 @@
         ".quick-input-box .monaco-findInput .monaco-inputbox": {
             "font-size": "16px !important",
             "height": "36px !important",
-            "line-height": "36px !important",
+            "line-height": "36px !important"
         },
         ".quick-input-widget": {
+            "background": "#2e3646 !important",
             "top": "25% !important",
             "width": "700px !important",
-        },
-        ".quick-input-list": {
-            "border": "1px solid var(--vscode-input-border) !important"
+            "box-shadow": "0 4px 8px rgba(0, 0, 0, 0.2) !important",
+            "padding": "5px !important"
         },
         ".quick-input-inline-action-bar": {
             "margin": "auto 0"
+        },
+        ".statusbar-item:has(.codicon-git-branch)": {
+            "background": "#5de4c7",
+            "color": "#1c1e28",
+            "font-weight": "bold"
+        },
+        ".statusbar-item:has(.codicon-error)": {
+            "background": "#a6accd",
+            "color": "#1c1e28"
+        },
+        ".statusbar-item.right": {
+            // "background": "#fffac2",
+            "background": "#a6accd",
+            "color": "#1c1e28"
+        },
+        ".statusbar-item:has(.codicon-bell)": {
+            "background": "#5de4c7",
+            "color": "#1c1e28",
+            "font-weight": "bold"
+        },
+        ".statusbar-item:has(.codicon-bell-dot)": {
+            "background": "#5de4c7",
+            "color": "#1c1e28",
+            "font-weight": "bold"
+        },
+        ".quick-input-list": {
+            "background": "#2e3646 !important"
+        },
+        ".quick-input-list .monaco-list-rows": {
+            "background": "#2e3646 !important"
+        },
+        ".statusbar": {
+            "background": "#212734 !important",
+            "font-weight": "bold !important"
         }
+    },
+    "apc.statusBar": {
+        "height": 30
     },
     "apc.listRow": {
         "height": 28,
@@ -50,5 +87,6 @@
     "workbench.sideBar.location": "right",
     "workbench.editor.showTabs": "none",
     "window.commandCenter": false,
-    "terminal.integrated.fontSize": 18
+    "terminal.integrated.fontSize": 18,
+    "editor.lineNumbers": "relative"
 }
