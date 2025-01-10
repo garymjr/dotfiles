@@ -90,8 +90,6 @@
   },
   "git.autofetch": true,
   "git.confirmSync": false,
-  "window.newWindowDimensions": "fullscreen",
-  "window.restoreFullscreen": true,
   "window.zoomLevel": 0.25,
   "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.iconTheme": "catppuccin-macchiato",
@@ -99,5 +97,6 @@
   "workbench.editor.showTabs": "none",
   "window.commandCenter": false,
   "terminal.integrated.fontSize": 18,
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "window.newWindowDimensions": "inherit"
 }
