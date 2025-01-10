@@ -43,6 +43,18 @@ return {
             },
           })
         end,
+        gemini = function()
+          return require("codecompanion.adapters").extend("gemini", {
+            env = {
+              api_key = "cmd:security find-generic-password -a aistudio.google.com -s gemini-api-key -w",
+            },
+            schema = {
+              model = {
+                default = "gemini-2.0-flash-exp",
+              },
+            },
+          })
+        end,
       },
       display = {
         diff = {
@@ -51,6 +63,7 @@ return {
       },
       strategies = {
         chat = {
+          adapter = "gemini",
           keymaps = {
             close = {
               modes = {
@@ -71,6 +84,9 @@ return {
             },
           },
         },
+        inline = {
+          adapter = "gemini",
+        },
       },
     },
   },
@@ -79,6 +95,12 @@ return {
     opts = {
       sources = {
         default = { "codecompanion" },
+        providers = {
+          codecompanion = {
+            name = "CodeCompanion",
+            module = "codecompanion.providers.completion.blink",
+          },
+        },
       },
     },
   },

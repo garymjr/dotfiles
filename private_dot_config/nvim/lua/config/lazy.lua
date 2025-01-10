@@ -20,7 +20,7 @@ require("lazy").setup({
     { "folke/lazy.nvim", version = false },
     { "garymjr/LazyVim", version = false, branch = "feat/ignore-keymaps" },
     { import = "plugins" },
-    { import = "plugins.extras.ai.copilot" },
+    -- { import = "plugins.extras.ai.copilot" },
     { import = "plugins.extras.ai.codecompanion" },
   },
   defaults = {

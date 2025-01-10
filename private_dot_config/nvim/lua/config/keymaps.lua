@@ -27,7 +27,6 @@ vim.keymap.del("i", "<A-k>")
 map("v", "J", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 map("v", "K", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
-
 if vim.g.vscode then
   map("n", "<leader>gg", function()
     vscode.call("lazygit.openLazygit")
@@ -40,7 +39,7 @@ if vim.g.vscode then
   map("n", "<leader>fb", function()
     vscode.call("workbench.action.quickOpenPreviousRecentlyUsedEditor")
   end, { desc = "Open Previous Editor" })
-  
+
   map("n", "<c-o>", function()
     vscode.call("workbench.action.previousEditorInGroup")
   end, { desc = "Previous Editor in Group" })
@@ -48,5 +47,11 @@ if vim.g.vscode then
   map("n", "<c-i>", function()
     vscode.call("workbench.action.nextEditorInGroup")
   end, { desc = "Next Editor in Group" })
-end
 
+  map("n", "<leader>bd", function()
+    vscode.call("workbench.action.closeActiveEditor")
+  end, { desc = "Close Active Editor" })
+
+  map("n", "gr", vim.lsp.buf.references, { desc = "References" })
+  map("n", "gd", vim.lsp.buf.definition, { desc = "Definition" })
+end
