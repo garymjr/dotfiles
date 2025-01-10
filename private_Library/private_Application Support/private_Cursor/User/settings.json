@@ -1,92 +1,103 @@
 {
-    "apc.stylesheet": {
-        ".quick-input-box .monaco-findInput .monaco-inputbox": {
-            "font-size": "16px !important",
-            "height": "36px !important",
-            "line-height": "36px !important"
-        },
-        ".quick-input-widget": {
-            "background": "#2e3646 !important",
-            "top": "25% !important",
-            "width": "700px !important",
-            "box-shadow": "0 4px 8px rgba(0, 0, 0, 0.2) !important",
-            "padding": "5px !important"
-        },
-        ".quick-input-inline-action-bar": {
-            "margin": "auto 0"
-        },
-        ".statusbar-item:has(.codicon-git-branch)": {
-            "background": "#5de4c7",
-            "color": "#1c1e28",
-            "font-weight": "bold"
-        },
-        ".statusbar-item:has(.codicon-error)": {
-            "background": "#a6accd",
-            "color": "#1c1e28"
-        },
-        ".statusbar-item.right": {
-            // "background": "#fffac2",
-            "background": "#a6accd",
-            "color": "#1c1e28"
-        },
-        ".statusbar-item:has(.codicon-bell)": {
-            "background": "#5de4c7",
-            "color": "#1c1e28",
-            "font-weight": "bold"
-        },
-        ".statusbar-item:has(.codicon-bell-dot)": {
-            "background": "#5de4c7",
-            "color": "#1c1e28",
-            "font-weight": "bold"
-        },
-        ".quick-input-list": {
-            "background": "#2e3646 !important"
-        },
-        ".quick-input-list .monaco-list-rows": {
-            "background": "#2e3646 !important"
-        },
-        ".statusbar": {
-            "background": "#212734 !important",
-            "font-weight": "bold !important"
-        }
+  "apc.stylesheet": {
+    ".quick-input-box .monaco-findInput .monaco-inputbox": {
+      "font-size": "16px !important",
+      "height": "36px !important",
+      "line-height": "36px !important"
     },
-    "apc.statusBar": {
-        "height": 30
+    ".quick-input-widget": {
+      "background": "#363a4f !important",
+      "top": "25% !important",
+      "width": "700px !important",
+      "box-shadow": "0 4px 8px rgba(0, 0, 0, 0.2) !important",
+      "padding": "5px !important"
     },
-    "apc.listRow": {
-        "height": 28,
-        "lists": [
-            "quick-input-list"
-        ]
+    ".quick-input-inline-action-bar": {
+      "margin": "auto 0"
     },
-    "cursor-retrieval.canAttemptGithubLogin": false,
-    "cursor.cmdk.useThemedDiffBackground": true,
-    "cursor.composer.collapsePaneInputBoxPills": true,
-    "cursor.composer.renderPillsInsteadOfBlocks": true,
-    "editor.cursorBlinking": "solid",
-    "editor.cursorSurroundingLines": 5,
-    "editor.fontFamily": "Monaspace Argon",
-    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
-    "editor.fontSize": 18,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.guides.indentation": false,
-    "editor.renderLineHighlight": "none",
-    "elixirLS.suggestSpecs": false,
-    "explorer.confirmDelete": false,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
+    ".statusbar-item:has(.codicon-git-branch)": {
+      "background": "#b4befe !important",
+      "color": "#363a4f !important",
+      "font-weight": "bold !important",
+      "position": "relative !important",
+      "overflow": "visible !important",
+      "border-top-right-radius": "15px !important",
+      "border-bottom-right-radius": "15px !important"
     },
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "window.newWindowDimensions": "fullscreen",
-    "window.restoreFullscreen": true,
-    "window.zoomLevel": 0.25,
-    "workbench.colorTheme": "poimandres-storm",
-    "workbench.iconTheme": "rose-pine-icons",
-    "workbench.sideBar.location": "right",
-    "workbench.editor.showTabs": "none",
-    "window.commandCenter": false,
-    "terminal.integrated.fontSize": 18,
-    "editor.lineNumbers": "relative"
+    ".statusbar-item:has(.codicon-bell)": {
+      "background": "#b4befe",
+      "color": "#363a4f",
+      "font-weight": "bold",
+      "border-top-left-radius": "15px !important",
+      "border-bottom-left-radius": "15px !important"
+    },
+    ".statusbar-item:has(.codicon-bell)::before": {
+      "content": "\"\"",
+      "position": "absolute",
+      "top": "0",
+      "left": "0",
+      "right": "0",
+      "bottom": "0",
+      "background-color": "red",
+      "z-index": "-1"
+    },
+    ".statusbar-item:has(.codicon-bell-dot)": {
+      "background": "#b4befe",
+      "color": "#363a4f",
+      "font-weight": "bold",
+      "border-top-left-radius": "15px !important",
+      "border-bottom-left-radius": "15px !important"
+    },
+    ".quick-input-list": {
+      "background": "#363a4f !important"
+    },
+    ".quick-input-list .monaco-list-rows": {
+      "background": "#363a4f !important"
+    },
+    ".quick-input-list .monaco-list-row.focused": {
+      "background": "#313347 !important"
+    },
+    ".statusbar": {
+      "background": "#363a4f !important",
+      "color": "#787f99 !important",
+      "font-weight": "bold !important"
+    }
+  },
+  "apc.statusBar": {
+    "height": 30
+  },
+  "apc.listRow": {
+    "height": 28,
+    "lists": ["quick-input-list"]
+  },
+  "cursor-retrieval.canAttemptGithubLogin": false,
+  "cursor.cmdk.useThemedDiffBackground": true,
+  "cursor.composer.collapsePaneInputBoxPills": true,
+  "cursor.composer.renderPillsInsteadOfBlocks": true,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSurroundingLines": 5,
+  "editor.fontFamily": "Monaspace Argon",
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
+  "editor.fontSize": 18,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.guides.indentation": false,
+  "editor.renderLineHighlight": "none",
+  "elixirLS.suggestSpecs": false,
+  "explorer.confirmDelete": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "window.newWindowDimensions": "fullscreen",
+  "window.restoreFullscreen": true,
+  "window.zoomLevel": 0.25,
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.sideBar.location": "right",
+  "workbench.editor.showTabs": "none",
+  "window.commandCenter": false,
+  "terminal.integrated.fontSize": 18,
+  "editor.lineNumbers": "relative"
 }
