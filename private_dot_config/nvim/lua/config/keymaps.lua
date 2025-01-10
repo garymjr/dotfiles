@@ -36,4 +36,17 @@ if vim.g.vscode then
   map("n", "<leader>ft", function()
     vscode.call("workbench.action.createTerminalEditor")
   end, { desc = "Create Terminal Editor" })
+
+  map("n", "<leader>fb", function()
+    vscode.call("workbench.action.quickOpenPreviousRecentlyUsedEditor")
+  end, { desc = "Open Previous Editor" })
+  
+  map("n", "<c-o>", function()
+    vscode.call("workbench.action.previousEditorInGroup")
+  end, { desc = "Previous Editor in Group" })
+
+  map("n", "<c-i>", function()
+    vscode.call("workbench.action.nextEditorInGroup")
+  end, { desc = "Next Editor in Group" })
 end
+
