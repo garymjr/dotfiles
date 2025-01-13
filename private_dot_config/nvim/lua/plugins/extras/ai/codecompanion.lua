@@ -63,7 +63,7 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "gemini",
+          adapter = "copilot",
           keymaps = {
             close = {
               modes = {
@@ -85,7 +85,7 @@ return {
           },
         },
         inline = {
-          adapter = "gemini",
+          adapter = "copilot",
         },
       },
     },

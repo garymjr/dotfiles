@@ -10,22 +10,25 @@ return {
       },
     },
     opts = {
-      flavour = "mocha",
+      flavour = "macchiato",
     },
   },
   {
     "rose-pine/neovim",
+    enabled = false,
+    dependencies = {
+      {
+        "LazyVim",
+        opts = {
+          colorscheme = "rose-pine",
+        },
+      },
+    },
     name = "rose-pine",
     lazy = false,
     priority = 1000,
     opts = {
       variant = "moon",
-    },
-  },
-  {
-    "LazyVim",
-    opts = {
-      colorscheme = "rose-pine",
     },
   },
 }
