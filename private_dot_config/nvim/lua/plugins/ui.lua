@@ -8,4 +8,14 @@ return {
       words = { enabled = false },
     },
   },
+  {
+    "noice.nvim",
+    opts = {
+      lsp = {
+        hover = {
+          silent = true,
+        },
+      },
+    },
+  },
 }
