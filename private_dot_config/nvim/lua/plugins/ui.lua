@@ -10,6 +10,7 @@ return {
   },
   {
     "noice.nvim",
+    enabled = false,
     opts = {
       lsp = {
         hover = {
