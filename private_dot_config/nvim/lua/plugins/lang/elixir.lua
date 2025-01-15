@@ -80,7 +80,15 @@ return {
 		end,
 	},
 	{
-		"MeanderingProgrammer/render-markdown.nvim",
+		"render-markdown.nvim",
+		optional = true,
+		ft = function(_, ft)
+			vim.list_extend(ft, { "livebook" })
+		end,
+	},
+	{
+		"markview.nvim",
+		optional = true,
 		ft = function(_, ft)
 			vim.list_extend(ft, { "livebook" })
 		end,

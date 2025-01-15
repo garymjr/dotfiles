@@ -146,4 +146,17 @@ return {
 			return vim.list_extend(ft, { "codecompanion" })
 		end,
 	},
+	{
+		"markview.nvim",
+		optional = true,
+		ft = function(_, ft)
+			return vim.list_extend(ft, { "codecompanion" })
+		end,
+		init = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "codecompanion",
+				command = "Markview attach",
+			})
+		end,
+	},
 }

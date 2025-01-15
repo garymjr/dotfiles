@@ -56,7 +56,18 @@ return {
 		},
 	},
 	{
+		"OXY2DEV/markview.nvim",
+		branch = "dev",
+		ft = { "markdown", "norg", "rmd", "org" },
+		opts = {
+			preview = {
+				icon_provider = "mini",
+			},
+		},
+	},
+	{
 		"MeanderingProgrammer/render-markdown.nvim",
+		enabled = false,
 		opts = {
 			code = {
 				sign = false,
