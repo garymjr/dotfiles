@@ -1,22 +1,29 @@
 return {
-  { "bufferline.nvim", enabled = false },
+  {
+    "echasnovski/mini.icons",
+    opts = {
+      file = {
+        [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+        ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
+      },
+      filetype = {
+        dotenv = { glyph = "", hl = "MiniIconsYellow" },
+      },
+    },
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
+    end,
+  },
+  { "MunifTanjim/nui.nvim", lazy = true },
   {
     "snacks.nvim",
-    opts = {
-      indent = { enabled = false },
-      scroll = { enabled = false },
-      words = { enabled = false },
-    },
-  },
-  {
-    "noice.nvim",
-    enabled = false,
-    opts = {
-      lsp = {
-        hover = {
-          silent = true,
-        },
-      },
+    optional = true,
+    keys = {
+      { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
     },
   },
 }

@@ -1,34 +1,37 @@
 return {
   {
-    "catppuccin",
-    dependencies = {
-      {
-        "LazyVim",
-        opts = {
-          colorscheme = "catppuccin",
-        },
-      },
-    },
+    "catppuccin/nvim",
+    event = "VeryLazy",
+    priority = 1000,
+    name = "catppuccin",
     opts = {
       flavour = "macchiato",
-    },
-  },
-  {
-    "rose-pine/neovim",
-    enabled = false,
-    dependencies = {
-      {
-        "LazyVim",
-        opts = {
-          colorscheme = "rose-pine",
+      integrations = {
+        blink_cmp = { enabled = true },
+        dashboard = true,
+        mason = true,
+        markdown = true,
+        mini = true,
+        native_lsp = {
+          enabled = true,
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
         },
+        notify = true,
+        semantic_tokens = true,
+        snacks = true,
+        treesitter = true,
+        treesitter_context = true,
+        which_key = true,
       },
     },
-    name = "rose-pine",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      variant = "moon",
-    },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme("catppuccin")
+    end,
   },
 }
