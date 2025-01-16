@@ -20,10 +20,28 @@ return {
   { "MunifTanjim/nui.nvim", lazy = true },
   {
     "snacks.nvim",
-    optional = true,
+    opts = {
+      dashboard = { enabled = true },
+      input = { enabled = true },
+      notifier = { enabled = true },
+      scope = { enabled = true },
+      statuscolumn = { enabled = true },
+    },
     keys = {
-      { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
-      { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+      {
+        "<leader>n",
+        function()
+          Snacks.notifier.show_history()
+        end,
+        desc = "Notification History",
+      },
+      {
+        "<leader>un",
+        function()
+          Snacks.notifier.hide()
+        end,
+        desc = "Dismiss All Notifications",
+      },
     },
   },
 }
