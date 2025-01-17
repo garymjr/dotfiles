@@ -13,6 +13,43 @@ function H.get_plugin(name)
   return require("lazy.core.config").spec.plugins[name]
 end
 
+H.action = setmetatable({}, {
+  __index = function(_, action)
+    return function()
+      vim.lsp.buf.code_action({
+        apply = true,
+        context = {
+          only = { action },
+          diagnostics = {},
+        },
+      })
+    end
+  end,
+})
+
+function H.apply_keymaps(bufnr)
+  if vim.bo[bufnr].filetype == "codecompanion" then
+    return
+  end
+
+  local map = function(mode, lhs, rhs, opts)
+    local options = vim.tbl_deep_extend("force", { silent = true, buffer = bufnr }, opts or {})
+    vim.keymap.set(mode, lhs, rhs, options)
+  end
+
+  map("n", "<leader>cl", "<cmd>LspInfo<cr>", { desc = "LSP Info" })
+  map("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+  map("n", "gr", vim.lsp.buf.references, { desc = "References", nowait = true })
+  map("n", "gI", vim.lsp.buf.implementation, { desc = "Goto Implementation" })
+  map("n", "gy", vim.lsp.buf.type_definition, { desc = "Goto Type Definition" })
+  map("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" })
+  map("n", "gK", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+  map("i", "<c-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+  map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+  map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
+  map("n", "<leader>cA", H.action.source, { desc = "Source Action" })
+end
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -83,13 +120,28 @@ return {
     config = function(_, opts)
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("pde_lsp", { clear = true }),
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if not client then
+            return
+          end
+
+          if client.name == "GitHub Copilot" then
+            return
+          end
+
+          H.apply_keymaps(args.buf)
+        end,
+      })
+
       local servers = opts.servers
       local has_blink, blink = pcall(require, "blink.cmp")
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
         vim.lsp.protocol.make_client_capabilities(),
-        has_cmp and cmp_nvim_lsp.default_capabilities() or {},
         has_blink and blink.get_lsp_capabilities() or {},
         opts.capabilities or {}
       )
