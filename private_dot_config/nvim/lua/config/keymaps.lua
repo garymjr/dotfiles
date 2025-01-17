@@ -111,7 +111,14 @@ end
 
 map("n", "<leader>gb", Snacks.git.blame_line, { desc = "Git Blame Line" })
 map({ "n", "x" }, "<leader>gB", function()
-	Snacks.gitbrowse()
+	---@diagnostic disable-next-line: missing-fields
+	Snacks.gitbrowse({
+		open = function(url)
+			local modified_url = url:gsub("github.com%-(.-)/", "github.com/")
+			vim.ui.open(modified_url)
+		end,
+		notify = false,
+	})
 end, { desc = "Git Browse (open)" })
 map({ "n", "x" }, "<leader>gY", function()
 	---@diagnostic disable-next-line: missing-fields
