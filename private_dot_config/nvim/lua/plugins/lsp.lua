@@ -158,10 +158,6 @@ return {
 			end
 
 			local have_mason, mlsp = pcall(require, "mason-lspconfig")
-			local all_mslp_servers = {}
-			if have_mason then
-				all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
-			end
 
 			local ensure_installed = {} ---@type string[]
 			for server, server_opts in pairs(servers) do
@@ -174,6 +170,7 @@ return {
 			end
 
 			if have_mason then
+				---@diagnostic disable-next-line: missing-fields
 				mlsp.setup({
 					ensure_installed = vim.tbl_deep_extend(
 						"force",
