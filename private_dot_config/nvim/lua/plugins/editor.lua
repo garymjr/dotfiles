@@ -160,6 +160,13 @@ return {
         desc = "Find Git Files",
       },
       {
+        "<leader>fp",
+        function()
+          Snacks.picker.files({ cwd = vim.fn.stdpath("data") .. "/lazy" })
+        end,
+        desc = "Find Plugin File",
+      },
+      {
         "<leader>fr",
         function()
           Snacks.picker.recent()
