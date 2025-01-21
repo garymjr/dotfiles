@@ -4,10 +4,11 @@
     "enabled": true,
     "button": true,
     "dock": "right",
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-5-sonnet"
-    }
+    "enable_experimental_live_diffs": true
+    // "default_model": {
+    //   "provider": "zed.dev",
+    //   "model": "claude-3-5-sonnet-latest"
+    // }
   },
   "buffer_font_family": "Maple Mono NF",
   "buffer_font_size": 18,
@@ -25,7 +26,7 @@
   "cursor_blink": false,
   "experimental.theme_overrides": {},
   "features": {
-    "inline_completion_provider": "copilot"
+    "inline_completion_provider": "zed"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],

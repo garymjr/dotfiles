@@ -39,8 +39,8 @@ end
 return {
   {
     "github/copilot.vim",
-    event = "VeryLazy",
-    version = false,
+    lazy = false,
+    build = ":Copilot auth",
     keys = {
       {
         "<C-l>",
@@ -64,7 +64,7 @@ return {
         desc = "Dismiss suggestion",
       },
       {
-        "<C-;>",
+        "<C-s>",
         "<Plug>(copilot-suggest)",
         mode = "i",
         silent = true,
@@ -94,9 +94,16 @@ return {
       local user = vim.env.USER or "User"
       user = user:sub(1, 1):upper() .. user:sub(2)
       return {
-        auto_insert_mode = true,
+        auto_insert_mode = false,
         question_header = "  " .. user .. " ",
         answer_header = "  Copilot ",
+        model = "gpt-4o-2024-08-06",
+        prompts = {
+          Commit = {
+            model = "gpt-4o-mini",
+            selection = function() end,
+          },
+        },
         mappings = {
           complete = {
             insert = "<c-y>",
@@ -331,5 +338,5 @@ return {
       },
     },
   },
-  { "olimorris/codecompanion.nvim", enabled = false },
+  { "CopilotChat.nvim", enabled = false },
 }
