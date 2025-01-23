@@ -21,13 +21,6 @@ return {
 								upgrade_dependency = true,
 								vendor = true,
 							},
-							analyses = {
-								fieldalignment = true,
-								nilness = true,
-								unusedparams = true,
-								unusedwrite = true,
-								useany = true,
-							},
 							usePlaceholders = true,
 							completeUnimported = true,
 							staticcheck = true,
