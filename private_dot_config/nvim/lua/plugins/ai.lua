@@ -334,7 +334,7 @@ return {
 							role = "user",
 							content = function()
 								return string.format(
-									[[You are an expert at following the Commitizen Commit specification. Do not simply list the changs, instead always try to infer intent. Alwaus use a casual tone in the commit body. When referring to code use '`' for a single line and '```' for multi line code blocks. Only respond with the commit message. Given the git diff listed below, please generate a commit message for me:
+									[[You are an expert at following the Commitizen Commit specification. Do not simply list the changs, instead always try to infer intent. When referring to code use '`' for a single line and '```' for multi line code blocks. Only respond with the commit message. Given the git diff listed below, please generate a commit message for me:
 
 ```diff
 %s
@@ -344,6 +344,10 @@ return {
 								)
 							end,
 							opts = {
+								adapter = {
+									name = "copilot",
+									model = "gpt-4o-mini",
+								},
 								contains_code = true,
 							},
 						},
