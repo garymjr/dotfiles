@@ -112,7 +112,7 @@ return {
 				prompts = {
 					Commit = {
 						model = "gpt-4o-mini",
-						selection = function() end,
+						selection = false,
 					},
 				},
 				mappings = {
@@ -356,5 +356,5 @@ return {
 			},
 		},
 	},
-	{ "CopilotChat.nvim", enabled = false },
+	{ "codecompanion.nvim", enabled = false },
 }
