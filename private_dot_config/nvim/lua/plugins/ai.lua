@@ -302,7 +302,7 @@ return {
 			},
 			strategies = {
 				chat = {
-					adapter = "copilot",
+					adapter = "gemini",
 					keymaps = {
 						close = {
 							modes = {
@@ -324,11 +324,18 @@ return {
 					},
 				},
 				inline = {
-					adapter = "copilot_mini",
+					adapter = "copilot",
 				},
 			},
 			prompt_library = {
 				["Generate a Commit Message"] = {
+					opts = {
+						adapter = {
+							name = "copilot",
+							model = "gpt-4o-mini",
+						},
+						contains_code = true,
+					},
 					prompts = {
 						{
 							role = "user",
@@ -343,18 +350,11 @@ return {
 									vim.fn.system("git diff --no-ext-diff --staged")
 								)
 							end,
-							opts = {
-								adapter = {
-									name = "copilot",
-									model = "gpt-4o-mini",
-								},
-								contains_code = true,
-							},
 						},
 					},
 				},
 			},
 		},
 	},
-	{ "codecompanion.nvim", enabled = false },
+	{ "CopilotChat.nvim", enabled = false },
 }
