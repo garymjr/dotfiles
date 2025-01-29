@@ -120,7 +120,7 @@ return {
 						insert = "<c-y>",
 					},
 					reset = {
-						normal = "gx",
+						normal = "",
 						insert = "",
 					},
 					accept_diff = {
@@ -142,6 +142,14 @@ return {
 					return require("CopilotChat").toggle()
 				end,
 				desc = "Toggle (CopilotChat)",
+				mode = { "n", "v" },
+			},
+			{
+				"<leader>an",
+				function()
+					return require("CopilotChat").open({ selection = false })
+				end,
+				desc = "Toggle - No Selection (CopilotChat)",
 				mode = { "n", "v" },
 			},
 			{
@@ -356,5 +364,5 @@ return {
 			},
 		},
 	},
-	{ "CopilotChat.nvim", enabled = false },
+	{ "codecompanion.nvim", enabled = false },
 }
