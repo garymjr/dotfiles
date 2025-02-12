@@ -21,6 +21,15 @@ PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 PATH=$GOPATH/bin:$PATH
 PATH=$HOME/zig/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
+
+if [ -d "/opt/homebrew/opt/libpq/bin" ]; then
+  PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+fi
+
+if [ -d "/opt/homebrew/opt/mysql-client/bin" ]; then
+  PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+fi
+
 export PATH=$PATH
 export SHELL=/bin/zsh
 
