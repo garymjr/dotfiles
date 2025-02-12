@@ -21,7 +21,6 @@ return {
 	{
 		"snacks.nvim",
 		opts = {
-			dashboard = { enabled = true },
 			input = { enabled = true },
 			notifier = { enabled = true },
 			scope = { enabled = true },
