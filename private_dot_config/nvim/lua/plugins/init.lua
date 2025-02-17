@@ -1,4 +1,5 @@
 return {
+	{ "MunifTanjim/nui.nvim", lazy = true },
 	{
 		"folke/snacks.nvim",
 		priority = 1000,
