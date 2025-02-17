@@ -36,6 +36,9 @@ return {
 						enabled = true,
 					},
 				},
+				list = {
+					selection = { preselect = false },
+				},
 				menu = {
 					draw = {
 						treesitter = { "lsp" },
@@ -49,9 +52,10 @@ return {
 					enabled = false,
 				},
 			},
-
+			-- cmdline = {
+			-- 	sources = {},
+			-- },
 			sources = {
-				cmdline = {},
 				default = { "lsp", "path", "snippets", "buffer", "lazydev" },
 				providers = {
 					lazydev = {
