@@ -16,26 +16,6 @@ function H.prompt()
 	end
 end
 
----@type snacks.picker.finder
-function H.pick_prompt()
-	local result = require("CopilotChat.actions").prompt_actions()
-
-	local items = {}
-
-	if not result then
-		return items
-	end
-
-	for label, action in pairs(result.actions) do
-		table.insert(items, {
-			text = label,
-			prompt = action.prompt,
-		})
-	end
-
-	return items
-end
-
 return {
 	{
 		"github/copilot.vim",
@@ -83,149 +63,6 @@ return {
 		config = function()
 			vim.g.copilot_no_tab_map = true
 		end,
-	},
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		dependencies = {
-			{
-				"markview.nvim",
-				ft = function(_, ft)
-					return vim.list_extend(ft, { "copilot-chat" })
-				end,
-				init = function()
-					vim.api.nvim_create_autocmd("FileType", {
-						pattern = "copilot-chat",
-						command = "Markview attach",
-					})
-				end,
-			},
-		},
-		cmd = "CopilotChat",
-		opts = function()
-			local user = vim.env.USER or "User"
-			user = user:sub(1, 1):upper() .. user:sub(2)
-			return {
-				auto_insert_mode = false,
-				question_header = "  " .. user .. " ",
-				answer_header = "  Copilot ",
-				model = "gemini-2.0-flash-001",
-				prompts = {
-					Commit = {
-						selection = false,
-					},
-				},
-				mappings = {
-					complete = {
-						insert = "<c-y>",
-					},
-					reset = {
-						normal = "",
-						insert = "",
-					},
-					accept_diff = {
-						normal = "ga",
-						insert = "<C-a>",
-					},
-				},
-				window = {
-					width = 0.4,
-				},
-			}
-		end,
-		keys = {
-			{ "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
-			{ "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
-			{
-				"<leader>aa",
-				function()
-					return require("CopilotChat").toggle()
-				end,
-				desc = "Toggle (CopilotChat)",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>an",
-				function()
-					return require("CopilotChat").open({ selection = false })
-				end,
-				desc = "Toggle - No Selection (CopilotChat)",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>ax",
-				function()
-					return require("CopilotChat").reset()
-				end,
-				desc = "Clear (CopilotChat)",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>aq",
-				function()
-					local input = vim.fn.input("Quick Chat: ")
-					if input ~= "" then
-						require("CopilotChat").ask(input)
-					end
-				end,
-				desc = "Quick Chat (CopilotChat)",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>ap",
-				function()
-					Snacks.picker.copilot_chat()
-				end,
-				desc = "Prompt Actions (CopilotChat)",
-				mode = { "n", "v" },
-			},
-		},
-		config = function(_, opts)
-			local chat = require("CopilotChat")
-
-			vim.api.nvim_create_autocmd("BufEnter", {
-				pattern = "copilot-chat",
-				callback = function()
-					vim.opt_local.relativenumber = false
-					vim.opt_local.number = false
-				end,
-			})
-
-			chat.setup(opts)
-		end,
-	},
-	{
-		"snacks.nvim",
-		opts = {
-			picker = {
-				sources = {
-					copilot_chat = {
-						finder = H.pick_prompt,
-						format = "text",
-						preview = function(ctx)
-							local buf = ctx.preview:scratch()
-							ctx.preview:set_title(ctx.item.text)
-							vim.bo[buf].filetype = "markdown"
-							vim.bo[buf].modifiable = true
-							local lines = vim.split(ctx.item.prompt, "\n")
-							vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-							vim.bo[buf].modifiable = false
-						end,
-						confirm = function(picker, item)
-							picker:close()
-
-							if not item then
-								return
-							end
-
-							require("CopilotChat").ask(
-								item.prompt,
-								require("CopilotChat.actions").prompt_actions()[item.text]
-							)
-						end,
-					},
-				},
-			},
-		},
 	},
 	{
 		"olimorris/codecompanion.nvim",
@@ -327,5 +164,5 @@ return {
 			},
 		},
 	},
-	{ "CopilotChat.nvim", enabled = false },
+	{ "codecompanion.nvim", enabled = false },
 }

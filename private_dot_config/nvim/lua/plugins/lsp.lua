@@ -1,5 +1,10 @@
 local H = {}
 
+H.ignored_fts = {
+	"codecompanion",
+	"copilot-chat",
+}
+
 function H.opts(name)
 	local plugin = H.get_plugin(name)
 	if not plugin then
@@ -28,7 +33,7 @@ H.action = setmetatable({}, {
 })
 
 function H.apply_keymaps(bufnr)
-	if vim.bo[bufnr].filetype == "codecompanion" then
+	if vim.tbl_contains(H.ignored_fts, vim.bo[bufnr].filetype) then
 		return
 	end
 
