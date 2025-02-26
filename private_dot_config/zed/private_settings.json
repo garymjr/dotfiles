@@ -1,16 +1,16 @@
 {
   "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gemini-2.0-flash-001"
+    },
     "version": "2",
     "enabled": true,
     "button": true,
     "dock": "right",
     "enable_experimental_live_diffs": true
-    // "default_model": {
-    //   "provider": "zed.dev",
-    //   "model": "claude-3-5-sonnet-latest"
-    // }
   },
-  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_family": "Monaspace Neon",
   "buffer_font_size": 18,
   "buffer_font_features": {
     "calt": true,
@@ -26,7 +26,7 @@
   "cursor_blink": false,
   "experimental.theme_overrides": {},
   "features": {
-    "inline_completion_provider": "zed"
+    "edit_prediction_provider": "zed"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
@@ -42,11 +42,10 @@
   "language_servers": [
     "!eslint",
     "!typescript-language-server",
-    "!lexical",
+    "!elixir-ls",
     "!next-ls",
     "..."
   ],
-  "multi_cursor_modifier": "cmd_or_ctrl",
   "outline_panel": {
     "button": false,
     "dock": "right",
@@ -78,7 +77,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Rosé Pine Moon"
+    "dark": "Gruvbox Dark Hard"
   },
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 18,

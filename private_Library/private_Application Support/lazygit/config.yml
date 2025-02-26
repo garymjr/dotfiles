@@ -1,0 +1,25 @@
+gui:
+  theme:
+    unstagedChangesColor:
+      - "#d0679d"
+    selectedLineBgColor:
+      - "#506477"
+    searchingActiveBorderColor:
+      - "#171922"
+      - "bold"
+    optionsTextColor:
+      - "#add7ff"
+    inactiveBorderColor:
+      - "#171922"
+    defaultFgColor:
+      - "#e4f0fb"
+    cherryPickedCommitFgColor:
+      - "#add7ff"
+    cherryPickedCommitBgColor:
+      - "#a6accd"
+    activeBorderColor:
+      - "#171922"
+      - "bold"
+  nerdFontsVersion: "3"
+os:
+  editPreset: "zed"

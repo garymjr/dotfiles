@@ -1,3 +1,36 @@
+[advice]
+  detachedHead = false
+[commit]
+  verbose = true
+[core]
+  pager = delta
+  excludesFile = ~/.config/git/ignore
+[credential]
+	helper = store
+[delta]
+  navigate = true
+  dark = true
+[diff]
+  algorithm = histogram
+[fetch]
+  prune = true
+[init]
+	defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  conflictstyle = zdiff3
+[pull]
+  rebase = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[rerere]
+  enable = true
+  autoupdate = true
+[safe]
+	directory = /Users/gamurray/code/neovim
 [user]
   name = Gary Murray
   email = garymjr@gmail.com
@@ -7,24 +40,6 @@
   path = ~/.config/git/fanatics.config
 [includeIf "gitdir:~/go/src/jaxf-github.fanatics.corp/mdm/"]
   path = ~/.config/git/fanatics.config
-[core]
-  pager = delta
-  excludesFile = ~/.config/git/ignore
-[interactive]
-  diffFilter = delta --color-only
-[merge]
-  conflictstyle = zdiff3
-[rebase]
-  autoSquash = true
-  updateRefs = true
-[pull]
-  rebase = true
-[branch]
-  autosetupmerge = always
-  autosetuprebase = always
-[delta]
-  navigate = true
-  dark = true
 [alias]
   a = add
   aa = add -A
@@ -56,11 +71,3 @@
   stum = stash -um
   sw = switch
   swc = switch -c
-[safe]
-	directory = /Users/gamurray/code/neovim
-[init]
-	defaultBranch = main
-[credential]
-	helper = store
-[advice]
-  detachedHead = false
