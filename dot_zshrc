@@ -1,9 +1,9 @@
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export EDITOR=nvim
+export EDITOR=zed
 export VISUAL=$EDITOR
-export GIT_EDITOR=$EDITOR
+export GIT_EDITOR="$EDITOR --wait"
 
 # for elixir/erlang support
 export KERL_BUILD_DOCS="yes"
@@ -36,8 +36,7 @@ export SHELL=/bin/zsh
 export GOPROXY=direct
 export GOSUMDB=
 
-export NVM_DIR="$HOME/.nvm"
-export AOC_SESSION="53616c7465645f5f9878fb63739800387aa9968584b3e42546375a925ad8805b071bef36c385558417a4b2d68c96f68a7b9b12917e5658bde4d64906878d5322"
+# export NVM_DIR="$HOME/.nvm"
 
 autoload -U +X compinit
 source $HOME/.zsh/completion.zsh
@@ -59,18 +58,9 @@ alias nv=nvim
 
 alias lg=lazygit
 
-alias tm=tmux-open
-alias tl='tmux list-sessions'
-alias ta='tmux attach -t'
-alias e=$HOME/bin/code
-
-alias fanauth='TERM=screen-256color fanauth'
-alias ssh='TERM=screen-256color ssh'
-alias mysql='docker run -it --rm mysql mysql'
+alias e=zed
 
 [ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
-
-alias luamake=/Users/gamurray/Code/lua-language-server/3rd/luamake/luamake
 
 FPATH=$HOME/.zsh_functions:$FPATH
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
