@@ -32,7 +32,6 @@
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
-  "format_on_save": "off",
   "gutter": {
     "code_actions": false
   },
@@ -40,7 +39,6 @@
     "enabled": false
   },
   "language_servers": [
-    "!eslint",
     "!typescript-language-server",
     "!elixir-ls",
     "!next-ls",
@@ -103,22 +101,5 @@
   "git_panel": {
     "button": true,
     "dock": "right"
-  },
-  "language_models": {
-    "google": {
-      "api_url": "https://generativelanguage.googleapis.com",
-      "available_models": [
-        {
-          "display_name": "Gemini 2.0 Flash",
-          "max_tokens": 1000000,
-          "name": "gemini-2.0-flash-exp"
-        },
-        {
-          "display_name": "Gemini 1.5 Flash",
-          "max_tokens": 1000000,
-          "name": "gemini-1.5-flash"
-        }
-      ]
-    }
   }
 }
