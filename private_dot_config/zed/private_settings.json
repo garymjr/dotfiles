@@ -24,7 +24,16 @@
   },
   "current_line_highlight": "none",
   "cursor_blink": false,
-  "experimental.theme_overrides": {},
+  "experimental.theme_overrides": {
+    "syntax": {
+      "keyword": {
+        "color": "#5de4c7"
+      },
+      "type": {
+        "color": "#acd7ff"
+      }
+    }
+  },
   "features": {
     "edit_prediction_provider": "copilot"
   },
@@ -66,11 +75,7 @@
   },
   "terminal": {
     "button": false,
-    "font_family": "Maple Mono NF",
-    "env": {
-      "EDITOR": "zed",
-      "GIT_EDITOR": "zed --wait"
-    }
+    "font_family": "Monaspace Neon"
   },
   "theme": {
     "mode": "dark",
