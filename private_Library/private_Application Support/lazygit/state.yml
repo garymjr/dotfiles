@@ -1,8 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/gamurray/fanatics/mono
+    - /Users/gamurray/fanatics/mds-graphql
     - /Users/gamurray/.local/share/chezmoi
     - /Users/gamurray/.config/nvim
-    - /Users/gamurray/fanatics/mono
     - /Users/gamurray/fanatics/hermes
     - /Users/gamurray/go/src/github.com/fancom-d2c-product/mdm-core
     - /Users/gamurray/fanatics/mds-postgres

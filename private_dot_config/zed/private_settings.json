@@ -41,6 +41,12 @@
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
+  "formatter": {
+    "external": {
+      "command": "/Users/gamurray/.bun/bin/prettier",
+      "arguments": ["--stdin-filepath", "{buffer_path}"]
+    }
+  },
   "gutter": {
     "code_actions": false
   },
@@ -48,8 +54,9 @@
     "enabled": false
   },
   "language_servers": [
+    "!eslint",
     "!typescript-language-server",
-    "!elixir-ls",
+    "!lexical",
     "!next-ls",
     "..."
   ],
