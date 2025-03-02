@@ -64,6 +64,10 @@ alias lg=lazygit
 
 alias e=zed
 
+alias fanauth='TERM=screen-256color fanauth'
+alias ssh='TERM=screen-256color ssh'
+alias mysql='docker run -it --rm mysql mysql'
+
 [ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
 FPATH=$HOME/.zsh_functions:$FPATH
