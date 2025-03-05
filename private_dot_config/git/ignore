@@ -2,3 +2,8 @@
 .zed/
 .mise.toml
 **/.npmrc
+
+# this is temporary
+.prettierignore
+.prettierrc.json
+eslint.config.mjs
