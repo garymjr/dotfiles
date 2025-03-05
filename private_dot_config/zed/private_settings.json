@@ -25,27 +25,18 @@
   "current_line_highlight": "none",
   "cursor_blink": false,
   "experimental.theme_overrides": {
-    "syntax": {
-      "keyword": {
-        "color": "#5de4c7"
-      },
-      "type": {
-        "color": "#acd7ff"
-      }
-    }
+    "panel.focused_border": "#eabcba"
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
-  "formatter": {
-    "external": {
-      "command": "/Users/gamurray/.bun/bin/prettier",
-      "arguments": ["--stdin-filepath", "{buffer_path}"]
-    }
+  "git_panel": {
+    "button": true,
+    "dock": "right"
   },
   "gutter": {
     "code_actions": false
@@ -54,7 +45,7 @@
     "enabled": false
   },
   "language_servers": [
-    "!eslint",
+    // "eslint",
     "!typescript-language-server",
     "!lexical",
     "!next-ls",
@@ -72,6 +63,14 @@
   },
   "relative_line_numbers": true,
   "restore_on_startup": "none",
+  "slash_commands": {
+    "docs": {
+      "enabled": true
+    },
+    "project": {
+      "enabled": true
+    }
+  },
   "tab_bar": {
     "show_nav_history_buttons": false,
     "show": true
@@ -87,31 +86,12 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "poimandres (no italics)"
+    "dark": "Rosé Pine"
   },
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 18,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "vim_mode": true,
-  "when_closing_with_no_tabs": "close_window",
-  "context_servers": {
-    "postgres-context-server": {
-      "settings": {
-        "database_url": "postgres://postgres:postgres@localhost:5432/styletrack_dev"
-      }
-    }
-  },
-  "slash_commands": {
-    "docs": {
-      "enabled": true
-    },
-    "project": {
-      "enabled": true
-    }
-  },
-  "git_panel": {
-    "button": true,
-    "dock": "right"
-  }
+  "when_closing_with_no_tabs": "close_window"
 }

@@ -17,13 +17,6 @@
     }
   },
   {
-    "context": "(vim_mode == normal && !menu) || EmptyPane || SharedScreen",
-    "bindings": {
-      "shift-h": "pane::ActivatePrevItem",
-      "shift-l": "pane::ActivateNextItem"
-    }
-  },
-  {
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
       "g D": "editor::GoToDeclaration",
@@ -36,7 +29,7 @@
       "space c a": "editor::ToggleCodeActions",
       "space c d": "editor::Hover",
       "space c f": "editor::Format",
-      "space c r": "editor::Rename",
+      "space c r": "editor::Rename"
     }
   },
   {
