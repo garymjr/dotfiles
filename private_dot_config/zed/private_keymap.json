@@ -1,35 +1,30 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
+    "context": "Pane > Editor || Terminal",
     "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-j": "workspace::ActivatePaneDown",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "cmd-l": "assistant::ToggleFocus",
+      "cmd-shift-i": "assistant::ToggleFocus"
+    }
+  },
+  {
+    "context": "AssistantPanel > ContextEditor",
+    "bindings": {
+      "cmd-shift-i": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "bindings": {
       "cmd-,": "zed::OpenSettings"
     }
   },
   {
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
-      "g D": "editor::GoToDeclaration",
       "g d": "editor::GoToDefinition",
       "g h": "editor::MoveToBeginningOfLine",
-      "g I": "editor::GoToImplementation",
       "g l": "editor::MoveToEndOfLine",
-      "g r": "editor::FindAllReferences",
-      "g y": "editor::GoToTypeDefinition",
-      "space c a": "editor::ToggleCodeActions",
-      "space c d": "editor::Hover",
-      "space c f": "editor::Format",
-      "space c r": "editor::Rename"
+      "g r i": "editor::GoToImplementation",
+      "g r r": "editor::FindAllReferences",
+      "g r n": "editor::Rename"
     }
   },
   {
@@ -38,27 +33,8 @@
       "<": "editor::Outdent",
       ">": "editor::Indent",
       "g n": "vim::SelectNext",
-      "space c a": "editor::ToggleCodeActions",
       "shift-j": "editor::MoveLineDown",
       "shift-k": "editor::MoveLineUp"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "ctrl-k": "editor::ShowSignatureHelp"
-    }
-  },
-  {
-    "context": "ContextEditor > Editor && vim_mode == normal && !menu",
-    "bindings": {
-      "q": "workspace::ToggleRightDock"
-    }
-  },
-  {
-    "context": "ProjectPanel && !editing",
-    "bindings": {
-      "q": "workspace::ToggleLeftDock"
     }
   },
   {

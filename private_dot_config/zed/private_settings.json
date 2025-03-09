@@ -2,7 +2,7 @@
   "assistant": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gemini-2.0-flash-001"
+      "model": "claude-3-5-sonnet"
     },
     "version": "2",
     "enabled": true,
@@ -51,6 +51,20 @@
     "!next-ls",
     "..."
   ],
+  "lsp": {
+    "copilot": {
+      "initialization_options": {
+        "copilotIntegrationId": "vscode-chat"
+      },
+      "settings": {
+        "github": {
+          "copilot": {
+            "selectedCompletionModel": "gpt-4o-copilot"
+          }
+        }
+      }
+    }
+  },
   "outline_panel": {
     "button": false,
     "dock": "right",
@@ -90,6 +104,7 @@
   },
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 18,
+  "use_autoclose": false,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "vim_mode": true,
