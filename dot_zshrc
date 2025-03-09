@@ -9,7 +9,6 @@ export GIT_EDITOR="$EDITOR --wait"
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-export HEX_CACERTS_PATH="$HOME/Cisco_Umbrella_Root_CA.cer"
 export ERL_AFLAGS="-public_key cacerts_path '\"/Users/gamurray/Cisco_Umbrella_Root_CA.cer\"'"
 export ERL_ZFLAGS="-public_key cacerts_path '\"/Users/gamurray/Cisco_Umbrella_Root_CA.cer\"'"
 
