@@ -25,7 +25,42 @@
   "current_line_highlight": "none",
   "cursor_blink": false,
   "experimental.theme_overrides": {
-    "panel.focused_border": "#eabcba"
+    // "panel.focused_border": "#eabcba"
+    "syntax": {
+      "keyword": {
+        "color": "#5de4c7"
+      },
+      "type": {
+        "color": "#add7ff"
+      }
+    },
+    "players": [
+      {
+        "cursor": "#e0def4",
+        "background": "#e0def4",
+        "selection": "#e0def422"
+      },
+      {
+        "cursor": "#9ccfd8",
+        "background": "#9ccfd8",
+        "selection": "#9ccfd844"
+      },
+      {
+        "cursor": "#c4a7e7",
+        "background": "#c4a7e7",
+        "selection": "#c4a7e744"
+      },
+      {
+        "cursor": "#31748f",
+        "background": "#31748f",
+        "selection": "#31748f44"
+      },
+      {
+        "cursor": "#eb6f92",
+        "background": "#eb6f92",
+        "selection": "#eb6f9244"
+      }
+    ]
   },
   "features": {
     "edit_prediction_provider": "copilot"
@@ -100,7 +135,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Rosé Pine"
+    "dark": "poimandres (no italics)"
   },
   "ui_font_family": "Zed Plex Sans",
   "ui_font_size": 18,
