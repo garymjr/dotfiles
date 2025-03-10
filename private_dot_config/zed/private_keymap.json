@@ -1,5 +1,10 @@
 [
   {
+    "bindings": {
+      "cmd-,": "zed::OpenSettings"
+    }
+  },
+  {
     "context": "Pane > Editor || Terminal",
     "bindings": {
       "cmd-shift-i": "assistant::ToggleFocus"
@@ -12,8 +17,9 @@
     }
   },
   {
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "cmd-,": "zed::OpenSettings"
+      "a": "project_panel::NewFile"
     }
   },
   {
@@ -24,7 +30,9 @@
       "g l": "editor::MoveToEndOfLine",
       "g r i": "editor::GoToImplementation",
       "g r r": "editor::FindAllReferences",
-      "g r n": "editor::Rename"
+      "g r n": "editor::Rename",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem"
     }
   },
   {
