@@ -2,7 +2,7 @@
   "assistant": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-5-sonnet"
+      "model": "gemini-2.0-flash-001"
     },
     "version": "2",
     "enabled": true,
@@ -63,7 +63,7 @@
     ]
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "zed"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
@@ -88,16 +88,10 @@
   ],
   "lsp": {
     "copilot": {
-      "initialization_options": {
+      "initialization_Options": {
         "copilotIntegrationId": "vscode-chat"
       },
-      "settings": {
-        "github": {
-          "copilot": {
-            "selectedCompletionModel": "gpt-4o-copilot"
-          }
-        }
-      }
+      "selectedCompletionModel": "gpt-4o-copilot"
     }
   },
   "outline_panel": {

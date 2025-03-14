@@ -11,6 +11,7 @@ font-feature = ss09
 cursor-style-blink = false
 selection-invert-fg-bg = true
 shell-integration-features = no-cursor
+command = "/opt/homebrew/bin/nu"
 
 # theme
 palette = 0=#1b1e28
