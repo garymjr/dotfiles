@@ -1,9 +1,5 @@
 **/Session.vim
 .zed/
-.mise.toml
+**/.mise.toml
+**/mise.toml
 **/.npmrc
-
-# this is temporary
-.prettierignore
-.prettierrc.json
-eslint.config.mjs

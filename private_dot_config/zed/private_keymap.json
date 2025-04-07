@@ -16,21 +16,21 @@
       "cmd-shift-i": "workspace::ToggleRightDock"
     }
   },
-  {
-    "context": "ProjectPanel && not_editing",
-    "bindings": {
-      "a": "project_panel::NewFile"
-    }
-  },
+  // {
+  //   "context": "ProjectPanel && not_editing",
+  //   "bindings": {
+  //     "a": "project_panel::NewFile"
+  //   }
+  // },
   {
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
       "g d": "editor::GoToDefinition",
       "g h": "editor::MoveToBeginningOfLine",
       "g l": "editor::MoveToEndOfLine",
-      "g r i": "editor::GoToImplementation",
-      "g r r": "editor::FindAllReferences",
-      "g r n": "editor::Rename",
+      "g shift-i": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences",
+      "space c r": "editor::Rename",
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem"
     }
