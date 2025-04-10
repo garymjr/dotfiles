@@ -32,13 +32,13 @@ if status is-interactive
 
     fzf_configure_bindings --directory=\ct --variables=\e\cv
 
-    # Load zoxide
-    source (zoxide init fish | psub)
-
     # Source local settings if they exist
     if test -s "$HOME/local.config.fish"
         source $HOME/local.config.fish
     end
+
+    set -x SHELL (which fish)
+
 
     zoxide init fish | source
     starship init fish | source
