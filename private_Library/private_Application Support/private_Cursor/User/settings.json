@@ -1,0 +1,9 @@
+{
+    "window.commandCenter": 1,
+    "workbench.colorTheme": "Cursor Dark Midnight",
+    "workbench.sideBar.location": "right",
+    "editor.fontFamily": "Monaspace Neon Var",
+    "editor.tabSize": 2,
+    "editor.fontSize": 16,
+    "update.releaseTrack": "prerelease"
+}
