@@ -32,7 +32,8 @@
       "g r": "editor::FindAllReferences",
       "space c r": "editor::Rename",
       "shift-h": "pane::ActivatePreviousItem",
-      "shift-l": "pane::ActivateNextItem"
+      "shift-l": "pane::ActivateNextItem",
+      "space c f": "editor::Format"
     }
   },
   {

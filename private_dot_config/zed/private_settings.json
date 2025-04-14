@@ -9,8 +9,8 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "provider": "google",
+      "model": "gemini-2.5-pro-exp-03-25"
     },
     "editor_model": {
       "provider": "copilot_chat",
@@ -46,6 +46,7 @@
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
+  "format_on_save": "off",
   "git_panel": {
     "button": true,
     "dock": "right"
@@ -106,7 +107,7 @@
     "font_family": "Monaspace Neon",
     "shell": {
       "with_arguments": {
-        "program": "nu",
+        "program": "fish",
         "args": ["-l"]
       }
     }

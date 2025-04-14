@@ -17,6 +17,7 @@ if status is-interactive
     set -x PATH /opt/homebrew/opt/libpq/bin $PATH
     set -x PATH /opt/homebrew/opt/mysql-client/bin $PATH
     set -x PATH $HOME/.cargo/bin $PATH
+    set -x PATH $HOME/.codeium/windsurf/bin $PATH
 
     # Set $GOPROXY and $GOSUMDB
     set -x GOPROXY direct
@@ -26,6 +27,8 @@ if status is-interactive
     alias ls eza
     alias chez chezmoi
     alias lg lazygit
+    alias ws windsurf-next
+    alias c cursor
 
     alias fanauth 'TERM=xterm-256color command fanauth'
     alias ssh 'TERM=xterm-256color command ssh'
@@ -39,7 +42,7 @@ if status is-interactive
 
     set -x SHELL (which fish)
 
-
+    mise activate fish | source
     zoxide init fish | source
     starship init fish | source
 end

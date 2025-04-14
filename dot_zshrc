@@ -105,3 +105,6 @@ fi
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
+
+# Added by Windsurf - Next
+export PATH="/Users/gamurray/.codeium/windsurf/bin:$PATH"
