@@ -1,0 +1,58 @@
+{
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.activityBar.location": "top",
+  "workbench.sideBar.location": "right",
+  "editor.fontFamily": "MonaspiceNe Nerd Font Propo",
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "vim.mouseSelectionGoesIntoVisualMode": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnType": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["ctrl+r"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["space", "c", "f"],
+      "commands": ["editor.action.formatDocument"]
+    }
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.lightbulb.enabled": "off",
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.fontSize": 18,
+  "window.zoomLevel": 0.5,
+  "vim.smartRelativeLine": true,
+  "editor.guides.indentation": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.openRepositoryInParentFolders": "always",
+  "git.blame.editorDecoration.enabled": true,
+  "workbench.iconTheme": "catppuccin-mocha",
+  "editor.formatOnSave": true
+}
