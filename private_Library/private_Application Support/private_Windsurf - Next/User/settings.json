@@ -1,6 +1,6 @@
 {
   "window.commandCenter": 1,
-  "workbench.colorTheme": "Rosé Pine",
+  "workbench.colorTheme": "poimandres-storm",
   "workbench.sideBar.location": "right",
   "editor.fontFamily": "Maple Mono NF",
   "editor.tabSize": 2,
@@ -20,12 +20,21 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "vim.mouseSelectionGoesIntoVisualMode": false,
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.openRepositoryInParentFolders": "always",
   "elixirLS.suggestSpecs": false,
   "git.confirmSync": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+   {
+    "before": ["K"],
+    "commands": ["editor.action.showHover"]
+   },
+   {
+    "before": ["g", "r"],
+    "commands": ["editor.action.goToReferences"]
+   }
+  ]
 }
