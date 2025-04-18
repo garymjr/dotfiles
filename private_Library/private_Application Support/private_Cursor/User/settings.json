@@ -1,21 +1,22 @@
 {
-    "window.commandCenter": 1,
-    "workbench.colorTheme": "Rosé Pine",
-    "workbench.sideBar.location": "right",
-    "editor.fontFamily": "Maple Mono NF",
-    "editor.tabSize": 2,
-    "editor.fontSize": 16,
-    "update.releaseTrack": "prerelease",
-    "terminal.integrated.defaultProfile.osx": "fish",
-    "git.blame.editorDecoration.enabled": true,
-    "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "elixirLS.suggestSpecs": false,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
+  "window.commandCenter": 1,
+  "workbench.colorTheme": "Rosé Pine",
+  "workbench.sideBar.location": "right",
+  "editor.fontFamily": "Maple Mono NF",
+  "editor.tabSize": 2,
+  "editor.fontSize": 16,
+  "update.releaseTrack": "prerelease",
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "git.blame.editorDecoration.enabled": true,
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "elixirLS.suggestSpecs": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "git.autofetch": true
 }

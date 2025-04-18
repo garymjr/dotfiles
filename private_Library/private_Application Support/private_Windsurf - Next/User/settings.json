@@ -1,6 +1,6 @@
 {
   "window.commandCenter": 1,
-  "workbench.colorTheme": "poimandres-storm",
+  "workbench.colorTheme": "Rosé Pine",
   "workbench.sideBar.location": "right",
   "editor.fontFamily": "Maple Mono NF",
   "editor.tabSize": 2,
@@ -28,13 +28,13 @@
   "git.confirmSync": false,
   "git.autofetch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
-   {
-    "before": ["K"],
-    "commands": ["editor.action.showHover"]
-   },
-   {
-    "before": ["g", "r"],
-    "commands": ["editor.action.goToReferences"]
-   }
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    }
   ]
 }
