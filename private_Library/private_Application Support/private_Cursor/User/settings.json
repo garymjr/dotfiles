@@ -1,5 +1,5 @@
 {
-  "window.commandCenter": 1,
+  "window.commandCenter": true,
   "workbench.colorTheme": "Rosé Pine",
   "workbench.sideBar.location": "right",
   "editor.fontFamily": "Maple Mono NF",
@@ -8,7 +8,7 @@
   "update.releaseTrack": "prerelease",
   "terminal.integrated.defaultProfile.osx": "fish",
   "git.blame.editorDecoration.enabled": true,
-  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss05', 'ss07', 'ss09'",
+  "editor.fontLigatures": "'calt', 'liga'",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -18,5 +18,8 @@
   "elixirLS.suggestSpecs": false,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "always",
+  "workbench.iconTheme": "catppuccin-frappe",
+  "git.confirmSync": false
 }
