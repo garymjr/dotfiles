@@ -10,6 +10,9 @@ if status is-interactive
     # set -x VISUAL $EDITOR
     # set -x GIT_EDITOR $EDITOR
 
+    set -x KERL_BUILD_DOCS "yes"
+    set -x ERL_AFLAGS "-kernel shell_history enabled"
+
     # Set $PATH
     set -x PATH /opt/homebrew/bin $PATH
     set -x PATH ~/go/bin $PATH
