@@ -1034,5 +1034,10 @@
     "key": "shift+cmd+l",
     "command": "-windsurf.prioritized.chat.openNewConversationFromTerminal",
     "when": "terminalFocus"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.panel.chatEditing",
+    "when": "workbench.panel.chat.view.edits.active"
   }
 ]
