@@ -1,6 +1,5 @@
 {
   "window.commandCenter": true,
-  "workbench.colorTheme": "Rosé Pine",
   "workbench.sideBar.location": "right",
   "editor.fontFamily": "Maple Mono NF",
   "editor.tabSize": 2,
@@ -20,6 +19,15 @@
   "editor.formatOnType": true,
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
-  "workbench.iconTheme": "catppuccin-frappe",
-  "git.confirmSync": false
+  "workbench.iconTheme": "catppuccin-mocha",
+  "git.confirmSync": false,
+  "database-client.autoSync": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "npm.keybindingsChangedWarningShown": true,
+  "explorer.confirmDelete": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
