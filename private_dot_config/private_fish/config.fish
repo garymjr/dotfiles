@@ -6,9 +6,9 @@ if status is-interactive
     set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
     # Set $EDITOR
-    # set -x EDITOR nvim
-    # set -x VISUAL $EDITOR
-    # set -x GIT_EDITOR $EDITOR
+    set -x EDITOR windsurf-next
+    set -x VISUAL $EDITOR
+    set -x GIT_EDITOR $EDITOR
 
     set -x KERL_BUILD_DOCS "yes"
     set -x ERL_AFLAGS "-kernel shell_history enabled"
