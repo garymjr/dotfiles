@@ -1,6 +1,5 @@
 {
   "window.commandCenter": 1,
-  "workbench.colorTheme": "Rosé Pine Moon",
   "workbench.sideBar.location": "right",
   "editor.fontFamily": "Maple Mono NF",
   "editor.tabSize": 2,
@@ -47,5 +46,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.lightbulb.enabled": "off",
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Catppuccin Mocha"
 }

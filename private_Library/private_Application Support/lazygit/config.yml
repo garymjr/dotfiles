@@ -1,25 +1,32 @@
 gui:
   theme:
-    unstagedChangesColor:
-      - "#d0679d"
-    selectedLineBgColor:
-      - "#506477"
-    searchingActiveBorderColor:
-      - "#171922"
-      - "bold"
-    optionsTextColor:
-      - "#add7ff"
-    inactiveBorderColor:
-      - "#171922"
-    defaultFgColor:
-      - "#e4f0fb"
-    cherryPickedCommitFgColor:
-      - "#add7ff"
-    cherryPickedCommitBgColor:
-      - "#a6accd"
     activeBorderColor:
-      - "#171922"
-      - "bold"
+      - "#b4befe"
+      - bold
+    inactiveBorderColor:
+      - "#a6adc8"
+    optionsTextColor:
+      - "#89b4fa"
+    selectedLineBgColor:
+      - "#313244"
+    cherryPickedCommitBgColor:
+      - "#45475a"
+    cherryPickedCommitFgColor:
+      - "#b4befe"
+    unstagedChangesColor:
+      - "#f38ba8"
+    defaultFgColor:
+      - "#cdd6f4"
+  searchingActiveBorderColor:
+    - "#f9e2af"
+
+  authorColors:
+    "*": "#b4befe"
+
   nerdFontsVersion: "3"
 os:
-  editPreset: "zed"
+  edit: "windsurf-next {{filename}}"
+  editAtLine: "windsurf-next --goto {{filename}}:{{line}}"
+  editAtLineAndWait: "windsurf-next --wait --goto {{filename}}:{{line}}"
+  editInTerminal: true
+  openDirInEditor: "windsurf-next {{dir}}"
