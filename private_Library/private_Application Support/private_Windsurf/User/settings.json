@@ -47,5 +47,12 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.lightbulb.enabled": "off",
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "Catppuccin Mocha"
+  "workbench.colorTheme": "poimandres",
+  "workbench.colorCustomizations": {
+    "editorStickyScroll.shadow": "#181e28",
+    "scrollbar.shadow": "#181e28"
+  },
+  "editor.renderWhitespace": "none",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "editor.renderLineHighlight": "none"
 }
