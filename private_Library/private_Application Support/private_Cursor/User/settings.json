@@ -29,5 +29,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.confirmDragAndDrop": false,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "v-theme-dark",
+  "cursor.composer.collapsePaneInputBoxPills": true,
+  "workbench.colorCustomizations": {
+    "editorStickyScroll.shadow": "#181e28",
+    "scrollbar.shadow": "#181e28"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
