@@ -3,21 +3,15 @@
 [commit]
   verbose = true
 [core]
-  pager = delta
   excludesFile = ~/.config/git/ignore
 [credential]
 	helper = store
-[delta]
-  navigate = true
-  dark = true
 [diff]
   algorithm = histogram
 [fetch]
   prune = true
 [init]
 	defaultBranch = main
-[interactive]
-  diffFilter = delta --color-only
 [merge]
   conflictstyle = zdiff3
 [pull]
@@ -48,6 +42,9 @@
   co = checkout
   cp = cherry-pick
   cs = commit --squash
+  dft = -c diff.external=difft diff
+  dl = -c diff.external=difft log -p --ext-diff
+  ds = -c diff.external=difft show --ext-diff
   f = fetch --prune
   l = log  --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
   ll = l --reflog
