@@ -6,9 +6,9 @@ if status is-interactive
     set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
     # Set $EDITOR
-    set -x EDITOR windsurf-next
+    set -x EDITOR surf
     set -x VISUAL $EDITOR
-    set -x GIT_EDITOR $EDITOR
+    set -x GIT_EDITOR "$EDITOR --wait"
 
     set -x KERL_BUILD_DOCS "yes"
     set -x ERL_AFLAGS "-kernel shell_history enabled"
@@ -30,7 +30,7 @@ if status is-interactive
     alias ls eza
     alias chez chezmoi
     alias lg lazygit
-    alias ws windsurf-next
+    alias s surf
     alias c cursor
 
     alias fanauth 'TERM=xterm-256color command fanauth'
