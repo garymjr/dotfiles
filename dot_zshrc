@@ -108,3 +108,6 @@ fi
 
 # Added by Windsurf - Next
 export PATH="/Users/gamurray/.codeium/windsurf/bin:$PATH"
+
+# Added by Windsurf - Next
+export PATH="/Users/gamurray/.codeium/windsurf/bin:$PATH"

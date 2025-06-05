@@ -30,7 +30,7 @@ if status is-interactive
     alias ls eza
     alias chez chezmoi
     alias lg lazygit
-    alias s surf
+    alias n surf-next
     alias c cursor
 
     alias fanauth 'TERM=xterm-256color command fanauth'
@@ -49,3 +49,6 @@ if status is-interactive
     zoxide init fish | source
     starship init fish | source
 end
+
+# Added by Windsurf
+fish_add_path /Users/gamurray/.codeium/windsurf/bin

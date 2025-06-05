@@ -25,8 +25,8 @@ gui:
 
   nerdFontsVersion: "3"
 os:
-  edit: "windsurf-next {{filename}}"
-  editAtLine: "windsurf-next --goto {{filename}}:{{line}}"
-  editAtLineAndWait: "windsurf-next --wait --goto {{filename}}:{{line}}"
+  edit: "surf-next --wait {{filename}}"
+  editAtLine: "surf-next --wait --goto {{filename}}:{{line}}"
+  editAtLineAndWait: "surf-next --wait --goto {{filename}}:{{line}}"
   editInTerminal: true
-  openDirInEditor: "windsurf-next {{dir}}"
+  openDirInEditor: "surf-next --wait {{dir}}"

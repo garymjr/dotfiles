@@ -53,6 +53,8 @@
     "scrollbar.shadow": "#181e28"
   },
   "editor.renderWhitespace": "none",
-  "workbench.iconTheme": "catppuccin-mocha",
-  "editor.renderLineHighlight": "none"
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "editor.renderLineHighlight": "none",
+  "vim.smartRelativeLine": true,
+  "git.blame.editorDecoration.template": "${authorName} (${authorDateAgo}) · ${subject}"
 }
