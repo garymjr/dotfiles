@@ -1,36 +1,28 @@
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export EDITOR=zed
+export EDITOR=vim
 export VISUAL=$EDITOR
-export GIT_EDITOR="$EDITOR --wait"
+export GIT_EDITOR="$EDITOR"
 
 # for elixir/erlang support
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-export ERL_AFLAGS="-public_key cacerts_path '\"/Users/gamurray/Cisco_Umbrella_Root_CA.cer\"'"
-export ERL_ZFLAGS="-public_key cacerts_path '\"/Users/gamurray/Cisco_Umbrella_Root_CA.cer\"'"
+export PATH=/opt/homebrew/bin:$PATH
 
-export GOPATH=$HOME/go
 PATH=$HOME/bin:$PATH
 PATH=/usr/local/bin:$PATH
-PATH=/usr/local/sbin:$PATH
-PATH=/opt/homebrew/bin:$PATH
-PATH=/opt/homebrew/sbin:$PATH
-PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
-PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
-PATH=$GOPATH/bin:$PATH
-PATH=$HOME/zig/bin:$PATH
+PATH=$HOME/go/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/.codeium/windsurf/bin:$PATH
 
-if [ -d "/opt/homebrew/opt/libpq/bin" ]; then
-  PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+if [ -d "$(brew --prefix)/opt/libpq/bin" ]; then
+  PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
 fi
 
-if [ -d "/opt/homebrew/opt/mysql-client/bin" ]; then
-  PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+if [ -d "$(brew --prefix)/opt/mysql-client/bin" ]; then
+  PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
 fi
 
 export PATH=$PATH
@@ -39,33 +31,24 @@ export SHELL=/bin/zsh
 export GOPROXY=direct
 export GOSUMDB=
 
-# export NVM_DIR="$HOME/.nvm"
-
 autoload -U +X compinit
 source $HOME/.zsh/completion.zsh
 
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/key-bindings.zsh
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^o' edit-command-line
-
 alias ls=eza
-alias vi=nvim
-alias nv=nvim
-
 alias lg=lazygit
-
-alias e=zed
+alias n=surf-next
+alias c=cursor
 
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
-alias mysql='docker run -it --rm mysql mysql'
 
 [ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
@@ -105,9 +88,3 @@ fi
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
-
-# Added by Windsurf - Next
-export PATH="/Users/gamurray/.codeium/windsurf/bin:$PATH"
-
-# Added by Windsurf - Next
-export PATH="/Users/gamurray/.codeium/windsurf/bin:$PATH"
