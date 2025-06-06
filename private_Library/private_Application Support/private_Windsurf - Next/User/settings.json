@@ -47,10 +47,11 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.lightbulb.enabled": "off",
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "poimandres",
+  "workbench.colorTheme": "v-theme-dark",
   "workbench.colorCustomizations": {
     "editorStickyScroll.shadow": "#181e28",
-    "scrollbar.shadow": "#181e28"
+    "scrollbar.shadow": "#181e28",
+    "list.activeSelectionBackground": "#303340"
   },
   "editor.renderWhitespace": "none",
   "workbench.iconTheme": "catppuccin-macchiato",
