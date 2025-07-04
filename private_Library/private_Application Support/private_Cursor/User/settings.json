@@ -1,7 +1,7 @@
 {
   "window.commandCenter": true,
   "workbench.sideBar.location": "right",
-  "editor.fontFamily": "Maple Mono NF",
+  "editor.fontFamily": "MonaspiceNe Nerd Font",
   "editor.tabSize": 2,
   "editor.fontSize": 16,
   "update.releaseTrack": "prerelease",
@@ -19,7 +19,7 @@
   "editor.formatOnType": true,
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "git.confirmSync": false,
   "database-client.autoSync": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -40,5 +40,7 @@
   },
   "editor.renderWhitespace": "none",
   "vim.mouseSelectionGoesIntoVisualMode": false,
-  "vim.smartRelativeLine": true
+  "vim.smartRelativeLine": true,
+  "workbench.colorTheme": "Devine Apollo",
+  "editor.semanticHighlighting.enabled": true
 }

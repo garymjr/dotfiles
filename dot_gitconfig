@@ -1,3 +1,5 @@
+[include]
+  path = ~/.gitconfig_local
 [advice]
   detachedHead = false
 [commit]
@@ -23,13 +25,6 @@
 [rerere]
   enable = true
   autoupdate = true
-[safe]
-	directory = /Users/gamurray/code/neovim
-[user]
-  name = Gary Murray
-  email = garymjr@gmail.com
-[includeIf "hasconfig:remote.*.url:git@github.com-fanatics:fancom-d2c-product/**"]
-  path = ~/.config/git/fanatics.config
 [alias]
   a = add
   aa = add -A

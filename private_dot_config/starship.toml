@@ -2,8 +2,8 @@ format = """
 $username\
 $hostname\
 $directory\
-$git_branch\
-$git_status\
+${custom.jj}\
+${custom.git_branch}\
 $cmd_duration\
 $line_break\
 $python\
@@ -19,10 +19,12 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
+disabled = true
 format = "[$branch]($style) "
 style = "bright-black"
 
 [git_status]
+disabled = true
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
 style = "cyan"
 conflicted = "​"
@@ -34,6 +36,7 @@ deleted = "​"
 stashed = "≡"
 
 [git_state]
+disabled = true
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
@@ -52,15 +55,33 @@ format = "[$symbol$number]($style) "
 style = "bold blue"
 
 
-[custom.git]
-command = '''
-git rev-parse --short=4 HEAD
-'''
-detect_folders = [".git"]
-style = "purple"
-
-# [custom.jjstate]
-# detect_folders = [".jj"]
+# [custom.git]
 # command = '''
-# jj log --ignore-working-copy -r@ -l1 --no-graph -T "" --stat | tail -n1 | sd "(\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(-\)" " ${1}m ${2}+ ${3}-" | sd " 0." ""
+# git rev-parse --short=4 HEAD
 # '''
+# detect_folders = [".git"]
+# style = "purple"
+
+[custom.jj]
+ignore_timeout = true
+description = "The current jj status"
+detect_folders = [".jj"]
+command = '''
+jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
+  separate(" ",
+    change_id.shortest(4),
+    bookmarks,
+  )
+'
+'''
+
+[custom.jjstate]
+detect_folders = [".jj"]
+command = '''
+jj log --ignore-working-copy -r@ -l1 --no-graph -T "" --stat | tail -n1 | sd "(\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(-\)" " ${1}m ${2}+ ${3}-" | sd " 0." ""
+'''
+
+[custom.git_branch]
+when = true
+command = "jj root >/dev/null 2>&1 || starship module git_branch"
+description = "Only show git branch when not in a jj repo"

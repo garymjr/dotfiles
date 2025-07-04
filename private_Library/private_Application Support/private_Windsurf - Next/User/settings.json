@@ -26,18 +26,7 @@
   "elixirLS.suggestSpecs": false,
   "git.confirmSync": false,
   "git.autofetch": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["K"],
-      "commands": ["editor.action.showHover"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
-    }
-  ],
   "git.blame.editorDecoration.enabled": true,
-  "database-client.autoSync": true,
   "editor.fontLigatures": "'liga', 'calt'",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -47,14 +36,14 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.lightbulb.enabled": "off",
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "v-theme-dark",
-  "workbench.colorCustomizations": {
-    "editorStickyScroll.shadow": "#181e28",
-    "scrollbar.shadow": "#181e28",
-    "list.activeSelectionBackground": "#303340"
-  },
+  "workbench.colorTheme": "poimandres",
+  // "workbench.colorCustomizations": {
+  //   "editorStickyScroll.shadow": "#181e28",
+  //   "scrollbar.shadow": "#181e28",
+  //   "list.activeSelectionBackground": "#303340"
+  // },
   "editor.renderWhitespace": "none",
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.iconTheme": "catppuccin-mocha",
   "editor.renderLineHighlight": "none",
   "vim.smartRelativeLine": true,
   "git.blame.editorDecoration.template": "${authorName} (${authorDateAgo}) · ${subject}"
