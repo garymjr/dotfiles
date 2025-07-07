@@ -1,28 +1,25 @@
 gui:
   theme:
-    activeBorderColor:
-      - "#b4befe"
-      - bold
-    inactiveBorderColor:
-      - "#a6adc8"
-    optionsTextColor:
-      - "#89b4fa"
-    selectedLineBgColor:
-      - "#313244"
-    cherryPickedCommitBgColor:
-      - "#45475a"
-    cherryPickedCommitFgColor:
-      - "#b4befe"
-    unstagedChangesColor:
-      - "#f38ba8"
-    defaultFgColor:
-      - "#cdd6f4"
-  searchingActiveBorderColor:
-    - "#f9e2af"
-
-  authorColors:
-    "*": "#b4befe"
-
+      unstagedChangesColor:
+        - "#e78284"
+      selectedLineBgColor:
+        - "#51576d"
+      searchingActiveBorderColor:
+        - "#ef9f76"
+        - "bold"
+      optionsTextColor:
+        - "#8caaee"
+      inactiveBorderColor:
+        - "#8caaee"
+      defaultFgColor:
+        - "#c6d0f5"
+      cherryPickedCommitFgColor:
+        - "#8caaee"
+      cherryPickedCommitBgColor:
+        - "#eebebe"
+      activeBorderColor:
+        - "#ef9f76"
+        - "bold"
   nerdFontsVersion: "3"
 os:
   edit: "surf-next --wait {{filename}}"
