@@ -17,6 +17,7 @@ PATH=$HOME/go/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/.codeium/windsurf/bin:$PATH
 PATH="/Users/gamurray/.bun/bin:$PATH"
+PATH=$HOME/.local/share/nvim/mason/bin:$PATH
 
 if [ -d "$(brew --prefix)/opt/libpq/bin" ]; then
   PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
@@ -89,3 +90,6 @@ fi
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
+
+# opencode
+export PATH=/Users/garymjr/.opencode/bin:$PATH
