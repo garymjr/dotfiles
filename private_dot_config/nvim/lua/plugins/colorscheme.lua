@@ -25,7 +25,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
-      flavour = "frappe",
+      flavour = "macchiato",
       background = {
         dark = "frappe",
       },

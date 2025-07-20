@@ -1,4 +1,0 @@
-[language-server.typescript-language-server]
-command = "vtsls"
-args = ["--stdio"]
-config.hostInfo = "helix"
