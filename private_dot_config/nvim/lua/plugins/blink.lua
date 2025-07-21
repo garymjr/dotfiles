@@ -36,6 +36,11 @@ return {
       },
       cmdline = {
         completion = {
+          list = {
+            selection = {
+              preselect = false,
+            },
+          },
           menu = {
             auto_show = true,
           },

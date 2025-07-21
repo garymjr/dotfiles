@@ -16,8 +16,6 @@ return {
     dependencies = {
       "b0o/SchemaStore.nvim",
       "neovim/nvim-lspconfig",
-      "williamboman/mason-lspconfig.nvim",
-      "nvim-lua/plenary.nvim",
       "Saghen/blink.cmp",
     },
     cmd = "Mason",
@@ -55,32 +53,6 @@ return {
           single_file_support = true,
         },
         eslint = {
-          cmd = { vim.fn.stdpath "data" .. "/mason/bin/vscode-eslint-language-server", "--stdio" },
-          filetypes = {
-            "javascript",
-            "javascriptreact",
-            "javascript.jsx",
-            "typescript",
-            "typescriptreact",
-            "typescript.tsx",
-            "vue",
-            "svelte",
-            "astro",
-          },
-          root_markers = {
-            ".eslintrc",
-            ".eslintrc.js",
-            ".eslintrc.cjs",
-            ".eslintrc.yaml",
-            ".eslintrc.yml",
-            ".eslintrc.json",
-            "eslint.config.js",
-            "eslint.config.mjs",
-            "eslint.config.cjs",
-            "eslint.config.ts",
-            "eslint.config.mts",
-            "eslint.config.cts",
-          },
           settings = {
             codeAction = {
               disableRuleComment = {
@@ -114,18 +86,7 @@ return {
           },
         },
         lua_ls = {
-          cmd = { vim.fn.stdpath "data" .. "/mason/bin/lua-language-server" },
-          filetypes = { "lua" },
           log_level = vim.lsp.protocol.MessageType.Warning,
-          root_markers = {
-            ".luarc.json",
-            ".luarc.jsonc",
-            ".luacheckrc",
-            ".stylua.toml",
-            "stylua.toml",
-            "selene.toml",
-            "selene.yml",
-          },
           settings = {
             Lua = {
               workspace = {
@@ -142,9 +103,6 @@ return {
           single_file_support = true,
         },
         gopls = {
-          cmd = { vim.fn.stdpath "data" .. "/mason/bin/gopls" },
-          filetypes = { "go", "gomod", "gowork", "gotmpl" },
-          root_markers = { "go.work", "go.mod" },
           settings = {
             gopls = {
               gofumpt = true,
@@ -168,8 +126,6 @@ return {
           single_file_support = true,
         },
         jsonls = {
-          cmd = { vim.fn.stdpath "data" .. "/mason/bin/vscode-json-language-server", "--stdio" },
-          filetypes = { "json", "jsonc" },
           init_options = {
             provideFormatter = true,
           },
@@ -188,60 +144,6 @@ return {
           single_file_support = true,
         },
         tailwindcss = {
-          cmd = { vim.fn.stdpath "data" .. "/mason/bin/tailwindcss-language-server", "--stdio" },
-          -- filetypes copied and adjusted from tailwindcss-intellisense
-          filetypes = {
-            "aspnetcorerazor",
-            "astro",
-            "astro-markdown",
-            "blade",
-            "clojure",
-            "django-html",
-            "htmldjango",
-            "edge",
-            "eelixir",
-            "elixir",
-            "ejs",
-            "erb",
-            "eruby",
-            "gohtml",
-            "gohtmltmpl",
-            "haml",
-            "handlebars",
-            "hbs",
-            "html",
-            "htmlangular",
-            "html-eex",
-            "heex",
-            "jade",
-            "leaf",
-            "liquid",
-            "markdown",
-            "mdx",
-            "mustache",
-            "njk",
-            "nunjucks",
-            "php",
-            "razor",
-            "slim",
-            "twig",
-            "css",
-            "less",
-            "postcss",
-            "sass",
-            "scss",
-            "stylus",
-            "sugarss",
-            "javascript",
-            "javascriptreact",
-            "reason",
-            "rescript",
-            "typescript",
-            "typescriptreact",
-            "vue",
-            "svelte",
-            "templ",
-          },
           on_new_config = function(new_config)
             if not new_config.settings then
               new_config.settings = {}
@@ -283,29 +185,8 @@ return {
               },
             },
           },
-          root_markers = {
-            "tailwind.config.js",
-            "tailwind.config.cjs",
-            "tailwind.config.mjs",
-            "tailwind.config.ts",
-            "postcss.config.js",
-            "postcss.config.cjs",
-            "postcss.config.mjs",
-            "postcss.config.ts",
-            "package.json",
-          },
         },
         vtsls = {
-          cmd = { vim.fn.stdpath "data" .. "/mason/bin/vtsls", "--stdio" },
-          filetypes = {
-            "javascript",
-            "javascriptreact",
-            "javascript.jsx",
-            "typescript",
-            "typescriptreact",
-            "typescript.tsx",
-          },
-          root_markers = { "tsconfig.json", "package.json", "jsconfig.json" },
           settings = {
             complete_function_calls = true,
             vtsls = {
@@ -336,17 +217,7 @@ return {
       },
     },
     config = function(_, opts)
-      require("mason-lspconfig").setup()
       require("mason").setup()
-      local mr = require "mason-registry"
-      mr:on("package:install:success", function()
-        vim.defer_fn(function()
-          require("lazy.core.handler.event").trigger {
-            event = "FileType",
-            buf = vim.api.nvim_get_current_buf(),
-          }
-        end, 100)
-      end)
 
       vim.diagnostic.config(opts.diagnostics)
 
@@ -375,25 +246,19 @@ return {
     opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = {
+        "elixir-ls",
+        "eslint-lsp",
+        "gopls",
+        "json-lsp",
+        "lua-language-server",
+        "shfmt",
+        "stylua",
+        "tailwindcss-language-server",
+        "vtsls",
         "stylua",
         "shfmt",
       },
     },
-  },
-  {
-    "mason-tool-installer.nvim",
-    opts = function(_, opts)
-      local plugin = require("lazy.core.config").spec.plugins["mason.nvim"]
-      if not plugin then
-        return opts
-      end
-      local mason_opts = require("lazy.core.plugin").values(plugin, "opts", false)
-      local servers = vim.tbl_filter(function(v)
-        return v ~= "*"
-      end, vim.tbl_keys(mason_opts.servers))
-      opts.ensure_installed = vim.list_extend(opts.ensure_installed, servers or {})
-      return opts
-    end,
   },
   {
     "mason.nvim",
