@@ -17,7 +17,6 @@ return {
       "b0o/SchemaStore.nvim",
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
-      "Exafunction/windsurf.nvim",
       "nvim-lua/plenary.nvim",
       "Saghen/blink.cmp",
     },
@@ -335,13 +334,6 @@ return {
           single_file_support = true,
         },
       },
-      windsurf = {
-        enable_cmp_source = false,
-        virtual_text = {
-          enabled = true,
-          manual = false,
-        },
-      },
     },
     config = function(_, opts)
       require("mason-lspconfig").setup()
@@ -374,8 +366,6 @@ return {
           vim.lsp.enable(server)
         end
       end
-
-      require("codeium").setup(opts.windsurf)
     end,
   },
   {
