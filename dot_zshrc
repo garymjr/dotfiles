@@ -95,4 +95,5 @@ if command -v starship >/dev/null 2>&1; then
 fi
 
 # Auto-Warpify
-[[ "$-" == *i* ]] && printf 'P$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}œ' 
+# [[ "$-" == *i* ]] && printf '\u001bP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}\u001b\\'
+

@@ -1,0 +1,26 @@
+name: Poimandres # Name for the theme
+# accent: '#89ddff' # Accent color for UI elements
+accent: '#66aecc' # Accent color for UI elements
+cursor: '#a6accd' # Input cursor color (optional; defaults to accent color if omitted)
+background: '#1b1e28' # Terminal background color
+foreground: '#a6accd' # The foreground color
+details: darker # Whether the theme is lighter or darker
+terminal_colors: # Ansi escape colors
+  bright:
+    black: '#a6accd'
+    blue: '#add7ff'
+    cyan: '#89ddff'
+    green: '#5de4c7'
+    magenta: '#fae4fc'
+    red: '#d0679d'
+    white: '#ffffff'
+    yellow: '#fffac2'
+  normal:
+    black: '#1b1e28'
+    blue: '#89ddff'
+    cyan: '#add7ff'
+    green: '#5de4c7'
+    magenta: '#fcc5e9'
+    red: '#d0679d'
+    white: '#ffffff'
+    yellow: '#fffac2'
