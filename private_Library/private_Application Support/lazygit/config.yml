@@ -22,8 +22,4 @@ gui:
         - "bold"
   nerdFontsVersion: "3"
 os:
-  edit: "surf-next --wait {{filename}}"
-  editAtLine: "surf-next --wait --goto {{filename}}:{{line}}"
-  editAtLineAndWait: "surf-next --wait --goto {{filename}}:{{line}}"
   editInTerminal: true
-  openDirInEditor: "surf-next --wait {{dir}}"
