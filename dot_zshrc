@@ -55,6 +55,8 @@ alias gwm=git-worktree-manager
 alias fanauth='TERM=screen-256color fanauth'
 alias ssh='TERM=screen-256color ssh'
 
+alias commit='opencode -m github-copilot/gpt-4.1 run "commit the current changes"'
+
 [ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
 FPATH=$HOME/.zsh_functions:$FPATH
