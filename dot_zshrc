@@ -99,3 +99,6 @@ fi
 # Auto-Warpify
 # [[ "$-" == *i* ]] && printf '\u001bP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}\u001b\\'
 
+# Auto-Warpify
+[[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "'"$(uname)"'" }}\x9c'
+
