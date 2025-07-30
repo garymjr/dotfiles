@@ -36,32 +36,38 @@ export GOPROXY=direct
 export GOSUMDB=
 
 autoload -U +X compinit
-source $HOME/.zsh/completion.zsh
 
-source $HOME/.zsh/history.zsh
-source $HOME/.zsh/key-bindings.zsh
-# source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
+  # Auto-Warpify
+  [[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "'"$(uname)"'" }}\x9c'
+else
+  source $HOME/.zsh/completion.zsh
 
-# Enhanced form of menu completion called `menu selection'
-zmodload -i zsh/complist
+  source $HOME/.zsh/history.zsh
+  source $HOME/.zsh/key-bindings.zsh
 
-alias ls=eza
-alias lg=lazygit
-alias n=surf-next
-alias c=cursor
-alias gwm=git-worktree-manager
+  # source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+  # source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-alias fanauth='TERM=screen-256color fanauth'
-alias ssh='TERM=screen-256color ssh'
 
-alias commit='opencode -m github-copilot/gpt-4.1 run "commit the current changes"'
+  # Enhanced form of menu completion called `menu selection'
+  zmodload -i zsh/complist
 
-[ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
-FPATH=$HOME/.zsh_functions:$FPATH
-FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  FPATH=$HOME/.zsh_functions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  if command -v fzf >/dev/null 2>&1; then
+    eval "$(fzf --zsh)"
+  fi
+
+
+  if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+  fi
+fi
+
 
 # Cache completion if nothing changed - faster startup time
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -71,9 +77,11 @@ else
   compinit -C -i
 fi
 
-if command -v fzf >/dev/null 2>&1; then
-  eval "$(fzf --zsh)"
-fi
+alias ls=eza
+alias lg=lazygit
+alias gwm=git-worktree-manager
+
+[ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
 
 if command -v chezmoi >/dev/null 2>&1; then
   eval "$(chezmoi completion zsh)"
@@ -88,17 +96,7 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
-# if command -v jj >/dev/null 2>&1; then
-#   eval "$(jj util completion zsh)"
-# fi
-
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init zsh)"
-fi
-
 # Auto-Warpify
 # [[ "$-" == *i* ]] && printf '\u001bP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}\u001b\\'
 
-# Auto-Warpify
-[[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "'"$(uname)"'" }}\x9c'
 
