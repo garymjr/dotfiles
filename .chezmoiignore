@@ -1,0 +1,2 @@
+# Ignore helix runtime directory (contains automatically downloaded/managed files)
+.config/helix/runtime

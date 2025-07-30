@@ -24,10 +24,3 @@ refreshPeriod = "168h"
 type = "file"
 url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/history.zsh"
 refreshPeriod = "168h"
-
-[".config/helix/runtime"]
-type = "archive"
-url = "https://github.com/helix-editor/helix/archive/refs/heads/master.zip"
-stripComponents = 2
-include = ["*/runtime/**"]
-refreshPeriod = "24h"
