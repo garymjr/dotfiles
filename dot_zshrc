@@ -49,6 +49,15 @@ fi
 # Prepare for compinit and completions later
 autoload -U +X compinit
 
+# Cache completion if nothing changed - faster startup time
+# Rebuild daily to pick up new completions
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
+
 # Warp-specific handling
 if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
   # Auto-Warpify
@@ -85,15 +94,6 @@ else
   if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
   fi
-fi
-
-# Cache completion if nothing changed - faster startup time
-# Rebuild daily to pick up new completions
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
-if [ $(date +'%j') != $updated_at ]; then
-  compinit -i
-else
-  compinit -C -i
 fi
 
 # --- Aliases ---
