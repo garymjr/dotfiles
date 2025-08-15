@@ -19,7 +19,7 @@
   "editor.formatOnType": true,
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.iconTheme": "catppuccin-mocha",
   "git.confirmSync": false,
   "database-client.autoSync": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -41,6 +41,6 @@
   "editor.renderWhitespace": "none",
   "vim.mouseSelectionGoesIntoVisualMode": false,
   "vim.smartRelativeLine": true,
-  "workbench.colorTheme": "Devine Apollo",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "editor.semanticHighlighting.enabled": true
 }

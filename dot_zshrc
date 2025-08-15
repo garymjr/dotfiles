@@ -1,75 +1,94 @@
-export FZF_DEFAULT_COMMAND='fd --type file'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
+# --- Editors ---
 export EDITOR=hx
 export VISUAL=$EDITOR
 export GIT_EDITOR="$EDITOR"
 
-# for elixir/erlang support
+# --- FZF defaults ---
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# --- Language/tooling env ---
+# Elixir/Erlang
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-export PATH=/opt/homebrew/bin:$PATH
-
-PATH=$HOME/bin:$PATH
-PATH=/usr/local/bin:$PATH
-PATH=$HOME/go/bin:$PATH
-PATH=$HOME/.cargo/bin:$PATH
-PATH=$HOME/.codeium/windsurf/bin:$PATH
-PATH="$HOME/.bun/bin:$PATH"
-PATH=$HOME/.local/share/nvim/mason/bin:$PATH
-PATH=$HOME/.opencode/bin:$PATH
-
-if [ -d "$(brew --prefix)/opt/libpq/bin" ]; then
-  PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
-fi
-
-if [ -d "$(brew --prefix)/opt/mysql-client/bin" ]; then
-  PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
-fi
-
-export PATH=$PATH
-export SHELL=/bin/zsh
-
+# Go
 export GOPATH=$HOME/go
 export GOPROXY=direct
-export GOSUMDB=
 
+# Shell path
+export SHELL=/bin/zsh
+
+# Use zsh's path array and dedupe to avoid duplicates and keep order
+typeset -U path
+path=(
+  /opt/homebrew/bin
+  $HOME/bin
+  /usr/local/bin
+  $HOME/go/bin
+  $HOME/.cargo/bin
+  $HOME/.codeium/windsurf/bin
+  $HOME/.bun/bin
+  $HOME/.local/share/nvim/mason/bin
+  $HOME/.opencode/bin
+  $HOME/.local/bin
+  $path
+)
+
+# Homebrew-provided client CLIs (if installed)
+if command -v brew >/dev/null 2>&1; then
+  if [ -d "$(brew --prefix)/opt/libpq/bin" ]; then
+    path=("$(brew --prefix)/opt/libpq/bin" $path)
+  fi
+  if [ -d "$(brew --prefix)/opt/mysql-client/bin" ]; then
+    path=("$(brew --prefix)/opt/mysql-client/bin" $path)
+  fi
+fi
+
+# --- Completion and FPATH ---
+# Prepare for compinit and completions later
 autoload -U +X compinit
 
+# Warp-specific handling
 if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
   # Auto-Warpify
   [[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "'"$(uname)"'" }}\x9c'
 else
-  source $HOME/.zsh/completion.zsh
+  source "$HOME/.zsh/completion.zsh"
+  source "$HOME/.zsh/history.zsh"
+  source "$HOME/.zsh/key-bindings.zsh"
 
-  source $HOME/.zsh/history.zsh
-  source $HOME/.zsh/key-bindings.zsh
+  source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+  source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-  # source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-  # source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-
-  # Enhanced form of menu completion called `menu selection'
+  # Enhanced menu completion module
   zmodload -i zsh/complist
 
+  # Additional completion search paths
+  typeset -U fpath
+  fpath=(
+    $HOME/.zsh_functions
+    $(brew --prefix 2>/dev/null)/share/zsh/site-functions
+    $(brew --prefix 2>/dev/null)/share/zsh-completions
+    $fpath
+  )
 
-  FPATH=$HOME/.zsh_functions:$FPATH
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
+  # Tool initializations
   if command -v fzf >/dev/null 2>&1; then
     eval "$(fzf --zsh)"
   fi
 
+  if command -v chezmoi >/dev/null 2>&1; then
+    eval "$(chezmoi completion zsh)"
+  fi
 
   if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
   fi
 fi
 
-
 # Cache completion if nothing changed - faster startup time
+# Rebuild daily to pick up new completions
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
 if [ $(date +'%j') != $updated_at ]; then
   compinit -i
@@ -77,17 +96,13 @@ else
   compinit -C -i
 fi
 
-alias ls=eza
+# --- Aliases ---
+alias ls="eza --icons=always"
 alias lg=lazygit
 alias gwm=git-worktree-manager
+alias chez=chezmoi
 
-[ -f "$HOME/.zshrc.local" ] && \. "$HOME/.zshrc.local"
-
-if command -v chezmoi >/dev/null 2>&1; then
-  eval "$(chezmoi completion zsh)"
-  alias chez=chezmoi
-fi
-
+# --- Tool integrations ---
 if command -v ~/.local/bin/mise >/dev/null 2>&1; then
   eval "$(~/.local/bin/mise activate zsh)"
 fi
@@ -96,7 +111,5 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
-# Auto-Warpify
-# [[ "$-" == *i* ]] && printf '\u001bP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}\u001b\\'
-
-
+# --- Local overrides ---
+[ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
