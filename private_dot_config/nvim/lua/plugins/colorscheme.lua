@@ -21,8 +21,19 @@ return {
     end,
   },
   {
+    "Mitch1000/backpack.nvim",
+    priority = 1000,
+    opts = {},
+    config = function(_, opts)
+      require("backpack").setup(opts)
+
+      vim.cmd.colorscheme "backpack"
+    end,
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
+    enabled = false,
     priority = 1000,
     opts = {
       flavour = "mocha",
