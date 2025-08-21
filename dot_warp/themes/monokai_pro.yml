@@ -1,0 +1,28 @@
+background: '#2d2a2e'
+accent: '#ab9df2'
+foreground: '#fcfcfa'
+details: darker
+cursor_color: '#c1c0c0'
+cursor_text: '#c1c0c0'
+selection_background: '#5b595c'
+selection_foreground: '#fcfcfa'
+terminal_colors:
+  normal:
+    black: '#2d2a2e'
+    red: '#ff6188'
+    green: '#a9dc76'
+    yellow: '#ffd866'
+    blue: '#fc9867'
+    magenta: '#ab9df2'
+    cyan: '#78dce8'
+    white: '#fcfcfa'
+  bright:
+    black: '#727072'
+    red: '#ff6188'
+    green: '#a9dc76'
+    yellow: '#ffd866'
+    blue: '#fc9867'
+    magenta: '#ab9df2'
+    cyan: '#78dce8'
+    white: '#fcfcfa'
+

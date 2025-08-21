@@ -21,13 +21,13 @@ return {
     end,
   },
   {
-    "Mitch1000/backpack.nvim",
+    "loctvl842/monokai-pro.nvim",
     priority = 1000,
     opts = {},
     config = function(_, opts)
-      require("backpack").setup(opts)
+      require("monokai-pro").setup(opts)
 
-      vim.cmd.colorscheme "backpack"
+      vim.cmd.colorscheme "monokai-pro"
     end,
   },
   {

@@ -1,0 +1,6 @@
+---
+"input:set_mode_unlocked_agent": cmd-i
+"input:set_mode_terminal": none
+"editor_view:insert_autosuggestion": shift-right
+"input:set_mode_unlocked_terminal": cmd-j
+"input:set_mode_agent": none
