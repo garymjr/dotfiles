@@ -1,0 +1,4 @@
+[".zsh/dotenv.plugin.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/dotenv/dotenv.plugin.zsh"
+refreshPeriod = "168h"
