@@ -27,7 +27,6 @@ path=(
   /usr/local/bin
   $HOME/go/bin
   $HOME/.cargo/bin
-  $HOME/.codeium/windsurf/bin
   $HOME/.bun/bin
   $HOME/.local/share/nvim/mason/bin
   $HOME/.opencode/bin
@@ -60,46 +59,12 @@ fi
 
 # Warp-specific handling
 if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
-  # Auto-Warpify
   [[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "'"$(uname)"'" }}\x9c'
-else
-  source "$HOME/.zsh/completion.zsh"
-  source "$HOME/.zsh/history.zsh"
-  source "$HOME/.zsh/key-bindings.zsh"
-
-  source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-  source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-  # Enhanced menu completion module
-  zmodload -i zsh/complist
-
-  # Additional completion search paths
-  typeset -U fpath
-  fpath=(
-    $HOME/.zsh_functions
-    $(brew --prefix 2>/dev/null)/share/zsh/site-functions
-    $(brew --prefix 2>/dev/null)/share/zsh-completions
-    $fpath
-  )
-
-  # Tool initializations
-  if command -v fzf >/dev/null 2>&1; then
-    eval "$(fzf --zsh)"
-  fi
-
-  if command -v chezmoi >/dev/null 2>&1; then
-    eval "$(chezmoi completion zsh)"
-  fi
-
-  if command -v starship >/dev/null 2>&1; then
-    eval "$(starship init zsh)"
-  fi
 fi
 
 # --- Aliases ---
 alias ls="eza --icons=always"
 alias lg=lazygit
-alias gwm=git-worktree-manager
 alias chez=chezmoi
 
 # --- Tool integrations ---
