@@ -1,6 +1,5 @@
 {
   "window.commandCenter": true,
-  "workbench.sideBar.location": "right",
   "editor.fontFamily": "MonaspiceNe Nerd Font",
   "editor.tabSize": 2,
   "editor.fontSize": 16,
@@ -42,5 +41,6 @@
   "vim.mouseSelectionGoesIntoVisualMode": false,
   "vim.smartRelativeLine": true,
   "workbench.colorTheme": "Catppuccin Mocha",
-  "editor.semanticHighlighting.enabled": true
+  "editor.semanticHighlighting.enabled": true,
+  "cursor.composer.usageSummaryDisplay": "always"
 }
