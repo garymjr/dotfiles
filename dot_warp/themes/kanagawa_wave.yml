@@ -4,6 +4,9 @@ accent: '#7e9cd8'
 cursor: '#c8c093'
 foreground: '#dcd7ba'
 details: darker
+selection:
+  background: '#2d4f67'
+  text: '#c8c093'
 terminal_colors:
   normal:
     black: '#16161d'

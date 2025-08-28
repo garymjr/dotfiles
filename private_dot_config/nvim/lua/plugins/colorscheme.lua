@@ -31,25 +31,14 @@ return {
     end,
   },
   {
-    "loctvl842/monokai-pro.nvim",
-    enabled = true,
-    priority = 1000,
-    opts = {},
-    config = function(_, opts)
-      require("monokai-pro").setup(opts)
-
-      vim.cmd.colorscheme "monokai-pro-octagon"
-    end,
-  },
-  {
     "catppuccin/nvim",
     name = "catppuccin",
-    enabled = false,
+    enabled = true,
     priority = 1000,
     opts = {
-      flavour = "mocha",
+      flavour = "frappe",
       background = {
-        dark = "mocha",
+        dark = "frappe",
       },
       term_colors = true,
       styles = {

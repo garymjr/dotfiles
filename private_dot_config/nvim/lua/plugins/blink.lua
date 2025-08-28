@@ -35,6 +35,7 @@ return {
         },
       },
       cmdline = {
+        enabled = false,
         completion = {
           list = {
             selection = {

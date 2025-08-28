@@ -42,5 +42,6 @@
   "vim.smartRelativeLine": true,
   "workbench.colorTheme": "Catppuccin Mocha",
   "editor.semanticHighlighting.enabled": true,
-  "cursor.composer.usageSummaryDisplay": "always"
+  "cursor.composer.usageSummaryDisplay": "always",
+  "cursor.composer.queueMessageDefaultBehavior": "queue"
 }
