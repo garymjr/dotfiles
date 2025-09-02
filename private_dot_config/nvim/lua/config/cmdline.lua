@@ -15,7 +15,7 @@ if vim.fn.executable "fd" == 1 then
         return items
       end
       while true do
-        local name, typ = vim.uv.fs_scandir_next(fd)
+        local name, _ = vim.uv.fs_scandir_next(fd)
         if not name then
           break
         end
@@ -74,12 +74,13 @@ if vim.fn.executable "fd" == 1 then
     if base_dir then
       local stat = vim.uv.fs_stat(base_dir)
       if stat and stat.type == "directory" then
-        if input_starts_with_slash or is_home_root then
-          -- Never recursively search when the input begins with '/' or when at home root: list only one level
+        -- Only avoid recursion at filesystem root or at the user's home directory
+        local is_fs_root = base_dir == "/"
+        if is_home_root or is_fs_root then
           fnames = list_dir_non_recursive(base_dir)
         else
           local fd_cmd = string.format(
-            'fd --hidden --color=never --type f --exclude .git . %s',
+            "fd --hidden --color=never --type f --exclude .git . %s",
             vim.fn.shellescape(base_dir)
           )
           fnames = vim.fn.systemlist(fd_cmd)
@@ -88,7 +89,7 @@ if vim.fn.executable "fd" == 1 then
         fnames = {}
       end
     else
-      fnames = vim.fn.systemlist 'fd --hidden --color=never --type f --exclude .git'
+      fnames = vim.fn.systemlist "fd --hidden --color=never --type f --exclude .git"
     end
 
     -- Normalize to absolute paths when we had a base_dir and fd returned relative paths

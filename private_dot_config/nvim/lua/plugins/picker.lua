@@ -3,13 +3,6 @@ return {
     "snacks.nvim",
     keys = {
       {
-        "<leader><space>",
-        function()
-          Snacks.picker.smart()
-        end,
-        desc = "Smart Find Files",
-      },
-      {
         "<leader>:",
         function()
           Snacks.picker.command_history()
@@ -30,34 +23,23 @@ return {
         end,
         desc = "File Explorer",
       },
-
       {
         "<leader>fb",
-        function()
-          Snacks.picker.buffers()
-        end,
-        desc = "Buffers",
+        ":b ",
+        desc = "Find Buffer",
       },
       {
         "<leader>fc",
-        function()
-          Snacks.picker.files { cwd = vim.fn.stdpath "config" }
-        end,
+        ":find ~/.config/nvim/",
         desc = "Find Config File",
       },
       {
         "<leader>ff",
+        ":find ",
         function()
           Snacks.picker.files()
         end,
         desc = "Find Files",
-      },
-      {
-        "<leader>fg",
-        function()
-          Snacks.picker.git_files()
-        end,
-        desc = "Find Git Files",
       },
       {
         "<leader>fp",
@@ -73,7 +55,6 @@ return {
         end,
         desc = "Recent",
       },
-
       {
         "<leader>gb",
         function()

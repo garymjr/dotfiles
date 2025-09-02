@@ -21,16 +21,6 @@ return {
     end,
   },
   {
-    "calind/selenized.nvim",
-    enabled = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      vim.opt.background = "light"
-      vim.cmd.colorscheme "selenized"
-    end,
-  },
-  {
     "loctvl842/monokai-pro.nvim",
     enabled = true,
     priority = 1000,

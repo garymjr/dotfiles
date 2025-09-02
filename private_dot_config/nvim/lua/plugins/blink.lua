@@ -35,22 +35,7 @@ return {
         },
       },
       cmdline = {
-        completion = {
-          list = {
-            selection = {
-              preselect = false,
-            },
-          },
-          menu = {
-            auto_show = true,
-          },
-        },
-        keymap = {
-          ["<tab>"] = { "select_next", "fallback" },
-          ["<s-tab>"] = { "select_prev", "fallback" },
-          ["<c-n>"] = { "select_next", "fallback" },
-          ["<c-p>"] = { "select_prev", "fallback" },
-        },
+        enabled = false,
       },
       keymap = {
         ["<cr>"] = { "accept", "fallback" },
