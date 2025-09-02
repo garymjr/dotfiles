@@ -4,7 +4,7 @@
   "editor.tabSize": 2,
   "editor.fontSize": 16,
   "update.releaseTrack": "prerelease",
-  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "git.blame.editorDecoration.enabled": true,
   "editor.fontLigatures": "'calt', 'liga'",
   "[typescriptreact]": {
@@ -18,11 +18,9 @@
   "editor.formatOnType": true,
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "catppuccin-latte",
   "git.confirmSync": false,
-  "database-client.autoSync": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "npm.keybindingsChangedWarningShown": true,
   "explorer.confirmDelete": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -38,10 +36,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.renderWhitespace": "none",
-  "vim.mouseSelectionGoesIntoVisualMode": false,
-  "vim.smartRelativeLine": true,
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Rosé Pine Dawn",
   "editor.semanticHighlighting.enabled": true,
-  "cursor.composer.usageSummaryDisplay": "always",
-  "cursor.composer.queueMessageDefaultBehavior": "queue"
+  "cursor.composer.usageSummaryDisplay": "never",
+  "workbench.statusBar.visible": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.activityBar.orientation": "vertical",
+  "terminal.integrated.fontSize": 16
 }

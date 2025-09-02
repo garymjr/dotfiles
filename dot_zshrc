@@ -57,12 +57,6 @@ else
   compinit -C -i
 fi
 
-
-# --- Zsh plugins ---
-export ZSH_CACHE_DIR="$HOME/.cache/zsh"
-
-source "$HOME/.zsh/dotenv.plugin.zsh"
-
 # Warp-specific handling
 if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
   [[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "'"$(uname)"'" }}\x9c'
