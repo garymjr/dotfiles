@@ -42,6 +42,5 @@
   "terminal.integrated.fontSize": 16,
   "cursor.cpp.disabledLanguages": ["markdown"],
   "cursor.composer.shouldChimeAfterChatFinishes": true,
-  "workbench.layoutControl.enabled": false,
-  "workbench.sideBar.location": "right"
+  "workbench.layoutControl.enabled": false
 }
