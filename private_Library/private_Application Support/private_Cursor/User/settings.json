@@ -17,7 +17,7 @@
   "editor.formatOnType": true,
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
-  "workbench.iconTheme": "catppuccin-latte",
+  "workbench.iconTheme": "catppuccin-mocha",
   "git.confirmSync": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDelete": false,
@@ -42,5 +42,8 @@
   "terminal.integrated.fontSize": 16,
   "cursor.cpp.disabledLanguages": ["markdown"],
   "cursor.composer.shouldChimeAfterChatFinishes": true,
-  "workbench.layoutControl.enabled": false
+  "workbench.layoutControl.enabled": false,
+  "githubPullRequests.pullBranch": "never",
+  "npm.keybindingsChangedWarningShown": true,
+  "workbench.colorTheme": "Catppuccin Mocha"
 }
