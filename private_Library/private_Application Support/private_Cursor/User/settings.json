@@ -39,8 +39,8 @@
   "workbench.colorTheme": "Rosé Pine Dawn",
   "editor.semanticHighlighting.enabled": true,
   "cursor.composer.usageSummaryDisplay": "never",
-  "workbench.statusBar.visible": false,
   "workbench.editor.showTabs": "single",
   "workbench.activityBar.orientation": "vertical",
-  "terminal.integrated.fontSize": 16
+  "terminal.integrated.fontSize": 16,
+  "cursor.cpp.disabledLanguages": ["markdown"]
 }
