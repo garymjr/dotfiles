@@ -36,7 +36,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.renderWhitespace": "none",
-  "workbench.colorTheme": "Rosé Pine Dawn",
   "editor.semanticHighlighting.enabled": true,
   "cursor.composer.usageSummaryDisplay": "never",
   "workbench.editor.showTabs": "single",
