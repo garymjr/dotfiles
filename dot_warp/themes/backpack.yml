@@ -1,0 +1,30 @@
+# backpack theme for Warp
+# Derived from catppuccin_frappe.yml template
+background: '#212121'
+accent: '#7d8fa4'
+foreground: '#f7f0f6'
+details: darker
+cursor: '#f6f7ec'
+cursor_text: '#000000'
+selection_background: '#2f363e'
+selection_foreground: '#7d8fa4'
+terminal_colors:
+  normal:
+    black: '#23252b'
+    red: '#bb595c'
+    green: '#e7477e'
+    yellow: '#eb0089'
+    blue: '#0089ff'
+    magenta: '#0089ff'
+    cyan: '#e482ff'
+    white: '#444444'
+  bright:
+    black: '#ff7eda'
+    red: '#ebebeb'
+    green: '#00d4f8'
+    yellow: '#31a6a5'
+    blue: '#bff4f4'
+    magenta: '#d3a172'
+    cyan: '#2cf392'
+    white: '#0089ff'
+

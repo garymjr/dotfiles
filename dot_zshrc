@@ -49,6 +49,9 @@ alias ls="eza --icons=always"
 alias lg=lazygit
 alias chez=chezmoi
 
+export ZSH_CACHE_DIR=$HOME/.cache/zsh
+source "$HOME/.zsh/dotenv.plugin.zsh"
+
 # --- Tool integrations ---
 if command -v ~/.local/bin/mise >/dev/null 2>&1; then
   eval "$(~/.local/bin/mise activate zsh)"
@@ -64,5 +67,3 @@ fi
 
 # --- Local overrides ---
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
-
-# Auto-Warpify
