@@ -1,12 +1,25 @@
+# --- Editors ---
+export EDITOR=hx
+export VISUAL=$EDITOR
+export GIT_EDITOR="$EDITOR"
+
+# --- FZF defaults ---
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# --- Language/tooling env ---
+# Elixir/Erlang
+export KERL_BUILD_DOCS="yes"
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Go
+export GOPATH=$HOME/go
+export GOPROXY=direct
+
 # Shell path
 export SHELL=/bin/zsh
 
-# Tool version manager
-if command -v ~/.local/bin/mise >/dev/null 2>&1; then
-  eval "$(~/.local/bin/mise activate zsh)"
-fi
-
-# Use zsh's path array
+# Use zsh's path array and dedupe to avoid duplicates and keep order
 typeset -U path
 path=(
   /opt/homebrew/bin
@@ -31,7 +44,8 @@ if command -v brew >/dev/null 2>&1; then
   fi
 fi
 
-# Basic completion setup
+# --- Completion and FPATH ---
+# Prepare for compinit and completions later
 autoload -U +X compinit
 
 # Cache completion if nothing changed - faster startup time
@@ -43,71 +57,23 @@ else
   compinit -C -i
 fi
 
-# Essential completion and history files
-source "$HOME/.zsh/completion.zsh"
-source "$HOME/.zsh/history.zsh"
+# Warp-specific handling
+if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
+  [[ "$-" == *i* ]] && printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "'"$(uname)"'" }}\x9c'
+fi
 
-# Enhanced menu completion module
-zmodload -i zsh/complist
+# --- Aliases ---
+alias ls="eza --icons=always"
+alias lg=lazygit
+alias chez=chezmoi
 
-# Additional completion search paths
-typeset -U fpath
-fpath=(
-  $HOME/.zsh_functions
-  $(brew --prefix 2>/dev/null)/share/zsh/site-functions
-  $(brew --prefix 2>/dev/null)/share/zsh-completions
-  $fpath
-)
+# --- Tool integrations ---
+if command -v ~/.local/bin/mise >/dev/null 2>&1; then
+  eval "$(~/.local/bin/mise activate zsh)"
+fi
 
-if [ -z "$CURSOR_AGENT" ]; then
-  # --- Editors ---
-  export EDITOR=cursor
-  export VISUAL=$EDITOR
-  export GIT_EDITOR=vim
-
-  # --- FZF defaults ---
-  export FZF_DEFAULT_COMMAND='fd --type file'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-  # --- Language/tooling env ---
-  # Elixir/Erlang
-  export KERL_BUILD_DOCS="yes"
-  export ERL_AFLAGS="-kernel shell_history enabled"
-
-  # Go
-  export GOPATH=$HOME/go
-  export GOPROXY=direct
-
-  # --- Tool initializations ---
-  if command -v fzf >/dev/null 2>&1; then
-    eval "$(fzf --zsh)"
-  fi
-
-  if command -v chezmoi >/dev/null 2>&1; then
-    eval "$(chezmoi completion zsh)"
-  fi
-
-  if command -v starship >/dev/null 2>&1; then
-    eval "$(starship init zsh)"
-  fi
-
-  # --- Aliases ---
-  alias ls="eza --icons=always"
-  alias lg=lazygit
-  alias chez=chezmoi
-  alias c=cursor
-  alias ca=cursor-agent
-  alias cau='cursor-agent update'
-
-  # --- Tool integrations ---
-  if command -v zoxide >/dev/null 2>&1; then
-    eval "$(zoxide init zsh)"
-  fi
-
-  # Enhanced plugins and completions
-  source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-  source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-  source "$HOME/.zsh/key-bindings.zsh"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
 fi
 
 # --- Local overrides ---

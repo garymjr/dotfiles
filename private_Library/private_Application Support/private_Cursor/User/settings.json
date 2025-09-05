@@ -37,6 +37,7 @@
   "editor.renderWhitespace": "none",
   "editor.semanticHighlighting.enabled": true,
   "cursor.composer.usageSummaryDisplay": "never",
+  "workbench.statusBar.visible": false,
   "workbench.editor.showTabs": "single",
   "workbench.activityBar.orientation": "vertical",
   "terminal.integrated.fontSize": 16,
