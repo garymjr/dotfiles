@@ -1,5 +1,16 @@
 return {
   {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    opts = {
+      keywordStyle = { italic = false },
+    },
+    config = function(_, opts)
+      require("kanagawa").setup(opts)
+      vim.cmd.colorscheme "kanagawa"
+    end,
+  },
+  {
     "olivercederborg/poimandres.nvim",
     enabled = false,
     priority = 1000,
@@ -18,17 +29,6 @@ return {
       })
 
       vim.cmd.colorscheme "poimandres"
-    end,
-  },
-  {
-    "loctvl842/monokai-pro.nvim",
-    enabled = true,
-    priority = 1000,
-    opts = {},
-    config = function(_, opts)
-      require("monokai-pro").setup(opts)
-
-      vim.cmd.colorscheme "monokai-pro-octagon"
     end,
   },
   {
