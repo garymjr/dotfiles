@@ -1,3 +1,4 @@
+command = "/opt/homebrew/bin/fish"
 font-family = "Maple Mono NF"
 font-size = 16
 font-feature = ss01
@@ -5,7 +6,7 @@ font-feature = ss02
 font-feature = ss03
 font-feature = ss05
 font-feature = ss09
-theme = "catppuccin-macchiato"
+theme = "Kanagawa Wave"
 cursor-style-blink = false
 selection-invert-fg-bg = true
 shell-integration-features = no-cursor
