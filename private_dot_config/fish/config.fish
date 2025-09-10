@@ -3,6 +3,8 @@ set -x EDITOR hx
 set -x VISUAL $EDITOR
 set -x GIT_EDITOR $EDITOR
 
+set -U fish_greeting
+
 # --- FZF defaults ---
 set -x FZF_DEFAULT_COMMAND 'fd --type file'
 set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
