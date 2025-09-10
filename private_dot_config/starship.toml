@@ -2,7 +2,6 @@ format = """
 $username\
 $hostname\
 $directory\
-${custom.jj}\
 ${custom.git_branch}\
 $cmd_duration\
 $line_break\

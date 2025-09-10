@@ -44,6 +44,8 @@ if command -v brew >/dev/null 2>&1; then
   fi
 fi
 
+export PATH
+
 # --- Aliases ---
 alias ls="eza --icons=always"
 alias lg=lazygit
@@ -62,8 +64,13 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
-  [[ "$-" == *i* ]] && printf 'P$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}œ' 
+  [[ "$-" == *i* ]] && printf 'P$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}ï¿½' 
+else
+  eval "$(starship init zsh)"
 fi
+
+# the new cursor script breaks envs right now
+alias cursor="open -a Cursor"
 
 # --- Local overrides ---
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
