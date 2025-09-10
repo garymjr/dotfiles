@@ -2,3 +2,4 @@ dot_zsh/fast-syntax-highlighting
 dot_zsh/pure
 
 .DS_Store
+private_dot_config/fish/config.local.fish

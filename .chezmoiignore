@@ -1,2 +1,2 @@
-# Ignore helix runtime directory (contains automatically downloaded/managed files)
 .config/helix/runtime
+.config/fish/config.local.fish
