@@ -17,7 +17,7 @@ set -x GOPATH $HOME/go
 set -x GOPROXY direct
 
 # Shell path
-set -x SHELL (which fish)
+set -x SHELL fish
 
 # PATH setup
 set -x PATH $PATH /opt/homebrew/bin
