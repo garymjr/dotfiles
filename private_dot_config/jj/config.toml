@@ -1,0 +1,14 @@
+[user]
+name = "Gary Murray"
+email = "garymjr@gmail.com"
+
+[git]
+subprocess = true
+
+[ui]
+default-command = "status"
+editor = "nvim"
+
+[alias]
+evolve = ["rebase", "--skip-empty", "-d"]
+sync = ["git", "fetch", "--all-remotes"]

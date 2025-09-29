@@ -1,0 +1,11 @@
+--when.repositories = ["/Users/gamurray/Developer"]
+
+[user]
+name = "Gary Murray"
+email = "gamurray@fanatics.com"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "~/.ssh/id_rsa_gamurray.pub"
+
