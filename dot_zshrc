@@ -66,20 +66,7 @@ source "$HOME/.zsh/zoxide.plugin.zsh"
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
-# --- Tool integrations ---
-if command -v ~/.local/bin/mise >/dev/null 2>&1; then
-  eval "$(~/.local/bin/mise activate zsh)"
-fi
-
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-fi
-
-if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
-  [[ "$-" == *i* ]] && printf 'P$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh", "uname": "Darwin" }}�' 
-else
-  eval "$(starship init zsh)"
-fi
+eval "$(starship init zsh)"
 
 # --- Local overrides ---
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
