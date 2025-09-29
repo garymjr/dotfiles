@@ -2,7 +2,7 @@ format = """
 $username\
 $hostname\
 $directory\
-${git_branch}\
+${custom.jj}\
 $cmd_duration\
 $line_break\
 $python\
@@ -52,14 +52,6 @@ symbol = "+"
 threshold = 1
 format = "[$symbol$number]($style) "
 style = "bold blue"
-
-
-# [custom.git]
-# command = '''
-# git rev-parse --short=4 HEAD
-# '''
-# detect_folders = [".git"]
-# style = "purple"
 
 [custom.jj]
 ignore_timeout = true
