@@ -57,13 +57,11 @@ if command -q zoxide
     zoxide init fish | source
 end
 
-if test "$TERM_PROGRAM" = "WarpTerminal"
+if test "$TERM_PROGRAM" = WarpTerminal
     # WarpTerminal specific - may need adaptation
 else
     starship init fish | source
 end
-
-alias cursor "open -a Cursor"
 
 # --- Local overrides ---
 if test -f ~/.config/fish/config.local.fish

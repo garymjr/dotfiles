@@ -54,6 +54,18 @@ alias chez=chezmoi
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
 source "$HOME/.zsh/dotenv.plugin.zsh"
 
+source "$HOME/.zsh/brew.plugin.zsh"
+source "$HOME/.zsh/bun.plugin.zsh"
+source "$HOME/.zsh/chezmoi.plugin.zsh"
+source "$HOME/.zsh/fzf.plugin.zsh"
+source "$HOME/.zsh/gh.plugin.zsh"
+source "$HOME/.zsh/history.plugin.zsh"
+source "$HOME/.zsh/jj.plugin.zsh"
+source "$HOME/.zsh/mise.plugin.zsh"
+source "$HOME/.zsh/zoxide.plugin.zsh"
+
+source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
 # --- Tool integrations ---
 if command -v ~/.local/bin/mise >/dev/null 2>&1; then
   eval "$(~/.local/bin/mise activate zsh)"
@@ -68,9 +80,6 @@ if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
 else
   eval "$(starship init zsh)"
 fi
-
-# the new cursor script breaks envs right now
-alias cursor="open -a Cursor"
 
 # --- Local overrides ---
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"

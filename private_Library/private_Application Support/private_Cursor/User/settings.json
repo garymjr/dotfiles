@@ -1,9 +1,7 @@
 {
-  "editor.fontFamily": "MonaspiceNe Nerd Font",
   "editor.tabSize": 2,
   "editor.fontSize": 16,
-  "update.releaseTrack": "dev",
-  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.osx": "fish",
   "git.blame.editorDecoration.enabled": true,
   "editor.fontLigatures": "'calt', 'liga'",
   "[typescriptreact]": {
@@ -36,16 +34,18 @@
   },
   "editor.renderWhitespace": "none",
   "editor.semanticHighlighting.enabled": true,
-  "cursor.composer.usageSummaryDisplay": "never",
-  "workbench.statusBar.visible": false,
   "terminal.integrated.fontSize": 16,
   "cursor.cpp.disabledLanguages": ["markdown"],
   "cursor.composer.shouldChimeAfterChatFinishes": true,
   "workbench.layoutControl.enabled": false,
   "githubPullRequests.pullBranch": "never",
   "npm.keybindingsChangedWarningShown": true,
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Cursor Light",
   "window.customTitleBarVisibility": "never",
-  "workbench.editor.showTabs": "single",
-  "cursor.enable_agent_window_setting": true
+  "cursor.enable_agent_window_setting": true,
+  "diffEditor.renderSideBySide": false,
+  "cursor.composer.usageSummaryDisplay": "never",
+  "cursor.composer.textSizeScale": 1.15,
+  "editor.fontFamily": "Maple Mono NF",
+  "update.releaseTrack": "dev"
 }

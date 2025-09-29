@@ -1,4 +1,4 @@
-command = "/opt/homebrew/bin/fish"
+command = "/opt/homebrew/bin/zsh"
 font-family = "Maple Mono NF"
 font-size = 16
 font-feature = ss01
@@ -9,7 +9,7 @@ font-feature = ss09
 theme = "Kanagawa Wave"
 cursor-style-blink = false
 selection-invert-fg-bg = true
-shell-integration-features = no-cursor
+shell-integration-features = cursor,sudo,title,ssh-terminfo
 
 # theme
 # palette = 0=#1b1e28

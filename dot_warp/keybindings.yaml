@@ -1,7 +1,9 @@
 ---
+"workspace:open_code_review_pane": shift-cmd-R
 "input:set_mode_terminal": none
-"input:open_completion_suggestions": tab
-"input:set_mode_unlocked_agent": cmd-i
-"input:set_mode_unlocked_terminal": cmd-j
-"input:set_mode_agent": none
 "editor_view:insert_autosuggestion": shift-right
+"terminal:open_inline_ai": none
+"input:set_mode_agent": none
+"input:set_mode_unlocked_terminal": cmd-j
+"input:set_mode_unlocked_agent": cmd-i
+"input:open_completion_suggestions": tab

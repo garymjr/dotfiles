@@ -2,7 +2,7 @@ format = """
 $username\
 $hostname\
 $directory\
-${custom.git_branch}\
+${git_branch}\
 $cmd_duration\
 $line_break\
 $python\
@@ -18,7 +18,7 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-disabled = true
+disabled = false
 format = "[$branch]($style) "
 style = "bright-black"
 
