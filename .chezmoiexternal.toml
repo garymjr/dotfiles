@@ -8,6 +8,11 @@ type = "file"
 url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/lib/history.zsh"
 refreshPeriod = "168h"
 
+[".zsh/git-completion.zsh"]
+type = "file"
+url = "https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion/git-completion.zsh"
+refreshPeriod = "168h"
+
 [".zsh/dotenv.plugin.zsh"]
 type = "file"
 url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/dotenv/dotenv.plugin.zsh"

@@ -51,9 +51,14 @@ alias ls="eza --icons=always"
 alias lg=lazygit
 alias chez=chezmoi
 
-export ZSH_CACHE_DIR=$HOME/.cache/zsh
-source "$HOME/.zsh/dotenv.plugin.zsh"
+autoload -Uz compinit; compinit
 
+export ZSH_CACHE_DIR=$HOME/.cache/zsh
+
+source "$HOME/.zsh/completion.zsh"
+source "$HOME/.zsh/history.zsh"
+
+source "$HOME/.zsh/dotenv.plugin.zsh"
 source "$HOME/.zsh/brew.plugin.zsh"
 source "$HOME/.zsh/bun.plugin.zsh"
 source "$HOME/.zsh/chezmoi.plugin.zsh"
@@ -63,6 +68,11 @@ source "$HOME/.zsh/history.plugin.zsh"
 source "$HOME/.zsh/jj.plugin.zsh"
 source "$HOME/.zsh/mise.plugin.zsh"
 source "$HOME/.zsh/zoxide.plugin.zsh"
+
+fpath=(
+  $HOME/.zsh
+  $fpath
+)
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
