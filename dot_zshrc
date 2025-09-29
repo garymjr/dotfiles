@@ -71,6 +71,7 @@ source "$HOME/.zsh/zoxide.plugin.zsh"
 
 fpath=(
   $HOME/.zsh
+  $HOME/.cache/zsh/completions
   $fpath
 )
 
