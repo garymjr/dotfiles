@@ -2,7 +2,7 @@ format = """
 $username\
 $hostname\
 $directory\
-${custom.jj}\
+${custom.jj}${custom.git_branch}\
 $cmd_duration\
 $line_break\
 $python\
@@ -18,7 +18,7 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-disabled = false
+disabled = true
 format = "[$branch]($style) "
 style = "bright-black"
 
@@ -73,6 +73,6 @@ jj log --ignore-working-copy -r@ -l1 --no-graph -T "" --stat | tail -n1 | sd "(\
 '''
 
 [custom.git_branch]
-when = true
-command = "jj root >/dev/null 2>&1 || starship module git_branch"
+when = "jj root >/dev/null 2>&1 && exit 1 || exit 0"
+command = "starship module git_branch"
 description = "Only show git branch when not in a jj repo"
