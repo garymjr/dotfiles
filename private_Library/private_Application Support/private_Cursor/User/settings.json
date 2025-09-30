@@ -47,5 +47,6 @@
   "cursor.composer.usageSummaryDisplay": "never",
   "cursor.composer.textSizeScale": 1.15,
   "editor.fontFamily": "Maple Mono NF",
-  "update.releaseTrack": "dev"
+  "update.releaseTrack": "dev",
+  "window.autoDetectColorScheme": true
 }
