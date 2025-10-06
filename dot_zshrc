@@ -15,6 +15,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Go
 export GOPATH=$HOME/go
 export GOPROXY=direct
+export GOSUMDB=
 
 # Shell path
 export SHELL=/bin/zsh
@@ -76,6 +77,7 @@ fpath=(
 )
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 eval "$(starship init zsh)"
 
