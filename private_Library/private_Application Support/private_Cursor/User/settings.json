@@ -48,5 +48,7 @@
   "cursor.composer.textSizeScale": 1.15,
   "editor.fontFamily": "Maple Mono NF",
   "update.releaseTrack": "dev",
-  "window.autoDetectColorScheme": true
+  "window.autoDetectColorScheme": true,
+  "cursor.agent_layout_browser_beta_setting": true,
+  "workbench.preferredLightColorTheme": "Cursor Light"
 }

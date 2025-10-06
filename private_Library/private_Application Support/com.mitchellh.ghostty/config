@@ -10,6 +10,7 @@ theme = "Kanagawa Wave"
 cursor-style-blink = false
 selection-invert-fg-bg = true
 shell-integration-features = cursor,sudo,title,ssh-terminfo
+desktop-notifications = true
 
 # theme
 # palette = 0=#1b1e28
@@ -33,3 +34,4 @@ shell-integration-features = cursor,sudo,title,ssh-terminfo
 # cursor-color = e4f0fb
 # selection-background = 2a2e3f
 # selection-foreground = f8f8f2
+keybind = shift+enter=text:\x1b\r
