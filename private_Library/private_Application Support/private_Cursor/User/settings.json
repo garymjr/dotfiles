@@ -40,7 +40,6 @@
   "workbench.layoutControl.enabled": false,
   "githubPullRequests.pullBranch": "never",
   "npm.keybindingsChangedWarningShown": true,
-  "workbench.colorTheme": "Cursor Light",
   "window.customTitleBarVisibility": "never",
   "cursor.enable_agent_window_setting": true,
   "diffEditor.renderSideBySide": false,

@@ -1,9 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "kanagawa",
-  "model": "opencode/grok-code-fast-1",
+  "theme": "opencode",
   "autoupdate": true,
-  "provider": {},
   "permission": {
     "bash": {
       "*": "ask"
