@@ -1,0 +1,160 @@
+# Syntax highlighting
+# -------------------
+"attribute" = "syntaxType"
+
+"type" = "syntaxType"
+"type.enum.variant" = "syntaxFunction"
+
+"constructor" = "syntaxFunction"
+
+"constant" = "syntaxNumber"
+"constant.character" = "syntaxString"
+"constant.character.escape" = "syntaxKeyword"
+
+"string" = "syntaxString"
+"string.regexp" = "syntaxKeyword"
+"string.special" = "syntaxFunction"
+"string.special.symbol" = "syntaxVariable"
+
+"comment" = { fg = "syntaxComment", modifiers = ["italic"] }
+
+"variable" = "syntaxVariable"
+"variable.parameter" = { fg = "syntaxVariable", modifiers = ["italic"] }
+"variable.builtin" = "syntaxKeyword"
+"variable.other.member" = "syntaxFunction"
+
+"label" = "syntaxFunction" # used for lifetimes
+
+"punctuation" = "syntaxPunctuation"
+"punctuation.special" = "syntaxOperator"
+
+"keyword" = "syntaxKeyword"
+"keyword.control.conditional" = { fg = "syntaxKeyword", modifiers = ["italic"] }
+
+"operator" = "syntaxOperator"
+
+"function" = "syntaxFunction"
+"function.macro" = "syntaxKeyword"
+
+"tag" = "syntaxFunction"
+
+"namespace" = { fg = "syntaxType", modifiers = ["italic"] }
+
+"special" = "syntaxFunction" # fuzzy highlight
+
+"markup.heading.1" = "syntaxKeyword"
+"markup.heading.2" = "syntaxVariable"
+"markup.heading.3" = "syntaxType"
+"markup.heading.4" = "syntaxString"
+"markup.heading.5" = "syntaxFunction"
+"markup.heading.6" = "syntaxOperator"
+"markup.list" = "syntaxString"
+"markup.list.unchecked" = "textMuted"
+"markup.list.checked" = "syntaxString"
+"markup.bold" = { fg = "syntaxVariable", modifiers = ["bold"] }
+"markup.italic" = { fg = "syntaxVariable", modifiers = ["italic"] }
+"markup.link.url" = { fg = "syntaxFunction", modifiers = ["italic", "underlined"] }
+"markup.link.text" = "syntaxOperator"
+"markup.link.label" = "syntaxFunction"
+"markup.raw" = "syntaxString"
+"markup.quote" = "syntaxType"
+
+"diff.plus" = "diffAdded"
+"diff.minus" = "diffRemoved"
+"diff.delta" = "diffContext"
+
+# User Interface
+# --------------
+"ui.background" = { fg = "text", bg = "background" }
+
+"ui.linenr" = { fg = "borderSubtle" }
+"ui.linenr.selected" = { fg = "primary" }
+
+"ui.statusline" = { fg = "text", bg = "backgroundPanel" }
+"ui.statusline.inactive" = { fg = "textMuted", bg = "backgroundPanel" }
+"ui.statusline.normal" = { fg = "background", bg = "primary", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "background", bg = "success", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "background", bg = "secondary", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "text", bg = "backgroundPanel" }
+"ui.window" = { fg = "border" }
+"ui.help" = { fg = "textMuted", bg = "backgroundPanel" }
+
+"ui.bufferline" = { fg = "textMuted", bg = "backgroundPanel" }
+"ui.bufferline.active" = { fg = "secondary", bg = "background", underline = { color = "secondary", style = "line" } }
+"ui.bufferline.background" = { bg = "border" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "backgroundElement", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "textMuted" }
+"ui.text.directory" = { fg = "syntaxFunction" }
+
+"ui.virtual" = "borderSubtle"
+"ui.virtual.ruler" = { bg = "backgroundElement" }
+"ui.virtual.indent-guide" = "borderSubtle"
+"ui.virtual.inlay-hint" = { fg = "textMuted", bg = "backgroundPanel" }
+"ui.virtual.jump-label" = { fg = "primary", modifiers = ["bold"] }
+
+"ui.selection" = { bg = "backgroundElement" }
+
+"ui.cursor" = { fg = "background", bg = "borderActive" }
+"ui.cursor.primary" = { fg = "background", bg = "primary" }
+"ui.cursor.match" = { fg = "syntaxVariable", modifiers = ["bold"] }
+
+"ui.cursor.primary.normal" = { fg = "background", bg = "primary" }
+"ui.cursor.primary.insert" = { fg = "background", bg = "success" }
+"ui.cursor.primary.select" = { fg = "background", bg = "secondary" }
+
+"ui.cursor.normal" = { fg = "background", bg = "borderActive" }
+"ui.cursor.insert" = { fg = "background", bg = "success" }
+"ui.cursor.select" = { fg = "background", bg = "secondary" }
+
+"ui.cursorline.primary" = { bg = "backgroundElement" }
+
+"ui.highlight" = { bg = "backgroundElement", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "textMuted", bg = "backgroundPanel" }
+"ui.menu.selected" = { fg = "text", bg = "backgroundElement", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "curl" } }
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "success", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+
+error = "error"
+warning = "warning"
+info = "info"
+hint = "success"
+
+rainbow = ["syntaxVariable", "syntaxVariable", "syntaxType", "syntaxString", "syntaxFunction", "syntaxOperator"]
+
+[palette]
+# Dark theme colors
+primary = "#fab283"
+secondary = "#5c9cf5"
+accent = "#9d7cd8"
+error = "#e06c75"
+warning = "#f5a742"
+success = "#7fd88f"
+info = "#56b6c2"
+text = "#eeeeee"
+textMuted = "#808080"
+background = "#0a0a0a"
+backgroundPanel = "#141414"
+backgroundElement = "#1e1e1e"
+border = "#484848"
+borderActive = "#606060"
+borderSubtle = "#3c3c3c"
+diffAdded = "#4fd6be"
+diffRemoved = "#c53b53"
+diffContext = "#828bb8"
+syntaxComment = "#808080"
+syntaxKeyword = "#9d7cd8"
+syntaxFunction = "#fab283"
+syntaxVariable = "#e06c75"
+syntaxString = "#7fd88f"
+syntaxNumber = "#f5a742"
+syntaxType = "#e5c07b"
+syntaxOperator = "#56b6c2"
+syntaxPunctuation = "#eeeeee"

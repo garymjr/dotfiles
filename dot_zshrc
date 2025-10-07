@@ -15,10 +15,11 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Go
 export GOPATH=$HOME/go
 export GOPROXY=direct
-export GOSUMDB=
 
 # Shell path
 export SHELL=/bin/zsh
+
+export HELIX_RUNTIME=$HOME/Developer/helix/runtime
 
 # Use zsh's path array and dedupe to avoid duplicates and keep order
 typeset -U path
@@ -79,7 +80,6 @@ fpath=(
 )
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 eval "$(starship init zsh)"
 
