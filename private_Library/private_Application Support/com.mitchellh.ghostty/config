@@ -6,7 +6,7 @@ font-feature = ss02
 font-feature = ss03
 font-feature = ss05
 font-feature = ss09
-theme = "opencode.conf"
+theme = "Rose Pine"
 cursor-style-blink = false
 selection-invert-fg-bg = true
 shell-integration-features = cursor,sudo,title,ssh-terminfo
@@ -33,4 +33,3 @@ shell-integration-features = cursor,sudo,title,ssh-terminfo
 # cursor-color = e4f0fb
 # selection-background = 2a2e3f
 # selection-foreground = f8f8f2
-keybind = shift+enter=text:\x1b\r

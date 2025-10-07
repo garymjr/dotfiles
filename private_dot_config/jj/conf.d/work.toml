@@ -1,4 +1,4 @@
---when.repositories = ["/Users/gamurray/Developer"]
+--when.repositories = ["/Users/gamurray/Developer", "/Users/gamurray/go/src/github.com"]
 
 [user]
 name = "Gary Murray"
