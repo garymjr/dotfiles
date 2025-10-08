@@ -9,8 +9,8 @@ export const OSCNotificationPlugin = async ({ project, client, $, directory, wor
         const message = "Task completed!"
         const oscNotification = "\x1b]777;notify;" + title + ";" + message + "\x07"
         
-        // Print the OSC sequence to trigger notification
-        console.log(oscNotification)
+        // Print the OSC sequence directly to stdout
+        process.stdout.write(oscNotification)
       }
       
       // Send notification when a permission is requested
@@ -21,8 +21,8 @@ export const OSCNotificationPlugin = async ({ project, client, $, directory, wor
         const message = `Permission requested: ${event.properties.title}`
         const oscNotification = "\x1b]777;notify;" + title + ";" + message + "\x07"
         
-        // Print the OSC sequence to trigger notification
-        console.log(oscNotification)
+        // Print the OSC sequence directly to stdout
+        process.stdout.write(oscNotification)
       }
     },
   }
