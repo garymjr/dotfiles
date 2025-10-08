@@ -80,6 +80,7 @@ fpath=(
 )
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 eval "$(starship init zsh)"
 
