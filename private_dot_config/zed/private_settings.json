@@ -1,0 +1,104 @@
+{
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "Z.ai",
+      "model": "glm-4.6"
+    },
+    "model_parameters": []
+  },
+  "language_models": {
+    "openai_compatible": {
+      "Z.ai": {
+        "api_url": "https://api.z.ai/api/coding/paas/v4",
+        "available_models": [
+          {
+            "name": "glm-4.6",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_size": 18,
+  "buffer_font_features": {
+    "calt": true,
+    "ss01": true,
+    "ss02": true,
+    "ss03": true,
+    "ss05": true,
+    "ss06": true,
+    "ss07": true,
+    "ss09": true
+  },
+  "current_line_highlight": "none",
+  "cursor_blink": false,
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"]
+  },
+  "format_on_save": "off",
+  "git_panel": {
+    "button": true,
+    "dock": "left"
+  },
+  "indent_guides": {
+    "enabled": false
+  },
+  "language_servers": [
+    // "eslint",
+    "!typescript-language-server",
+    "!lexical",
+    "!next-ls",
+    "!protobuf-language-server",
+    "..."
+  ],
+  "outline_panel": {
+    "button": false,
+    "dock": "left",
+    "indent_size": 10
+  },
+  "pane_split_direction_horizontal": "down",
+  "pane_split_direction_vertical": "right",
+  "project_panel": {
+    "indent_size": 10,
+    "dock": "left"
+  },
+  "relative_line_numbers": true,
+  "restore_on_startup": "none",
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "tabs": { "file_icons": true },
+  "toolbar": {
+    "quick_actions": false
+  },
+  "terminal": {
+    "button": false,
+    "font_family": "Maple Mono NF"
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Nebula Glow",
+    "dark": "Rosé Pine Dawn"
+  },
+  "ui_font_size": 18,
+  "use_autoclose": false,
+  "use_smartcase_search": true,
+  "use_system_path_prompts": false,
+  "vim_mode": true,
+  "when_closing_with_no_tabs": "close_window"
+}
