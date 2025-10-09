@@ -82,6 +82,14 @@ fpath=(
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+# --- JJ Aliases ---
+alias jjb="jj b"
+alias jjbc="jj bookmark create"
+alias jjbt="jj bookmark track"
+alias jjbm="jj bookmark move"
+alias jjbe="jj bookmark move --to @-"
+alias jjgp="jj git push -b"
+
 eval "$(starship init zsh)"
 
 # --- Local overrides ---
