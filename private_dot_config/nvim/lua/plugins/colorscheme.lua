@@ -1,15 +1,12 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    opts = {
-      variant = "dawn",
-    },
+    "garymjr/opencode.nvim",
+    opts = {},
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "opencode",
     },
   },
 }
