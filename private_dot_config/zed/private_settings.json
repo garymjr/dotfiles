@@ -93,7 +93,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Rosé Pine Dawn"
+    "dark": "Opencode Dark"
   },
   "ui_font_size": 18,
   "use_autoclose": false,
