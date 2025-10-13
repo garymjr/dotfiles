@@ -57,14 +57,7 @@
   "indent_guides": {
     "enabled": false
   },
-  "language_servers": [
-    // "eslint",
-    "!typescript-language-server",
-    "!lexical",
-    "!next-ls",
-    "!protobuf-language-server",
-    "..."
-  ],
+  "languages": {},
   "outline_panel": {
     "button": false,
     "dock": "left",

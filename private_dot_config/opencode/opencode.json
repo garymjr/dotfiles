@@ -4,9 +4,20 @@
   "autoupdate": true,
   "permission": {
     "bash": {
-      "*": "ask",
-      "find *": "allow",
-      "grep *": "allow"
+      "*": "allow",
+      "curl *": "ask",
+      "gh *": "ask",
+      "acli *": "ask",
+      "rm *": "ask",
+      "mv *": "ask",
+      "bun *": "ask",
+      "bunx *": "ask",
+      "npm *": "ask",
+      "npx *": "ask",
+      "psql *": "ask",
+      "sqlite3 *": "ask",
+      "mysql *": "ask",
+      "cargo *": "ask"
     }
   },
   "mcp": {},
