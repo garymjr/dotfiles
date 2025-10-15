@@ -5,4 +5,7 @@ return {
     cmd = { "DiffEditor" },
     opts = {},
   },
+  { "grug-far.nvim", enabled = false },
+  { "flash.nvim", enabled = false },
+  { "bufferline.nvim", enabled = false },
 }
