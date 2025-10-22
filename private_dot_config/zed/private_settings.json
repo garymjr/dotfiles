@@ -1,5 +1,6 @@
 {
   "agent": {
+    "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
       "provider": "Z.ai",
@@ -86,12 +87,18 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Opencode Dark"
+    "dark": "Modest Dark"
   },
   "ui_font_size": 18,
   "use_autoclose": false,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "vim_mode": true,
-  "when_closing_with_no_tabs": "close_window"
+  "when_closing_with_no_tabs": "close_window",
+  "agent_servers": {
+    "opencode": {
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  }
 }

@@ -9,6 +9,8 @@ font-feature = ss09
 theme = "opencode.conf"
 cursor-style-blink = false
 selection-invert-fg-bg = true
+# macos-titlebar-style = hidden
+window-decoration = false
 shell-integration-features = cursor,sudo,title,ssh-terminfo
 
 # theme
