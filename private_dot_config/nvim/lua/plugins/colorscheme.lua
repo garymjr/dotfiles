@@ -1,12 +1,15 @@
 return {
   {
-    "garymjr/opencode.nvim",
-    opts = {},
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+      flavour = "frappe",
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "opencode",
+      colorscheme = "catppuccin",
     },
   },
 }

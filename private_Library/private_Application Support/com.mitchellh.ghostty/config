@@ -6,12 +6,15 @@ font-feature = ss02
 font-feature = ss03
 font-feature = ss05
 font-feature = ss09
-theme = "opencode.conf"
+theme = "Catppuccin Frappe"
 cursor-style-blink = false
 selection-invert-fg-bg = true
-# macos-titlebar-style = hidden
-window-decoration = false
+macos-titlebar-style = hidden
+# window-decoration = false
 shell-integration-features = cursor,sudo,title,ssh-terminfo
+window-padding-balance = true
+window-padding-x = 10
+window-padding-y = 2
 
 # theme
 # palette = 0=#1b1e28
