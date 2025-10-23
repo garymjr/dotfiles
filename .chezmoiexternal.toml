@@ -13,11 +13,6 @@ type = "file"
 url = "https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion/git-completion.zsh"
 refreshPeriod = "168h"
 
-[".zsh/dotenv.plugin.zsh"]
-type = "file"
-url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/dotenv/dotenv.plugin.zsh"
-refreshPeriod = "168h"
-
 [".zsh/brew.plugin.zsh"]
 type = "file"
 url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/brew/brew.plugin.zsh"
@@ -66,13 +61,6 @@ refreshPeriod = "168h"
 [".zsh/fast-syntax-highlighting"]
 type = "archive"
 url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/refs/heads/master.zip"
-exact = true
-stripComponents = 1
-refreshPeriod = "168h"
-
-[".zsh/zsh-autosuggestions"]
-type = "archive"
-url = "https://github.com/zsh-users/zsh-autosuggestions/archive/refs/heads/master.zip"
 exact = true
 stripComponents = 1
 refreshPeriod = "168h"

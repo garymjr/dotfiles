@@ -62,7 +62,6 @@ export ZSH_CACHE_DIR=$HOME/.cache/zsh
 source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/history.zsh"
 
-source "$HOME/.zsh/dotenv.plugin.zsh"
 source "$HOME/.zsh/brew.plugin.zsh"
 source "$HOME/.zsh/bun.plugin.zsh"
 source "$HOME/.zsh/chezmoi.plugin.zsh"
@@ -80,7 +79,6 @@ fpath=(
 )
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # --- JJ Aliases ---
 alias jjb="jj b"

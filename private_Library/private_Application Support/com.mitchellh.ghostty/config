@@ -6,10 +6,13 @@ font-feature = ss02
 font-feature = ss03
 font-feature = ss05
 font-feature = ss09
-theme = "Catppuccin Frappe"
+theme = "Catppuccin Mocha"
 cursor-style-blink = false
 selection-invert-fg-bg = true
 window-decoration = none
+window-padding-balance = true
+window-padding-x = 10
+# window-padding-y = 10
 shell-integration-features = cursor,sudo,title,ssh-terminfo
 
 # theme
