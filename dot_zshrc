@@ -85,8 +85,7 @@ alias jjb="jj b"
 alias jjbc="jj bookmark create"
 alias jjbt="jj bookmark track"
 alias jjbm="jj bookmark move"
-alias jjbe="jj bookmark move --to @-"
-alias jjgp="jj git push -b"
+alias jjbs="jj bookmark set"
 
 eval "$(starship init zsh)"
 
