@@ -12,3 +12,18 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_chezmoi" ]]; then
 fi
 
 chezmoi completion zsh >| "$ZSH_CACHE_DIR/completions/_chezmoi" &|
+
+# ALIASES
+alias cm='chezmoi'
+alias cma='chezmoi add'
+alias cme='chezmoi edit'
+alias cmg='chezmoi git'
+alias cml='chezmoi ls'
+alias cmp='chezmoi apply'
+alias cmr='chezmoi remove'
+alias cms='chezmoi status'
+alias cmu='chezmoi update'
+alias cmcd='chezmoi cd'
+alias cmdiff='chezmoi diff'
+alias cmm='chezmoi managed'
+alias cmv='chezmoi verify'
