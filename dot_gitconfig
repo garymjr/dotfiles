@@ -6,10 +6,11 @@
   verbose = true
 [core]
   excludesFile = ~/.config/git/ignore
-[credential]
-	helper = store
+  autocrlf = input
+  quotePath = false
 [diff]
   algorithm = histogram
+  renames = copies
 [fetch]
   prune = true
 [init]
@@ -22,40 +23,20 @@
   autoSquash = true
   autoStash = true
   updateRefs = true
+  committerDateIsAuthorDate = true
 [rerere]
   enable = true
   autoupdate = true
-[alias]
-  a = add
-  aa = add -A
-  b = branch
-  bd = branch -d
-  c = commit -v
-  ca = commit -v --amend
-  cb = checkout -b
-  cf = commit --fixup
-  co = checkout
-  cp = cherry-pick
-  cs = commit --squash
-  dft = -c diff.external=difft diff
-  dl = -c diff.external=difft log -p --ext-diff
-  ds = -c diff.external=difft show --ext-diff
-  f = fetch --prune
-  l = log  --graph --abbrev-commit --decorate --pretty=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(dim white)%s%C(reset) %C(bold green)%cr%C(reset) (%C(magenta)%an%C(reset))'
-  ll = l --reflog
-  nuke = !git clean -df && git reset --hard
-  p = pull
-  po = !git push origin $(git rev-parse --abbrev-ref HEAD)
-  pof = !git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)
-  puo = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
-  rt = !cd $(git rev-parse --show-toplevel)
-  s = status
-  so = spinoff
-  st = stash
-  stl = stash list
-  stm = stash -m
-  stp = stash pop
-  stu = stash -u
-  stum = stash -um
-  sw = switch
-  swc = switch -c
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential]
+	helper = !gh auth git-credential
+[push]
+  default = simple
+  autoSetupRemote = true
+[status]
+  showUntrackedFiles = normal

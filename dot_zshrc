@@ -67,8 +67,8 @@ source "$HOME/.zsh/bun.plugin.zsh"
 source "$HOME/.zsh/chezmoi.plugin.zsh"
 source "$HOME/.zsh/fzf.plugin.zsh"
 source "$HOME/.zsh/gh.plugin.zsh"
+source "$HOME/.zsh/git.plugin.zsh"
 source "$HOME/.zsh/history.plugin.zsh"
-source "$HOME/.zsh/jj.plugin.zsh"
 source "$HOME/.zsh/mise.plugin.zsh"
 source "$HOME/.zsh/zoxide.plugin.zsh"
 
@@ -80,13 +80,7 @@ fpath=(
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
-# --- JJ Aliases ---
-alias jjb="jj b"
-alias jjbc="jj bookmark create"
-alias jjbt="jj bookmark track"
-alias jjbm="jj bookmark move"
-alias jjbs="jj bookmark set"
-
+eval "$(direnv activate)"
 eval "$(starship init zsh)"
 
 # --- Local overrides ---
