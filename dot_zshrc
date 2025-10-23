@@ -80,6 +80,12 @@ fpath=(
 
 source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
+# Ensure history navigation works in subshells
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
+
 eval "$(direnv activate)"
 eval "$(starship init zsh)"
 
