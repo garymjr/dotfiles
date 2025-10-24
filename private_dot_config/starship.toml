@@ -2,6 +2,7 @@ format = """
 $username\
 $hostname\
 $directory\
+$git_branch\
 $git_commit\
 $cmd_duration\
 $line_break\
@@ -18,7 +19,8 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-disabled = true
+format = "[$branch]($style) "
+style = "#5a5a5a"
 
 [git_status]
 disabled = true
@@ -42,5 +44,6 @@ style = "bold blue"
 
 [git_commit]
 format = "[$hash]($style) "
-style = "purple"
-only_detached = false
+style = "#5a5a5a"
+only_detached = true
+commit_hash_length = 7
