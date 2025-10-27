@@ -14,6 +14,7 @@ window-padding-balance = true
 window-padding-x = 10
 # window-padding-y = 10
 shell-integration-features = cursor,sudo,title,ssh-terminfo
+quit-after-last-window-closed = true
 
 # theme
 # palette = 0=#1b1e28
