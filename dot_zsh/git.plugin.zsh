@@ -2,56 +2,30 @@ git_current_branch() {
   command git rev-parse --abbrev-ref HEAD 2>/dev/null
 }
 
-alias g='git status --short'
+g() {
+  if [[ $# -eq 0 ]]; then
+    git status --short
+  else
+    git "$@"
+  fi
+}
 alias ga='git add'
 alias gaa='git add -A'
-alias gb='git branch'
-alias gba='git branch --all'
-alias gbd='git branch --delete'
-alias gbD='git branch --delete --force'
-alias gbr='git branch --remote'
 alias gco='git checkout'
 alias gcb='git checkout -b'
-alias gcp='git cherry-pick'
-alias gcl='git clone --recurse-submodules'
-alias gcs='git commit --gpg-sign'
-alias gcmsg='git commit --message'
 alias gc='git commit --verbose'
-alias gca='git commit --verbose --all'
-alias gca!='git commit --verbose --all --amend'
-alias gc!='git commit --verbose --amend'
-alias gcn='git commit --verbose --no-edit'
-alias gcn!='git commit --verbose --no-edit --amend'
-alias gcf='git config --list'
+alias gca='git commit --verbose --amend'
+alias gcmsg='git commit --message'
 alias gd='git diff'
 alias gds='git diff --staged'
-alias gdw='git diff --word-diff'
 alias gf='git fetch'
 alias gfo='git fetch origin'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias gm='git merge'
-alias gma='git merge --abort'
-alias gmc='git merge --continue'
-alias gms="git merge --squash"
-alias gmff="git merge --ff-only"
 alias gp='git pull'
-alias gpr='git pull --rebase'
-alias gP='git push'
-alias gPd='git push --dry-run'
-alias gPf!='git push --force'
-alias gPf='git push --force-with-lease'
-alias gpv='git push --verbose'
 alias grb='git rebase'
-alias grf='git reflog'
-alias gr='git remote'
-alias grv='git remote --verbose'
-alias gra='git remote add'
-alias grh='git reset'
 alias grs='git restore'
-alias grm='git rm'
-alias gsh='git show'
 alias gs='git stash'
-alias gsp='git stash show --patch'
 alias gst='git status'
 alias gss='git status --short'
 alias gsb='git status --short --branch'
