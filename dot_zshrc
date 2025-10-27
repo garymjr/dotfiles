@@ -86,7 +86,7 @@ zle -N edit-command-line
 bindkey '^P' up-line-or-history
 bindkey '^N' down-line-or-history
 
-eval "$(direnv activate)"
+eval "$(varset hook zsh)"
 eval "$(starship init zsh)"
 
 # --- Local overrides ---

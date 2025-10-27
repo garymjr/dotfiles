@@ -22,7 +22,12 @@
       "mysql *": "ask",
       "supabase *": "ask",
       "bunx supabase *": "ask",
-      "npx supabase *": "ask"
+      "npx supabase *": "ask",
+      "bunx convex *": "ask",
+      "npx convex *": "ask",
+      "pkill *": "ask",
+      "brew *": "ask",
+      "railway *": "ask"
     }
   },
   "mcp": {},
