@@ -48,8 +48,6 @@ fi
 
 export PATH
 
-export OPENCODE_DISABLE_AUTOCOMPACT=1
-
 # --- Aliases ---
 alias ls="eza --icons=always"
 alias lg=lazygit
