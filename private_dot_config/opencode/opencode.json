@@ -2,6 +2,17 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "catppuccin",
   "autoupdate": true,
+  "agent": {
+    "general": {
+      "model": "opencode/big-pickle"
+    },
+    "build": {
+      "model": "opencode/claude-haiku-4-5"
+    },
+    "plan": {
+      "model": "opencode/claude-sonnet-4-5"
+    }
+  },
   "permission": {
     "bash": {
       "*": "allow",
@@ -47,8 +58,8 @@
     "session_unshare": "none",
     "session_interrupt": "esc",
     "session_compact": "<leader>c",
-    "session_child_cycle": "ctrl+]",
-    "session_child_cycle_reverse": "ctrl+[",
+    "session_child_cycle": "<leader>]",
+    "session_child_cycle_reverse": "<leader>[",
     "messages_page_up": "alt+k",
     "messages_page_down": "alt+j",
     "messages_half_page_up": "alt+u",
