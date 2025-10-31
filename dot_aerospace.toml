@@ -233,3 +233,7 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
   if.app-id = 'com.cisco.secureclient.gui'
   run = ['layout floating']
+
+[[on-window-detected]]
+  if.app-id = 'dev.zed.Zed'
+  run = ['move-node-to-workspace E']
