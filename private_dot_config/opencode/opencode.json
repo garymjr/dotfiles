@@ -4,14 +4,8 @@
   "autoupdate": true,
   "agent": {
     "general": {
-      "model": "opencode/big-pickle"
+      "model": "opencode/grok-code"
     },
-    "build": {
-      "model": "opencode/claude-haiku-4-5"
-    },
-    "plan": {
-      "model": "opencode/claude-sonnet-4-5"
-    }
   },
   "permission": {
     "bash": {
@@ -39,7 +33,22 @@
       "railway *": "ask"
     }
   },
-  "mcp": {},
+  "mcp": {
+    "postgres": {
+      "enabled": false,
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "DATABASE_URI",
+        "crystaldba/postgres-mcp",
+        "--access-mode=restricted"
+      ],
+    },
+  },
   "keybinds": {
     "leader": "ctrl+x",
     "app_exit": "ctrl+c,<leader>q",
