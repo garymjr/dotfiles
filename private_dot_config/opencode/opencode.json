@@ -2,6 +2,15 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "catppuccin",
   "autoupdate": true,
+  "agent": {
+    "general": {
+      "model": "opencode/grok-code"
+    },
+    "build": {
+      "model": "opencode/big-pickle",
+      "temperature": 0.6
+    }
+  },
   "permission": {
     "bash": {
       "*": "allow",
@@ -33,13 +42,9 @@
   "mcp": {},
   "keybinds": {
     "leader": "ctrl+x",
-    "app_help": "<leader>h",
     "app_exit": "ctrl+c,<leader>q",
     "editor_open": "<leader>e",
     "theme_list": "<leader>t",
-    "project_init": "<leader>i",
-    "tool_details": "<leader>d",
-    "thinking_blocks": "<leader>b",
     "session_export": "<leader>x",
     "session_new": "<leader>n",
     "session_list": "<leader>l",
@@ -47,8 +52,6 @@
     "session_unshare": "none",
     "session_interrupt": "esc",
     "session_compact": "<leader>c",
-    "session_child_cycle": "ctrl+]",
-    "session_child_cycle_reverse": "ctrl+[",
     "messages_page_up": "alt+k",
     "messages_page_down": "alt+j",
     "messages_half_page_up": "alt+u",
