@@ -24,8 +24,6 @@
       "sh *": "ask",
       "fish *": "ask",
       "bash *": "ask",
-      "gh *": "ask",
-      "acli *": "ask",
       "psql *": "ask",
       "sqlite3 *": "ask",
       "mysql *": "ask",

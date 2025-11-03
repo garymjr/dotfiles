@@ -21,6 +21,8 @@ export SHELL=/bin/zsh
 
 export HELIX_RUNTIME=$HOME/Developer/helix/runtime
 
+export OPENCODE_DISABLE_AUTOCOMPACT=1
+
 # Use zsh's path array and dedupe to avoid duplicates and keep order
 typeset -U path
 path=(
