@@ -28,6 +28,8 @@ alias gsw='git switch'
 alias gu='git push'
 alias guf='git push --force-with-lease'
 alias guf!='git push --force'
-alias guo="git push -u origin $(git branch --show-current)"
+guo() {
+  git push -u origin $(git branch --show-current)
+}
 alias gwt='git worktree'
 
