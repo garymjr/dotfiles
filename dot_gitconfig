@@ -1,5 +1,6 @@
-[include]
-  path = ~/.gitconfig_local
+[user]
+  name = "Gary Murray"
+  email = "garymjr@gmail.com"
 [advice]
   detachedHead = false
   statusHints = false
@@ -27,5 +28,16 @@
 [rerere]
   enable = true
   autoupdate = true
+[includeIf "gitdir:/Users/gamurray/Developer/"]
+  path = ~/.gitconfig_private
+[includeIf "gitdir:/Users/gamurray/go/src/github.com/"]
+  path = ~/.gitconfig_private
 [credential]
-	helper = !gh auth git-credential
+	helper = -osxkeychain
+  helper = !gh auth git-credential
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
