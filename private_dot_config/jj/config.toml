@@ -10,6 +10,5 @@ default-command = "status"
 editor = "nvim"
 diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 
-[alias]
+[aliases]
 evolve = ["rebase", "--skip-empty", "-d"]
-sync = ["git", "fetch", "--all-remotes"]

@@ -2,15 +2,14 @@
   path = ~/.gitconfig_local
 [advice]
   detachedHead = false
+  statusHints = false
+[color]
+  ui = auto
 [commit]
   verbose = true
 [core]
   excludesFile = ~/.config/git/ignore
-  autocrlf = input
-  quotePath = false
-[diff]
-  algorithm = histogram
-  renames = copies
+  ignorecase = true
 [fetch]
   prune = true
 [init]
@@ -19,24 +18,14 @@
   conflictstyle = zdiff3
 [pull]
   rebase = true
+[push]
+  autoSetupRemote = true
 [rebase]
   autoSquash = true
   autoStash = true
   updateRefs = true
-  committerDateIsAuthorDate = true
 [rerere]
   enable = true
   autoupdate = true
-[credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential]
 	helper = !gh auth git-credential
-[push]
-  default = simple
-  autoSetupRemote = true
-[status]
-  showUntrackedFiles = normal

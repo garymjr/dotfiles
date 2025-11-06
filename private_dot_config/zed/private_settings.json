@@ -1,10 +1,12 @@
 {
+  "disable_ai": false,
   "agent": {
+    "play_sound_when_agent_done": true,
     "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
-      "provider": "Z.ai",
-      "model": "glm-4.6"
+      "provider": "copilot_chat",
+      "model": "gpt-5"
     },
     "model_parameters": []
   },
@@ -42,9 +44,8 @@
     "ss09": true
   },
   "current_line_highlight": "none",
-  "cursor_blink": false,
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "copilot"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "dockerfile.*"],
