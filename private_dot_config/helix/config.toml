@@ -20,3 +20,10 @@ cursor-line = "warning"
 [editor.lsp]
 display-inlay-hints = true
 
+[keys.normal]
+X = ["extend_line_up", "extend_to_line_bounds"]
+A-x = "extend_to_line_bounds"
+
+[keys.select]
+X = ["extend_line_up", "extend_to_line_bounds"]
+A-x = "extend_to_line_bounds"

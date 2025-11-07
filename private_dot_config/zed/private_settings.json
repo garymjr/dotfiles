@@ -88,7 +88,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Modest Dark"
+    "dark": "Catppuccin Latte"
   },
   "ui_font_size": 18,
   "use_autoclose": false,

@@ -4,7 +4,7 @@ git_current_branch() {
 
 g() {
   if [[ $# -eq 0 ]]; then
-    git status --short
+    git log --all --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
   else
     git "$@"
   fi
@@ -18,13 +18,13 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gf='git fetch'
 alias gfo='git fetch origin'
-alias gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias gm='git merge'
 alias gp='git pull'
 alias gr='git reset'
 alias grb='git rebase'
 alias grs='git restore'
-alias gs='git stash'
+alias gs='git status --short'
+alias gst='git stash'
 alias gsw='git switch'
 alias gu='git push'
 alias guf='git push --force-with-lease'
