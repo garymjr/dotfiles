@@ -88,13 +88,13 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Catppuccin Latte"
+    "dark": "Rosé Pine Dawn"
   },
   "ui_font_size": 18,
   "use_autoclose": false,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
-  "vim_mode": true,
+  "vim_mode": false,
   "when_closing_with_no_tabs": "close_window",
   "agent_servers": {
     "opencode": {
