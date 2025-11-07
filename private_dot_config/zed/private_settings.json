@@ -1,4 +1,7 @@
 {
+  "inlay_hints": {
+    "enabled": true
+  },
   "disable_ai": false,
   "agent": {
     "play_sound_when_agent_done": true,
