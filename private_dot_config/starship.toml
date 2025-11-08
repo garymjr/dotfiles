@@ -2,8 +2,8 @@ format = """
 $username\
 $hostname\
 $directory\
-$git_commit\
-$git_branch\
+${custom.jj}\
+${custom.git_branch}\
 $cmd_duration\
 $line_break\
 $python\
@@ -43,7 +43,28 @@ format = "[$symbol$number]($style) "
 style = "bold blue"
 
 [git_commit]
+disabled = true
 format = "[$hash]($style) "
 style = "#5a5a5a"
 only_detached = false
 commit_hash_length = 7
+
+[custom.jj]
+description = "The current jj change_id"
+when = "jj --ignore-working-copy root"
+detect_folders = [".jj"]
+symbol = ""
+command = '''
+jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 --template '
+  separate(" ",
+    change_id.shortest(4),
+    bookmarks,
+  )
+'
+'''
+
+[custom.git_branch]
+description = "The current git branch (fallback for no jj)"
+when = "! jj --ignore-working-copy root"
+symbol = ""
+command = "starship module git_branch"
