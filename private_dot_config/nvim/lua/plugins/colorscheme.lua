@@ -7,14 +7,9 @@ return {
     },
   },
   {
-    "EdenEast/nightfox.nvim",
-    priority = 1000,
-    opts = {},
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dawnfox",
+      colorscheme = "catppuccin",
     },
   },
 }
