@@ -17,7 +17,7 @@ Each review should follow this format for EVERY issue found:
 1. **Issue**: Clear description of the problem
 2. **Suggestion**: How to improve it
 3. **Code Diff**: Isolated diff showing only the changes for this specific issue
-4. **Explanation**: Message explaining why this change improves the code
+4. **Comment**: PR review comment that can be posted directly
 
 IMPORTANT REQUIREMENTS:
 
@@ -25,6 +25,7 @@ IMPORTANT REQUIREMENTS:
 - NEVER combine multiple issues in one diff
 - Each diff should show only the minimal changes needed for that specific issue
 - Review each issue individually - do not group related issues together
+- The Comment field should be formatted as a ready-to-post PR review comment
 
 Please don't:
 

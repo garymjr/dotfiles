@@ -91,7 +91,7 @@
   "theme": {
     "mode": "dark",
     "light": "Nebula Glow",
-    "dark": "Rosé Pine Dawn"
+    "dark": "Catppuccin Mocha"
   },
   "ui_font_size": 18,
   "use_autoclose": false,
