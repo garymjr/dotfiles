@@ -231,5 +231,9 @@ automatically-unhide-macos-hidden-apps = false
   run = ['move-node-to-workspace Z']
 
 [[on-window-detected]]
+  if.app-id = 'com.microsoft.VSCodeInsiders'
+  run = ['move-node-to-workspace E']
+
+[[on-window-detected]]
   if.app-id = 'com.cisco.secureclient.gui'
   run = ['layout floating']

@@ -54,6 +54,7 @@ export PATH
 alias ls="eza --icons=always"
 alias lg=lazygit
 alias chez=chezmoi
+alias code=code-insiders
 
 autoload -Uz compinit; compinit
 
