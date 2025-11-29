@@ -44,6 +44,7 @@ alias cme='chezmoi edit'
 alias cmf='chezmoi forget'
 alias cmg='chezmoi git'
 alias cml='chezmoi ls'
+alias cmlg="lazygit --path=$(chezmoi source-path)"
 alias cmp='chezmoi apply'
 alias cmr='chezmoi remove'
 alias cmra='chezmoi re-add'
