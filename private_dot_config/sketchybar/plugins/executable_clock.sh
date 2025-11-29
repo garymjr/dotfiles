@@ -4,7 +4,7 @@
 if [ "$1" = "setup" ]; then
   # Clock item setup
   sketchybar --add item clock right \
-             --set clock update_freq=10 icon= script="$0"
+             --set clock update_freq=10 icon= script="$0" icon.color=0xfffab387
   exit 0
 fi
 
@@ -12,4 +12,4 @@ fi
 # the item invoking this script:
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
-sketchybar --set "$NAME" label="$(date '+%m/%d %H:%M')"
+sketchybar --set "$NAME" label="$(date '+%m/%d %H:%M')" icon.color=0xfffab387

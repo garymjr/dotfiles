@@ -9,7 +9,7 @@ if [ "$1" = "setup" ]; then
 fi
 
 # Set default icon immediately to ensure it shows on startup
-sketchybar --set "$NAME" icon="󰤥" label=""
+sketchybar --set "$NAME" icon="󰤥" label="" icon.color=0xff89b4fa
 
 # Get WiFi information using system_profiler
 WIFI_INFO=$(system_profiler SPAirPortDataType)
@@ -17,7 +17,7 @@ SSID=$(echo "$WIFI_INFO" | grep -A 5 "Current Network Information:" | grep -v "C
 
 # Check if WiFi is connected
 if [ -z "$SSID" ] || [ "$SSID" = "" ]; then
-  sketchybar --set "$NAME" icon="󰖪" label=""
+  sketchybar --set "$NAME" icon="󰖪" label="" icon.color=0xff89b4fa
   exit 0
 fi
 
@@ -48,4 +48,4 @@ if [ -n "$SSID" ] && [ ${#SSID} -gt 10 ]; then
 fi
 
 # Update SketchyBar item with just the icon
-sketchybar --set "$NAME" icon="$ICON" label=""
+sketchybar --set "$NAME" icon="$ICON" label="" icon.color=0xff89b4fa

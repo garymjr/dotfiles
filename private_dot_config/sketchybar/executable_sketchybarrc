@@ -5,6 +5,12 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+CATPPUCCIN_BLUE=0xff89b4fa
+CATPPUCCIN_PEACH=0xfffab387
+CATPPUCCIN_GREEN=0xffa6e3a1
+CATPPUCCIN_RED=0xfff38ba8
+CATPPUCCIN_YELLOW=0xfff9e2af
+
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
 # These are only some of the options available. For all options see:
