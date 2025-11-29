@@ -4,6 +4,6 @@
 if [ "$1" = "setup" ]; then
   # Chevron item setup
   sketchybar --add item chevron left \
-             --set chevron icon= label.drawing=off
+             --set chevron icon=▪ label.drawing=off icon.padding_right=0
   exit 0
 fi
