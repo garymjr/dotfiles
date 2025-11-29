@@ -121,6 +121,10 @@ add-zsh-hook precmd lazy_load_syntax_highlighting
 bindkey -v
 export KEYTIMEOUT=1
 
+# Enable Ctrl+P/N for history navigation in insert mode
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
+
 eval "$(varset hook zsh)"
 
 # Fix for starship recursion issue
