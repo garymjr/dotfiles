@@ -119,6 +119,7 @@ add-zsh-hook precmd lazy_load_syntax_highlighting
 
 # --- Key Bindings and History ---
 bindkey -v
+export KEYTIMEOUT=1
 
 eval "$(varset hook zsh)"
 
