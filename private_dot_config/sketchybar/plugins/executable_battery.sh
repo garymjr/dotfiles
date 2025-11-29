@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# Check if this is the initial setup or an update
+if [ "$1" = "setup" ]; then
+  # Battery item setup
+  sketchybar --add item battery right \
+             --set battery update_freq=120 script="$0" \
+             --subscribe battery system_woke power_source_change
+  exit 0
+fi
+
 PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
 CHARGING="$(pmset -g batt | grep 'AC Power')"
 

@@ -1,27 +1,50 @@
 #!/usr/bin/env bash
 
-sketchybar --add event aerospace_workspace_change
+# Check if this is the initial setup or an update
+if [ "$1" = "setup" ]; then
+  sketchybar --add event aerospace_workspace_change
 
-sketchybar --add item aerospace_workspace left \
-  --subscribe aerospace_workspace aerospace_workspace_change \
-  --set aerospace_workspace \
-  background.drawing=off \
-  label.highlight_color="" \
-  icon="" \
-  label="" \
-  script="$CONFIG_DIR/scripts/aerospace.sh" \
-  click_script='bash "$CONFIG_DIR/scripts/aerospace_popup_toggle.sh"'
+  # Create 5 workspace items
+  for i in {1..5}; do
+    sketchybar --add item "aerospace_ws_$i" left \
+      --subscribe "aerospace_ws_$i" aerospace_workspace_change \
+      --set "aerospace_ws_$i" \
+      background.drawing=off \
+      label.color=0xff6c7086 \
+      label.font="SF Pro:Bold:14.0" \
+      label="$i" \
+      icon="" \
+      script="$0" \
+      click_script="$0 click $i"
+  done
 
-sketchybar --set aerospace_workspace \
-  popup.drawing=off \
-  popup.blur_radius=20 \
-  popup.background.color=0xdd1e1e2e \
-  popup.background.border_color=0xff89b4fa \
-  popup.background.border_width=2 \
-  popup.background.corner_radius=8 \
-  popup.background.padding_left=0 \
-  popup.background.padding_right=0 \
-  popup.background.padding_top=0 \
-  popup.background.padding_bottom=0 \
-  popup.y_offset=5 \
-  popup.align=left
+  # Trigger initial color update
+  bash "$0"
+  exit 0
+fi
+
+# Handle click events
+if [ "$1" = "click" ]; then
+  WORKSPACE_NAME="$2"
+  if [ -z "$WORKSPACE_NAME" ]; then
+    echo "Error: Workspace name not provided"
+    exit 1
+  fi
+  # Focus the selected workspace
+  aerospace workspace "$WORKSPACE_NAME" 2>/dev/null
+  exit 0
+fi
+
+# Get current focused workspace
+FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)
+
+# Update all 5 workspace items
+for i in {1..5}; do
+  if [ "$i" = "$FOCUSED_WORKSPACE" ]; then
+    # Active workspace - rosewater color
+    sketchybar --set "aerospace_ws_$i" label.color=0xfff5e0dc
+  else
+    # Inactive workspace - overlay0 color
+    sketchybar --set "aerospace_ws_$i" label.color=0xff6c7086
+  fi
+done

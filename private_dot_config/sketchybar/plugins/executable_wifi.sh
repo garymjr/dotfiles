@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Check if this is the initial setup or an update
+if [ "$1" = "setup" ]; then
+  # WiFi item setup
+  sketchybar --add item wifi right \
+             --set wifi update_freq=120 script="$0" label.padding_left=0 label.padding_right=0
+  exit 0
+fi
+
 # Set default icon immediately to ensure it shows on startup
 sketchybar --set "$NAME" icon="󰤥" label=""
 
