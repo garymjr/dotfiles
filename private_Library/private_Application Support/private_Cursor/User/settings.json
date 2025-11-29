@@ -47,7 +47,8 @@
   "cursor.composer.textSizeScale": 1.15,
   "editor.fontFamily": "Maple Mono NF",
   "update.releaseTrack": "dev",
-  "update.mode": "silentlyApplyOnQuit",
   "cursor.enable_git_worktrees_setting": true,
-  "cursor.agent_layout_browser_beta_setting": true
+  "cursor.agent_layout_browser_beta_setting": true,
+  "update.mode": "silentlyApplyOnQuit",
+  "workbench.colorTheme": "Cursor Dark Midnight"
 }
