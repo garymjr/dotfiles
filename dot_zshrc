@@ -3,10 +3,6 @@ export EDITOR=hx
 export VISUAL=$EDITOR
 export GIT_EDITOR="$EDITOR"
 
-# --- FZF defaults ---
-export FZF_DEFAULT_COMMAND='fd --type file'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 # --- Language/tooling env ---
 # Elixir/Erlang
 export KERL_BUILD_DOCS="yes"
@@ -20,7 +16,6 @@ export GOPROXY=direct
 export SHELL=/bin/zsh
 
 export HELIX_RUNTIME=$HOME/Developer/helix/runtime
-
 export OPENCODE_DISABLE_AUTOCOMPACT=1
 
 # Use zsh's path array and dedupe to avoid duplicates and keep order
@@ -38,17 +33,21 @@ path=(
   $path
 )
 
-# Homebrew-provided client CLIs (if installed)
+# Homebrew-provided client CLIs 
 if command -v brew >/dev/null 2>&1; then
-  if [ -d "$(brew --prefix)/opt/libpq/bin" ]; then
-    path=("$(brew --prefix)/opt/libpq/bin" $path)
-  fi
-  if [ -d "$(brew --prefix)/opt/mysql-client/bin" ]; then
-    path=("$(brew --prefix)/opt/mysql-client/bin" $path)
-  fi
+  local brew_prefix="$(brew --prefix)"
+  local brew_dirs=("libpq/bin" "mysql-client/bin")
+  for brew_dir in "${brew_dirs[@]}"; do
+    if [ -d "$brew_prefix/opt/$brew_dir" ]; then
+      path=("$brew_prefix/opt/$brew_dir" $path)
+    fi
+  done
 fi
 
 export PATH
+
+# --- Shell Options ---
+setopt autocd correct
 
 # --- Aliases ---
 alias ls="eza --icons=always"
@@ -56,22 +55,14 @@ alias lg=lazygit
 alias chez=chezmoi
 alias code=code-insiders
 
-autoload -Uz compinit; compinit
-
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
 
+# --- Core Configuration  ---
 source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/history.zsh"
 
-source "$HOME/.zsh/brew.plugin.zsh"
-source "$HOME/.zsh/bun.plugin.zsh"
-source "$HOME/.zsh/chezmoi.plugin.zsh"
-source "$HOME/.zsh/fzf.plugin.zsh"
-source "$HOME/.zsh/gh.plugin.zsh"
-source "$HOME/.zsh/git.plugin.zsh"
-source "$HOME/.zsh/history.plugin.zsh"
-source "$HOME/.zsh/mise.plugin.zsh"
-source "$HOME/.zsh/zoxide.plugin.zsh"
+# --- Initialize completions after path setup ---
+autoload -Uz compinit; compinit
 
 fpath=(
   $HOME/.zsh
@@ -79,16 +70,53 @@ fpath=(
   $fpath
 )
 
-source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+# --- Conditional Plugin Loading ---
+# Load brew plugin if brew is available
+if command -v brew >/dev/null 2>&1; then
+  source "$HOME/.zsh/brew.plugin.zsh"
+fi
 
-# Ensure history navigation works in subshells
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey '^P' up-line-or-history
-bindkey '^N' down-line-or-history
+# Load git-related plugins if git is available
+if command -v git >/dev/null 2>&1; then
+  source "$HOME/.zsh/git.plugin.zsh"
+  source "$HOME/.zsh/gh.plugin.zsh"
+fi
+
+# Load tool-specific plugins if commands are available
+command -v bun >/dev/null 2>&1 && source "$HOME/.zsh/bun.plugin.zsh"
+command -v chezmoi >/dev/null 2>&1 && source "$HOME/.zsh/chezmoi.plugin.zsh"
+command -v mise >/dev/null 2>&1 && source "$HOME/.zsh/mise.plugin.zsh"
+command -v zoxide >/dev/null 2>&1 && source "$HOME/.zsh/zoxide.plugin.zsh"
+
+# Load fzf plugin 
+source "$HOME/.zsh/fzf.plugin.zsh"
+
+# Load history plugin
+source "$HOME/.zsh/history.plugin.zsh"
+
+# --- Lazy Loading for Heavy Components ---
+autoload -Uz add-zsh-hook
+
+lazy_load_starship() {
+  if ! typeset -f starship_prompt >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+  fi
+}
+
+lazy_load_syntax_highlighting() {
+  if ! typeset -f _zsh_highlight >/dev/null 2>&1; then
+    source "$HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+  fi
+}
+
+# Hook lazy loading into prompt
+add-zsh-hook precmd lazy_load_starship
+add-zsh-hook precmd lazy_load_syntax_highlighting
+
+# --- Key Bindings and History ---
+bindkey -v
 
 eval "$(varset hook zsh)"
-eval "$(starship init zsh)"
 
 # --- Local overrides ---
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"

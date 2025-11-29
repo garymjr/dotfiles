@@ -46,3 +46,5 @@ setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt share_history          # share command history data
+setopt inc_append_history     # append history immediately
+setopt hist_reduce_blanks     # remove extra blanks from commands

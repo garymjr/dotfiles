@@ -3,6 +3,28 @@ if (( ! $+commands[gh] )); then
   return
 fi
 
+# Enhanced completion caching with error handling and timeout
+_gh_completion_update() {
+  local completion_file="$ZSH_CACHE_DIR/completions/_gh"
+  local timeout=5
+  
+  # Ensure cache directory exists
+  [[ -d "$ZSH_CACHE_DIR/completions" ]] || mkdir -p "$ZSH_CACHE_DIR/completions"
+  
+  # Generate completion with timeout protection
+  if timeout $timeout gh completion --shell zsh >| "$completion_file" 2>/dev/null; then
+    # Success: autoload completion if not already loaded
+    if [[ ! -f "$completion_file" ]] || [[ $_comps[gh] != "_gh" ]]; then
+      typeset -g -A _comps
+      autoload -Uz _gh
+      _comps[gh]=_gh
+    fi
+  else
+    # Failure: remove potentially broken completion file
+    [[ -f "$completion_file" ]] && rm -f "$completion_file"
+  fi
+}
+
 # If the completion file doesn't exist yet, we need to autoload it and
 # bind it to `gh`. Otherwise, compinit will have already done that.
 if [[ ! -f "$ZSH_CACHE_DIR/completions/_gh" ]]; then
@@ -11,4 +33,5 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_gh" ]]; then
   _comps[gh]=_gh
 fi
 
-gh completion --shell zsh >| "$ZSH_CACHE_DIR/completions/_gh" &|
+# Update completion asynchronously with error handling
+_gh_completion_update &|

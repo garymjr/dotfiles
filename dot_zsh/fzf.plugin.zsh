@@ -266,9 +266,12 @@ unset -f -m 'fzf_setup_*'
 if [[ -z "$FZF_DEFAULT_COMMAND" ]]; then
   if (( $+commands[fd] )); then
     export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   elif (( $+commands[rg] )); then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   elif (( $+commands[ag] )); then
     export FZF_DEFAULT_COMMAND='ag -l --hidden -g "" --ignore .git'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   fi
 fi
