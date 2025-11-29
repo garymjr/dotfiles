@@ -5,6 +5,7 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+##### Catppuccin Mocha Colors #####
 CATPPUCCIN_BLUE=0xff89b4fa
 CATPPUCCIN_PEACH=0xfffab387
 CATPPUCCIN_GREEN=0xffa6e3a1
