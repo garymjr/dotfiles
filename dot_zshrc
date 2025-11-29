@@ -99,7 +99,11 @@ autoload -Uz add-zsh-hook
 
 lazy_load_starship() {
   if ! typeset -f starship_prompt >/dev/null 2>&1; then
-    eval "$(starship init zsh)"
+    # Prevent multiple initializations in current session only
+    if [[ -z "$STARSHIP_INITIALIZED" ]]; then
+      STARSHIP_INITIALIZED=1
+      eval "$(starship init zsh)"
+    fi
   fi
 }
 
@@ -117,6 +121,9 @@ add-zsh-hook precmd lazy_load_syntax_highlighting
 bindkey -v
 
 eval "$(varset hook zsh)"
+
+# Fix for starship recursion issue
+export FUNCNEST=1000
 
 # --- Local overrides ---
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
