@@ -54,6 +54,7 @@ alias ls="eza --icons=always"
 alias lg=lazygit
 alias chez=chezmoi
 alias code=code-insiders
+alias dbui="nvim -c DBUI"
 
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
 
