@@ -1,5 +1,5 @@
 # --- Editors ---
-export EDITOR=hx
+export EDITOR=nvim
 export VISUAL=$EDITOR
 export GIT_EDITOR="$EDITOR"
 
@@ -55,6 +55,7 @@ alias lg=lazygit
 alias chez=chezmoi
 alias code=code-insiders
 alias dbui="nvim -c DBUI"
+alias nv=nvim
 
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
 
