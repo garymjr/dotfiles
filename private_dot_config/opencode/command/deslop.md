@@ -15,3 +15,4 @@ This includes:
 - Any other style that is inconsistent with the file
 
 Report at the end with only a 1-3 sentence summary of what you changed
+Do not commit changes until they are reviewed
