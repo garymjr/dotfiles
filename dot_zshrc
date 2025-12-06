@@ -134,3 +134,5 @@ export FUNCNEST=1000
 
 # --- Local overrides ---
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
+fpath=(~/.local/share/zsh/completions $fpath)
+autoload -U compinit && compinit
