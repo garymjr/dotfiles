@@ -4,7 +4,7 @@ description: "Frontend Design Skill"
 
 # Frontend Design Skill
 
-Use this rule whenever creating or updating frontend UI (HEEx, CSS, JS/TS). The goal is to produce distinctive, production-grade interfaces with a bold, intentional aesthetic and zero generic AI look.
+Use this rule whenever creating or updating frontend UI. The goal is to produce distinctive, production-grade interfaces with a bold, intentional aesthetic and zero generic AI look.
 
 ## Design Approach
 
@@ -39,5 +39,5 @@ Use this rule whenever creating or updating frontend UI (HEEx, CSS, JS/TS). The 
 
 ## Delivery Expectations
 
-- Ship working, production-ready code (HEEx/CSS/JS) with cohesive styling and animations that match the selected direction.
+- Ship working, production-ready code with cohesive styling and animations that match the selected direction.
 - Each implementation must feel bespoke to the context, not generic. If the design feels interchangeable, revisit typography, palette, and composition until it stands out.
