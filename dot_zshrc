@@ -127,6 +127,10 @@ export KEYTIMEOUT=1
 bindkey '^P' up-line-or-history
 bindkey '^N' down-line-or-history
 
+# Enable Ctrl+A/E for beginning/end of line in vi mode
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
 eval "$(varset hook zsh)"
 
 # Fix for starship recursion issue
@@ -136,3 +140,6 @@ export FUNCNEST=1000
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
 fpath=(~/.local/share/zsh/completions $fpath)
 autoload -U compinit && compinit
+
+# Added by Antigravity
+export PATH="/Users/garymjr/.antigravity/antigravity/bin:$PATH"
