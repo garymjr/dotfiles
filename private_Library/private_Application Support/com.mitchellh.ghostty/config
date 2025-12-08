@@ -40,3 +40,6 @@ quit-after-last-window-closed = true
 # cursor-color = e4f0fb
 # selection-background = 2a2e3f
 # selection-foreground = f8f8f2
+
+keybind = alt+arrow_left=unbind
+keybind = alt+arrow_right=unbind
