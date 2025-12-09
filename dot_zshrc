@@ -143,3 +143,6 @@ autoload -U compinit && compinit
 
 # Added by Antigravity
 export PATH="/Users/garymjr/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/gamurray/.antigravity/antigravity/bin:$PATH"

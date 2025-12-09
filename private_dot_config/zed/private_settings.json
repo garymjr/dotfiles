@@ -74,7 +74,7 @@
     "indent_size": 10,
     "dock": "left"
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "restore_on_startup": "none",
   "tab_bar": {
     "show_nav_history_buttons": false,
@@ -88,11 +88,7 @@
     "button": false,
     "font_family": "Maple Mono NF"
   },
-  "theme": {
-    "mode": "dark",
-    "light": "Nebula Glow",
-    "dark": "Catppuccin Mocha"
-  },
+  "theme": "Kanagawa",
   "ui_font_size": 18,
   "use_autoclose": false,
   "use_smartcase_search": true,

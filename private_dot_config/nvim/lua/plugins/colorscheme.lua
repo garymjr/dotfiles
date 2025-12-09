@@ -9,7 +9,7 @@ return {
     name = "rose-pine",
     priority = 1000,
     opts = {
-      variant = "dawn",
+      variant = "moon",
     },
   },
   {
