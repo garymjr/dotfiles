@@ -47,7 +47,7 @@ fi
 export PATH
 
 # --- Shell Options ---
-setopt autocd correct
+setopt autocd
 
 # --- Aliases ---
 alias ls="eza --icons=always"
@@ -130,6 +130,36 @@ bindkey '^N' down-line-or-history
 # Enable Ctrl+A/E for beginning/end of line in vi mode
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+
+# --- Auto-Z Handler (Subshell Workaround) ---
+# Handles unknown commands by checking if zoxide can resolve them to a directory.
+# Since command_not_found_handler runs in a subshell, we write the target
+# directory to a file and change to it in the precmd hook.
+command_not_found_handler() {
+  local target
+  # Check if zoxide can find a match
+  if target=$(zoxide query "$@" 2>/dev/null); then
+    # Write target to a temporary file
+    echo "$target" > "$ZSH_CACHE_DIR/zoxide_autocd_target"
+    return 0
+  fi
+  
+  # Fallback: Print standard error and return failure
+  echo "zsh: command not found: $1" >&2
+  return 127
+}
+
+# Precmd hook to finalize the directory change
+zoxide_autocd_precmd() {
+  local target_file="$ZSH_CACHE_DIR/zoxide_autocd_target"
+  if [[ -f "$target_file" ]]; then
+    local target=$(cat "$target_file")
+    rm "$target_file"
+    # Perform the actual cd in the parent shell
+    builtin cd "$target"
+  fi
+}
+add-zsh-hook precmd zoxide_autocd_precmd
 
 eval "$(varset hook zsh)"
 
