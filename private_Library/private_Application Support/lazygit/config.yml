@@ -1,25 +1,25 @@
 gui:
   nerdFontsVersion: "3"
   theme:
-    cherryPickedCommitBgColor:
-      - "#e0def4"
-    activeBorderColor:
-      - "#31748f"
-      - "bold"
     unstagedChangesColor:
-      - "#eb6f92"
+      - "#ed8796"
     selectedLineBgColor:
-      - "#332d41"
+      - "#494d64"
     searchingActiveBorderColor:
-      - "#31748f"
+      - "#f5a97f"
       - "bold"
     optionsTextColor:
-      - "#ebbcba"
+      - "#8aadf4"
     inactiveBorderColor:
-      - "#6e6a86"
+      - "#8aadf4"
     defaultFgColor:
-      - "#e0def4"
+      - "#cad3f5"
     cherryPickedCommitFgColor:
-      - "#ebbcba"
+      - "#8aadf4"
+    cherryPickedCommitBgColor:
+      - "#f0c6c6"
+    activeBorderColor:
+      - "#f5a97f"
+      - "bold"
 os:
   editInTerminal: true
