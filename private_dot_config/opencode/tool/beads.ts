@@ -41,13 +41,13 @@ export const update_status = tool({
 });
 
 export const close = tool({
-  description: "Close one or more issues",
+  description: "Close a single issue",
   args: {
-    ids: tool.schema.array(tool.schema.string().min(1)).min(1).describe("Issue IDs to close"),
+    id: tool.schema.string().min(1).describe("Issue ID to close"),
   },
   async execute(args) {
-    const ids = (args as any).ids as string[];
-    return await Bun.$`bd close ${ids.join(" ")}`.text();
+    const id = (args as any).id as string;
+    return await Bun.$`bd close ${id}`.text();
   },
 });
 
