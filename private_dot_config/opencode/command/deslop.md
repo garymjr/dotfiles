@@ -5,10 +5,34 @@ subtask: true
 
 # Remove AI code slop
 
-Target selection: Use `$ARGUMENTS` to determine scope.
-- If `$ARGUMENTS` is a commit hash, run against that commit.
-- If `$ARGUMENTS` is a branch name, run against that branch.
-- If `$ARGUMENTS` is blank, operate on unpushed changes for the current branch.
+---
+
+Input: $ARGUMENTS
+
+---
+
+## Determining What to Deslop
+
+Based on the input provided, determine which type of deslop to perform:
+
+1. **No arguments (default)**: Deslop all uncommitted changes
+
+   - Run: `git diff` for unstaged changes
+   - Run: `git diff --cached` for staged changes
+
+2. **Commit hash** (40-char SHA or short hash): Deslop that specific commit
+
+   - Run: `git show $ARGUMENTS`
+
+3. **Branch name**: Compare current branch to the specified branch
+
+   - Run: `git diff $ARGUMENTS...HEAD`
+
+4. **PR URL or number** (contains "github.com" or "pull" or looks like a PR number): Deslop the pull request
+   - Run: `gh pr view $ARGUMENTS` to get PR context
+   - Run: `gh pr diff $ARGUMENTS` to get the diff
+
+Use best judgement when processing input.
 
 Remove all AI-generated slop introduced relative to the chosen target.
 

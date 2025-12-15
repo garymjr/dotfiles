@@ -33,10 +33,20 @@ export const update_status = tool({
   description: "Update the status of an issue",
   args: {
     id: tool.schema.string().min(1).describe("Issue ID"),
-    status: tool.schema.enum(["open", "in_progress", "closed"]).describe("New status for the issue"),
+    status: tool.schema.enum(["open", "blocked", "in_progress"]).describe("New status for the issue"),
   },
   async execute(args) {
     return await Bun.$`bd update ${(args as any).id} --status=${(args as any).status}`.text();
+  },
+});
+
+export const close = tool({
+  description: "Close an issue",
+  args: {
+    id: tool.schema.string().min(1).describe("Issue ID"),
+  },
+  async execute(args) {
+    return await Bun.$`bd close ${(args as any).id}`.text();
   },
 });
 
