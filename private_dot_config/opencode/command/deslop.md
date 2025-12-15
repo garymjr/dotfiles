@@ -13,26 +13,10 @@ Input: $ARGUMENTS
 
 ## Determining What to Deslop
 
-Based on the input provided, determine which type of deslop to perform:
+Always deslop the current uncommitted changes only.
 
-1. **No arguments (default)**: Deslop all uncommitted changes
-
-   - Run: `git diff` for unstaged changes
-   - Run: `git diff --cached` for staged changes
-
-2. **Commit hash** (40-char SHA or short hash): Deslop that specific commit
-
-   - Run: `git show $ARGUMENTS`
-
-3. **Branch name**: Compare current branch to the specified branch
-
-   - Run: `git diff $ARGUMENTS...HEAD`
-
-4. **PR URL or number** (contains "github.com" or "pull" or looks like a PR number): Deslop the pull request
-   - Run: `gh pr view $ARGUMENTS` to get PR context
-   - Run: `gh pr diff $ARGUMENTS` to get the diff
-
-Use best judgement when processing input.
+- Run: `git diff` for unstaged changes
+- Run: `git diff --cached` for staged changes
 
 Remove all AI-generated slop introduced relative to the chosen target.
 
