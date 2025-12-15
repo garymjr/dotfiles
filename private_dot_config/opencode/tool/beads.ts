@@ -40,16 +40,6 @@ export const update_status = tool({
   },
 });
 
-export const close = tool({
-  description: "Close a single issue",
-  args: {
-    id: tool.schema.string().min(1).describe("Issue ID to close"),
-  },
-  async execute(args) {
-    const id = (args as any).id as string;
-    return await Bun.$`bd close ${id}`.text();
-  },
-});
 
 export const list = tool({
   description: "List issues by status",

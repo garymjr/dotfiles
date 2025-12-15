@@ -15,7 +15,7 @@
   - `beads_show` — view issue details and deps
   - `beads_create` — create issue (task|bug|feature)
   - `beads_update_status` — set issue status
-  - `beads_close` — close one or more issues
+
   - `beads_add_dependency` — add dependency between issues
   - `bd sync --from-main` — sync beads with main
   - `bd stats` — project statistics
@@ -28,7 +28,7 @@
 ## Usage Patterns
 
 - Start work: `beads_ready` → `beads_show(id)` → `beads_update_status(id, in_progress)`
-- Complete work: `beads_close([...])` → `bd sync --from-main`
+- Complete work: `beads_update_status(id, closed)` → `bd sync --from-main`
 - Create dependent work: `beads_create(...)` → `beads_add_dependency(issue, depends_on)`
 
 ## Code Search
