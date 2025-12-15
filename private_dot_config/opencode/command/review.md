@@ -1,5 +1,6 @@
 ---
 description: review changes [commit|branch|pr], defaults to uncommitted
+agent: general
 subtask: true
 ---
 

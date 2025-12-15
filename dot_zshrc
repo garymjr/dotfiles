@@ -57,6 +57,9 @@ alias code=code-insiders
 alias dbui="nvim -c DBUI"
 alias nv=nvim
 
+alias oc=opencode
+alias occ="opencode -m opencode/big-pickle run 'commit the staged changes'"
+
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
 
 # --- Core Configuration  ---
