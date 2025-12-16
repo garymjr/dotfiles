@@ -75,3 +75,25 @@ export const add_dependency = tool({
     return await Bun.$`bd dep add ${(args as any).issue} ${(args as any).depends_on}`.text();
   },
 });
+
+export const update = tool({
+  description: "Update the description/body/notes of an issue",
+  args: {
+    id: tool.schema.string().min(1).describe("Issue ID"),
+    description: tool.schema.string().min(1).describe("New description/body text for the issue"),
+  },
+  async execute(args) {
+    return await Bun.$`bd update ${(args as any).id} --description="${(args as any).description}"`.text();
+  },
+});
+
+export const add_note = tool({
+  description: "Add a note or comment to an issue",
+  args: {
+    id: tool.schema.string().min(1).describe("Issue ID"),
+    note: tool.schema.string().min(1).describe("Note or comment text to append"),
+  },
+  async execute(args) {
+    return await Bun.$`bd note add ${(args as any).id} "${(args as any).note}"`.text();
+  },
+});

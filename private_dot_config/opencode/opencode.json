@@ -10,7 +10,12 @@
       "disable": true
     }
   },
-  "permission": {},
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "git push": "ask"
+    }
+  },
   "tools": {
     "beads_*": true,
     "todoread": false,
