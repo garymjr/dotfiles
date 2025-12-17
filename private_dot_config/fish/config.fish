@@ -12,6 +12,8 @@ set -gx SHELL (which fish)
 
 set -gx OPENCODE_DISABLE_AUTOCOMPACT 1
 
+set -U fish_greeting
+
 fish_add_path -g /opt/homebrew/bin
 fish_add_path -g $HOME/bin
 fish_add_path -g /usr/local/bin
