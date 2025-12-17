@@ -1,0 +1,20 @@
+#!/bin/bash
+
+path=$(zoxide query -l | fzf)
+
+if [ -z "$path" ]; then
+    exit 1
+fi
+
+session_name=$(basename "$path")
+
+if [ -n "$TMUX" ]; then
+    tmux new-session -d -s "$session_name" -c "$path" 2>/dev/null || true
+    tmux switch-client -t "$session_name"
+else
+    if tmux has-session -t "$session_name" 2>/dev/null; then
+        tmux attach-session -t "$session_name"
+    else
+        tmux new-session -s "$session_name" -c "$path"
+    fi
+fi

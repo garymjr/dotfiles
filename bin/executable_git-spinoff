@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+if [ -z "$1" ]; then
+	echo "Usage: $0 <branch-name>"
+	exit 1
+fi
+
+branch=$1
+existing_branch=$(git branch | grep -w $branch || true)
+current_branch=$(git branch --show-current)
+
+if ! [ -z "$existing_branch" ]; then
+	echo "Branch $branch already exists"
+	exit 1
+fi
+
+git switch -c $branch >/dev/null 2>&1
+git checkout $current_branch >/dev/null 2>&1
+git reset --hard origin/$current_branch >/dev/null 2>&1
+git switch $branch
