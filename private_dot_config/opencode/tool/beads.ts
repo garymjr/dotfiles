@@ -1,5 +1,13 @@
 import { tool } from "@opencode-ai/plugin";
 
+export const init = tool({
+  description: "Initialize a new Beads workspace in the current directory",
+  args: {},
+  async execute() {
+    return await Bun.$`bd init`.text();
+  },
+});
+
 export const ready = tool({
   description: "Get issues that are ready to work on (no blockers)",
   args: {},
