@@ -4,3 +4,10 @@ url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/ref
 exact = true
 stripComponents = 1
 refreshPeriod = "168h"
+
+[".tmux/plugins/tpm"]
+type = "archive"
+url = "https://github.com/tmux-plugins/tpm/archive/refs/heads/master.zip"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
