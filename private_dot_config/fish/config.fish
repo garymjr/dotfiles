@@ -95,4 +95,5 @@ if status is-interactive
     bind -M insert \ce end-of-line
     bind -M insert \cp up-or-search
     bind -M insert \cn down-or-search
+    bind -M insert \cf forward-char
 end
