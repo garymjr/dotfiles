@@ -1,4 +1,4 @@
-command = "/opt/homebrew/bin/zsh"
+command = "/opt/homebrew/bin/fish"
 font-family = "Maple Mono NF"
 font-size = 16
 font-feature = ss01
