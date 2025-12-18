@@ -5,6 +5,7 @@ alias chez=chezmoi
 alias code=code-insiders
 alias dbui="nvim -c DBUI"
 alias nv=nvim
+alias t=tms
 
 alias oc=opencode
 alias occ="opencode -m opencode/big-pickle run 'commit the staged changes'"
