@@ -23,6 +23,7 @@ fish_add_path -g $HOME/.bun/bin
 fish_add_path -g $HOME/.local/share/nvim/mason/bin
 fish_add_path -g $HOME/.opencode/bin
 fish_add_path -g $HOME/.local/bin
+fish_add_path -g $HOME/.amp/bin
 
 # homebrew-provided client clis
 if command -v brew &>/dev/null
