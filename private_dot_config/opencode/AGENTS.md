@@ -1,27 +1,38 @@
-# who you are working with
+# Who you are working with
 
 Gary Murray (garymjr) - senior engineer at fanatics and founding principal
-engineer at idPair. i'm proficient in full-stack development, with SQL being a
-potential weak spot.
-
-## Workflow
-
-- Track all work in Beads (no TodoWrite or markdown TODOs)
-- Create issues with `beads_create`; manage status with `beads_update_status`
-- Use `beads_ready` to find available work
-
-## Beads Usage Patterns
-
-- Start work: `beads_ready` → `beads_show(id)` → `beads_update_status(id, in_progress)`
-- Complete work: `beads_close(id)` → `bd sync --from-main`
-- Create dependent work: `beads_create(...)` → `beads_add_dependency(issue, depends_on)`
-
-## Code Search
-
-- Prefer: Read (known paths) → Explore agent (patterns/architecture) → Grep/Glob (content/name)
+engineer at idPair.
 
 ## Git Patterns
 
 - Never commit unless I ask
 - Always use lowercase text. This does not mean not using camelCase or PascalCase when applicable.
 - Commit messages should be short, concise and to the point.
+
+## Tool Preferences
+
+- Never use the todowrite or todoread tools
+
+## Beads Usage
+
+Use beads (bd) for issue tracking and dependency management:
+
+### Creating Issues
+
+- Use `bd create "description"` to track new work
+- Add details with `-p priority` (0=highest), `-t type`, `--assignee`, `-d description`
+- Check ready work with `bd ready` to find unblocked tasks
+
+### Managing Dependencies
+
+- Use `bd dep add <id> <dependency>` to link related work
+- Dependency types: blocks, related, parent-child, discovered-from
+- `bd dep tree` visualizes relationships
+- `bd dep cycles` detects circular dependencies
+
+### Workflow
+
+- Create issues when discovering new work
+- Update status with `bd update <id> --status <status>`
+- Close completed work with `bd close <id> --reason "reason"`
+- Use `--json` flags for programmatic parsing
