@@ -1,7 +1,8 @@
 {
-  "lastChangelogVersion": "0.30.2",
+  "lastChangelogVersion": "0.31.0",
   "hideThinkingBlock": false,
-  "defaultThinkingLevel": "off",
+  "defaultThinkingLevel": "medium",
   "defaultProvider": "zai",
-  "defaultModel": "glm-4.7"
+  "defaultModel": "glm-4.7",
+  "queueMode": "one-at-a-time"
 }
