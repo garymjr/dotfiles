@@ -2,6 +2,8 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "catppuccin",
   "autoupdate": true,
+  "model": "zai-coding-plan/glm-4.7",
+  "small_model": "zai-coding-plan/glm-4.5-air",
   "agent": {
     "general": {
       "disable": true
@@ -15,7 +17,39 @@
     "todoread": false,
     "todowrite": false
   },
-  "mcp": {},
+  "mcp": {
+    "zai-mcp-server": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@z_ai/mcp-server"
+      ],
+      "environment": {
+        "Z_AI_MODE": "ZAI"
+      }
+    }
+  },
+  "provider": {
+    "zai-coding-plan": {
+      "models": {
+        "glm-4.7": {
+          "cost": {
+            "output": 2.20,
+            "input": 0.6,
+            "cache_read": 0.11
+          }
+        },
+        "glm-4.5-air": {
+          "cost": {
+            "output": 1.1,
+            "input": 0.2,
+            "cache_read": 0.03
+          }
+        }
+      }
+    }
+  },
   "keybinds": {
     "leader": "ctrl+x",
     "app_exit": "ctrl+c,<leader>q",

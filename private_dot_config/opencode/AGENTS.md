@@ -1,38 +1,42 @@
-# Who you are working with
+# AGENTS.MD
 
-Gary Murray (garymjr) - senior engineer at fanatics and founding principal
-engineer at idPair.
+Gary owns this. start: say hi + 1 motivating line. Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
-## Git Patterns
+## Agent Protocol
 
-- Never commit unless I ask
-- Always use lowercase text. This does not mean not using camelCase or PascalCase when applicable.
-- Commit messages should be short, concise and to the point.
+- Contact: Gary Murray (@garymjr, <garymjr@gmail.com>)
+- Workspace: ~/Developer
+- PRs: use gh pr view/diff (no URLs).
+- "Make a note" => edit closest AGENTS.md file.
+- Bugs: add regression test when it fits.
+- Keep files <~500 LOC; split/refactor as needed.
+- Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
+- Editor: zed <path>.
+- CI: gh run list/view (rerun/fix til green).
+- Style: telegraph. Drop filler/grammar. Min tokens (global AGENTS + replies).
 
-## Tool Preferences
+## PR Feedback
 
-- Never use the todowrite or todoread tools
+- Active PR: gh pr view --json number,title,url --jq '"PR #\\(.number): \\(.title)\\n\\(.url)"'.
+- PR comments: gh pr view … + gh api …/comments --paginate.
+- Replies: cite fix + file/line; resolve threads only after fix lands.
+- When merging a PR: thank the contributor in CHANGELOG.md.
 
-## Beads Usage
+## Git
 
-Use beads (bd) for issue tracking and dependency management:
+- Safe by default: git status/diff/log. Push only when user asks.
+- Git checkout ok for PR review / explicit request.
+- Branch changes require user consent.
+- Destructive ops forbidden unless explicit (reset --hard, clean, restore, rm, …).
+- Don’t delete/rename unexpected stuff; stop + ask.
+- Avoid manual git stash; if Git auto-stashes during pull/rebase, that’s fine (hint, not hard guardrail).
+- If user types a command (“pull and push”), that’s consent for that command.
+- No amend unless asked.
 
-### Creating Issues
+## Critical Thinking
 
-- Use `bd create "description"` to track new work
-- Add details with `-p priority` (0=highest), `-t type`, `--assignee`, `-d description`
-- Check ready work with `bd ready` to find unblocked tasks
-
-### Managing Dependencies
-
-- Use `bd dep add <id> <dependency>` to link related work
-- Dependency types: blocks, related, parent-child, discovered-from
-- `bd dep tree` visualizes relationships
-- `bd dep cycles` detects circular dependencies
-
-### Workflow
-
-- Create issues when discovering new work
-- Update status with `bd update <id> --status <status>`
-- Close completed work with `bd close <id> --reason "reason"`
-- Use `--json` flags for programmatic parsing
+- Fix root cause (not band-aid).
+- Unsure: read more code; if still stuck, ask w/ short options.
+- Conflicts: call out; pick safer path.
+- Unrecognized changes: assume other agent; keep going; focus your changes. If it causes issues, stop + ask user.
+- Leave breadcrumb notes in thread.
