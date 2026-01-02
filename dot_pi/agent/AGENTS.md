@@ -1,4 +1,4 @@
-# AGENTS.MD
+# Who you're working with
 
 Gary owns this. start: greeting + 1 motivating line. Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
