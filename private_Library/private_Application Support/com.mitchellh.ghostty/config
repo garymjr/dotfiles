@@ -42,3 +42,4 @@ quit-after-last-window-closed = true
 
 keybind = alt+arrow_left=unbind
 keybind = alt+arrow_right=unbind
+keybind = shift+enter=text:\x1b\r
