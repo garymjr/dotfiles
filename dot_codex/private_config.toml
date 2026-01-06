@@ -28,5 +28,11 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Developer/CodexBar"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Developer/pure-zig"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/.local/share/chezmoi"]
+trust_level = "trusted"
+
 [notice]
 hide_full_access_warning = true
