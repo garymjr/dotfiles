@@ -6,3 +6,4 @@ dot_codex/private_history.jsonl
 dot_codex/version.json
 dot_config/fish/private_fish_variables
 dot_config/opencode/node_modules
+dot_pi/agent/sessions
