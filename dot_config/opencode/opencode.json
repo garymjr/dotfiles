@@ -1,0 +1,83 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "catppuccin",
+  "autoupdate": true,
+  "model": "zai-coding-plan/glm-4.7",
+  "small_model": "zai-coding-plan/glm-4.5-air",
+  "agent": {
+    "general": {
+      "disable": true
+    },
+    "plan": {
+      "disable": true
+    }
+  },
+  "permission": {},
+  "tools": {
+    "todoread": false,
+    "todowrite": false
+  },
+  "mcp": {
+    "zai-mcp-server": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@z_ai/mcp-server"
+      ],
+      "environment": {
+        "Z_AI_MODE": "ZAI"
+      }
+    }
+  },
+  "provider": {
+    "zai-coding-plan": {
+      "models": {
+        "glm-4.7": {
+          "cost": {
+            "output": 2.20,
+            "input": 0.6,
+            "cache_read": 0.11
+          }
+        },
+        "glm-4.5-air": {
+          "cost": {
+            "output": 1.1,
+            "input": 0.2,
+            "cache_read": 0.03
+          }
+        }
+      }
+    }
+  },
+  "keybinds": {
+    "leader": "ctrl+x",
+    "app_exit": "ctrl+c,<leader>q",
+    "editor_open": "<leader>e",
+    "theme_list": "<leader>t",
+    "session_export": "<leader>x",
+    "session_new": "<leader>n",
+    "session_list": "<leader>l",
+    "session_share": "<leader>s",
+    "session_unshare": "none",
+    "session_interrupt": "esc",
+    "session_compact": "<leader>c",
+    "messages_page_up": "alt+k",
+    "messages_page_down": "alt+j",
+    "messages_half_page_up": "alt+u",
+    "messages_half_page_down": "alt+d",
+    "messages_first": "ctrl+g",
+    "messages_last": "ctrl+shift+g",
+    "messages_copy": "<leader>y",
+    "messages_undo": "<leader>u",
+    "messages_redo": "<leader>r",
+    "model_list": "<leader>m",
+    "agent_list": "<leader>a",
+    "agent_cycle": "tab",
+    "agent_cycle_reverse": "shift+tab",
+    "input_clear": "ctrl+c",
+    "input_paste": "ctrl+v",
+    "input_submit": "enter",
+    "input_newline": "shift+enter,ctrl+j"
+  }
+}
