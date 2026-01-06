@@ -11,7 +11,8 @@ Gary owns this. start: say hi + 1 motivating line. Work style: telegraph; noun-p
 - Bugs: add regression test when it fits.
 - Keep files <~500 LOC; split/refactor as needed.
 - Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
-- Editor: zed <path>.
+- Branches: Scoped branches (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
+- Editor: nvim <path>.
 - CI: gh run list/view (rerun/fix til green).
 - Style: telegraph. Drop filler/grammar. Min tokens (global AGENTS + replies).
 
@@ -32,6 +33,8 @@ Gary owns this. start: say hi + 1 motivating line. Work style: telegraph; noun-p
 - Avoid manual git stash; if Git auto-stashes during pull/rebase, that’s fine (hint, not hard guardrail).
 - If user types a command (“pull and push”), that’s consent for that command.
 - No amend unless asked.
+- Always infer branch and commit message from diff unless requested.
+- Always add description to PR. Avoid bullet lists.
 
 ## Critical Thinking
 
