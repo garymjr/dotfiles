@@ -1,0 +1,6 @@
+dot_codex/log
+dot_codex/sessions/**
+dot_codex/shell_snapshots
+dot_codex/private_auth.json
+dot_codex/private_history.jsonl
+dot_codex/version.json
