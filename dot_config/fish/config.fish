@@ -36,8 +36,6 @@ if command -v brew &>/dev/null
     end
 end
 
-source $HOME/.config/fish/aliases.fish
-
 if command -v mise &>/dev/null
     mise activate fish | source
 end

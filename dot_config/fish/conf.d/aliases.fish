@@ -32,6 +32,8 @@ alias guf='git push --force-with-lease'
 alias 'guf!'='git push --force'
 alias gwt='git worktree'
 
+alias ccu='npx @ccusage/codex@latest'
+
 # --- brew aliases ---
 if command -v brew &>/dev/null
     alias ba='brew autoremove'

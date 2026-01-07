@@ -8,3 +8,4 @@ dot_config/fish/private_fish_variables
 dot_config/opencode/node_modules
 dot_pi/agent/sessions
 private_Library/private_Application Support/lazygit/state.yml
+dot_config/fish/conf.d/local.fish
