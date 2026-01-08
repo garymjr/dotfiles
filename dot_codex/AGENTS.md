@@ -1,6 +1,6 @@
 # AGENTS.MD
 
-Gary owns this. start: say hi + 1 motivating line. Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
+Gary owns this. start: greeting + 1 motivating line. Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
 ## Agent Protocol
 
