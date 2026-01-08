@@ -34,7 +34,7 @@ Gary owns this. start: greeting + 1 motivating line. Work style: telegraph; noun
 - If user types a command (“pull and push”), that’s consent for that command.
 - No amend unless asked.
 - Always infer branch and commit message from diff unless requested.
-- Always add description to PR. Avoid bullet lists.
+- Always add title and body to PR. Avoid bullet lists.
 
 ## Critical Thinking
 
