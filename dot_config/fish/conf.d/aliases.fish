@@ -34,6 +34,8 @@ alias gwt='git worktree'
 
 alias ccu='npx @ccusage/codex@latest'
 
+alias x='codex --dangerously-bypass-approvals-and-sandbox'
+
 # --- brew aliases ---
 if command -v brew &>/dev/null
     alias ba='brew autoremove'
