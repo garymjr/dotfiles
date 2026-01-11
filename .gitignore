@@ -9,3 +9,4 @@ dot_config/opencode/node_modules
 dot_pi/agent/sessions
 private_Library/private_Application Support/lazygit/state.yml
 dot_config/fish/conf.d/local.fish
+dot_pi/agent/private_auth.json
