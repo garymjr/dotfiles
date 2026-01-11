@@ -10,11 +10,11 @@ theme = "Catppuccin Mocha"
 cursor-style-blink = false
 selection-invert-fg-bg = true
 # window-decoration = none
-window-show-tab-bar = never
+# window-show-tab-bar = never
 # window-padding-balance = true
 # window-padding-x = 10
 # window-padding-y = 10
-shell-integration-features = cursor,sudo,title,ssh-terminfo
+shell-integration = fish
 quit-after-last-window-closed = true
 
 # theme
