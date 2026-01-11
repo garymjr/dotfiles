@@ -17,7 +17,7 @@ Mind is a Zig-based CLI tool for managing project todos with dependencies and ta
 
 ## Core Concepts
 
-- **ID**: `{timestamp}-{seq:0>3}` format, auto-generated
+- **ID**: `{basename}-{hex_seq}` format, auto-generated (e.g., `mind-a`, `mind-ff`, `mind-123`)
 - **Status**: `pending`, `in-progress`, `done`, `blocked`
 - **Priority**: `low`, `medium`, `high`, `critical` (default: medium)
 - **Dependencies**: `depends_on` (parent tasks) and `blocked_by` (child tasks)
@@ -30,6 +30,8 @@ Mind is a Zig-based CLI tool for managing project todos with dependencies and ta
 ```bash
 mind add "Implement feature"          # Simple todo (priority: medium)
 mind add "Fix bug" --tags "bug,urgent" # With tags
+mind add "Fix bug" --tag "bug,urgent"  # Same as --tags (alias)
+mind add "Fix bug" -t "bug,urgent"    # Same as --tags (short alias)
 mind add "Critical issue" --priority critical  # With priority
 mind add "Task with details" --body "Description here" --tags "frontend"
 mind add "Quick task" --quiet         # Output only the ID (for scripting)
@@ -41,7 +43,7 @@ Use `--quiet` to get just the ID for capture in scripts:
 
 ```bash
 ID=$(mind add "New task" --quiet)
-# $ID now contains: 1736205028-000
+# $ID now contains: mind-a
 mind edit $ID --status in-progress
 ```
 
@@ -51,10 +53,13 @@ mind edit $ID --status in-progress
 mind list                              # List all
 mind list --status pending             # Filter by status
 mind list --priority critical          # Filter by priority
-mind list --tag bug                    # Filter by tag
+mind list --tags bug                  # Filter by tag
+mind list --tag bug                    # Same as --tags (alias)
+mind list -t bug                       # Same as --tags (short alias)
 mind list --sort priority             # Sort by priority (critical first)
 mind search "query"                    # Search by text (title/body)
-mind search --tag frontend "auth"      # Combined filters
+mind search --tags frontend "auth"    # Combined filters
+mind search --tag frontend "auth"     # Same as --tags (alias)
 mind show <id>                         # Show details
 mind status                            # Show project status summary
 mind next                              # Show next ready task
@@ -62,12 +67,13 @@ mind next                              # Show next ready task
 
 #### Search
 
-Search performs case-insensitive substring matching across titles and bodies:
+Search performs case-insensitive substring matching across titles and bodies (query required):
 
 ```bash
 mind search "auth"                     # Find todos containing "auth"
 mind search "API"                      # Find API-related todos
-mind search --tag frontend "auth"      # Search with tag filter
+mind search --tags frontend "auth"     # Search with tag filter
+mind search --tag frontend "auth"      # Same as --tags (alias)
 mind search "bug" --json               # Search with JSON output
 ```
 
@@ -98,12 +104,50 @@ mind edit <id> --body "More details"             # Update body
 mind edit <id> --status in-progress              # Update status
 mind edit <id> --priority high                  # Update priority
 mind edit <id> --tags "priority,urgent"          # Replace all tags
+mind edit <id> --tag "priority,urgent"           # Same as --tags (alias)
+mind edit <id> -t "priority,urgent"             # Same as --tags (short alias)
 mind tag <id> <tag>                              # Add a single tag
 mind untag <id> <tag>                            # Remove a single tag
-mind done <id>                                    # Mark as done
-mind done <id1> <id2> ...                          # Mark multiple as done
+mind done <id>                                    # Mark as done (single ID only)
 mind done <id> --json                             # Mark done, JSON output
 ```
+
+### Deleting Tasks
+
+```bash
+mind delete <id>                    # Fails if has dependencies
+mind delete <id> --unlink           # Remove dependencies, delete this todo only
+mind delete <id> --force            # Delete this todo and all linked todos
+mind delete <id> --force --yes      # Skip confirmation (dangerous)
+mind remove <id> --unlink           # Alias for delete
+```
+
+**Important**: `--force` cascades through all linked todos transitively. Use `--unlink` to safely delete a single todo by removing its dependencies first.
+
+### Tag Operations
+
+**Setting/replacing tags** (use `edit` with tag flags):
+```bash
+mind edit <id> --tags "bug,urgent"     # Replace all tags with new list
+mind edit <id> --tag "bug,urgent"      # Same as --tags (alias)
+mind edit <id> -t "bug,urgent"         # Same as --tags (short alias)
+```
+
+**Adding/removing single tags** (use `tag`/`untag` commands):
+```bash
+mind tag <id> urgent                  # Add single tag (appends)
+mind untag <id> urgent                # Remove single tag
+```
+
+**Filtering by tags**:
+```bash
+mind list --tags bug                  # Filter by tag(s) - comma-separated
+mind list --tag bug                   # Same as --tags (alias)
+mind list -t bug                      # Same as --tags (short alias)
+mind search --tags bug,frontend "API" # Search + tag filter
+```
+
+**Note**: `--tags`, `--tag`, and `-t` are all equivalent. They accept comma-separated tags and work for both setting (add/edit) and filtering (list/search). The `tag` and `untag` commands add/remove a single tag without replacing others.
 
 ### Archiving Completed Tasks
 
@@ -276,7 +320,7 @@ just check             # Build + test
 {
   "todos": [
     {
-      "id": "1736205028-000",
+      "id": "mind-a",
       "title": "Task name",
       "status": "pending",
       "priority": "high"
@@ -290,9 +334,8 @@ just check             # Build + test
 
 ```json
 {
-  "marked": ["1736205028-000", "1736205028-001"],
-  "count": 2,
-  "errors": 0
+  "id": "mind-a",
+  "status": "done"
 }
 ```
 
@@ -303,7 +346,7 @@ Data stored in `.mind/mind.json`:
 ```json
 {
   "todos": [{
-    "id": "1736205028-000",
+    "id": "mind-a",
     "title": "...",
     "body": "...",
     "status": "pending",
