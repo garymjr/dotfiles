@@ -29,10 +29,10 @@
 [rerere]
   enable = true
   autoupdate = true
-[includeIf "gitdir:/Users/gamurray/Developer/"]
-  path = ~/.gitconfig_private
-[includeIf "gitdir:/Users/gamurray/go/src/github.com/"]
-  path = ~/.gitconfig_private
+[gtr "editor"]
+	default = nvim
+[gtr "ai"]
+	default = "codex --dangerously-bypass-approvals-and-sandbox"
 [credential]
 	helper = -osxkeychain
   helper = !gh auth git-credential
