@@ -15,6 +15,11 @@ Local-first task manager stored in `.tasks/tasks.json` per directory. Supports d
 - Filtering by tags, status, or priority
 - Prefer `--json` output for supported commands
 
+## Task Bodies
+
+- Always include a body when creating or editing tasks; it preserves context for future agents.
+- Use `--body` with a short sentence or a few bullets (why, scope, acceptance).
+
 ## Ideal Workflows
 
 ### Bootstrap a Repo
