@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.45.7",
   "hideThinkingBlock": false,
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "defaultProvider": "zai",
   "defaultModel": "glm-4.7",
   "steeringMode": "one-at-a-time",
