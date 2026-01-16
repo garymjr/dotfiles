@@ -11,3 +11,5 @@ private_Library/private_Application Support/lazygit/state.yml
 dot_config/fish/conf.d/local.fish
 dot_pi/agent/private_auth.json
 dot_codex/tmp/
+dot_config/zed/conversations/
+dot_config/zed/prompts/
