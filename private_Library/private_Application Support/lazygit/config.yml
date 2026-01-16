@@ -1,6 +1,5 @@
 gui:
   nerdFontsVersion: "3"
-  portraitMode: always
   theme:
     searchingActiveBorderColor:
       - "#fab387"
