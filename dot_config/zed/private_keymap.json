@@ -1,0 +1,55 @@
+[
+  {
+    "bindings": {
+      "cmd-,": "zed::OpenSettings"
+    }
+  },
+  {
+    "context": "Pane > Editor || Terminal",
+    "bindings": {
+      "cmd-shift-i": "assistant::ToggleFocus"
+    }
+  },
+  {
+    "context": "AssistantPanel > ContextEditor",
+    "bindings": {
+      "cmd-shift-i": "workspace::ToggleRightDock"
+    }
+  },
+  // {
+  //   "context": "ProjectPanel && not_editing",
+  //   "bindings": {
+  //     "a": "project_panel::NewFile"
+  //   }
+  // },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "g d": "editor::GoToDefinition",
+      "g h": "editor::MoveToBeginningOfLine",
+      "g l": "editor::MoveToEndOfLine",
+      "g shift-i": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences",
+      "space c r": "editor::Rename",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "space c f": "editor::Format"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "<": "editor::Outdent",
+      ">": "editor::Indent",
+      "g n": "vim::SelectNext",
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "ProjectSearchBar",
+    "bindings": {
+      "escape": "pane::CloseActiveItem"
+    }
+  }
+]

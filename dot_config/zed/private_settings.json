@@ -1,0 +1,59 @@
+{
+  "theme": "Catppuccin Mocha",
+  "inlay_hints": {
+    "enabled": true
+  },
+  "disable_ai": true,
+  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_size": 18,
+  "buffer_font_features": {
+    "calt": true
+  },
+  "current_line_highlight": "none",
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"]
+  },
+  "format_on_save": "off",
+  "git_panel": {
+    "button": true,
+    "dock": "left"
+  },
+  "indent_guides": {
+    "enabled": false
+  },
+  "experimental.theme_overrides": {
+    "border.variant": "#11111b"
+  },
+  "languages": {},
+  "outline_panel": {
+    "button": false,
+    "dock": "left",
+    "indent_size": 10
+  },
+  "pane_split_direction_horizontal": "down",
+  "pane_split_direction_vertical": "right",
+  "project_panel": {
+    "indent_size": 10,
+    "dock": "left"
+  },
+  "restore_on_startup": "launchpad",
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "tabs": { "file_icons": true },
+  "toolbar": {
+    "quick_actions": false
+  },
+  "terminal": {
+    "button": false,
+    "font_family": "Maple Mono NF"
+  },
+  "ui_font_size": 18,
+  "use_autoclose": false,
+  "use_smartcase_search": true,
+  "use_system_path_prompts": false,
+  "vim_mode": false,
+  "when_closing_with_no_tabs": "close_window"
+}
