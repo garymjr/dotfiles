@@ -37,7 +37,7 @@ alias ccu='npx @ccusage/codex@latest'
 alias x='codex --dangerously-bypass-approvals-and-sandbox'
 
 # --- brew aliases ---
-if command -v brew &>/dev/null
+if test -x /opt/homebrew/bin/brew
     alias ba='brew autoremove'
     alias bcfg='brew config'
     alias bci='brew info --cask'
@@ -74,7 +74,7 @@ if command -v brew &>/dev/null
 end
 
 # --- chezmoi aliases ---
-if command -v chezmoi &>/dev/null
+if test -x /opt/homebrew/bin/chezmoi
     alias cm='chezmoi'
     alias cma='chezmoi add'
     alias cmcd='chezmoi cd'

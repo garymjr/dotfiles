@@ -83,16 +83,5 @@ end
 
 fish_add_path -g $HOME/.antigravity/antigravity/bin
 
-# --- local overrides ---
-if test -f $HOME/local.config.fish
-    source $HOME/local.config.fish
-end
-
 if status is-interactive
-    # emacs-style bindings for insert mode
-    bind -M insert \ca beginning-of-line
-    bind -M insert \ce end-of-line
-    bind -M insert \cp up-or-search
-    bind -M insert \cn down-or-search
-    bind -M insert \cf forward-char
 end
