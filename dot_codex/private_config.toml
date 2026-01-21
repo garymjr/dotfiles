@@ -13,6 +13,7 @@ apply_patch_freeform = true
 web_search_request = true
 skills = true
 shell_snapshot = true
+steer = true
 
 [projects."/Users/gmurray/Library/Application Support/nushell"]
 trust_level = "trusted"
