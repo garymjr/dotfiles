@@ -46,8 +46,7 @@ end
 
 direnv hook fish | source
 
-# fish_vi_key_bindings
-pure init --no-detailed fish | source
+starship init fish | source
 
 if command -v fzf &>/dev/null
     if command -v fd &>/dev/null
@@ -79,9 +78,4 @@ if command -v chezmoi &>/dev/null
         mkdir -p $HOME/.config/fish/completions
         chezmoi completion fish >$HOME/.config/fish/completions/chezmoi.fish 2>/dev/null
     end
-end
-
-fish_add_path -g $HOME/.antigravity/antigravity/bin
-
-if status is-interactive
 end

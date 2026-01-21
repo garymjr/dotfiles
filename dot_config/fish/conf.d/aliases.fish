@@ -32,7 +32,7 @@ alias guf='git push --force-with-lease'
 alias 'guf!'='git push --force'
 alias gwt='git worktree'
 
-alias ccu='npx @ccusage/codex@latest'
+alias ccu=codex-usage
 
 alias x='codex --dangerously-bypass-approvals-and-sandbox'
 
