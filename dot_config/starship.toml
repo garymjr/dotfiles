@@ -1,0 +1,64 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$directory\
+${custom.vcs_ref}\
+$cmd_duration\
+$line_break\
+$python\
+$character"""
+
+[directory]
+style = "blue"
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "bright-black"
+
+[custom.vcs_ref]
+description = "jj change id if available, git branch otherwise"
+command = '''
+if command -v jj >/dev/null 2>&1 && jj root >/dev/null 2>&1; then
+  jj --ignore-working-copy log --no-graph -r @ -T 'change_id.shortest()'
+  exit $?
+fi
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  git symbolic-ref --quiet --short HEAD 2>/dev/null || git rev-parse --short HEAD
+fi
+'''
+when = ''' command -v jj --ignore-working-copy >/dev/null 2>&1 && jj --ignore-working-copy root >/dev/null 2>&1 || git rev-parse --is-inside-work-tree >/dev/null 2>&1 '''
+format = "[$output]($style)"
+style = "bright-black"
+shell = ["sh"]
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+detect_extensions = []
+detect_files = []
