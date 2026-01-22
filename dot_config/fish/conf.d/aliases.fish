@@ -9,32 +9,9 @@ alias nv=nvim
 alias oc=opencode
 alias occ="opencode -m opencode/big-pickle run 'commit the staged changes'"
 
-# --- git aliases ---
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit --verbose'
-alias 'gc!'='git commit --amend --verbose'
-alias gco='git checkout'
-alias gd='git diff'
-alias gds='git diff --staged'
-alias gf='git fetch'
-alias gfo='git fetch origin'
-alias gm='git merge'
-alias gp='git pull'
-alias gr='git reset'
-alias grb='git rebase'
-alias grs='git restore'
-alias gs='git status --short'
-alias gst='git stash'
-alias gsw='git switch'
-alias gu='git push'
-alias guf='git push --force-with-lease'
-alias 'guf!'='git push --force'
-alias gwt='git worktree'
-
 alias ccu=codex-usage
 
-alias x='codex --dangerously-bypass-approvals-and-sandbox'
+alias cx='codex --dangerously-bypass-approvals-and-sandbox'
 
 # --- brew aliases ---
 if test -x /opt/homebrew/bin/brew
