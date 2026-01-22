@@ -13,3 +13,4 @@ dot_pi/agent/private_auth.json
 dot_codex/tmp/
 dot_config/zed/conversations/
 dot_config/zed/prompts/
+dot_codex/models_cache.json
