@@ -38,6 +38,7 @@ Gary owns this. start: greeting + 1 motivating line.
 - No repo-wide S/R scripts; keep edits small/reviewable.
 - Avoid manual git stash; if Git auto-stashes during pull/rebase, that’s fine (hint, not hard guardrail).
 - If user types a command (“pull and push”), that’s consent for that command.
+- Don’t ask for branch name/commit message; draft both and proceed unless user says otherwise.
 - No amend unless asked.
 - Big review: git --no-pager diff --color=never.
 

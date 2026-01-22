@@ -23,7 +23,7 @@ Create/update GitHub PRs and respond to review comments using gh CLI with clean,
 - Confirm base branch and target repo if unclear.
 - Run smallest relevant test; note command and result.
 
-2) **Draft PR body**
+1) **Draft PR body**
 Use this snippet (edit per context):
 
 ```
@@ -33,17 +33,11 @@ What
 Why
 - 
 
-How Tested
-- 
-
-Risk
-- 
-
 Notes
 - 
 ```
 
-3) **Create or update PR**
+1) **Create or update PR**
 
 - If creating: use `gh pr create` with title/body from above.
 - If updating: `gh pr edit <num>` to adjust title/body.
@@ -61,7 +55,7 @@ Notes
 - `gh pr view <num> --comments`.
 - If needed: `gh api repos/:owner/:repo/pulls/<num>/comments --paginate`.
 
-2) **Respond**
+1) **Respond**
 
 - Cite fix with file/line: `path:line`.
 - Resolve threads only after fix lands.
