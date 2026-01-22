@@ -1,3 +1,3 @@
 function ga
-    git ai $argv
+    git gtr ai $argv
 end

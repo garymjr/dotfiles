@@ -1,3 +1,3 @@
 function ge
-    git editor $argv
+    git gtr editor $argv
 end
