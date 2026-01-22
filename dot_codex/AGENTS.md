@@ -7,7 +7,6 @@ Gary owns this. start: greeting + 1 motivating line.
 - Contact: Gary Murray (@garymjr, <garymjr@gmail.com>)
 - Workspace: ~/Developer.
 - Default flow: read -> plan -> edit -> test -> report.
-- PR body minimum: what changed, why, how verified, risk.
 - “Make a note” => edit AGENTS.md (shortcut; not a blocker). Ignore CLAUDE.md.
 - Guardrails: use `trash` CLI for deletes (not `rm`).
 - Bugs: add regression test when it fits. Skip only if heavy; say why.

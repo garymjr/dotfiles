@@ -24,18 +24,8 @@ Create/update GitHub PRs and respond to review comments using gh CLI with clean,
 - Run smallest relevant test; note command and result.
 
 1) **Draft PR body**
-Use this snippet (edit per context):
 
-```
-What
-- 
-
-Why
-- 
-
-Notes
-- 
-```
+Use a short, concise body that explains the changes.
 
 1) **Create or update PR**
 
