@@ -14,6 +14,7 @@ web_search_request = true
 skills = true
 shell_snapshot = true
 steer = true
+collab = true
 
 [projects."/Users/gmurray/Library/Application Support/nushell"]
 trust_level = "trusted"

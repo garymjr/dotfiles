@@ -1,0 +1,7 @@
+.codex/log
+.codex/sessions
+.codex/shell_snapshots
+.codex/tmp
+.codex/history.jsonl
+.codex/models_cache.json
+.codex/auth.json
