@@ -46,8 +46,6 @@ end
 
 direnv hook fish | source
 
-starship init fish | source
-
 if command -v fzf &>/dev/null
     if command -v fd &>/dev/null
         set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
