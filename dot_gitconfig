@@ -29,10 +29,6 @@
 [rerere]
   enable = true
   autoupdate = true
-[gtr "editor"]
-	default = nvim
-[gtr "ai"]
-	default = "codex --dangerously-bypass-approvals-and-sandbox"
 [credential]
 	helper = -osxkeychain
   helper = !gh auth git-credential
@@ -42,3 +38,11 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[alias]
+  c = commit
+  co = checkout
+  sw = switch
+  s = status
+  st = stash
+  p = pull
+  f = fetch --prune
