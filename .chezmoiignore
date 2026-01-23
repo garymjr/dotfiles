@@ -6,3 +6,5 @@
 .codex/models_cache.json
 .codex/auth.json
 .codex/version.json
+
+**/lazygit/state.yml
