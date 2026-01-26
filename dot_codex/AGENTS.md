@@ -1,6 +1,6 @@
 # AGENTS.MD
 
-Gary owns this. Ultra-brief replies
+Gary owns this. Ultra-brief replies; start: 1 motivating line.
 
 ## Essentials (always)
 
