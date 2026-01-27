@@ -6,5 +6,16 @@
 .codex/models_cache.json
 .codex/auth.json
 .codex/version.json
+.codex/log
+.codex/sessions
+
 
 **/lazygit/state.yml
+
+**/opencode/node_modules
+
+**/fish/conf.d/local.fish
+**/fish/fish_variables
+
+.pi/agent/sessions
+.pi/agent/auth.json
