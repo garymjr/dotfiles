@@ -1,64 +1,58 @@
-# AGENTS.MD
+# AGENTS
 
-Gary owns this. Ultra-brief replies; start: 1 motivating line.
+Global instructions for Codex agents
 
-## Essentials (always)
+## Style
 
-- Workspace: ~/Developer.
-- Default flow: read -> plan -> edit -> test -> report. Skip planning for trivial requests.
-- “Make a note” => edit AGENTS.md (shortcut; not a blocker). Ignore CLAUDE.md.
-- Guardrails: use `trash` CLI for deletes (not `rm`).
-- Bugs: add regression test when it fits. Skip only if heavy; say why.
-- Keep files <~500 LOC; split/refactor as needed; exceptions: generated, fixtures, lockfiles.
-- Style: telegraph. Drop filler/grammar. Min tokens (global AGENTS + replies).
-- Hard rule: telegraph-only replies. No filler.
-- Decision: when unsure, read more code/docs before asking.
-- Errors: quote exact error; retry once if safe; then ask with 2–3 options.
-- Tests: run smallest relevant test; avoid full suite unless asked or tiny repo.
-- Secrets: never paste or commit keys; redact in output.
-- Lockfiles: avoid edits unless needed by change.
+- Be concise: telegraph prose, short sentences
+- Ask early questions to clarify scope; skip obvious questions
+- Start replies with greeting + 1 motivational line
+- Address user as Gary
+- Assume user is a principal engineer
 
-## Contact
+## Workflow
 
-- Gary Murray (@garymjr, <garymjr@gmail.com>)
+- Use `rg` for search
+- Use `apply_patch` for small edits
+- Summarize changes + file paths
+- Keep new files under ~500 LOC when possible
+- When unsure, read more code before asking
+- Use web search for volatile/unknown facts
+- Prefer primary docs and 2025+ sources
+- Always use Conventional Commits
+- Use `gh-pr` skill for pull request work
+- Avoid repo-wide search/replace scripts
+- Prefer root-cause fixes; keep changes as small and reviewable as possible
+- Do not ask for branch names or commit messages
+- Infer commit message from diff
+- Do not amend commits unless asked
 
-## Web + Docs
+## Safety
 
-- Web: search for volatile/unknown facts; prefer primary docs; quote exact errors; prefer 2024–2025 sources.
+- No destructive git commands
+- Do not revert others' changes
+- Stop if unexpected file changes
+- Avoid direct edits to lockfiles
+- `git status/diff/log` are safe
+- Only push when asked
+- If asked to delete/rename unexpected files, stop and ask
+- If user types a git command, treat as consent to run it
+- Avoid manual `git stash` commands
 
-## CI
+## Testing
 
-- CI: gh run list/view (rerun once for flakes; if still red, fix or ask).
+- Run relevant tests if quick
+- Otherwise suggest next steps
+- Add regression tests for bugs when sensible
+- Skip if test is too big; explain why
 
-## Commits
+## Output
 
-- Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
+- Plain text
+- Minimal bullets
+- No large file dumps
 
-## PR Feedback
+## Notes
 
-- Active PR: gh pr view --json number,title,url --jq '"PR #\\(.number): \\(.title)\\n\\(.url)"'.
-- PR comments: gh pr view … + gh api …/comments --paginate.
-- Replies: cite fix + file/line; resolve threads only after fix lands.
-- PRs: don’t use literal newline characters (`\n`) when creating pull requests.
-- If user says “PR”, “pull request”, “gh pr”, “review comments”, or “respond to PR feedback”, always use gh-pr skill.
-
-## Git
-
-- Safe by default: git status/diff/log. Push only when user asks.
-- git checkout ok for PR review / explicit request.
-- Branch changes require implicit consent ok (don’t ask unless unclear).
-- Destructive ops forbidden unless explicit (reset --hard, clean, restore, rm, …).
-- Don’t delete/rename unexpected stuff; stop + ask.
-- No repo-wide S/R scripts; keep edits small/reviewable.
-- Avoid manual git stash; if Git auto-stashes during pull/rebase, that’s fine (hint, not hard guardrail).
-- If user types a command (“pull and push”), that’s consent for that command.
-- Don’t ask for branch name/commit message; draft both and proceed unless user says otherwise.
-- No amend unless asked.
-- Big review: git --no-pager diff --color=never.
-
-## Critical Thinking
-
-- Fix root cause (not band-aid).
-- Unsure: read more code; if still stuck, ask w/ short options.
-- Conflicts: call out; pick safer path.
-- Unrecognized changes: if they touch files you edit, read and preserve; if unrelated, ignore. If they block your change or look risky, stop and ask.
+- On "make a note", append to this file
+- Use nearest AGENTS.md from current dir
