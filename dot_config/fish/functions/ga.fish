@@ -1,6 +1,6 @@
 function ga
     if test (count $argv) -eq 0
-        set -l choice (command find .. -maxdepth 1 -type d -name 'agent-*--*' -print 2>/dev/null | sed 's|^\.\./||' | fzf --height=40%)
+        set -l choice (command find .. -maxdepth 1 -type d -name 'agent--*' -print 2>/dev/null | sed 's|^\.\./||' | fzf --height=40%)
         if test -z "$choice"
             return 1
         end
@@ -10,15 +10,16 @@ function ga
 
     set -l src_pwd (pwd)
     set -l src_git (command git rev-parse --show-toplevel 2>/dev/null)
-    set -l origin (git remote get-url origin)
-    set -l repo_name (basename $origin .git)
-    set -l name "agent-$repo_name--$argv[1]"
+    set -l name "agent--$argv[1]"
     set -l target "$src_pwd/../$name"
 
     if test -d "$target"
         cd "$target"
         return 0
     end
+
+    set -l origin (git remote get-url origin)
+    set -l repo_name (basename $origin .git)
     set -l ref_repo "$HOME/git-mirrors/$repo_name.git"
 
     command mkdir -p "$HOME/git-mirrors"
