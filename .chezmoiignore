@@ -8,11 +8,18 @@
 .codex/version.json
 .codex/log
 .codex/sessions
+.codex/archived_sessions
+.codex/vendor_imports
+.codex/worktrees
+.codex/sqlite
+.codex/.codex-global-state.json
 
 
 **/lazygit/state.yml
 
 **/opencode/node_modules
+**/opencode/bun.lock
+**/opencode/package.json
 
 **/fish/conf.d/local.fish
 **/fish/fish_variables
