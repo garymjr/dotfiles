@@ -14,6 +14,8 @@ set -gx SHELL (which fish)
 
 set -gx OPENCODE_DISABLE_AUTOCOMPACT 1
 
+set -gx CODEX_HOME $HOME/.codex
+
 set -U fish_greeting
 
 fish_add_path -g /opt/homebrew/bin
