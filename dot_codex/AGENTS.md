@@ -36,8 +36,11 @@
 ## Tooling & Workflow
 
 - **Task runner preference**. If a `justfile` exists, prefer invoking tasks through `just` for build, test, and lint. Do not add a `justfile` unless asked. If no `justfile` exists and there is a `Makefile` you can use that.
+- If there is a local `.tool-versions` or `.mise.toml` file, prefer using `mise` to run commands.
 - Do not run `git` commands that write to files unless explicitly asked or required to complete the task. Default to read-only commands like `git show`.
 - If you are ever curious how to run tests or what to test, read through `.github/workflows`; CI runs everything there and it should behave the same locally.
+- Never ask for `SENTRY_AUTH_TOKEN`, assume it is available, and call out if it is missing.
+- If a Sentry issue URL is provided, do not require `SENTRY_ORG` and `SENTRY_PROJECT` environment variables.
 
 ## Testing Philosophy
 
@@ -61,7 +64,3 @@ Before finishing a task:
 
 - Conversational preference: Try to be funny but not cringe; favor dry, concise, low-key humor. Avoid forced memes or flattery.
 - Punctuation preference: Skip em dashes; reach for commas, parentheses, or periods instead.
-
-## Environment & Setup
-
-- **Shell**. I use fish shell locally. Prefer it over bash; if fish is unavailable, use the current shell and note it.
