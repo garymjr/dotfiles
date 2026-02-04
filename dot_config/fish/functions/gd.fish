@@ -2,7 +2,7 @@ function gd
     set -l dir (pwd)
     set -l base (basename $dir)
 
-    if not string match -q 'agent--*' $base
+    if not string match -q 'agent-*--*' $base
         return 1
     end
 

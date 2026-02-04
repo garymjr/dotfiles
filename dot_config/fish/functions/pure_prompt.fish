@@ -28,6 +28,7 @@ function pure_prompt
     set -l bright_red (printf '\e[91m')
     set -l bright_magenta (printf '\e[95m')
     set -l bright_yellow_prompt (printf '\e[93m')
+    set -l bright_cyan (printf '\e[96m')
 
     set -l insert_symbol "❯"
     set -l normal_symbol "❮"

@@ -12,7 +12,7 @@ function __pure_git_status -a cwd
     if test -z "$branch"
         set -l hash (command git -C "$cwd" rev-parse --short=7 HEAD 2>/dev/null)
         if test -n "$hash"
-            set branch ":$hash"
+            set branch "$hash"
         end
     end
 

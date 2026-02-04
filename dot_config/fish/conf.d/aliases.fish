@@ -9,10 +9,11 @@ alias nv=nvim
 alias oc=opencode
 alias occ="opencode -m opencode/big-pickle run 'commit the staged changes'"
 
-alias c='codex --dangerously-bypass-approvals-and-sandbox'
 alias cu=codex-usage
+alias cxm=codex-monitor
+alias d=diffler
 
-alias gc='bunx critique@latest'
+alias ghd="gh dash"
 
 # --- brew aliases ---
 if test -x /opt/homebrew/bin/brew
