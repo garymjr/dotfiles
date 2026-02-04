@@ -4,8 +4,11 @@ tool_output_token_limit = 25000
 # Formula: 273000 - (tool_output_token_limit + 15000)
 # With tool_output_token_limit=25000 ⇒ 273000 - (25000 + 15000) = 233000
 model_auto_compact_token_limit = 233000
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 suppress_unstable_features_warning = true
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+personality = "pragmatic"
 
 [features]
 ghost_commit = false

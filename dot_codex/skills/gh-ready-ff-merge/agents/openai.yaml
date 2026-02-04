@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ready FF Merge"
+  short_description: "Fast-forward merge PRs labeled ready to merge"
+  default_prompt: "Check PRs with the ready to merge label in the current repo, ensure branches are up to date, then fast-forward merge into the base branch and push."

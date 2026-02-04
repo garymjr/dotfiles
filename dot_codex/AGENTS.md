@@ -1,58 +1,67 @@
-# AGENTS
+# AGENTS.md
 
-Global instructions for Codex agents
+**Purpose**: Operate Codex CLI tasks in this repo while honoring user preferences and house style.
+**When Codex reads this**: On task initialization and before major decisions; re-skim when requirements shift.
+**Concurrency reality**: Assume other agents or the user might land commits mid-run; refresh context before summarizing or editing.
 
-## Style
+## Quick Obligations
 
-- Be concise: telegraph prose, short sentences
-- Ask early questions to clarify scope; skip obvious questions
-- Start replies with greeting + 1 motivational line
-- Address user as Gary
-- Assume user is a principal engineer
+| Situation | Required action |
+| --- | --- |
+| Starting a task | Read this guide end-to-end and align with any fresh user instructions. |
+| Tool or command hangs | If a command runs longer than 5 minutes, stop it, capture logs, and check with the user. |
+| Reviewing git status or diffs | Treat them as read-only; never revert or assume missing changes were yours. |
+| Adding a dependency | Research well-maintained options and confirm fit with the user before adding. |
 
-## Workflow
+## Mindset & Process
 
-- Use `rg` for search
-- Use `apply_patch` for small edits
-- Summarize changes + file paths
-- Keep new files under ~500 LOC when possible
-- When unsure, read more code before asking
-- Use web search for volatile/unknown facts
-- Prefer primary docs and 2025+ sources
-- Always use Conventional Commits
-- Use `gh-pr` skill for pull request work
-- Avoid repo-wide search/replace scripts
-- Prefer root-cause fixes; keep changes as small and reviewable as possible
-- Do not ask for branch names or commit messages
-- Infer commit message from diff
-- Do not amend commits unless asked
+- THINK A LOT PLEASE.
+- **No breadcrumbs**. If you delete or move code, do not leave a comment in the old place. No "// moved to X", no "relocated". Just remove it.
+- **Stay on the plot**. Keep the main goal in view when making edits.
+- Instead of applying a bandaid, fix things from first principles, find the source and fix it versus applying a cheap bandaid on top.
+- When taking on new work, follow this order:
+  1. Think about the architecture.
+  2. If architecture is unclear or new, research official docs, blogs, or papers on the best architecture.
+  3. Review the existing codebase.
+  4. Compare the research with the codebase to choose the best fit.
+  5. Implement the fix or ask about the tradeoffs the user is willing to make.
+- Write idiomatic, simple, maintainable code. Always ask yourself if this is the most simple intuitive solution to the problem.
+- Leave each repo better than how you found it, within the areas you touched. If something is giving a code smell, fix it for the next person.
+- Clean up unused code ruthlessly. If a function no longer needs a parameter or a helper is dead, delete it and update the callers instead of letting the junk linger.
+- **Search before pivoting**. If you are stuck, uncertain, or working in a novel area, do a quick web search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
+- If code is very confusing or hard to understand:
+  1. Try to simplify it.
+  2. Add an ASCII art diagram in a code comment if it would help.
 
-## Safety
+## Tooling & Workflow
 
-- No destructive git commands
-- Do not revert others' changes
-- Stop if unexpected file changes
-- Avoid direct edits to lockfiles
-- `git status/diff/log` are safe
-- Only push when asked
-- If asked to delete/rename unexpected files, stop and ask
-- If user types a git command, treat as consent to run it
-- Avoid manual `git stash` commands
+- **Task runner preference**. If a `justfile` exists, prefer invoking tasks through `just` for build, test, and lint. Do not add a `justfile` unless asked. If no `justfile` exists and there is a `Makefile` you can use that.
+- Do not run `git` commands that write to files unless explicitly asked or required to complete the task. Default to read-only commands like `git show`.
+- If you are ever curious how to run tests or what to test, read through `.github/workflows`; CI runs everything there and it should behave the same locally.
 
-## Testing
+## Testing Philosophy
 
-- Run relevant tests if quick
-- Otherwise suggest next steps
-- Add regression tests for bugs when sensible
-- Skip if test is too big; explain why
+- AVOID MOCK tests, either do unit or e2e, nothing in between. Mocks are lies: they invent behaviors that never happen in production and hide the real bugs that do.
+- Test `EVERYTHING` in the changed surface area, all new code paths and all affected existing paths. Tests must be rigorous. The intent is ensuring a new person contributing to the same code base cannot break anything and that nothing slips by.
+- Unless the user asks otherwise, run only the tests you added or modified (or those directly affected) instead of the entire suite to avoid wasting time.
 
-## Output
+## Final Handoff
 
-- Plain text
-- Minimal bullets
-- No large file dumps
+Before finishing a task:
 
-## Notes
+1. Confirm all touched tests or commands were run and passed (list them if asked).
+1. Summarize changes with file and line references.
+1. Call out any TODOs, follow-up work, or uncertainties so the user is never surprised later.
 
-- On "make a note", append to this file
-- Use nearest AGENTS.md from current dir
+## Dependencies & External APIs
+
+- If you need to add a new dependency to a project to solve an issue, search the web and find the best, most maintained option. Something most used with the best exposed API. Don't create a situation for the user where they are using an unmaintained dependency, that no one else relies on.
+
+## Communication Preferences
+
+- Conversational preference: Try to be funny but not cringe; favor dry, concise, low-key humor. Avoid forced memes or flattery.
+- Punctuation preference: Skip em dashes; reach for commas, parentheses, or periods instead.
+
+## Environment & Setup
+
+- **Shell**. I use fish shell locally. Prefer it over bash; if fish is unavailable, use the current shell and note it.
