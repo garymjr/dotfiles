@@ -1,14 +1,14 @@
-model = "gpt-5.2-codex"
+model = "gpt-5.3-codex"
 tool_output_token_limit = 25000
 # Leave room for native compaction near the 272–273k context window.
 # Formula: 273000 - (tool_output_token_limit + 15000)
 # With tool_output_token_limit=25000 ⇒ 273000 - (25000 + 15000) = 233000
 model_auto_compact_token_limit = 233000
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 suppress_unstable_features_warning = true
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
-personality = "pragmatic"
+personality = "friendly"
 
 [features]
 ghost_commit = false
