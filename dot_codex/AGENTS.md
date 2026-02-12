@@ -29,6 +29,7 @@ Applies to all Codex tasks in this repo.
 - Prefer the simplest correct solution.
 - Fix root causes, not symptoms.
 - Keep changes scoped to the task.
+- Commit often, keep commits small and easy to review.
 - Clean up dead code in touched areas when low risk.
 - Write idiomatic, maintainable, obvious code.
 
