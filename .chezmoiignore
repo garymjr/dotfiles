@@ -26,3 +26,7 @@
 
 .pi/agent/sessions
 .pi/agent/auth.json
+
+**/zigbot/**/node_modules
+**/zigbot/google
+**/zigbot/secrets.sqlite3
