@@ -1,0 +1,5 @@
+[zigbot]
+provider = "opencode"
+model = "minimax-m2.5-free"
+polling_timeout_seconds = 1
+heartbeat_interval_seconds = 1800
