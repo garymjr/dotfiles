@@ -1,45 +1,61 @@
-# AGENTS.MD
+# AGENTS.md
 
-Gary owns this. start: greeting + 1 motivating line. Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
+## Scope
 
-## Agent Protocol
+Applies to all Codex tasks in this repo.
 
-- Contact: Gary Murray (@garymjr, <garymjr@gmail.com>)
-- Workspace: ~/Developer
-- PRs: use gh pr view/diff (no URLs).
-- "Make a note" => edit closest AGENTS.md file.
-- Bugs: add regression test when it fits.
-- Keep files <~500 LOC; split/refactor as needed.
-- Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
-- Branches: Scoped branches (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
-- Editor: nvim <path>.
-- CI: gh run list/view (rerun/fix til green).
-- Style: telegraph. Drop filler/grammar. Min tokens (global AGENTS + replies).
+## Priority
 
-## PR Feedback
+1. Follow explicit user instructions.
+2. Then follow this file.
+3. If instructions conflict or are ambiguous, ask once, then proceed with the safest minimal change.
 
-- Active PR: gh pr view --json number,title,url --jq '"PR #\\(.number): \\(.title)\\n\\(.url)"'.
-- PR comments: gh pr view … + gh api …/comments --paginate.
-- Replies: cite fix + file/line; resolve threads only after fix lands.
-- When merging a PR: thank the contributor in CHANGELOG.md.
+## Hard Rules (MUST)
 
-## Git
+- Assume other agents or the user may change files during the task, refresh context before editing or summarizing.
+- If a command runs longer than 5 minutes, stop it, capture output, and check with the user.
+- Treat existing git diffs as read-only unless the user explicitly asks to modify them.
+- Do not run destructive git commands unless explicitly requested.
+- If `.tool-versions` or `.mise.toml` exists, prefer running commands through `mise`.
+- If unsure how CI runs checks, read `.github/workflows`.
+- Do not ask for `SENTRY_AUTH_TOKEN`, assume it exists and report if missing.
+- If given a Sentry issue URL, do not require `SENTRY_ORG` or `SENTRY_PROJECT`.
+- Do not add dependencies without user confirmation.
+- Do not leave breadcrumb comments when moving or deleting code.
+- Always use the `python3` binary when running Python scripts.
 
-- Safe by default: git status/diff/log. Push only when user asks.
-- Git checkout ok for PR review / explicit request.
-- Branch changes require user consent.
-- Destructive ops forbidden unless explicit (reset --hard, clean, restore, rm, …).
-- Don’t delete/rename unexpected stuff; stop + ask.
-- Avoid manual git stash; if Git auto-stashes during pull/rebase, that’s fine (hint, not hard guardrail).
-- If user types a command (“pull and push”), that’s consent for that command.
-- No amend unless asked.
-- Always infer branch and commit message from diff unless requested.
-- Always add title and body to PR. Avoid bullet lists.
+## Defaults (SHOULD)
 
-## Critical Thinking
+- Prefer the simplest correct solution.
+- Fix root causes, not symptoms.
+- Keep changes scoped to the task.
+- Commit often, keep commits small and easy to review.
+- Clean up dead code in touched areas when low risk.
+- Write idiomatic, maintainable, obvious code.
 
-- Fix root cause (not band-aid).
-- Unsure: read more code; if still stuck, ask w/ short options.
-- Conflicts: call out; pick safer path.
-- Unrecognized changes: assume other agent; keep going; focus your changes. If it causes issues, stop + ask user.
-- Leave breadcrumb notes in thread.
+## Research Triggers
+
+- If architecture is unclear or the area is novel, research official docs/specs before implementation.
+- If research suggests a new direction, summarize tradeoffs and confirm with the user before pivoting.
+- For dependency selection, choose actively maintained, widely used options with good APIs.
+
+## Testing
+
+- Prefer unit or e2e tests over mocks.
+- Use test doubles only when dependencies are nondeterministic or unavailable.
+- Test changed paths and affected behavior.
+- Unless asked otherwise, run only tests for the changed surface area.
+
+## Output Contract
+
+- Summarize changes with file and line references.
+- Call out TODOs, follow-up work, and uncertainties.
+- Mention testing only when tests were added in the PR, state what ran and passed.
+- Never say tests were not run because you were not asked to run them.
+- Do not propose follow-up tasks or enhancements at the end of the final answer. If a follow-up is clearly needed and feasible, do it instead of asking.
+
+## Communication Style
+
+- Telegraph style, concise, direct.
+- Dry humor is fine, avoid flattery and memes.
+- Avoid em dashes, prefer commas, parentheses, or periods.

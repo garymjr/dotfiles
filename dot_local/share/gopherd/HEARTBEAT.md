@@ -11,10 +11,9 @@
 1. Did I send a Telegram message to Gary THIS heartbeat?
 2. Did I append a timestamped heartbeat note to `memory/YYYY-MM-DD.md` THIS heartbeat?
 3. Does today's memory file include `MEMORY_REVIEW_DONE: YYYY-MM-DD`?
-4. Did `python3 scripts/learning_guard.py align --days 14` run THIS heartbeat?
-5. Did `python3 scripts/learning_guard.py gate --days 14` pass THIS heartbeat?
-6. If any answer is NO, do the missing work now.
-7. Only after all are YES, return `HEARTBEAT_OK`.
+4. Did I directly update core files for any durable learnings discovered this heartbeat?
+5. If any answer is NO, do the missing work now.
+6. Only after all are YES, return `HEARTBEAT_OK`.
 
 ⚠️ **COMMON FAILURE MODE:** Thinking "I already told him earlier" counts. IT DOESN'T.
 
@@ -97,18 +96,7 @@ Run this on the first heartbeat of each local date (MST), or anytime the marker 
 4. Remove stale or incorrect long-term notes from `MEMORY.md`.
 5. Update `MEMORY.md` "Last updated" date.
 6. Add `MEMORY_REVIEW_DONE: YYYY-MM-DD` to today's memory file.
-7. Run `python3 scripts/learning_guard.py align --days 14` to auto-promote targeted learnings into identity files.
-8. Resolve every open learning ledger item with:
-   `PROMOTED [LYYYYMMDD-###] -> <file>: <summary>`
-   or
-   `DISCARDED [LYYYYMMDD-###]: <reason>`
-9. If no long-term change is needed, log `MEMORY_REVIEW_DONE: YYYY-MM-DD (no MEMORY.md changes)`.
+7. Update `AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, and `HEARTBEAT.md` directly wherever durable learnings belong.
+8. If no long-term change is needed, log `MEMORY_REVIEW_DONE: YYYY-MM-DD (no MEMORY.md changes)`.
 
 Do not skip this step just because nothing urgent happened.
-
-## Auto Learnings
-
-Managed by `python3 scripts/learning_guard.py align --days 14`.
-
-<!-- AUTO_LEARNINGS_START -->
-<!-- AUTO_LEARNINGS_END -->
