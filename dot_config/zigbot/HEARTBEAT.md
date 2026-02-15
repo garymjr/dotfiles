@@ -4,44 +4,35 @@
 
 ## 0. Always Update Gary (NEVER SILENT)
 
-⚠️ **MANDATORY: Message Gary on Telegram EVERY heartbeat** — even if nothing changed:
-
-- What you checked
-- What you found (or "nothing new")
-- What's pending/next
+⚠️ **MANDATORY: Message Gary on Telegram EVERY heartbeat** — even if nothing changed.
 
 **STOP BEFORE SAYING HEARTBEAT_OK:**
 
 1. Did I send a Telegram message to Gary THIS heartbeat?
-2. If NO → Use `message` tool NOW. Even just "Checked posts, nothing new."
+2. If NO → Use bot API to send. Even just "All quiet."
 3. Only after sending → Then HEARTBEAT_OK
-
-**Never reply HEARTBEAT_OK without the Telegram message first.**
 
 ⚠️ **COMMON FAILURE MODE:** Thinking "I already told him earlier" counts. IT DOESN'T.
 
 - Each heartbeat is INDEPENDENT
-- "Gary notified (msg #X)" referring to earlier message = WRONG
-- Must send NEW message THIS heartbeat = RIGHT
+- Must send NEW message THIS heartbeat
 
 ## 1. Check Gary's Email Every Heartbeat
 
 Before sending the Telegram update:
 
 1. Check Gary's recent email (new/unread plus latest inbox activity).
-2. Identify important-looking emails and include a short summary in the heartbeat update to Gary.
+2. Identify important-looking emails — flag anything that needs attention.
 3. For emails that look like spam or junk, apply the `review` label.
-4. Report every email labeled `review` in the heartbeat update (sender + subject, concise).
+4. Note flagged emails in the heartbeat message.
 
-## 2. Check Gary's Calendar Every Heartbeat
+## 2. Check Gary's Calendar a Few Times Per Day
 
-Before sending the Telegram update:
+Check the calendar periodically (2-3 times per day is fine), not every heartbeat:
 
-1. Use the `calendar` skill to check Gary's upcoming events (today plus the next few days).
-2. Include a concise summary of upcoming events in the heartbeat update (title + time + how soon).
-3. Look for reminder-worthy items from Gmail that are not on the calendar yet (deadlines, meetings, travel, bills, follow-ups).
-4. Recommend events or reminders to add when useful, including anything else Gary should likely be reminded of.
-5. If there are no upcoming events and no reminder suggestions, explicitly say so in the heartbeat update.
+1. Use the `calendar` skill to check upcoming events (today plus next few days).
+2. Note any events worth mentioning — birthdays, appointments, deadlines.
+3. Reuse the last check result for heartbeats in between full calendar checks.
 
 ## 3. Check Weather (Exactly Once Per Day)
 
@@ -49,15 +40,34 @@ Run the Kody Colorado forecast scraper exactly one time per local date (MST). Do
 
 1. Use `date +%F` to get today's local date string.
 2. Check `memory/YYYY-MM-DD.md` for marker line: `KODY_FORECAST_DONE: YYYY-MM-DD`.
-3. If marker exists, skip the scraper for this heartbeat (already done today).
+3. If marker exists, skip the scraper (already done today).
 4. If marker does not exist, run:
    `python3 ~/.config/zigbot/skills/weather/scripts/kody_colorado_forecast.py --max-paragraphs 5`
 5. Prefer running this in the morning (05:00-11:59 MST). If morning is missed, run on the first heartbeat after 12:00 MST.
-6. Add a brief summary to Gary's Telegram heartbeat update when run:
-   - Forecast date
-   - Headline
-   - 1-2 key forecast points
-7. Append this to today's memory file immediately after running:
-   - `KODY_FORECAST_DONE: YYYY-MM-DD`
-   - 1-3 lines with the brief forecast summary sent to Gary
-8. If scraper fails, report failure in the heartbeat update, do not retry repeatedly, and use `curl -s wttr.in/Johnstown+Colorado?0pq` as fallback conditions only.
+6. If scraper fails, use `curl -s wttr.in/Johnstown+Colorado?0pq` as fallback.
+
+## 4. Telegram Message Style (IMPORTANT)
+
+**Write like you're talking to a friend, not filing a report.**
+
+✅ **Do:**
+- Lead with what's important or interesting
+- Skip the checklist format — just write sentences
+- Add light commentary where it adds value ("the usual school stuff", "you can ignore until due")
+- Vary the length based on what's happening
+- Sign off casually ("— S" or just end naturally)
+
+❌ **Don't:**
+- Use emoji headers (📧 Email:, 📅 Calendar:)
+- List everything item by item
+- Write in telegram-style bullet points
+- Say "Heartbeat complete" or use ✅ checkmarks
+
+**Example (good):**
+> "Hey Gary — quick pulse. Nothing urgent in email. The usual school stuff from Allyson Garza and John Dumbleton, plus a UCHealth payment reminder you can ignore until due. Jaxson's birthday is tomorrow at 10am @ GetAir (the trampoline place), mom's is Tuesday. Weather was done earlier — looks fine. — S"
+
+**Example (bad):**
+> "📧 Email: Raptor Report, UCHealth payment
+> 📅 Calendar: Jaxson's Birthday tomorrow
+> 🌤️ Weather: Done
+> ✅ Heartbeat complete"
