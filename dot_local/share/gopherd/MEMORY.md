@@ -54,8 +54,6 @@ Curated learnings.
 
 ## Heartbeat Expectations
 
-Gary runs `zig build run -- beat` periodically. Each heartbeat should:
-
 1. Check Gmail for anything urgent
 2. Check Calendar for upcoming events (next 7 days)
 3. Send summary to Gary via Telegram
@@ -72,7 +70,6 @@ Gary runs `zig build run -- beat` periodically. Each heartbeat should:
 
 - Bot username: @SpruxiBot
 - Gary's chat_id: 8410132204
-- Same bot used by talongo project
 
 ---
 

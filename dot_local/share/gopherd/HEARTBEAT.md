@@ -9,13 +9,18 @@
 **STOP BEFORE SAYING HEARTBEAT_OK:**
 
 1. Did I send a Telegram message to Gary THIS heartbeat?
-2. If NO → Use bot API to send. Even just "All quiet."
-3. Only after sending → Then HEARTBEAT_OK
+2. Did I append a timestamped heartbeat note to `memory/YYYY-MM-DD.md` THIS heartbeat?
+3. Does today's memory file include `MEMORY_REVIEW_DONE: YYYY-MM-DD`?
+4. Did `python3 scripts/learning_guard.py align --days 14` run THIS heartbeat?
+5. Did `python3 scripts/learning_guard.py gate --days 14` pass THIS heartbeat?
+6. If any answer is NO, do the missing work now.
+7. Only after all are YES, return `HEARTBEAT_OK`.
 
 ⚠️ **COMMON FAILURE MODE:** Thinking "I already told him earlier" counts. IT DOESN'T.
 
 - Each heartbeat is INDEPENDENT
 - Must send NEW message THIS heartbeat
+- Must write NEW memory log THIS heartbeat
 
 ## 1. Check Gary's Email Every Heartbeat
 
@@ -46,11 +51,20 @@ Run the Kody Colorado forecast scraper exactly one time per local date (MST). Do
 5. Prefer running this in the morning (05:00-11:59 MST). If morning is missed, run on the first heartbeat after 12:00 MST.
 6. If scraper fails, use `curl -s wttr.in/Johnstown+Colorado?0pq` as fallback.
 
-## 4. Telegram Message Style (IMPORTANT)
+## 4. Quick System Check
+
+Before anything else, do a quick sanity check:
+
+1. **Recent errors:** Check `~/.local/share/gopherd/logs/` if it exists for any recent error logs
+
+If something looks wrong, note it in the Telegram message to Gary. Don't dig deep unless it's clearly broken.
+
+## 5. Telegram Message Style (IMPORTANT)
 
 **Write like you're talking to a friend, not filing a report.**
 
 ✅ **Do:**
+
 - Lead with what's important or interesting
 - Skip the checklist format — just write sentences
 - Add light commentary where it adds value ("the usual school stuff", "you can ignore until due")
@@ -58,6 +72,7 @@ Run the Kody Colorado forecast scraper exactly one time per local date (MST). Do
 - Sign off casually ("— S" or just end naturally)
 
 ❌ **Don't:**
+
 - Use emoji headers (📧 Email:, 📅 Calendar:)
 - List everything item by item
 - Write in telegram-style bullet points
@@ -71,3 +86,29 @@ Run the Kody Colorado forecast scraper exactly one time per local date (MST). Do
 > 📅 Calendar: Jaxson's Birthday tomorrow
 > 🌤️ Weather: Done
 > ✅ Heartbeat complete"
+
+## 6. Memory Maintenance (Once Per Day, Required)
+
+Run this on the first heartbeat of each local date (MST), or anytime the marker is missing.
+
+1. Read today's and yesterday's `memory/YYYY-MM-DD.md` files.
+2. Pull out durable facts (preferences, recurring process updates, lessons, corrections).
+3. Update `MEMORY.md` with distilled long-term notes.
+4. Remove stale or incorrect long-term notes from `MEMORY.md`.
+5. Update `MEMORY.md` "Last updated" date.
+6. Add `MEMORY_REVIEW_DONE: YYYY-MM-DD` to today's memory file.
+7. Run `python3 scripts/learning_guard.py align --days 14` to auto-promote targeted learnings into identity files.
+8. Resolve every open learning ledger item with:
+   `PROMOTED [LYYYYMMDD-###] -> <file>: <summary>`
+   or
+   `DISCARDED [LYYYYMMDD-###]: <reason>`
+9. If no long-term change is needed, log `MEMORY_REVIEW_DONE: YYYY-MM-DD (no MEMORY.md changes)`.
+
+Do not skip this step just because nothing urgent happened.
+
+## Auto Learnings
+
+Managed by `python3 scripts/learning_guard.py align --days 14`.
+
+<!-- AUTO_LEARNINGS_START -->
+<!-- AUTO_LEARNINGS_END -->

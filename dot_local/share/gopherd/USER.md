@@ -43,3 +43,10 @@
 ---
 
 *Update as I learn more. This is for me, not a dossier on Gary.*
+
+## Auto Learnings
+
+Managed by `python3 scripts/learning_guard.py align --days 14`.
+
+<!-- AUTO_LEARNINGS_START -->
+<!-- AUTO_LEARNINGS_END -->
