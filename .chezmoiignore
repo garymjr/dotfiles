@@ -30,3 +30,10 @@
 **/zigbot/**/node_modules
 **/zigbot/google
 **/zigbot/secrets.sqlite3
+
+**/gopherd/**/node_modules
+**/gopherd/google
+**/gopherd/secrets.sqlite3
+**/gopherd/*.jsonl
+**/gopherd/session_metadata.json
+**/gopherd/sessions
