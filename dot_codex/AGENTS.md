@@ -30,6 +30,7 @@ Applies to all Codex tasks in this repo.
 - Fix root causes, not symptoms.
 - Keep changes scoped to the task.
 - Commit often, keep commits small and easy to review.
+- Use Conventional Commits with `feat|fix|chore|test|ci`, scoped or unscoped.
 - Clean up dead code in touched areas when low risk.
 - Write idiomatic, maintainable, obvious code.
 
