@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nushell Custom Completions"
+  short_description: "Create Nushell command and extern completions"
+  default_prompt: "Create or update Nushell custom completions for command arguments and flags, including dynamic and context-aware behavior when needed."
