@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.52.9",
+  "lastChangelogVersion": "0.52.10",
   "hideThinkingBlock": false,
   "defaultThinkingLevel": "high",
   "defaultProvider": "zai",
@@ -12,8 +12,5 @@
     "openai-codex/gpt-5.2",
     "openai-codex/gpt-5.2-codex",
     "zai/glm-4.7"
-  ],
-  "retry": {
-    "enabled": false
-  }
+  ]
 }
