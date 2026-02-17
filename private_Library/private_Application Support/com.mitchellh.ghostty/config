@@ -1,4 +1,3 @@
-command = "/opt/homebrew/bin/fish"
 font-family = "Maple Mono NF"
 font-size = 16
 font-feature = ss01
@@ -14,7 +13,6 @@ selection-invert-fg-bg = true
 # window-padding-balance = true
 # window-padding-x = 10
 # window-padding-y = 10
-shell-integration = fish
 quit-after-last-window-closed = true
 
 # theme
