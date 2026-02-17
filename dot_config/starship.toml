@@ -4,7 +4,9 @@ format = """
 $username\
 $hostname\
 $directory\
-${custom.vcs_ref}\
+$git_branch\
+$git_state\
+$git_status\
 $cmd_duration\
 $line_break\
 $python\
@@ -21,22 +23,6 @@ vimcmd_symbol = "[❮](green)"
 [git_branch]
 format = "[$branch]($style)"
 style = "bright-black"
-
-[custom.vcs_ref]
-description = "jj change id if available, git branch otherwise"
-command = '''
-if command -v jj >/dev/null 2>&1 && jj root >/dev/null 2>&1; then
-  jj --ignore-working-copy log --no-graph -r @ -T 'change_id.shortest()'
-  exit $?
-fi
-if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  git symbolic-ref --quiet --short HEAD 2>/dev/null || git rev-parse --short HEAD
-fi
-'''
-when = ''' command -v jj --ignore-working-copy >/dev/null 2>&1 && jj --ignore-working-copy root >/dev/null 2>&1 || git rev-parse --is-inside-work-tree >/dev/null 2>&1 '''
-format = "[$output]($style)"
-style = "bright-black"
-shell = ["sh"]
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
