@@ -1,62 +1,53 @@
 # AGENTS.md
 
-## Scope
+## Operating Principles
 
-Applies to all Codex tasks in this repo.
+* Be persistent and surgical.
+* Fix root causes. Do not apply band-aids.
+* Leave the codebase better than you found it.
+* Prefer obvious code over clever code.
+* Be concise and direct. Avoid em dashes.
 
-## Priority
+## Authority and Precedence
 
-1. Follow explicit user instructions.
-2. Then follow this file.
-3. If instructions conflict or are ambiguous, ask once, then proceed with the safest minimal change.
+1. Follow explicit user instructions first.
+2. Then follow this AGENTS.md.
+3. If they conflict, ask for clarification before proceeding.
 
-## Hard Rules (MUST)
+## Safety and Git
 
-- Assume other agents or the user may change files during the task, refresh context before editing or summarizing.
-- If a command runs longer than 5 minutes, stop it, capture output, and check with the user.
-- Treat existing git diffs as read-only unless the user explicitly asks to modify them.
-- Do not run destructive git commands unless explicitly requested.
-- If `.tool-versions` or `.mise.toml` exists, prefer running commands through `mise`.
-- If unsure how CI runs checks, read `.github/workflows`.
-- Do not ask for `SENTRY_AUTH_TOKEN`, assume it exists and report if missing.
-- If given a Sentry issue URL, do not require `SENTRY_ORG` or `SENTRY_PROJECT`.
-- Do not add dependencies without user confirmation.
-- Do not leave breadcrumb comments when moving or deleting code.
-- Always use the `python3` binary when running Python scripts.
+* Never run destructive git commands without explicit user approval.
+* Never commit unless explicitly asked.
+* Keep commits small and atomic.
+* Prefer Conventional Commit conventions.
 
-## Defaults (SHOULD)
+## Context and Tooling
 
-- Prefer the simplest correct solution.
-- Fix root causes, not symptoms.
-- Keep changes scoped to the task.
-- Commit often, keep commits small and easy to review.
-- Use Conventional Commits with `feat|fix|chore|test|ci`, scoped or unscoped.
-- Clean up dead code in touched areas when low risk.
-- Write idiomatic, maintainable, obvious code.
+* Always refresh relevant context before making changes.
+* If `.tool-versions` or `.mise.toml` exists, prefer running commands through `mise`.
+* If architecture is unclear or the area is novel, check official documentation or specifications before implementing.
+* If research suggests a different direction, summarize tradeoffs and confirm with the user before pivoting.
+* When choosing dependencies, prefer actively maintained and widely used options.
 
-## Research Triggers
+## Code Changes
 
-- If architecture is unclear or the area is novel, research official docs/specs before implementation.
-- If research suggests a new direction, summarize tradeoffs and confirm with the user before pivoting.
-- For dependency selection, choose actively maintained, widely used options with good APIs.
+* Do not leave breadcrumb comments when deleting or moving code.
+* Avoid clever or obscure solutions.
+* Improve clarity, structure, and naming where appropriate.
+* Keep scope tight. Do not refactor unrelated areas unless necessary.
 
-## Testing
+## Testing and Validation
 
-- Prefer unit or e2e tests over mocks.
-- Use test doubles only when dependencies are nondeterministic or unavailable.
-- Test changed paths and affected behavior.
-- Unless asked otherwise, run only tests for the changed surface area.
+* Validate changed behavior with targeted checks covering the touched surface area unless broader coverage is requested.
+* Prefer unit or end-to-end tests over heavy mocking.
+* Use test doubles only for nondeterministic or unavailable dependencies.
 
-## Output Contract
+## Reporting
 
-- Summarize changes with file and line references.
-- Call out TODOs, follow-up work, and uncertainties.
-- Mention testing only when tests were added in the PR, state what ran and passed.
-- Never say tests were not run because you were not asked to run them.
-- Do not propose follow-up tasks or enhancements at the end of the final answer. If a follow-up is clearly needed and feasible, do it instead of asking.
+In the final response:
 
-## Communication Style
-
-- Telegraph style, concise, direct.
-- Dry humor is fine, avoid flattery and memes.
-- Avoid em dashes, prefer commas, parentheses, or periods.
+* Summarize changes with file and line references.
+* State what validation ran and the result. If nothing ran, state why.
+* Call out TODOs, follow-up work, and uncertainties.
+* Keep the response concise and direct.
+* Suggest follow-up actions only if required to unblock progress or reduce material risk.
