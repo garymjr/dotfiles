@@ -1,45 +1,53 @@
-# AGENTS.MD
+# AGENTS.md
 
-Gary owns this. start: greeting + 1 motivating line. Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
+## Operating Principles
 
-## Agent Protocol
+* Be persistent and surgical.
+* Fix root causes. Do not apply band-aids.
+* Leave the codebase better than you found it.
+* Prefer obvious code over clever code.
+* Be concise and direct. Avoid em dashes.
 
-- Contact: Gary Murray (@garymjr, <garymjr@gmail.com>)
-- Workspace: ~/Developer
-- PRs: use gh pr view/diff (no URLs).
-- "Make a note" => edit closest AGENTS.md file.
-- Bugs: add regression test when it fits.
-- Keep files <~500 LOC; split/refactor as needed.
-- Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
-- Branches: Scoped branches (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
-- Editor: nvim <path>.
-- CI: gh run list/view (rerun/fix til green).
-- Style: telegraph. Drop filler/grammar. Min tokens (global AGENTS + replies).
+## Authority and Precedence
 
-## PR Feedback
+1. Follow explicit user instructions first.
+2. Then follow this AGENTS.md.
+3. If they conflict, ask for clarification before proceeding.
 
-- Active PR: gh pr view --json number,title,url --jq '"PR #\\(.number): \\(.title)\\n\\(.url)"'.
-- PR comments: gh pr view … + gh api …/comments --paginate.
-- Replies: cite fix + file/line; resolve threads only after fix lands.
-- When merging a PR: thank the contributor in CHANGELOG.md.
+## Safety and Git
 
-## Git
+* Never run destructive git commands without explicit user approval.
+* Never commit unless explicitly asked.
+* Keep commits small and atomic.
+* Prefer Conventional Commit conventions.
 
-- Safe by default: git status/diff/log. Push only when user asks.
-- Git checkout ok for PR review / explicit request.
-- Branch changes require user consent.
-- Destructive ops forbidden unless explicit (reset --hard, clean, restore, rm, …).
-- Don’t delete/rename unexpected stuff; stop + ask.
-- Avoid manual git stash; if Git auto-stashes during pull/rebase, that’s fine (hint, not hard guardrail).
-- If user types a command (“pull and push”), that’s consent for that command.
-- No amend unless asked.
-- Always infer branch and commit message from diff unless requested.
-- Always add title and body to PR. Avoid bullet lists.
+## Context and Tooling
 
-## Critical Thinking
+* Always refresh relevant context before making changes.
+* If `.tool-versions` or `.mise.toml` exists, prefer running commands through `mise`.
+* If architecture is unclear or the area is novel, check official documentation or specifications before implementing.
+* If research suggests a different direction, summarize tradeoffs and confirm with the user before pivoting.
+* When choosing dependencies, prefer actively maintained and widely used options.
 
-- Fix root cause (not band-aid).
-- Unsure: read more code; if still stuck, ask w/ short options.
-- Conflicts: call out; pick safer path.
-- Unrecognized changes: assume other agent; keep going; focus your changes. If it causes issues, stop + ask user.
-- Leave breadcrumb notes in thread.
+## Code Changes
+
+* Do not leave breadcrumb comments when deleting or moving code.
+* Avoid clever or obscure solutions.
+* Improve clarity, structure, and naming where appropriate.
+* Keep scope tight. Do not refactor unrelated areas unless necessary.
+
+## Testing and Validation
+
+* Validate changed behavior with targeted checks covering the touched surface area unless broader coverage is requested.
+* Prefer unit or end-to-end tests over heavy mocking.
+* Use test doubles only for nondeterministic or unavailable dependencies.
+
+## Reporting
+
+In the final response:
+
+* Summarize changes with file and line references.
+* State what validation ran and the result. If nothing ran, state why.
+* Call out TODOs, follow-up work, and uncertainties.
+* Keep the response concise and direct.
+* Suggest follow-up actions only if required to unblock progress or reduce material risk.

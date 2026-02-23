@@ -119,3 +119,6 @@ do
   fi
 done
 unset _zsh_hl _zcompdump
+
+# opencode
+export PATH=/Users/garymjr/.opencode/bin:$PATH
