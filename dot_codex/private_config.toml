@@ -19,30 +19,14 @@ shell_snapshot = true
 steer = true
 multi_agent = true
 prevent_idle_sleep = true
+voice_transcription = true
 
-[projects."/Users/gmurray/Library/Application Support/nushell"]
-trust_level = "trusted"
-
-[projects."/Users/gmurray/.dotfm"]
-trust_level = "trusted"
-
-[projects."/Users/gmurray/Developer"]
-trust_level = "trusted"
-
-[projects."/Users/gmurray/Developer/nvsep"]
-trust_level = "trusted"
-
-[projects."/Users/gmurray/Developer/CodexBar"]
-trust_level = "trusted"
-
-[projects."/Users/gmurray/Developer/pure-zig"]
-trust_level = "trusted"
-
-[projects."/Users/gmurray/.local/share/chezmoi"]
-trust_level = "trusted"
-
-[projects."/Users/gmurray/Developer/tasks"]
-trust_level = "trusted"
+[agents]
+max_threads = 12
+max_depth = 2
 
 [notice]
 hide_full_access_warning = true
+
+[tui]
+theme = "catppuccin-mocha"
