@@ -18,6 +18,8 @@ _path_prepend=(
   "$HOME/.local/share/nvim/mason/bin"
   "$HOME/.opencode/bin"
   "$HOME/.local/bin"
+  "$HOME/.opencode/bin"
+  "/opt/homebrew/opt/libpq/bin"
 )
 for _p in "${_path_prepend[@]}"; do
   [[ -d "$_p" ]] && _existing_path_prepend+=("$_p")
@@ -30,6 +32,8 @@ export VISUAL="$EDITOR"
 export GIT_EDITOR="$EDITOR"
 export KERL_BUILD_DOCS='yes'
 export ERL_AFLAGS='-kernel shell_history enabled'
+unset MAILCHECK MAIL MAILPATH mailpath
+unsetopt MAIL_WARNING 2>/dev/null
 
 [[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
@@ -67,6 +71,93 @@ else
 fi
 alias cz='chezmoi'
 alias lg='lazygit'
+
+ga() {
+  local target=""
+
+  if [[ $# -eq 0 ]]; then
+    local choice
+    choice=$(
+      command find .. -maxdepth 1 -type d -name 'agent-*--*' -print 2>/dev/null \
+        | sed 's|^\.\./||' \
+        | fzf --height=40%
+    )
+    [[ -z "$choice" ]] && return 1
+    target="../$choice"
+  else
+    local src_pwd src_git origin repo_name name
+    src_pwd="$(pwd)"
+    src_git="$(command git rev-parse --show-toplevel 2>/dev/null)"
+    origin="$(git remote get-url origin)"
+    repo_name="$(basename "$origin" .git)"
+    name="agent-$repo_name--$1"
+    target="$src_pwd/../$name"
+
+    if [[ ! -d "$target" ]]; then
+      local ref_repo
+      ref_repo="$HOME/git-mirrors/$repo_name.git"
+
+      command mkdir -p "$HOME/git-mirrors"
+
+      if [[ -d "$ref_repo" ]]; then
+        git -C "$ref_repo" fetch --all --prune
+      else
+        git clone --mirror "$origin" "$ref_repo"
+      fi
+
+      git clone --reference "$ref_repo" "$origin" "$target" || return 1
+
+      local -a copy_list
+      if [[ -n "${GA_COPY:-}" ]]; then
+        copy_list=(${=GA_COPY})
+      else
+        copy_list=(".env")
+      fi
+
+      local item
+      for item in "${copy_list[@]}"; do
+        if [[ -e "$src_pwd/$item" ]]; then
+          command rsync -a "$src_pwd/$item" "$target/" \
+            || command cp -a "$src_pwd/$item" "$target/" \
+            || printf "ga: copy failed: %s\n" "$src_pwd/$item" >&2
+        elif [[ -n "$src_git" && -e "$src_git/$item" ]]; then
+          command rsync -a "$src_git/$item" "$target/" \
+            || command cp -a "$src_git/$item" "$target/" \
+            || printf "ga: copy failed: %s\n" "$src_git/$item" >&2
+        fi
+      done
+    fi
+  fi
+
+  cd "$target" || return 1
+}
+
+gd() {
+  local dir base
+  dir="$(pwd)"
+  base="$(basename "$dir")"
+
+  [[ "$base" == agent-*--* ]] || return 1
+
+  local force=0
+  local arg
+  for arg in "$@"; do
+    [[ "$arg" == "--force" ]] && force=1
+  done
+
+  local dirty=0
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    [[ -n "$(git status --porcelain)" ]] && dirty=1
+  fi
+
+  if [[ $dirty -eq 1 && $force -eq 0 ]]; then
+    echo "Uncommitted changes. Use gd --force to delete."
+    return 1
+  fi
+
+  cd .. || return 1
+  trash "$base"
+}
 
 # mise
 if command -v mise >/dev/null 2>&1; then
@@ -119,6 +210,3 @@ do
   fi
 done
 unset _zsh_hl _zcompdump
-
-# opencode
-export PATH=/Users/garymjr/.opencode/bin:$PATH
