@@ -27,7 +27,6 @@
 ## Code Changes
 
 * Fix root causes. Do not apply band-aids.
-* Keep scope tight. Do not refactor unrelated areas unless necessary.
 * Do not add backward compatibility paths, legacy shims, or dual-behavior logic unless explicitly requested.
 * Do not leave breadcrumb comments when deleting or moving code.
 
@@ -37,8 +36,7 @@
 * Prefer unit or end-to-end tests over heavy mocking.
 * Use test doubles only for nondeterministic or unavailable dependencies.
 
-## Final Response
+## Playwriter Skill
 
-* Summarize changes with file and line references.
-* State what validation ran and the result. If nothing ran, state why.
-* Keep working until the request is fully complete; only stop early when blocked by a concrete dependency or missing input.
+* When using the `playwriter` skill, always connect to an active Playwriter session.
+* Do not run this project's e2e tests as part of the `playwriter` skill workflow.
