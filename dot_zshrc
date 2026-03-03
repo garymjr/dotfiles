@@ -30,6 +30,7 @@ unset _p _path_prepend _existing_path_prepend
 export EDITOR='nvim'
 export VISUAL="$EDITOR"
 export GIT_EDITOR="$EDITOR"
+export CODEX_HOME="${HOME}/.codex"
 export KERL_BUILD_DOCS='yes'
 export ERL_AFLAGS='-kernel shell_history enabled'
 unset MAILCHECK MAIL MAILPATH mailpath
@@ -210,3 +211,6 @@ do
   fi
 done
 unset _zsh_hl _zcompdump
+
+# opencode
+export PATH=/Users/gmurray/.opencode/bin:$PATH
