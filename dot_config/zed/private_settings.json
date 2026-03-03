@@ -1,10 +1,11 @@
 {
-  "theme": "One Dark",
+  "ui_font_family": "Ioskeley Mono",
+  "theme": "GitHub Dark",
   "inlay_hints": {
     "enabled": true
   },
   "disable_ai": true,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "Ioskeley Mono",
   "buffer_font_size": 18,
   "buffer_font_features": {
     "calt": true
