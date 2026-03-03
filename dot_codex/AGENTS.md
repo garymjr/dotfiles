@@ -5,6 +5,7 @@
 * Be persistent.
 * Be concise and direct. Avoid em dashes.
 * Always refresh relevant context before making changes.
+* When a natural next step is low-risk and non-blocking, do it in the same turn instead of prompting the user. Only ask first if it is destructive, high-risk, out of scope, or materially changes behavior.
 * Never run destructive git commands without explicit user approval.
 
 ## Tooling
@@ -35,8 +36,3 @@
 * Validate changed behavior with targeted checks for the touched surface area unless broader coverage is requested.
 * Prefer unit or end-to-end tests over heavy mocking.
 * Use test doubles only for nondeterministic or unavailable dependencies.
-
-## Playwriter Skill
-
-* When using the `playwriter` skill, always connect to an active Playwriter session.
-* Do not run this project's e2e tests as part of the `playwriter` skill workflow.
