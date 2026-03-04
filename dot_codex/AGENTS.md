@@ -7,11 +7,13 @@
 * Always refresh relevant context before making changes.
 * When a natural next step is low-risk and non-blocking, do it in the same turn instead of prompting the user. Only ask first if it is destructive, high-risk, out of scope, or materially changes behavior.
 * Never run destructive git commands without explicit user approval.
+* Never commit or push without explicit user instructions.
 
 ## Tooling
 
 * Prefer `uv` for Python commands.
 * If `.tool-versions` or `.mise.toml` exists, use `mise` only as a fallback when needed (for example, not required for commands like `git`).
+* Use `worktrunk` when working with worktrees.
 
 ## Git Branch Naming
 
