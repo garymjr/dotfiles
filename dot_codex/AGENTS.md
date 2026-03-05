@@ -30,6 +30,7 @@
 ## Code Changes
 
 * Fix root causes. Do not apply band-aids.
+* Do not default to minimal patches when they miss the true root cause.
 * Do not add backward compatibility paths, legacy shims, or dual-behavior logic unless explicitly requested.
 * Do not leave breadcrumb comments when deleting or moving code.
 
