@@ -14,6 +14,7 @@
 .codex/sqlite
 .codex/.codex-global-state.json
 .codex/*.sqlite*
+.codex/session_index.jsonl
 
 
 **/lazygit/state.yml
@@ -38,3 +39,5 @@
 **/gopherd/*.jsonl
 **/gopherd/session_metadata.json
 **/gopherd/sessions
+
+**/__pycache__
