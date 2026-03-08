@@ -22,6 +22,7 @@ steer = true
 multi_agent = true
 prevent_idle_sleep = true
 voice_transcription = true
+js_repl = true
 
 [agents]
 max_threads = 12
@@ -35,3 +36,20 @@ hide_full_access_warning = true
 
 [tui]
 theme = "catppuccin-mocha"
+
+[[skills.config]]
+path = "/Users/gmurray/.codex/skills/playwriter/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/gmurray/.codex/skills/playwright/SKILL.md"
+enabled = false
+
+[projects."/Users/gmurray/Developer/nvsep"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/tmux-worktrunk-session"]
+trust_level = "trusted"

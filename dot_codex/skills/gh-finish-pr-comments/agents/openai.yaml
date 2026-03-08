@@ -1,4 +1,0 @@
-interface:
-  display_name: "GH Finish PR Comments"
-  short_description: "Commit, push, and resolve PR threads"
-  default_prompt: "Use $gh-finish-pr-comments to commit my addressed review fixes, push the branch, and reply to and resolve the PR threads."
