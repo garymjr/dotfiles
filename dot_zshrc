@@ -33,6 +33,7 @@ export GIT_EDITOR="$EDITOR"
 export CODEX_HOME="${HOME}/.codex"
 export KERL_BUILD_DOCS='yes'
 export ERL_AFLAGS='-kernel shell_history enabled'
+export HOMEBREW_NO_ENV_HINTS=1
 unset MAILCHECK MAIL MAILPATH mailpath
 unsetopt MAIL_WARNING 2>/dev/null
 
@@ -214,3 +215,6 @@ do
   fi
 done
 unset _zsh_hl _zcompdump
+
+# opencode
+export PATH=/Users/gmurray/.opencode/bin:$PATH
