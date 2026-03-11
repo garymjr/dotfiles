@@ -23,7 +23,7 @@ If the token is missing, give the user these steps:
 
 ## Core tasks (use bundled script)
 
-Use `scripts/sentry_api.py` for deterministic API calls. It handles pagination and retries once on transient errors.
+Use the bundled script from the skill directory for deterministic API calls. It handles pagination and retries once on transient errors.
 
 ## Skill path (set once)
 
@@ -33,6 +33,8 @@ export SENTRY_API="$CODEX_HOME/skills/sentry/scripts/sentry_api.py"
 ```
 
 User-scoped skills install under `$CODEX_HOME/skills` (default: `~/.codex/skills`).
+
+When this skill references bundled files under `scripts/`, resolve them relative to the skill directory in `$CODEX_HOME`, not relative to the target repo checkout.
 
 ### 1) List issues (ordered by most recent)
 

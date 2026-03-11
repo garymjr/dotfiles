@@ -11,8 +11,17 @@ Guide to find the open PR for the current branch and address its comments with g
 
 Prereq: ensure `gh` is authenticated (for example, run `gh auth login` once), then run `gh auth status` with escalated permissions (include workflow/repo scopes) so `gh` commands succeed. If sandboxing blocks `gh auth status`, rerun it with `sandbox_permissions=require_escalated`.
 
+Inputs:
+- `repo`: path inside the target repo (default `.`)
+- `gh` authentication for the repo host
+
+When this skill references bundled files under `scripts/` or `assets/`, resolve them relative to the skill directory in `$CODEX_HOME`, not relative to the target repo checkout.
+
 ## 1) Inspect comments needing attention
-- Run scripts/fetch_comments.py which will print out all the comments and review threads on the PR
+- Run the bundled script from the skill directory:
+  - `python "$CODEX_HOME/skills/gh-address-comments/scripts/fetch_comments.py" --repo "."`
+  - Equivalent form: `python "<path-to-skill>/scripts/fetch_comments.py" --repo "."`
+- The script prints all PR comments and review threads for the current branch PR.
 
 ## 2) Ask the user for clarification
 - Number all the review threads and comments and provide a short summary of what would be required to apply a fix for it
