@@ -1,11 +1,20 @@
 {
-  "ui_font_family": "Ioskeley Mono",
-  "theme": "GitHub Dark",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+  "ui_font_family": "Geist",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
   "inlay_hints": {
     "enabled": true
   },
   "disable_ai": true,
-  "buffer_font_family": "Ioskeley Mono",
+  "buffer_font_family": "GeistMono Nerd Font",
   "buffer_font_size": 18,
   "buffer_font_features": {
     "calt": true
