@@ -1,53 +1,41 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use when asked to build or redesign web components, pages, flows, or frontend applications where visual direction, interaction quality, and polished implementation matter.
+description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.
 ---
 
-Create bold, production-grade frontend code that avoids generic AI aesthetics. Implement fully working interfaces with intentional visual direction, not interchangeable templates.
+This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
 
-## Workflow
+The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
 
-1. Clarify product context.
-- Define audience, purpose, primary tasks, and constraints (framework, performance, accessibility, responsiveness).
+## Design Thinking
 
-2. Commit to one clear aesthetic direction.
-- Choose a strong concept and execute it consistently.
-- Pick from distinct directions such as editorial, brutalist, retro-futurist, industrial, playful, organic, or refined minimal.
-- Decide the memorable signature detail before coding.
+Before coding, understand the context and commit to a BOLD aesthetic direction:
+- **Purpose**: What problem does this interface solve? Who uses it?
+- **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic direction.
+- **Constraints**: Technical requirements (framework, performance, accessibility).
+- **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
 
-3. Establish a design system in code.
-- Define CSS variables or tokens for color, type, spacing, radius, depth, and motion timing.
-- Use a dominant palette with deliberate accents.
-- Pair a characterful display font with a readable body font.
+**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
 
-4. Implement complete, functional UI.
-- Deliver working structure, behavior, and states (loading, empty, error, success, hover, focus, disabled).
-- Ensure desktop and mobile quality.
-- Prefer semantic HTML and accessible interactions.
+Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
+- Production-grade and functional
+- Visually striking and memorable
+- Cohesive with a clear aesthetic point-of-view
+- Meticulously refined in every detail
 
-5. Polish for production quality.
-- Tighten spacing rhythm, contrast, hierarchy, and alignment.
-- Refine transitions to support meaning.
-- Remove visual noise and generic defaults.
+## Frontend Aesthetics Guidelines
 
-## Frontend Design Rules
+Focus on:
+- **Typography**: Choose fonts that are beautiful, unique, and interesting. Avoid generic fonts like Arial and Inter; opt instead for distinctive choices that elevate the frontend's aesthetics; unexpected, characterful font choices. Pair a distinctive display font with a refined body font.
+- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes.
+- **Motion**: Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise.
+- **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements. Generous negative space OR controlled density.
+- **Backgrounds & Visual Details**: Create atmosphere and depth rather than defaulting to solid colors. Add contextual effects and textures that match the overall aesthetic. Apply creative forms like gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, decorative borders, custom cursors, and grain overlays.
 
-- Typography: Use expressive, purposeful fonts. Avoid default stacks and overused pairings such as Inter/Roboto/Arial/system.
-- Color: Commit to a cohesive visual language. Avoid generic purple-on-white gradient aesthetics.
-- Layout: Use intentional composition, including asymmetry or controlled density when it supports the concept.
-- Motion: Favor a few high-impact moments (entry sequence, reveal, meaningful hover/focus transitions) over scattered gimmicks.
-- Atmosphere: Build depth with gradients, textures, overlays, or pattern systems instead of flat backgrounds.
-- Consistency: Keep components cohesive across pages and breakpoints.
+NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
 
-## Implementation Expectations
+Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
 
-- Match code complexity to the design ambition.
-- For maximal styles, implement richer effects and transitions with maintainable structure.
-- For minimal styles, show restraint and precision in spacing, typography, and interaction details.
-- Use framework-appropriate patterns (HTML/CSS/JS, React, Vue, etc.) while preserving the same design rigor.
+**IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 
-## Anti-Patterns
-
-- Do not ship cookie-cutter SaaS layouts with default card grids and safe color ramps.
-- Do not reuse the same visual formula across tasks.
-- Do not prioritize speed over craft when the task requests design quality.
+Remember: Codex is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.

@@ -48,6 +48,14 @@ enabled = false
 path = "/Users/gmurray/.codex/skills/playwright/SKILL.md"
 enabled = false
 
+[[skills.config]]
+path = "/Users/gmurray/.codex/skills/chrome-remote-debugging-interactive/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/gmurray/.codex/skills/playwright-interactive/SKILL.md"
+enabled = false
+
 [projects."/Users/gmurray/Developer/nvsep"]
 trust_level = "trusted"
 
