@@ -7,14 +7,14 @@
   "ui_font_family": "Geist",
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
   },
   "inlay_hints": {
     "enabled": true
   },
   "disable_ai": true,
-  "buffer_font_family": "GeistMono Nerd Font",
+  "buffer_font_family": "Maple Mono NF",
   "buffer_font_size": 18,
   "buffer_font_features": {
     "calt": true
@@ -31,9 +31,6 @@
   },
   "indent_guides": {
     "enabled": false
-  },
-  "experimental.theme_overrides": {
-    "border.variant": "#11111b"
   },
   "languages": {},
   "outline_panel": {

@@ -1,4 +1,13 @@
 gui:
+  theme:
+    inactiveBorderColor:
+      - default
+    defaultFgColor:
+      - default
+    selectedLineBgColor:
+      - reverse
+    inactiveViewSelectedLineBgColor:
+      - reverse
   nerdFontsVersion: "3"
 os:
   editInTerminal: true
