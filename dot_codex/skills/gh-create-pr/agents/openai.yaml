@@ -1,4 +1,0 @@
-interface:
-  display_name: "GitHub PR Creator"
-  short_description: "Create complete GitHub pull requests with gh CLI"
-  default_prompt: "Use $gh-create-pr to create a complete pull request from the current branch."
