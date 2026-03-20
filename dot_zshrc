@@ -161,6 +161,46 @@ gd() {
   trash "$base"
 }
 
+wtcodex() {
+  if ! command -v wt >/dev/null 2>&1; then
+    echo "wtcodex: wt not found" >&2
+    return 1
+  fi
+
+  if [[ ! -r /usr/share/dict/words ]]; then
+    echo "wtcodex: /usr/share/dict/words is not readable" >&2
+    return 1
+  fi
+
+  local -a words
+  words=("${(@f)$(awk '
+    /^[[:alpha:]]+$/ {
+      w[++n] = tolower($0)
+    }
+    END {
+      if (n < 2) {
+        exit 1
+      }
+      srand()
+      i = int(rand() * n) + 1
+      j = int(rand() * (n - 1)) + 1
+      if (j >= i) {
+        j++
+      }
+      print w[i]
+      print w[j]
+    }
+  ' /usr/share/dict/words)}")
+
+  if [[ ${#words[@]} -ne 2 ]]; then
+    echo "wtcodex: could not generate a branch name" >&2
+    return 1
+  fi
+
+  local name="codex/${words[1]}-${words[2]}"
+  wt switch --create "$name"
+}
+
 # mise
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
