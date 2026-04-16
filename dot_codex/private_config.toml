@@ -8,25 +8,22 @@ model_reasoning_effort = "medium"
 suppress_unstable_features_warning = true
 approval_policy = "on-request"
 # sandbox_mode = "danger-full-access"
-personality = "friendly"
+personality = "pragmatic"
 plan_mode_reasoning_effort = "high"
-responses_websockets_v2 = true
 approvals_reviewer = "guardian_subagent"
 sandbox_mode = "workspace-write"
+commit_attribution = "Codex <codex@openai.com>"
 
 [features]
-ghost_commit = false
+codex_git_commit = true
 unified_exec = true
 apply_patch_freeform = true
-skills = true
 shell_snapshot = true
-steer = true
 multi_agent = true
 prevent_idle_sleep = true
-voice_transcription = true
 js_repl = true
 guardian_approval = true
-tui_app_server = true
+memories = true
 
 [agents]
 max_threads = 12
@@ -39,7 +36,8 @@ hide_full_access_warning = true
 "gpt-5.3-codex" = "gpt-5.4"
 
 [tui]
-theme = "base16"
+theme = "ansi"
+status_line = ["model-with-reasoning", "current-dir", "context-usage"]
 
 [[skills.config]]
 path = "/Users/gmurray/.codex/skills/playwriter/SKILL.md"
@@ -59,6 +57,14 @@ enabled = false
 
 [[skills.config]]
 path = "/Users/gmurray/.codex/skills/chrome-remote-debugging-interactive/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/gmurray/.codex/skills/gh-address-comments/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/gmurray/.codex/skills/gh-fix-ci/SKILL.md"
 enabled = false
 
 [projects."/Users/gmurray/Developer/nvsep"]
@@ -97,5 +103,77 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Developer/farfield"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Developer/bio-web-demo"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/verify"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/verify-demo"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/verify-demo-2"]
+trust_level = "trusted"
+
+[projects."/Applications/Codex.app"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/codex.me"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/haleys-kitchen"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/pi-go"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/.local/share/opencode"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/atlas"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/symphony-workspaces/03fwrmg2gtu1i8sevi64400gl_28"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/symphony-workspaces/03fwrmg2gtu1i8sevi64400gl_29"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/symphony-workspaces/03fwrmg2gtu1i8sevi64400gl_30"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/code/symphony-workspaces/nvsep-30"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/symphony-workspaces/nvsep-30"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/symphony"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/fizel"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/symphony-workspaces/haley_s-kitchen-31"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/fizel-workspaces/haley_s-kitchen-32"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/overture"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/idpair-central"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/ma_casino_api"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true

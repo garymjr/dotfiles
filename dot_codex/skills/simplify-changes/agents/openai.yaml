@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simplify Changes"
+  short_description: "Review diffs, simplify code, apply fixes"
+  default_prompt: "Use $simplify-changes to review the current changes for reuse, quality, and efficiency issues, then simplify and fix them."

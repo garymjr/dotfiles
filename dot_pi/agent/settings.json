@@ -1,16 +1,6 @@
 {
-  "lastChangelogVersion": "0.52.10",
+  "lastChangelogVersion": "0.53.0",
   "hideThinkingBlock": false,
-  "defaultThinkingLevel": "high",
-  "defaultProvider": "zai",
-  "defaultModel": "glm-4.7",
-  "steeringMode": "one-at-a-time",
-  "enabledModels": [
-    "openai-codex/gpt-5.1",
-    "openai-codex/gpt-5.1-codex-max",
-    "openai-codex/gpt-5.1-codex-mini",
-    "openai-codex/gpt-5.2",
-    "openai-codex/gpt-5.2-codex",
-    "zai/glm-4.7"
-  ]
+  "defaultThinkingLevel": "medium",
+  "steeringMode": "one-at-a-time"
 }

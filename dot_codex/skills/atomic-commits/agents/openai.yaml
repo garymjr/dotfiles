@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atomic Commits"
+  short_description: "Split large diffs into atomic commits"
+  default_prompt: "Use $atomic-commits to turn this large git diff into a safe sequence of atomic commits."

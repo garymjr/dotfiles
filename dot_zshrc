@@ -73,6 +73,20 @@ else
 fi
 alias cz='chezmoi'
 alias lg='lazygit'
+alias oc='opencode attach http://localhost:4096 --dir $(pwd)'
+alias t1="node $HOME/Developer/t1code/apps/tui/bin/t1code.js"
+
+ocserver() {
+  (
+    opencode serve --hostname 0.0.0.0 --port 4096 &
+    local pid=$!
+
+    trap 'kill "$pid" 2>/dev/null' INT TERM HUP EXIT
+
+    caffeinate -is -w "$pid"
+    wait "$pid"
+  )
+}
 
 ga() {
   local target=""
@@ -258,3 +272,11 @@ unset _zsh_hl _zcompdump
 
 # opencode
 export PATH=/Users/gmurray/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/gmurray/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

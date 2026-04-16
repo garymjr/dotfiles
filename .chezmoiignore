@@ -15,6 +15,9 @@
 .codex/.codex-global-state.json
 .codex/*.sqlite*
 .codex/session_index.jsonl
+.codex/.tmp
+.codex/cache
+.codex/plugins/cache
 
 
 **/lazygit/state.yml

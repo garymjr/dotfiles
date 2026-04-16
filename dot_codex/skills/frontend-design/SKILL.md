@@ -1,41 +1,128 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.
+description: Guide frontend visual design away from generic AI-generated patterns and toward clear, product-specific interfaces. Use when generating or refining HTML, CSS, React, Vue, Svelte, or other frontend UI code and the work needs stronger visual taste, tighter art direction, more intentional typography, calmer color choices, cleaner layout hierarchy, or a more human-designed feel. Apply when a UI looks templated, over-decorated, overly rounded, gradient-heavy, dashboard-generic, or disconnected from the product's established design language.
 ---
 
-This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
+# Frontend UI Art Direction
 
-The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
+Shape frontend work so it feels deliberate and product-specific instead of default AI UI. Start by reading the existing interface, then make a few strong visual decisions and follow them consistently.
 
-## Design Thinking
+## Workflow
 
-Before coding, understand the context and commit to a BOLD aesthetic direction:
-- **Purpose**: What problem does this interface solve? Who uses it?
-- **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic direction.
-- **Constraints**: Technical requirements (framework, performance, accessibility).
-- **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
+1. Audit the existing product surface before inventing anything.
+2. Reuse the product's spacing, radii, colors, type, and component patterns when they already exist.
+3. If there is no established direction, choose one clear visual system and apply it consistently.
+4. Remove decorative filler before adding new styling.
+5. Keep layout, motion, and copy in service of the product's job.
 
-**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
+If the task is mainly about breakpoints, fluid layouts, or touch targets, also use [frontend-responsive-ui](/Users/gmurray/.codex/skills/frontend-responsive-ui/SKILL.md).
 
-Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
-- Production-grade and functional
-- Visually striking and memorable
-- Cohesive with a clear aesthetic point-of-view
-- Meticulously refined in every detail
+## Start With What Exists
 
-## Frontend Aesthetics Guidelines
+Before changing styles, inspect a few real files and answer these questions:
 
-Focus on:
-- **Typography**: Choose fonts that are beautiful, unique, and interesting. Avoid generic fonts like Arial and Inter; opt instead for distinctive choices that elevate the frontend's aesthetics; unexpected, characterful font choices. Pair a distinctive display font with a refined body font.
-- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes.
-- **Motion**: Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise.
-- **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements. Generous negative space OR controlled density.
-- **Backgrounds & Visual Details**: Create atmosphere and depth rather than defaulting to solid colors. Add contextual effects and textures that match the overall aesthetic. Apply creative forms like gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, decorative borders, custom cursors, and grain overlays.
+- What colors, font families, radii, shadows, and spacing scales already exist?
+- Does the product feel editorial, enterprise, playful, technical, quiet, dense, or minimal?
+- Which components repeat often enough to define the visual language?
+- What parts feel intentional already, and what parts feel generic or autogenerated?
 
-NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
+Prefer extending the existing system over replacing it. If the repo already has a design system, component library, or token file, follow it.
 
-Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
+## Default Direction
 
-**IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
+When there is no strong existing direction, bias toward restrained product UI:
 
-Remember: Codex is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
+- Use compact to moderate radii, usually `6px` to `12px`.
+- Use solid surfaces, borders, and contrast before reaching for shadows.
+- Use one primary accent and one support accent at most.
+- Use typography and spacing to create hierarchy instead of decorative containers.
+- Use simple motion with opacity, color, or position changes under `200ms`.
+- Use familiar layouts that match the product type instead of inventing novelty.
+
+Aim for interfaces that feel edited. Fewer ideas, applied more consistently, almost always looks better.
+
+## Avoid These Patterns
+
+Treat these as warning signs unless the product explicitly calls for them:
+
+- Large-radius cards, buttons, panels, and sidebars everywhere
+- Gradient-heavy hero styling used to fake taste
+- Glassmorphism, blur haze, glow effects, or detached floating shells
+- Generic dark SaaS dashboards with KPI cards as the first move
+- Decorative eyebrow labels, tiny uppercase captions, or explanatory filler copy
+- Sidebar brand blocks, badge clutter, fake status pills, and ornamental metadata
+- Fake analytics, filler charts, or percentages with no product meaning
+- Over-animated hover states, bounce, scale, or translate effects
+- Excess padding that makes the interface feel expensive but inefficient
+- Default safe font stacks chosen out of convenience rather than fit
+- Layout asymmetry that creates empty space without improving hierarchy
+
+If a choice looks like an easy AI default, pause and choose the cleaner option.
+
+## Use These Patterns Instead
+
+### Layout
+
+- Match the product's actual information architecture.
+- Use straightforward shells: header plus content, sidebar plus content, or sectioned landing page.
+- Keep containers disciplined with consistent gutters and section spacing.
+- Let tables, lists, and forms stay simple when they are the right tool.
+
+### Typography
+
+- Pick one purposeful family or reuse the existing one.
+- Create hierarchy with size, weight, and spacing rather than ornamental labels.
+- Keep body copy readable and concise.
+- Avoid "marketing voice" in internal tools unless the product already uses it.
+
+### Color
+
+- Reuse project colors first.
+- If no palette exists, choose calm, coordinated colors instead of high-saturation defaults.
+- Let neutrals do most of the work and spend accent color intentionally.
+- Preserve strong contrast for text, borders, and active states.
+
+### Components
+
+- Keep buttons, inputs, tabs, and cards understated.
+- Use badges only when they carry real status or taxonomy value.
+- Prefer borders and spacing over stacked panel treatments.
+- Make tables and lists dense enough to be useful, not decorative.
+
+### Motion
+
+- Keep transitions short and quiet.
+- Animate for clarity, not spectacle.
+- Favor opacity or color shifts over scaling, bouncing, or sliding UI chrome.
+
+## Product-Specific Heuristics
+
+Different product types need different defaults:
+
+- Internal tools: favor density, clear scanning, obvious actions, and durable tables or lists.
+- Consumer apps: favor memorable type, stronger composition, and fewer but more expressive accents.
+- Marketing pages: allow larger gestures, but keep the layout intentional and the copy grounded in the product.
+- Data-heavy views: make the data structure itself the design. Do not decorate around it.
+
+Do not force every frontend into a dashboard pattern.
+
+## Copy And Structure
+
+Keep content honest and functional:
+
+- Remove placeholder-sounding subheads and generic product claims.
+- Avoid invented labels like "live pulse" or "command center" unless the product genuinely uses that language.
+- Use section titles only when they help orientation.
+- Let navigation, labels, and real data explain the interface.
+
+## Quick Review Pass
+
+Before finishing, check for these issues:
+
+- Does the UI reuse the product's existing language where possible?
+- Is there any decoration that does not improve hierarchy or meaning?
+- Are radii, spacing, and shadows more restrained than the first draft?
+- Would this still look credible without gradients, glows, and marketing copy?
+- On mobile, does the layout stay intentional instead of collapsing into a long stack of oversized cards?
+
+If the answer to any of these is no, simplify again.

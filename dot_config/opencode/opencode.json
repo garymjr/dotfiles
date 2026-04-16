@@ -4,5 +4,16 @@
   "agent": {},
   "permission": {},
   "mcp": {},
-  "provider": {}
+  "provider": {
+    "openai": {
+      "models": {
+        "gpt-5.4": {
+          "limit": {
+            "context": 258000,
+            "output": 65536
+          }
+        }
+      }
+    }
+  }
 }
