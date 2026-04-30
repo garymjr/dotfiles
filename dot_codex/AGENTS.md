@@ -27,7 +27,7 @@ Keep files below 500 lines when practical. Existing files may grow to 1000 lines
 When asked to commit, inspect the current status, preserve unrelated work, stage intentionally, commit with an appropriate message, and verify the final status.
 When asked to commit and push after a fix, check whether the fix is already committed before creating another commit.
 When asked not to open a PR, stop after commit and push.
-If GitHub CLI auth fails or lacks scopes, run `gh auth status` and try `gh auth refresh -h github.com` before treating GitHub access as blocked.
+If GitHub CLI auth fails in the sandbox, first retry the same `gh` command with network/keychain access so it can use the existing macOS credentials. Use `gh auth status` to inspect state, but do not start `gh auth login` or `gh auth refresh` device-code/browser reauth unless the user explicitly asks or a real missing-scope error remains after keychain access.
 
 ## Infrastructure
 
