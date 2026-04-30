@@ -4,7 +4,6 @@
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha"
   },
-  "ui_font_family": "Geist",
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
@@ -25,25 +24,12 @@
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
   "format_on_save": "off",
-  "git_panel": {
-    "button": true,
-    "dock": "left"
-  },
   "indent_guides": {
     "enabled": false
   },
   "languages": {},
-  "outline_panel": {
-    "button": false,
-    "dock": "left",
-    "indent_size": 10
-  },
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
-  "project_panel": {
-    "indent_size": 10,
-    "dock": "left"
-  },
   "restore_on_startup": "launchpad",
   "tab_bar": {
     "show_nav_history_buttons": false,
