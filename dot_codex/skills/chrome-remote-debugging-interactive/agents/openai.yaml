@@ -1,4 +1,0 @@
-interface:
-  display_name: "Chrome Remote Interactive"
-  short_description: "Persistent browser QA via raw CDP"
-  default_prompt: "Use $chrome-remote-debugging-interactive to connect js_repl to a user-started browser session via the new remote debugging flow, preferring raw CDP and falling back to Puppeteer only if needed."

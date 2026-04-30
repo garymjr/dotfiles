@@ -1,4 +1,4 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 tool_output_token_limit = 25000
 # Leave room for native compaction near the 272–273k context window.
 # Formula: 273000 - (tool_output_token_limit + 15000)
@@ -8,11 +8,15 @@ model_reasoning_effort = "medium"
 suppress_unstable_features_warning = true
 approval_policy = "on-request"
 # sandbox_mode = "danger-full-access"
-personality = "pragmatic"
+personality = "friendly"
 plan_mode_reasoning_effort = "high"
 approvals_reviewer = "guardian_subagent"
 sandbox_mode = "workspace-write"
 commit_attribution = "Codex <codex@openai.com>"
+
+
+
+notify = ["/Users/gmurray/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [features]
 codex_git_commit = true
@@ -24,6 +28,9 @@ prevent_idle_sleep = true
 js_repl = true
 guardian_approval = true
 memories = true
+fast_mode = false
+chronicle = false
+terminal_resize_reflow = true
 
 [agents]
 max_threads = 12
@@ -38,6 +45,9 @@ hide_full_access_warning = true
 [tui]
 theme = "ansi"
 status_line = ["model-with-reasoning", "current-dir", "context-usage"]
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
 
 [[skills.config]]
 path = "/Users/gmurray/.codex/skills/playwriter/SKILL.md"
@@ -169,6 +179,78 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Developer/ma_casino_api"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Developer/demo-templ"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/haleys-hitchen"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-18-stop-the-process-using-port-8080"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/mobidex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-19-what-information-do-you-have-in"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-20-draft-a-password-reset-email-for"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-20-files-mentioned-by-the-user-dark"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-20-files-mentioned-by-the-user-dark-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-20-what-does-this-setting-do-in"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-21-review-recent-sessions-in-codex-and"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/infra-basecamp"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-22-hiifjscdvheropdwarrufhnjightmseqvitalfnhjijudmprpitbpgwnwghkhadcvqmtwfcjjkapwngd"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-22-plan-a-admin-portal-user-management"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-23-create-a-symlink-from-applications-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/codex-usage"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-23/does-downloads-par-sheets-csv-end"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/New project"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/haleys-kitchen-app"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/nvsep-go"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-24/use-the-aws-cli-and-create"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-27/how-can-i-automate-status-updates"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-29/how-can-i-find-my-shell"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-29/can-you-explain-this-vanta-failure"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-04-29/cognito-mfa-not-enabled-for-oauth"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = true
 
@@ -177,3 +259,34 @@ enabled = true
 
 [plugins."github@openai-curated"]
 enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-28T03:03:15Z"
+source_type = "local"
+source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-04-28T03:29:00Z"
+source_type = "local"
+source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[memories]
+no_memories_if_mcp_or_web_search = true
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
