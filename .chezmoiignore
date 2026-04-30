@@ -18,6 +18,12 @@
 .codex/.tmp
 .codex/cache
 .codex/plugins/cache
+.codex/ambient-suggestions
+.codex/automations/**/memory.md
+.codex/*.bak
+.codex/generated_images
+.codex/memories
+.codex/memories_extensions
 
 
 **/lazygit/state.yml
