@@ -1,0 +1,13 @@
+version = 1
+id = "weekly-agents-md-housekeeping"
+kind = "cron"
+name = "Weekly AGENTS.md Housekeeping"
+prompt = "Perform housekeeping on `$CODEX_HOME/AGENTS.md` to keep it concise, current, and optimized for Codex work. Scan the available Codex session records from the prior 7 days for repeated friction, hotspots, common failures, recurring user preferences, and workflow issues. Use those findings to strengthen and harden the agents file only when the guidance is durable and broadly useful. Preserve existing important instructions, remove stale or duplicative guidance, keep wording compact, avoid sensitive data, and do not add one-off project details. Verify adjacent references after editing when applicable, then report the hotspots found, the specific AGENTS.md changes made, and any uncertainty or skipped checks."
+status = "ACTIVE"
+rrule = "FREQ=WEEKLY;BYDAY=MO;BYHOUR=9;BYMINUTE=0;BYSECOND=0"
+model = "gpt-5.4-mini"
+reasoning_effort = "medium"
+execution_environment = "local"
+cwds = ["/Users/gmurray/.codex"]
+created_at = 1777996332732
+updated_at = 1777996602774

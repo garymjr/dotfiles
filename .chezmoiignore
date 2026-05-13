@@ -24,6 +24,9 @@
 .codex/generated_images
 .codex/memories
 .codex/memories_extensions
+.codex/browser/sessions
+.codex/computer-use
+.codex/node_repl
 
 
 **/lazygit/state.yml

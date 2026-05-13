@@ -15,8 +15,7 @@ sandbox_mode = "workspace-write"
 commit_attribution = "Codex <codex@openai.com>"
 
 
-
-notify = ["/Users/gmurray/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+notify = ["/Users/gmurray/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [features]
 codex_git_commit = true
@@ -31,6 +30,9 @@ memories = true
 fast_mode = false
 chronicle = false
 terminal_resize_reflow = true
+hooks = true
+mentions_v2 = true
+goals = true
 
 [agents]
 max_threads = 12
@@ -251,6 +253,84 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-04-29/cognito-mfa-not-enabled-for-oauth"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Developer/central"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-02/i-m-considering-pivotting-a-web"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-03/powers-o-leary-o-leary-o"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/.codex/worktrees/5cf3/haleys-kitchen"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-05/create-an-automation-that-performs-housekeeping"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-05/find-all-ports-currently-being-listened"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-05/codex-theme-v1-codethemeid-absolutely-theme"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-05/files-mentioned-by-the-user-players"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/idpair-tools"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-06/create-a-mobile-recipe-book-that"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-06/compare-go-templ-htmx-tailwind-to"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-07/generate-an-example-argon2id-hash-string"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-07/files-mentioned-by-the-user-bonus"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-07/files-mentioned-by-the-user-university"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-09/use-computer-plugin-computer-use-openai"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-10/use-computer-plugin-computer-use-openai"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-11/use-computer-plugin-computer-use-openai"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/gateway"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-11/use-helium-and-find-the-verify"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-12/files-mentioned-by-the-user-system"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-12/i-need-to-figure-out-how"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-12/files-mentioned-by-the-user-decc"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-12/computer-plugin-computer-use-openai-bundled"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/aegis_aml"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-12/look-at-session-019e1cfd-c93d-7fe1"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-05-12/i-think-this-account-673775671225-is"]
+trust_level = "trusted"
+
 [sandbox_workspace_write]
 network_access = true
 
@@ -263,9 +343,6 @@ enabled = true
 [plugins."computer-use@openai-bundled"]
 enabled = true
 
-[plugins."browser-use@openai-bundled"]
-enabled = true
-
 [plugins."documents@openai-primary-runtime"]
 enabled = true
 
@@ -275,13 +352,19 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
 [marketplaces.openai-bundled]
-last_updated = "2026-04-28T03:03:15Z"
+last_updated = "2026-05-10T21:10:16Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-28T03:29:00Z"
+last_updated = "2026-05-07T19:28:35Z"
 source_type = "local"
 source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -290,3 +373,6 @@ no_memories_if_mcp_or_web_search = true
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
+
+[apps.connector_76869538009648d5b282a4bb21c3d157]
+enabled = false
