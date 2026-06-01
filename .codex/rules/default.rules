@@ -11,6 +11,12 @@ prefix_rule(
 )
 
 prefix_rule(
+    pattern=["git", "add"],
+    decision="allow",
+    justification="Allow Codex to stage explicitly selected files without prompting when the user asks for a commit.",
+)
+
+prefix_rule(
     pattern=["aws", "sts", "get-caller-identity"],
     decision="allow",
     justification="Allow Codex to verify the active AWS identity without prompting.",

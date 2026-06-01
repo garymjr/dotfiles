@@ -27,7 +27,7 @@ hide_full_access_warning = true
 "gpt-5.3-codex" = "gpt-5.4"
 
 [tui]
-theme = "catppuccin-mocha"
+theme = "ansi"
 status_line = ["model-with-reasoning", "current-dir", "context-used", "git-branch"]
 status_line_use_colors = true
 
@@ -112,6 +112,9 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-05-31/add-prefix-rules-for-gh-auth"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Developer/nvsep"]
+trust_level = "trusted"
+
 [plugins."gmail@openai-curated"]
 enabled = true
 
@@ -137,7 +140,7 @@ enabled = true
 enabled = true
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-01T03:50:20Z"
+last_updated = "2026-06-01T18:30:12Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
