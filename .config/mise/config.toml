@@ -1,0 +1,11 @@
+[tools]
+actionlint = "latest"
+awscli = { version = "latest", symlink_bins = "true" }
+bun = "latest"
+go = "1.26.3"
+lazygit = "latest"
+node = "latest"
+pnpm = "latest"
+rust = "latest"
+uv = "latest"
+zig = "latest"
