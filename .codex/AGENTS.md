@@ -1,7 +1,5 @@
 # AGENTS.md
 
-Prefer `xonsh` when working on the user's system.
-
 ## Top Priorities
 
 - Workspace: `~/Developer`.

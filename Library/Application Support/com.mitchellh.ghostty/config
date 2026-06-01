@@ -1,5 +1,5 @@
 font-family = "Maple Mono NF"
-command = /opt/homebrew/bin/xonsh
+command = /bin/zsh
 font-feature = ss01
 font-feature = ss02
 font-feature = ss03

@@ -162,17 +162,17 @@ if command -v atuin > /dev/null 2>&1; then
 fi
 
 # zsh-syntax-highlighting
-# for _zsh_hl in \
-#   /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
-#   /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
-#   /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# do
-#   if [[ -r "$_zsh_hl" ]]; then
-#     source "$_zsh_hl"
-#     break
-#   fi
-# done
-# unset _zsh_hl _zcompdump
+for _zsh_hl in \
+  /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+  /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+do
+  if [[ -r "$_zsh_hl" ]]; then
+    source "$_zsh_hl"
+    break
+  fi
+done
+unset _zsh_hl _zcompdump
 
 # opencode
 export PATH=/Users/gmurray/.opencode/bin:$PATH
