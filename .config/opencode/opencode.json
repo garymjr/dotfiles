@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "agent": {},
+  "permission": {},
+  "mcp": {},
+  "provider": {
+    "openai": {
+      "models": {
+        "gpt-5.4": {
+          "limit": {
+            "context": 258000,
+            "output": 65536
+          }
+        }
+      }
+    }
+  }
+}

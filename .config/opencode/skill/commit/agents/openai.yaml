@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Changes"
+  short_description: "Commit local git changes safely"
+  default_prompt: "Use $commit to inspect, stage, validate, and commit my local git changes."

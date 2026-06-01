@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Design"
+  short_description: "Steer frontend UI away from generic AI patterns"
+  default_prompt: "Use $frontend-design to design or refine this frontend so it feels intentional, product-specific, and not AI-generic."
