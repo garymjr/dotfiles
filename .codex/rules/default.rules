@@ -1,0 +1,138 @@
+prefix_rule(
+    pattern=["gh", "auth", "status"],
+    decision="allow",
+    justification="Allow Codex to check GitHub CLI authentication status without prompting.",
+)
+
+prefix_rule(
+    pattern=["gh", "pr", "view"],
+    decision="allow",
+    justification="Allow Codex to view GitHub pull request metadata without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "sts", "get-caller-identity"],
+    decision="allow",
+    justification="Allow Codex to verify the active AWS identity without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "configure", "list"],
+    decision="allow",
+    justification="Allow Codex to inspect active AWS CLI configuration without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "ec2", [
+        "describe-addresses",
+        "describe-availability-zones",
+        "describe-instances",
+        "describe-internet-gateways",
+        "describe-nat-gateways",
+        "describe-network-acls",
+        "describe-route-tables",
+        "describe-security-groups",
+        "describe-subnets",
+        "describe-tags",
+        "describe-vpc-endpoints",
+        "describe-vpcs",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect EC2 and VPC inventory without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "rds", [
+        "describe-db-clusters",
+        "describe-db-instances",
+        "describe-db-parameter-groups",
+        "describe-db-snapshots",
+        "describe-events",
+        "describe-pending-maintenance-actions",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect RDS inventory and maintenance state without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "ecs", [
+        "describe-clusters",
+        "describe-services",
+        "describe-task-definition",
+        "describe-tasks",
+        "list-clusters",
+        "list-services",
+        "list-task-definitions",
+        "list-tasks",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect ECS inventory without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "elbv2", [
+        "describe-listeners",
+        "describe-load-balancers",
+        "describe-rules",
+        "describe-target-groups",
+        "describe-target-health",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect load balancer inventory without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "route53", [
+        "get-hosted-zone",
+        "list-hosted-zones",
+        "list-resource-record-sets",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect Route 53 DNS configuration without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "acm", [
+        "describe-certificate",
+        "list-certificates",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect ACM certificate metadata without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "cloudformation", [
+        "describe-stack-events",
+        "describe-stack-resources",
+        "describe-stacks",
+        "list-stack-resources",
+        "list-stacks",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect CloudFormation stack metadata without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "iam", [
+        "get-open-id-connect-provider",
+        "get-policy",
+        "get-policy-version",
+        "get-role",
+        "list-attached-role-policies",
+        "list-open-id-connect-providers",
+        "list-policies",
+        "list-role-policies",
+        "list-roles",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect IAM role and policy metadata without prompting.",
+)
+
+prefix_rule(
+    pattern=["aws", "secretsmanager", [
+        "describe-secret",
+        "list-secrets",
+    ]],
+    decision="allow",
+    justification="Allow Codex to inspect Secrets Manager metadata without reading secret values.",
+)
