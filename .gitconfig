@@ -1,0 +1,48 @@
+[user]
+  name = "Gary Murray"
+  email = "garymjr@gmail.com"
+[advice]
+  detachedHead = false
+  statusHints = false
+[color]
+  ui = auto
+[commit]
+  verbose = true
+[core]
+  excludesFile = ~/.config/git/ignore
+  ignorecase = true
+[fetch]
+  prune = true
+[init]
+	defaultBranch = main
+[merge]
+  conflictstyle = zdiff3
+  ff = only
+[pull]
+  rebase = true
+[push]
+  autoSetupRemote = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[rerere]
+  enable = true
+  autoupdate = true
+[credential]
+	helper = -osxkeychain
+  helper = !gh auth git-credential
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[alias]
+  c = commit
+  co = checkout
+  sw = switch
+  s = status
+  st = stash
+  p = pull
+  f = fetch --prune

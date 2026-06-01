@@ -1,0 +1,252 @@
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+from xonsh.built_ins import XSH
+from xonsh.dirstack import cd as xonsh_cd
+
+HOME = Path.home()
+env = XSH.env
+
+
+def _command_exists(command):
+    path = os.pathsep.join(str(part) for part in env.get("PATH", []))
+    return shutil.which(command, path=path) is not None
+
+
+def _prepend_path(*paths):
+    current = [str(path) for path in env.get("PATH", [])]
+    prepend = []
+
+    for raw_path in paths:
+        path = Path(os.path.expandvars(os.path.expanduser(str(raw_path))))
+        path_str = str(path)
+        if path.is_dir() and path_str not in prepend:
+            prepend.append(path_str)
+
+    env["PATH"] = prepend + [path for path in current if path not in prepend]
+
+
+def _execx_from(command, filename):
+    try:
+        script = subprocess.run(
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            check=False,
+            env=env.detype(),
+        ).stdout
+    except OSError:
+        return
+
+    if script.strip():
+        execx(script, "exec", XSH.ctx, filename=filename)
+
+
+# Homebrew environment
+for brew_prefix in (Path("/opt/homebrew"), Path("/usr/local")):
+    if (brew_prefix / "bin" / "brew").is_file():
+        env["HOMEBREW_PREFIX"] = str(brew_prefix)
+        env["HOMEBREW_CELLAR"] = str(brew_prefix / "Cellar")
+        env["HOMEBREW_REPOSITORY"] = str(brew_prefix)
+        _prepend_path(brew_prefix / "bin", brew_prefix / "sbin")
+        break
+
+
+# Keep PATH tidy and predictable.
+_prepend_path(
+    "/usr/local/bin",
+    HOME / "go" / "bin",
+    HOME / ".cargo" / "bin",
+    HOME / ".bun" / "bin",
+    HOME / ".local" / "share" / "nvim" / "mason" / "bin",
+    HOME / ".opencode" / "bin",
+    HOME / ".local" / "bin",
+    HOME / "Library" / "pnpm" / "bin",
+    "/opt/homebrew/opt/libpq/bin",
+)
+
+env["EDITOR"] = "nvim"
+env["VISUAL"] = env["EDITOR"]
+env["GIT_EDITOR"] = env["EDITOR"]
+env["CODEX_HOME"] = str(HOME / ".codex")
+env["KERL_BUILD_DOCS"] = "yes"
+env["ERL_AFLAGS"] = "-kernel shell_history enabled"
+env["HOMEBREW_NO_ENV_HINTS"] = "1"
+
+for mail_var in ("MAILCHECK", "MAIL", "MAILPATH", "mailpath"):
+    env.pop(mail_var, None)
+
+
+# Local xonsh-only overrides.
+local_rc = HOME / ".xonshrc.local"
+if local_rc.is_file():
+    execx(local_rc.read_text(), "exec", XSH.ctx, filename=str(local_rc))
+
+
+# Atuin owns shell history; avoid xonsh's JSON backend, which is noisy on macOS.
+env["XONSH_HISTORY_BACKEND"] = "sqlite"
+env["XONSH_STORE_STDIN"] = False
+env["AUTO_CD"] = True
+env["XONSH_INTERACTIVE_COMMENTS"] = True
+
+
+# Completion and editing behavior
+env["COMPLETIONS_DISPLAY"] = "multi"
+env["CASE_SENSITIVE_COMPLETIONS"] = False
+env["UPDATE_COMPLETIONS_ON_KEYPRESS"] = False
+env["XONSH_COLOR_STYLE"] = env.get("XONSH_COLOR_STYLE", "default")
+
+
+# Aliases
+if _command_exists("eza"):
+    aliases["ls"] = "eza --group-directories-first --color=always --icons=auto"
+    aliases["ll"] = "eza -lah --group-directories-first --git --color=always --icons=auto"
+    aliases["la"] = "eza -a --group-directories-first --color=always --icons=auto"
+    aliases["l"] = "eza --group-directories-first --color=always --icons=auto"
+else:
+    aliases["ll"] = "ls -lah"
+    aliases["la"] = "ls -A"
+    aliases["l"] = "ls -CF"
+
+aliases["cz"] = "chezmoi"
+aliases["lg"] = "lazygit"
+
+
+# mise
+if _command_exists("mise"):
+    _execx_from(["mise", "activate", "xonsh"], "mise")
+
+
+# direnv does not ship a xonsh hook here, so emulate its env export on prompt/chdir.
+if _command_exists("direnv"):
+
+    def _direnv_hook(**kwargs):
+        result = subprocess.run(
+            ["direnv", "export", "json"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            check=False,
+            env=env.detype(),
+        )
+        if result.returncode != 0 or not result.stdout.strip():
+            return
+
+        try:
+            updates = json.loads(result.stdout)
+        except json.JSONDecodeError:
+            return
+
+        for key, value in updates.items():
+            if value is None:
+                env.pop(key, None)
+            else:
+                env[key] = value
+
+    events.on_pre_prompt(_direnv_hook)
+    events.on_chdir(_direnv_hook)
+
+
+# zoxide
+if _command_exists("zoxide"):
+    _execx_from(["zoxide", "init", "xonsh"], "zoxide")
+
+
+# starship
+if _command_exists("starship"):
+    env["STARSHIP_CONFIG"] = str(Path(env.get("XDG_CONFIG_HOME", HOME / ".config")) / "starship.toml")
+    _execx_from(["starship", "init", "xonsh"], "starship")
+
+
+# worktrunk shell integration for xonsh.
+if _command_exists("wt"):
+
+    def _wt(args, stdin=None):
+        args = list(args)
+        use_source = False
+        wt_args = []
+
+        for arg in args:
+            if arg == "--source":
+                use_source = True
+            else:
+                wt_args.append(arg)
+
+        worktrunk_bin = env.get("WORKTRUNK_BIN") or shutil.which(
+            "wt", path=os.pathsep.join(str(part) for part in env.get("PATH", []))
+        )
+
+        if env.get("COMPLETE"):
+            if worktrunk_bin is None:
+                return 127
+            return subprocess.call([worktrunk_bin, *wt_args], env=env.detype())
+
+        with tempfile.NamedTemporaryFile(delete=False) as cd_file:
+            cd_path = cd_file.name
+        with tempfile.NamedTemporaryFile(delete=False) as exec_file:
+            exec_path = exec_file.name
+
+        child_env = env.detype()
+        child_env["WORKTRUNK_DIRECTIVE_CD_FILE"] = cd_path
+        child_env["WORKTRUNK_DIRECTIVE_EXEC_FILE"] = exec_path
+
+        try:
+            if use_source:
+                command = ["cargo", "run", "--bin", "wt", "--quiet", "--", *wt_args]
+            elif worktrunk_bin is not None:
+                command = [worktrunk_bin, *wt_args]
+            else:
+                print("wt: command not found", file=sys.stderr)
+                return 127
+
+            exit_code = subprocess.call(command, env=child_env)
+
+            if os.path.getsize(cd_path) > 0:
+                target_dir = Path(cd_path).read_text().strip()
+                try:
+                    xonsh_cd([target_dir])
+                except Exception:
+                    if exit_code == 0:
+                        exit_code = 1
+
+            if os.path.getsize(exec_path) > 0:
+                exec_code = subprocess.call(Path(exec_path).read_text(), shell=True, env=env.detype())
+                if exit_code == 0:
+                    exit_code = exec_code
+
+            return exit_code
+        finally:
+            for path in (cd_path, exec_path):
+                try:
+                    os.unlink(path)
+                except FileNotFoundError:
+                    pass
+
+    aliases["wt"] = _wt
+    aliases["wtcd"] = lambda args, stdin=None: xonsh_cd(
+        [subprocess.check_output(["wt", "root"], text=True).strip()]
+    )
+
+
+# atuin
+if _command_exists("atuin"):
+    _execx_from(["atuin", "init", "xonsh"], "atuin")
+
+
+# opencode
+_prepend_path(HOME / ".opencode" / "bin")
+
+
+# pnpm
+env["PNPM_HOME"] = str(HOME / "Library" / "pnpm")
+_prepend_path(env["PNPM_HOME"])
+
+# Keep xonsh off the JSON history backend after third-party startup hooks load.
+env["XONSH_HISTORY_BACKEND"] = "sqlite"
