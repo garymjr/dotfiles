@@ -71,7 +71,6 @@ else
   alias la='ls -A'
   alias l='ls -CF'
 fi
-alias cz='chezmoi'
 alias lg='lazygit'
 alias oc='opencode attach http://localhost:4096 --dir $(pwd)'
 alias t1="node $HOME/Developer/t1code/apps/tui/bin/t1code.js"
@@ -141,11 +140,6 @@ fi
 # zoxide
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
-fi
-
-# chezmoi
-if command -v chezmoi >/dev/null 2>&1; then
-  source <(chezmoi completion zsh 2>/dev/null)
 fi
 
 # starship
