@@ -11,7 +11,22 @@
 - If a run fails, inspect the live terminal or log output first and use the exact error text.
 - Assume the user or another agent may have changed files mid-run; refresh context before summarizing or editing.
 - If a `justfile` exists, prefer `just` targets for build/test/lint. If not, use the project's existing conventions.
-- If an expected environment variable appears unset, check `mise` configuration and activation state before asking the user.
+
+## Environment Variables
+
+- Never run broad environment dumps such as `env`, `set`, or `export -p`; query exact variable names and redact values.
+
+## Rules And Notes
+
+- When the user asks to add a rule, add it to `~/.codex/rules/default.rules`.
+- When the user asks to add a note, add it to `~/.codex/AGENTS.md`.
+- When the user asks to add a local note, add it to the nearest `AGENTS.md` file for the active project.
+
+## Secrets And 1Password
+
+- When a command may require secret env vars, prefer `op run -- ...` so 1Password can inject configured secrets.
+- Use `mise exec -- op run -- ...` only when the project relies on `mise` for the command's tool/runtime versions.
+- Never print secret-bearing values; query only exact variable names and redact values in output.
 
 ## Security And Production Data
 
@@ -32,7 +47,6 @@
 ## Runtime Safety
 
 - In zsh, do not use `status` as a variable name.
-- Never run broad environment dumps such as `env`, `set`, or `export -p`; query exact variable names and redact values.
 
 ## Git
 
@@ -41,10 +55,6 @@
 - Branch changes require user consent.
 - Destructive git or filesystem operations are forbidden unless explicitly requested.
 - If already inside a git repo, work in that checkout instead of jumping to a sibling clone unless asked.
-
-## Handoff
-
-- Mention commands run, changed files, unresolved uncertainty, and any opportunistic cleanup.
 
 ## Infrastructure
 

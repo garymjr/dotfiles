@@ -1,0 +1,13 @@
+version = 1
+id = "weekly-permission-rule-review"
+kind = "cron"
+name = "Weekly Permission Rule Review"
+prompt = "Review the previous 7 days of Codex session history and automation/thread logs for repeated sandbox permission requests. Identify permission requests that were approved commonly, treating common as at least 3 approvals for the same narrow command prefix or clearly equivalent command family during the review window. Before editing, read `/Users/gmurray/.codex/rules/default.rules` and compare against existing `prefix_rule(...)` patterns so no duplicate or semantically equivalent rule is added. Add only narrow `prefix_rule` entries for commonly approved commands that are safe to allow by default; avoid broad shells/interpreters such as `python`, `node`, `bash`, or `zsh`, avoid destructive commands such as `rm`, `git reset`, or checkout/revert operations, and avoid rules that could expose secrets, credentials, PII, or production data. Prefer the smallest prefix that covers the repeated approved request, preserve the existing file style, and include a concise justification for each new rule. If no safe non-duplicate rules meet the threshold, leave the file unchanged. Keep output concise with the evidence window, approvals counted, rules added or skipped, file changed, and any uncertainty. Do not print secret-bearing values or broad environment dumps."
+status = "ACTIVE"
+rrule = "RRULE:FREQ=WEEKLY;BYHOUR=9;BYMINUTE=0;BYDAY=FR"
+model = "gpt-5.4-mini"
+reasoning_effort = "medium"
+execution_environment = "local"
+cwds = ["/Users/gmurray/.codex"]
+created_at = 1780418095479
+updated_at = 1780418140122
