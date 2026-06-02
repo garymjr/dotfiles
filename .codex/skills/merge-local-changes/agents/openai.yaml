@@ -1,4 +1,0 @@
-interface:
-  display_name: "Merge Local Changes"
-  short_description: "Fast-forward local changes into a target branch"
-  default_prompt: "Use $merge-local-changes to merge my current branch into the target branch safely."
