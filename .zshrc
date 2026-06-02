@@ -61,6 +61,11 @@ compinit -d "$_zcompdump"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+# 1Password CLI completion
+if command -v op >/dev/null 2>&1; then
+  eval "$(op completion zsh)"
+fi
+
 if command -v eza >/dev/null 2>&1; then
   alias ls='eza --group-directories-first --color=always --icons=auto'
   alias ll='eza -lah --group-directories-first --git --color=always --icons=auto'
