@@ -86,11 +86,29 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-06-02/update-codex-agents-md-to-add"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/review-codex-agents-md-and-find"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/add-a-new-rule-to-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/dotenv_elixir"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/response-meta-version-the-version-of"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/files-mentioned-by-the-user-idpair"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/update-codex-config-toml-to-enable"]
+trust_level = "trusted"
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-02T19:27:46Z"
+last_updated = "2026-06-03T03:19:56Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -126,11 +144,14 @@ enabled = true
 [plugins."chrome@openai-bundled"]
 enabled = true
 
+[plugins."build-web-apps@openai-curated"]
+enabled = true
+
 [features]
 terminal_resize_reflow = true
 memories = true
-js_repl = false
 prevent_idle_sleep = true
+js_repl = false
 
 [desktop]
 conversationDetailMode = "STEPS_COMMANDS"
@@ -204,3 +225,22 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunc
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[[skills.config]]
+name = "build-web-apps:react-best-practices"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:shadcn"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:stripe-best-practices"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:supabase-postgres-best-practices"
+enabled = false
+
+[sandbox_workspace_write]
+network_access = true

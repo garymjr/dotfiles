@@ -96,3 +96,16 @@ prefix_rule(
     decision = "allow",
     justification = "Allows read-only Elixir formatting checks via repo-pinned mise tooling.",
 )
+
+# Allow creating a local feature branch after the user has approved the branch change.
+prefix_rule(
+    pattern = ["git", "switch", "-c"],
+    decision = "allow",
+    justification = "Allows Git to create slash-separated feature branch refs inside .git after explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["git", "add"],
+    decision = "allow",
+    justification = "Allows Git to stage files after explicit user approval.",
+)
