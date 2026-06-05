@@ -5,6 +5,14 @@ elif [[ -x /usr/local/bin/brew ]]; then
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+
 # Keep PATH tidy and predictable.
 typeset -U path PATH
 typeset -a _path_prepend _existing_path_prepend
@@ -16,8 +24,8 @@ _path_prepend=(
   "$HOME/.local/share/nvim/mason/bin"
   "$HOME/.opencode/bin"
   "$HOME/.local/bin"
-  "$HOME/Library/pnpm/bin"
-  "/opt/homebrew/opt/libpq/bin"
+  "$PNPM_HOME/bin"
+  "$HOMEBREW_PREFIX/opt/libpq/bin"
 )
 for _p in "${_path_prepend[@]}"; do
   [[ -d "$_p" ]] && _existing_path_prepend+=("$_p")

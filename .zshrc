@@ -12,17 +12,6 @@ unsetopt MAIL_WARNING 2>/dev/null
 
 [[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
-HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
-mkdir -p "${HISTFILE:h}"
-HISTSIZE=100000
-SAVEHIST=100000
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt hist_reduce_blanks
-setopt extended_history
-
 setopt autocd
 setopt interactive_comments
 bindkey -e
@@ -50,65 +39,6 @@ else
   alias l='ls -CF'
 fi
 alias lg='lazygit'
-alias oc='opencode attach http://localhost:4096 --dir $(pwd)'
-alias t1="node $HOME/Developer/t1code/apps/tui/bin/t1code.js"
-
-ocserver() {
-  (
-    opencode serve --hostname 0.0.0.0 --port 4096 &
-    local pid=$!
-
-    trap 'kill "$pid" 2>/dev/null' INT TERM HUP EXIT
-
-    caffeinate -is -w "$pid"
-    wait "$pid"
-  )
-}
-
-wtcodex() {
-  if ! command -v wt >/dev/null 2>&1; then
-    echo "wtcodex: wt not found" >&2
-    return 1
-  fi
-
-  if [[ ! -r /usr/share/dict/words ]]; then
-    echo "wtcodex: /usr/share/dict/words is not readable" >&2
-    return 1
-  fi
-
-  local -a words
-  words=("${(@f)$(awk '
-    /^[[:alpha:]]+$/ {
-      w[++n] = tolower($0)
-    }
-    END {
-      if (n < 2) {
-        exit 1
-      }
-      srand()
-      i = int(rand() * n) + 1
-      j = int(rand() * (n - 1)) + 1
-      if (j >= i) {
-        j++
-      }
-      print w[i]
-      print w[j]
-    }
-  ' /usr/share/dict/words)}")
-
-  if [[ ${#words[@]} -ne 2 ]]; then
-    echo "wtcodex: could not generate a branch name" >&2
-    return 1
-  fi
-
-  local name="codex/${words[1]}-${words[2]}"
-  wt switch --create "$name"
-}
-
-# direnv
-# if command -v direnv >/dev/null 2>&1; then
-#   eval "$(direnv hook zsh)"
-# fi
 
 # zoxide
 if command -v zoxide >/dev/null 2>&1; then
@@ -137,11 +67,3 @@ do
   fi
 done
 unset _zsh_hl _zcompdump
-
-# pnpm
-export PNPM_HOME="/Users/gmurray/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
