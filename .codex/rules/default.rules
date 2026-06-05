@@ -72,6 +72,55 @@ prefix_rule(
     justification = "Allows read-only AWS CloudWatch alarm inspection via aws CLI.",
 )
 
+# Allow common read-only Terraform and AWS inspection commands without approval.
+prefix_rule(
+    pattern = ["terraform", "validate"],
+    decision = "allow",
+    justification = "Allows read-only Terraform configuration validation.",
+)
+
+prefix_rule(
+    pattern = ["terraform", "plan"],
+    decision = "allow",
+    justification = "Allows read-only Terraform plan previews.",
+)
+
+prefix_rule(
+    pattern = ["terraform", "state", "list"],
+    decision = "allow",
+    justification = "Allows read-only Terraform state listing.",
+)
+
+prefix_rule(
+    pattern = ["aws", "ec2", "describe-route-tables"],
+    decision = "allow",
+    justification = "Allows read-only AWS route table inspection via aws CLI.",
+)
+
+prefix_rule(
+    pattern = ["aws", "rds", "describe-db-instances"],
+    decision = "allow",
+    justification = "Allows read-only AWS RDS instance inspection via aws CLI.",
+)
+
+prefix_rule(
+    pattern = ["aws", "ssm", "get-command-invocation"],
+    decision = "allow",
+    justification = "Allows read-only AWS SSM command result inspection via aws CLI.",
+)
+
+prefix_rule(
+    pattern = ["aws", "ecs", "describe-services"],
+    decision = "allow",
+    justification = "Allows read-only AWS ECS service inspection via aws CLI.",
+)
+
+prefix_rule(
+    pattern = ["aws", "elbv2", "describe-target-health"],
+    decision = "allow",
+    justification = "Allows read-only AWS target health inspection via aws CLI.",
+)
+
 # Allow common non-mutating Elixir validation commands without approval.
 prefix_rule(
     pattern = ["mix", "test"],

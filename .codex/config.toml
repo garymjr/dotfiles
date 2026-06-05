@@ -4,6 +4,7 @@ model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 approvals_reviewer = "auto_review"
 approval_policy = "on-request"
+service_tier = "default"
 
 [projects."/Users/gmurray"]
 trust_level = "trusted"
@@ -104,16 +105,64 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-06-02/update-codex-config-toml-to-enable"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/v1-plan-launchpad-summary-build-launchpad"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/add-two-new-rules-to-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/skill-creator-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/use-aws-cli-with-the-nvsep"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/what-is-ebs-in-aws"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/see-if-you-can-figure-out"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/infra-registry"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-04/accounts-idpair-account-backend-tf-locals"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-04/i-want-to-set-the-user"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-04/i-need-you-to-make-some"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/what-s-the-best-way-to"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/help-me-come-up-with-a"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/how-can-i-stop-mac-from"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/tell-me-if-you-can-access"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/does-zshenv-run-in-interactive-shells"]
+trust_level = "trusted"
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-03T03:19:56Z"
+last_updated = "2026-06-05T18:29:01Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-01T20:01:49Z"
+last_updated = "2026-06-04T06:17:38Z"
 source_type = "local"
 source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -138,13 +187,16 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
+[plugins."build-web-apps@openai-curated"]
+enabled = true
+
 [plugins."browser@openai-bundled"]
 enabled = true
 
 [plugins."chrome@openai-bundled"]
 enabled = true
 
-[plugins."build-web-apps@openai-curated"]
+[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [features]
@@ -163,6 +215,7 @@ hotkey-window-projectless-default-enabled = true
 appearanceLightCodeThemeId = "codex"
 appearanceDarkCodeThemeId = "codex"
 followUpQueueMode = "steer"
+notifications-turn-mode = "always"
 
 [desktop.appearanceLightChromeTheme]
 accent = "#0169cc"
@@ -204,28 +257,6 @@ global = "zed"
 generate_memories = true
 use_memories = true
 
-[mcp_servers.vanta_mcp]
-enabled = true
-url = "https://mcp.vanta.com/mcp"
-
-[mcp_servers.node_repl]
-args = []
-command = "/Applications/Codex.app/Contents/Resources/node_repl"
-startup_timeout_sec = 120
-
-[mcp_servers.node_repl.env]
-NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = ""
-NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
-CODEX_HOME = "/Users/gmurray/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "4b6bfaf4ed2ce9b5cd68e60a61642eb4927a36306ba8c8993f6058607b3530fb"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
-
 [[skills.config]]
 name = "build-web-apps:react-best-practices"
 enabled = false
@@ -244,3 +275,22 @@ enabled = false
 
 [sandbox_workspace_write]
 network_access = true
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
+CODEX_HOME = "/Users/gmurray/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2de792ebdf729e85542c94275f6654821dddce546d9c7374c915f2297529e313"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.602.40724"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"

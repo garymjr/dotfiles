@@ -20,11 +20,14 @@
 /.codex/plugins/cache
 /.codex/process_manager
 /.codex/session_index.jsonl
-/.codex/sessions/
+/.codex/sessions
 /.codex/skills/.system
 /.codex/sqlite
 /.codex/state_5.*
-/.codex/tmp/
+/.codex/tmp
 /.codex/vendor_imports
 /.codex/version.json
 /.codex/worktrees
+/.codex/attachments
+/.codex/generated_images
+/.codex/shell_snapshots

@@ -463,3 +463,38 @@
 - Created `release/2026-06-02` from `origin/develop`, pushed it, and opened draft PR #579: https://github.com/idPair-Inc/nvsep/pull/579 targeting `main` with the `release` label.
 - PR body lists the full current commit list for `release/2026-06-02`.
 - Runtime: about 3 minutes.
+
+## 2026-06-03
+
+- Fetched/pruned `origin`.
+- Latest existing release branch was `origin/release/2026-06-02`.
+- Compared `origin/release/2026-06-02..origin/develop`: `git rev-list --left-right --count` returned `0 6`, so `develop` had 6 commits not on the latest release branch.
+- Updated `release/2026-06-02` to current `origin/develop` and refreshed draft PR #579: https://github.com/idPair-Inc/nvsep/pull/579 targeting `main` with the `release` label.
+- PR body now lists the full current commit list for `release/2026-06-02`.
+- Runtime: about 4 minutes.
+
+## 2026-06-03 22:49:43Z
+
+- Fetched/pruned `origin`.
+- Latest existing release branch was `origin/release/2026-06-02`.
+- Compared `origin/release/2026-06-02..origin/develop`: `git rev-list --left-right --count` returned `0 1`, so `develop` had 1 commit not on the latest release branch: `450398f3 [codex] Fix Sentry Mix.env release crash (#585)`.
+- Created and pushed `release/2026-06-03` from `origin/develop`.
+- Opened draft PR #586: https://github.com/idPair-Inc/nvsep/pull/586 targeting `main` with the `release` label.
+- PR body lists the full current commit list for `release/2026-06-03`.
+- Runtime: about 3 minutes.
+
+## 2026-06-05 18:14:43Z
+
+- Fetched/pruned `origin` and fetched tags first from the writable canonical checkout.
+- No existing release-candidate tags matching `vYYYY.MM.x` were present after the fetch.
+- Compared `origin/main` against the empty baseline; `origin/main` currently has 1067 commits.
+- Created and pushed `v2026.06.1` from current `origin/main`.
+- Runtime: about 1 minute.
+
+## 2026-06-05 18:16:00Z
+
+- Fetched/pruned `origin` and fetched tags first.
+- Latest release-candidate tag was `v2026.06.1`.
+- Compared `origin/main...v2026.06.1`: `git rev-list --left-right --count` returned `1 0`, so `origin/main` had 1 commit not in the latest tag: `f26db9de fix: monthly release tag validation (#597)`.
+- Created and pushed `v2026.06.2` from current `origin/main`.
+- Runtime: about 1 minute.

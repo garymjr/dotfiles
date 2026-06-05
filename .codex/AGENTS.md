@@ -14,11 +14,11 @@
 
 - Never run broad environment dumps such as `env`, `set`, or `export -p`; query exact variable names and redact values.
 
-## Secrets And 1Password
+## Tooling
 
-- When a command may require secret env vars, prefer `op run -- ...` so 1Password can inject configured secrets.
-- Use `mise exec -- op run -- ...` only when the project relies on `mise` for the command's tool/runtime versions.
-- Never print secret-bearing values; query only exact variable names and redact values in output.
+- Use `mise` to manage project runtimes and tool versions.
+- Use 1Password CLI (`op`) to manage secrets.
+- For 1Password Environments, if a command needs `op run --environment`, resolve the environment ID with `OP_ENVIRONMENT_ID` if explicitly set, then `git config --get codex.opEnvironmentId`. Run `op run --environment <id> -- <command>`. If no ID is found, ask the user to set one with `git config --local codex.opEnvironmentId <environment-id>`. To inspect where the project value came from, use `git config --show-origin --get codex.opEnvironmentId`.
 
 ## Security And Production Data
 
@@ -40,6 +40,7 @@
 ## Git
 
 - Destructive git or filesystem operations are forbidden unless explicitly requested.
+- Do not amend commits, force-push, or otherwise rewrite published history without explicit approval for that exact action.
 - If already inside a git repo, work in that checkout instead of jumping to a sibling clone unless asked.
 
 ## Infrastructure
