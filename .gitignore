@@ -31,3 +31,5 @@
 /.codex/attachments
 /.codex/generated_images
 /.codex/shell_snapshots
+/.config/opencode/.DS_Store
+/.config/opencode/package-lock.json

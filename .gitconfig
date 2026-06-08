@@ -17,7 +17,6 @@
 	defaultBranch = main
 [merge]
   conflictstyle = zdiff3
-  ff = only
 [pull]
   rebase = true
 [push]
