@@ -92,6 +92,30 @@ prefix_rule(
 )
 
 prefix_rule(
+    pattern = ["mise", "exec", "--", "terraform", "plan"],
+    decision = "allow",
+    justification = "Allows read-only Terraform plan previews via repo-pinned mise.",
+)
+
+prefix_rule(
+    pattern = ["mise", "exec", "--", "terraform", "validate"],
+    decision = "allow",
+    justification = "Allows read-only Terraform validation via repo-pinned mise.",
+)
+
+prefix_rule(
+    pattern = ["mise", "exec", "--", "terraform", "state", "list"],
+    decision = "allow",
+    justification = "Allows read-only Terraform state listing via repo-pinned mise.",
+)
+
+prefix_rule(
+    pattern = ["mise", "exec", "--", "terraform", "fmt", "-check", "-recursive"],
+    decision = "allow",
+    justification = "Allows read-only Terraform formatting checks via repo-pinned mise.",
+)
+
+prefix_rule(
     pattern = ["aws", "ec2", "describe-route-tables"],
     decision = "allow",
     justification = "Allows read-only AWS route table inspection via aws CLI.",
@@ -157,4 +181,22 @@ prefix_rule(
     pattern = ["git", "add"],
     decision = "allow",
     justification = "Allows Git to stage files after explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["git", "commit"],
+    decision = "allow",
+    justification = "Allows Git to create local commits after explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["git", "fetch", "origin"],
+    decision = "allow",
+    justification = "Allows read-only Git fetches from origin after explicit user approval.",
+)
+
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "allow",
+    justification = "Allows Git pushes to complete remote updates and local index bookkeeping without sandbox metadata failures after explicit user approval.",
 )

@@ -17,8 +17,7 @@
 ## Tooling
 
 - Use `mise` to manage project runtimes and tool versions.
-- Use 1Password CLI (`op`) to manage secrets.
-- For 1Password Environments, if a command needs `op run --environment`, resolve the environment ID with `OP_ENVIRONMENT_ID` if explicitly set, then `git config --get codex.opEnvironmentId`. Run `op run --environment <id> -- <command>`. If no ID is found, ask the user to set one with `git config --local codex.opEnvironmentId <environment-id>`. To inspect where the project value came from, use `git config --show-origin --get codex.opEnvironmentId`.
+- If you use `/private/tmp` for sandbox-safe caches, scratch files, or tool output, clean up the specific files and directories you created before finishing.
 
 ## Security And Production Data
 
@@ -45,4 +44,4 @@
 
 ## Infrastructure
 
-- Do not run `terraform apply` unless explicitly requested.
+- Never run destructive Terraform or OpenTofu commands unless explicitly requested.

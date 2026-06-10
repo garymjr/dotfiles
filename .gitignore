@@ -33,3 +33,4 @@
 /.codex/shell_snapshots
 /.config/opencode/.DS_Store
 /.config/opencode/package-lock.json
+/.codex/.codex-global-state.json.bak

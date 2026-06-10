@@ -153,11 +153,57 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-06-05/does-zshenv-run-in-interactive-shells"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/use-chrome-plugin-chrome-openai-bundled"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/central-tui"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/gateway"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/central-tui-go"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/central"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/add-a-rule-to-codex-rules"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/look-up-the-vanta-test-github"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/can-i-make-a-macos-menubar"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/hubbar"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/create-a-new-skill-in-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/look-at-aws-config-and-tell"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/change-the-line-do-not-run"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/add-a-rule-to-codex-agents"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/skill-creator-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "git-branch"]
+status_line_use_colors = true
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-05T18:29:01Z"
+last_updated = "2026-06-10T04:46:50Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -190,13 +236,13 @@ enabled = true
 [plugins."build-web-apps@openai-curated"]
 enabled = true
 
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
 [plugins."browser@openai-bundled"]
 enabled = true
 
 [plugins."chrome@openai-bundled"]
-enabled = true
-
-[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [features]
@@ -212,40 +258,42 @@ keepRemoteControlAwakeWhilePluggedIn = true
 preventSleepWhileRunning = true
 reviewDelivery = "detached"
 hotkey-window-projectless-default-enabled = true
-appearanceLightCodeThemeId = "codex"
-appearanceDarkCodeThemeId = "codex"
+appearanceLightCodeThemeId = "catppuccin"
+appearanceDarkCodeThemeId = "catppuccin"
 followUpQueueMode = "steer"
-notifications-turn-mode = "always"
+notifications-turn-mode = "unfocused"
+appearanceTheme = "system"
+codeFontSize = 14
 
 [desktop.appearanceLightChromeTheme]
-accent = "#0169cc"
+accent = "#8839ef"
 contrast = 45
-ink = "#0d0d0d"
+ink = "#4c4f69"
 opaqueWindows = false
-surface = "#ffffff"
+surface = "#eff1f5"
 
 [desktop.appearanceLightChromeTheme.fonts]
 code = '"Maple Mono NF"'
 
 [desktop.appearanceLightChromeTheme.semanticColors]
-diffAdded = "#00a240"
-diffRemoved = "#e02e2a"
-skill = "#751ed9"
+diffAdded = "#40a02b"
+diffRemoved = "#d20f39"
+skill = "#8839ef"
 
 [desktop.appearanceDarkChromeTheme]
-accent = "#0169cc"
+accent = "#cba6f7"
 contrast = 60
-ink = "#fcfcfc"
+ink = "#cdd6f4"
 opaqueWindows = false
-surface = "#111111"
+surface = "#1e1e2e"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 code = '"Maple Mono NF"'
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
-diffAdded = "#00a240"
-diffRemoved = "#e02e2a"
-skill = "#b06dff"
+diffAdded = "#a6e3a1"
+diffRemoved = "#f38ba8"
+skill = "#cba6f7"
 
 [desktop.open-in-target-preferences]
 global = "zed"
@@ -278,19 +326,22 @@ network_access = true
 
 [mcp_servers.node_repl]
 args = []
-command = "/Applications/Codex.app/Contents/Resources/node_repl"
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = ""
-NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
 CODEX_HOME = "/Users/gmurray/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2de792ebdf729e85542c94275f6654821dddce546d9c7374c915f2297529e313"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "72614174f4dad67a58d46a3ac759cffb45c92fa48a293af4c4ea35102ba391ba"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.602.40724"
+BROWSER_USE_CODEX_APP_VERSION = "26.608.12217"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[mcp_servers.vanta]
+url = "https://mcp.vanta.com/mcp"

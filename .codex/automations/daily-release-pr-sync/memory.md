@@ -218,6 +218,14 @@
 
 ## 2026-05-06 10:00:00 MDT
 
+## 2026-06-05
+
+- Fetched/pruned `origin` and fetched tags.
+- Latest existing release-candidate tag overall is `v2026.06.3`.
+- Compared `v2026.06.3...origin/main`: `git rev-list --left-right --count` returned `0 0`, so `origin/main` matches the latest release-candidate tag.
+- No `v2026.06.4` tag was created or pushed.
+- Runtime: under 1 minute.
+
 - Fetched/pruned `origin`; `origin/develop` advanced to `ad86eb0b`.
 - Latest existing release branch before this run was `origin/release/2026-05-05`.
 - Compared `origin/release/2026-05-05..origin/develop`: 12 commits missing from the release branch.
@@ -498,3 +506,11 @@
 - Compared `origin/main...v2026.06.1`: `git rev-list --left-right --count` returned `1 0`, so `origin/main` had 1 commit not in the latest tag: `f26db9de fix: monthly release tag validation (#597)`.
 - Created and pushed `v2026.06.2` from current `origin/main`.
 - Runtime: about 1 minute.
+
+## 2026-06-09 17:00:00Z
+
+- Fetched/pruned `origin` and fetched tags first from the writable canonical checkout.
+- Latest release-candidate tag was `v2026.06.3`.
+- Compared `v2026.06.3...origin/main`: `git rev-list --left-right --count` returned `0 2`, so `origin/main` had 2 commits not in the latest tag: `8fbab8717 chore: ignore local Codex config (#601)` and `afcd2f796 revert: app-managed admin MFA (#603)`.
+- Created and pushed `v2026.06.4` from current `origin/main`.
+- Runtime: about 2 minutes.
