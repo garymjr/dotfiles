@@ -1,0 +1,11 @@
+interface:
+  display_name: "CodeRabbit"
+  short_description: "Find unresolved CodeRabbit PR comments"
+  default_prompt: "Use $coderabbit to find unresolved CodeRabbit comments on the active PR for this branch."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "github"
+      description: "GitHub connector for pull request metadata and comments"
+      transport: "streamable_http"
+      url: "https://api.githubcopilot.com/mcp/"

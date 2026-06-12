@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rule Maintenance"
+  short_description: "Review Codex approval rules safely"
+  default_prompt: "Use $rule-maintenance to review last week's Codex threads and propose safe updates to ~/.codex/rules/default.rules."

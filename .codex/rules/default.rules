@@ -72,49 +72,6 @@ prefix_rule(
     justification = "Allows read-only AWS CloudWatch alarm inspection via aws CLI.",
 )
 
-# Allow common read-only Terraform and AWS inspection commands without approval.
-prefix_rule(
-    pattern = ["terraform", "validate"],
-    decision = "allow",
-    justification = "Allows read-only Terraform configuration validation.",
-)
-
-prefix_rule(
-    pattern = ["terraform", "plan"],
-    decision = "allow",
-    justification = "Allows read-only Terraform plan previews.",
-)
-
-prefix_rule(
-    pattern = ["terraform", "state", "list"],
-    decision = "allow",
-    justification = "Allows read-only Terraform state listing.",
-)
-
-prefix_rule(
-    pattern = ["mise", "exec", "--", "terraform", "plan"],
-    decision = "allow",
-    justification = "Allows read-only Terraform plan previews via repo-pinned mise.",
-)
-
-prefix_rule(
-    pattern = ["mise", "exec", "--", "terraform", "validate"],
-    decision = "allow",
-    justification = "Allows read-only Terraform validation via repo-pinned mise.",
-)
-
-prefix_rule(
-    pattern = ["mise", "exec", "--", "terraform", "state", "list"],
-    decision = "allow",
-    justification = "Allows read-only Terraform state listing via repo-pinned mise.",
-)
-
-prefix_rule(
-    pattern = ["mise", "exec", "--", "terraform", "fmt", "-check", "-recursive"],
-    decision = "allow",
-    justification = "Allows read-only Terraform formatting checks via repo-pinned mise.",
-)
-
 prefix_rule(
     pattern = ["aws", "ec2", "describe-route-tables"],
     decision = "allow",
@@ -145,30 +102,6 @@ prefix_rule(
     justification = "Allows read-only AWS target health inspection via aws CLI.",
 )
 
-# Allow common non-mutating Elixir validation commands without approval.
-prefix_rule(
-    pattern = ["mix", "test"],
-    decision = "allow",
-    justification = "Allows local Elixir test runs via mix.",
-)
-
-prefix_rule(
-    pattern = ["mix", "format", "--check-formatted"],
-    decision = "allow",
-    justification = "Allows read-only Elixir formatting checks via mix.",
-)
-
-prefix_rule(
-    pattern = ["mix", "test"],
-    decision = "allow",
-    justification = "Allows local Elixir test runs via repo-pinned mise tooling.",
-)
-
-prefix_rule(
-    pattern = ["mix", "format", "--check-formatted"],
-    decision = "allow",
-    justification = "Allows read-only Elixir formatting checks via repo-pinned mise tooling.",
-)
 
 # Allow creating a local feature branch after the user has approved the branch change.
 prefix_rule(

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thread Maintenance"
+  short_description: "Archive stale Codex threads"
+  default_prompt: "Use $thread-maintenance to archive Codex threads older than 7 days."

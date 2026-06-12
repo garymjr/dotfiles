@@ -514,3 +514,19 @@
 - Compared `v2026.06.3...origin/main`: `git rev-list --left-right --count` returned `0 2`, so `origin/main` had 2 commits not in the latest tag: `8fbab8717 chore: ignore local Codex config (#601)` and `afcd2f796 revert: app-managed admin MFA (#603)`.
 - Created and pushed `v2026.06.4` from current `origin/main`.
 - Runtime: about 2 minutes.
+
+## 2026-06-10 22:02:37Z
+
+- Fetched/pruned `origin` and fetched tags first.
+- Latest release-candidate tag overall was `v2026.06.4`.
+- Compared `v2026.06.4...origin/main`: `git rev-list --left-right --count` returned `0 1`, so `origin/main` had 1 commit not in the latest tag: `2530fbc1 feat: add API v2 persons and reinstatements (#604)`.
+- Created and pushed `v2026.06.5` from current `origin/main`.
+- Runtime: about 1 minute.
+
+## 2026-06-11 22:02:45Z
+
+- Fetched/pruned `origin` and fetched tags first.
+- Latest release-candidate tag overall was `v2026.06.6`.
+- Compared `v2026.06.6...origin/main`: `git rev-list --left-right --count` returned `0 1`, so `origin/main` had 1 commit not in the latest tag: `3520edf6 feat: migrate NVSEP infra into this repo and simplify OpenTofu workflows (#608)`.
+- Created and pushed `v2026.06.7` from current `origin/main`.
+- Runtime: about 2 minutes.
