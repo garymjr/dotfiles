@@ -40,6 +40,12 @@ else
 fi
 alias lg='lazygit'
 
+rcd() {
+  local repo_root
+  repo_root="$(git rev-parse --show-toplevel 2>/dev/null)" || return
+  builtin cd "$repo_root"
+}
+
 # zoxide
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
