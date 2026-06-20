@@ -1,0 +1,503 @@
+notify = ["/Users/gmurray/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approvals_reviewer = "auto_review"
+approval_policy = "on-request"
+service_tier = "default"
+
+[projects."/Users/gmurray"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/.codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/idpair-central"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/ma_casino_api"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/i-keep-getting-this-error-in"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/nvsep"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/update-the-global-agents-md-file"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/find-the-automation-in-codex-backup"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/how-do-you-deactivate-a-user"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/i-need-to-deprovision-the-user"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/how-can-i-make-it-so"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/how-do-i-disable-a-user"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/chrome-plugin-chrome-openai-bundled-use"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-01/files-mentioned-by-the-user-agents"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/i-want-to-start-migrating-my"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/i-want-to-create-a-new"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/use-the-nvsep-aws-profile-and"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/use-chrome-plugin-chrome-openai-bundled"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/use-the-nvsep-aws-profile-and-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/use-the-aws-cli-with-nvsep"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/use-chrome-plugin-chrome-openai-bundled-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/use-chrome-plugin-chrome-openai-bundled-3"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/v1-plan-launchpad-summary-build-launchpad"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/look-up-the-new-aws-storage"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/infra-basecamp"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/launchpad"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/update-codex-agents-md-to-add"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/review-codex-agents-md-and-find"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/add-a-new-rule-to-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/dotenv_elixir"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/response-meta-version-the-version-of"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/files-mentioned-by-the-user-idpair"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-02/update-codex-config-toml-to-enable"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/v1-plan-launchpad-summary-build-launchpad"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/add-two-new-rules-to-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/skill-creator-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/use-aws-cli-with-the-nvsep"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/what-is-ebs-in-aws"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-03/see-if-you-can-figure-out"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/infra-registry"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-04/accounts-idpair-account-backend-tf-locals"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-04/i-want-to-set-the-user"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-04/i-need-you-to-make-some"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/what-s-the-best-way-to"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/help-me-come-up-with-a"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/how-can-i-stop-mac-from"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/tell-me-if-you-can-access"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/does-zshenv-run-in-interactive-shells"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-05/use-chrome-plugin-chrome-openai-bundled"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/central-tui"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/gateway"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/central-tui-go"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/central"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/add-a-rule-to-codex-rules"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/look-up-the-vanta-test-github"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/can-i-make-a-macos-menubar"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/hubbar"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/create-a-new-skill-in-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/look-at-aws-config-and-tell"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/change-the-line-do-not-run"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-09/add-a-rule-to-codex-agents"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/skill-creator-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/skill-creator-users-gmurray-codex-skills-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/use-rule-maintenance-users-gmurray-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/update-the-weekly-permission-rule-review"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/skill-creator-users-gmurray-codex-skills-3"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/run-thread-maintenance-users-gmurray-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/is-there-a-global-rule-in"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-10/skill-creator-users-gmurray-codex-skills-4"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/ghui"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-11/i-m-finding-the-pinned-summary"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-11/look-up-vanta-vulnerabilities-for-ma"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-11/what-does-vanta-expect-for-this"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-12/use-the-repobar-cli-and-hide"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-12/use-aws-cli-users-gmurray-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-12/look-up-the-vanta-test-aws"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-13/find-the-prodecs-ecs-service-on"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-14/thread-maintenance-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-14/find-a-delete-all-archived-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-14/find-and-delete-all-archived-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-14/what-changes-can-be-made-to"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-14/i-want-to-ctrl-p-to"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/files-mentioned-by-the-user-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/skill-creator-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/use-aws-cli-users-gmurray-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/look-up-ma-casino-api-using"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/skill-cleaner-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/look-up-the-vanata-test-aws"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/build-macos-apps-plugin-build-macos"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/files-mentioned-by-the-user-codex-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/AWSBar"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/ghbar"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-15/can-you-tell-what-editor-apps"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-16/add-two-new-rules-to-codex"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-16/i-want-you-to-use-aws"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-16/using-the-idpair-profile-i-need"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-16/this-thread-will-serve-to-be"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-17/update-the-opentofu-skill-to-prefer"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-17/skill-creator-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-17/add-codex-completion-to-zshrc"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-17/create-a-pinned-cto-discussion-thread"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-17/cto-discussion"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-18/plugin-creator-users-gmurray-codex-skills"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-19/sk"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-19/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-19/remove-unused-dynamodb-lock-tables"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-19/aws-resource-regions-guardduty-scope"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-19/d"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-19/new-chat-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-20/l"]
+trust_level = "trusted"
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "git-branch"]
+status_line_use_colors = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-20T17:08:32Z"
+source_type = "local"
+source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-20T04:02:14Z"
+source_type = "local"
+source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."sentry@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."build-web-apps@openai-curated"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."greptile-pr-comments@personal"]
+enabled = true
+
+[plugins."greptile@personal"]
+enabled = true
+
+[features]
+terminal_resize_reflow = true
+memories = true
+prevent_idle_sleep = true
+js_repl = false
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = true
+keepRemoteControlAwakeWhilePluggedIn = true
+preventSleepWhileRunning = true
+reviewDelivery = "inline"
+hotkey-window-projectless-default-enabled = true
+appearanceLightCodeThemeId = "codex"
+appearanceDarkCodeThemeId = "codex"
+followUpQueueMode = "steer"
+notifications-turn-mode = "always"
+appearanceTheme = "system"
+codeFontSize = 14
+worktree-keep-count = 5
+usePointerCursors = true
+
+[desktop.appearanceLightChromeTheme]
+accent = "#6f9ba6"
+contrast = 45
+ink = "#141414"
+opaqueWindows = true
+surface = "#fcfcfc"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = '"GeistMono Nerd Font"'
+ui = "Geist"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#55a583"
+diffRemoved = "#e75e78"
+skill = "#206595"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#88c0d0"
+contrast = 50
+ink = "#e4e4e4"
+opaqueWindows = true
+surface = "#181818"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = '"Geist Mono", ui-monospace, "SFMono-Regular"'
+ui = "Geist, Inter"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#70b489"
+diffRemoved = "#fc6b83"
+skill = "#82d2ce"
+
+[desktop.open-in-target-preferences]
+global = "zed"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/gmurray/Developer/nvsep" = "zed"
+"/Users/gmurray/Developer/central" = "ghostty"
+"/Users/gmurray/.codex/worktrees/b4dd/central" = "ghostty"
+
+[memories]
+generate_memories = true
+use_memories = true
+
+[[skills.config]]
+name = "build-web-apps:react-best-practices"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:shadcn"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:stripe-best-practices"
+enabled = false
+
+[[skills.config]]
+name = "build-web-apps:supabase-postgres-best-practices"
+enabled = false
+
+[sandbox_workspace_write]
+network_access = true
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
+CODEX_HOME = "/Users/gmurray/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "4cfaeb70b54d114e1cd56bc0f85d04e1b344a5049cddb729e2b1161b9ff3008a"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.616.41845"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[mcp_servers.vanta]
+url = "https://mcp.vanta.com/mcp"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mise"
+  short_description: "Work cleanly with mise tasks and toolchains"
+  default_prompt: "Use $mise to inspect and improve this project's mise tasks."

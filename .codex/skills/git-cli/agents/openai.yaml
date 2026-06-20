@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git CLI"
+  short_description: "Run Git commands safely in Codex"
+  default_prompt: "Use $git-cli to run Git operations while avoiding known Codex sandbox metadata issues."

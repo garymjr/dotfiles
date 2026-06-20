@@ -1,0 +1,25 @@
+{
+  "name": "greptile",
+  "version": "0.1.0+codex.20260619220120",
+  "description": "Review, fix, reply to, and resolve Greptile comments on GitHub pull requests.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Greptile",
+    "shortDescription": "Review Greptile PR comments",
+    "longDescription": "Use the GitHub app to inspect Greptile comments on pull requests, analyze actionable feedback, implement focused fixes, validate them locally, reply to handled threads, and resolve the conversations addressed by changes.",
+    "developerName": "Local developer",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Review Greptile comments on this PR",
+      "Summarize unresolved Greptile feedback"
+    ]
+  },
+  "apps": "./.app.json"
+}

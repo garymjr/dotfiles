@@ -1,0 +1,4 @@
+interface:
+  display_name: "SwiftPM CLI"
+  short_description: "Run SwiftPM safely in Codex"
+  default_prompt: "Use $swiftpm-cli to run SwiftPM build or test commands without known sandbox failures."

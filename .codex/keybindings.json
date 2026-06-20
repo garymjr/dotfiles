@@ -1,0 +1,22 @@
+[
+  {
+    "command": "globalDictationToggle",
+    "key": "Command+Alt+Space"
+  },
+  {
+    "command": "hotkeyWindow",
+    "key": "Alt+Space"
+  },
+  {
+    "command": "toggleMaximizeSidePanel",
+    "key": "Command+Shift+F"
+  },
+  {
+    "command": "toggleSidebar",
+    "key": "Command+S"
+  },
+  {
+    "command": "toggleSidePanel",
+    "key": "Command+B"
+  }
+]
