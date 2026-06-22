@@ -33,6 +33,11 @@ if command -v codex >/dev/null 2>&1; then
   eval "$(codex completion zsh)"
 fi
 
+# mise completion
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise completion zsh)"
+fi
+
 if command -v eza >/dev/null 2>&1; then
   alias ls='eza --group-directories-first --color=always --icons=auto'
   alias ll='eza -lah --group-directories-first --git --color=always --icons=auto'
