@@ -14,7 +14,7 @@ description: "Use when tasks involve reading, creating, or reviewing PDF files w
 ## Workflow
 1. Prefer visual review: render PDF pages to PNGs and inspect them.
    - Use `pdftoppm` if available.
-   - If unavailable, install Poppler or ask the user to review the output locally.
+   - If unavailable, use an existing local renderer or ask the user to review the output locally; do not install system packages without approval.
 2. Use `reportlab` to generate PDFs when creating new documents.
 3. Use `pdfplumber` (or `pypdf`) for text extraction and quick checks; do not rely on it for layout fidelity.
 4. After each meaningful update, re-render pages and verify alignment, spacing, and legibility.
@@ -24,16 +24,12 @@ description: "Use when tasks involve reading, creating, or reviewing PDF files w
 - Write final artifacts under `output/pdf/` when working in this repo.
 - Keep filenames stable and descriptive.
 
-## Dependencies (install if missing)
-Prefer `uv` for dependency management.
+## Dependencies
+Prefer existing project, workspace, or bundled dependencies. If a Python package is missing and installation is needed, use a project-local or temporary environment with `uv`; do not install globally.
 
-Python packages:
+Python packages, in a local or temporary environment:
 ```
 uv pip install reportlab pdfplumber pypdf
-```
-If `uv` is unavailable:
-```
-python3 -m pip install reportlab pdfplumber pypdf
 ```
 System tools (for rendering):
 ```
@@ -44,7 +40,7 @@ brew install poppler
 sudo apt-get install -y poppler-utils
 ```
 
-If installation isn't possible in this environment, tell the user which dependency is missing and how to install it locally.
+System package installs such as Homebrew, apt, or sudo require user approval. If installation is not appropriate in this environment, tell the user which dependency is missing and how to install it locally.
 
 ## Environment
 No required environment variables.

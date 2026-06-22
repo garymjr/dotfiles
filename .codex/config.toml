@@ -1,6 +1,7 @@
 notify = ["/Users/gmurray/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 model = "gpt-5.5"
 model_reasoning_effort = "medium"
+personality = "pragmatic"
 sandbox_mode = "workspace-write"
 approvals_reviewer = "auto_review"
 approval_policy = "on-request"
@@ -342,6 +343,30 @@ trust_level = "trusted"
 [projects."/Users/gmurray/.dotfiles"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/i"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/i-have"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/i-have-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/i-have-approve-for-me-selected"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/find"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/lo"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-21/lo-2"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch"]
 status_line_use_colors = true
@@ -350,7 +375,7 @@ status_line_use_colors = true
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-20T17:08:32Z"
+last_updated = "2026-06-21T03:12:44Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -413,7 +438,7 @@ reviewDelivery = "inline"
 hotkey-window-projectless-default-enabled = true
 appearanceLightCodeThemeId = "codex"
 appearanceDarkCodeThemeId = "codex"
-followUpQueueMode = "steer"
+followUpQueueMode = "queue"
 notifications-turn-mode = "always"
 appearanceTheme = "system"
 codeFontSize = 14
@@ -444,7 +469,7 @@ opaqueWindows = true
 surface = "#181818"
 
 [desktop.appearanceDarkChromeTheme.fonts]
-code = '"Geist Mono", ui-monospace, "SFMono-Regular"'
+code = '"GeistMono Nerd Font", ui-monospace, "SFMono-Regular"'
 ui = "Geist, Inter"
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
@@ -494,12 +519,12 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_nod
 NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
 CODEX_HOME = "/Users/gmurray/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "4cfaeb70b54d114e1cd56bc0f85d04e1b344a5049cddb729e2b1161b9ff3008a"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2c20141b13bec5a64cd2874d8e2df011430d5b1a70e4f5425aa10d01743311a8"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.616.41845"
+BROWSER_USE_CODEX_APP_VERSION = "26.616.51431"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [mcp_servers.vanta]

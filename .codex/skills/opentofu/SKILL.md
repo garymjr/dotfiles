@@ -35,6 +35,7 @@ Use this skill for infrastructure-as-code work where state, remote backends, pro
    - Before `tofu init`, `tofu validate`, or `tofu plan` in Codex, set scoped temp paths such as `TF_DATA_DIR` and `TF_PLUGIN_CACHE_DIR` under `/private/tmp` when the root does not already provide safe local paths. Clean up only the temp directories you created.
    - Run `tofu init -reconfigure -input=false` when backend/provider metadata is stale or state/plan commands require initialization.
    - For stateful behavior, use `tofu plan -detailed-exitcode -input=false -no-color` in each affected root. A passing validate is not proof that OpenTofu will keep live infrastructure unchanged.
+   - For requested review or validation, scoped `tofu init`, `tofu validate`, and `tofu plan` are acceptable without separate confirmation when they are read-only, use the intended root/profile/backend, and avoid exposing secrets or production data.
    - Treat exit code `0` as no diff, `2` as a non-empty plan to inspect and summarize, and `1` as an error to diagnose.
    - When a plan runs, tell the user what it would change: action counts, resource addresses, replacements/destroys, important argument changes, and output changes when visible.
    - Do not run `tofu apply`, `destroy`, state mutation, import, taint, or moved-state operations unless explicitly requested or confirmed for that exact target.

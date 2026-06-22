@@ -1,4 +1,0 @@
-interface:
-  display_name: "CLI Sandbox Skill Maintenance"
-  short_description: "Maintain CLI sandbox skills from sessions"
-  default_prompt: "Use $cli-sandbox-skill-maintenance to scan recent Codex sessions for CLI sandbox failures and update the relevant CLI skills."

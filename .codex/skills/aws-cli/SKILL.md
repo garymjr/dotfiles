@@ -59,6 +59,8 @@ Before reporting account-specific results or performing any confirmed mutation, 
 
 Default to read-only for AWS investigation and production work unless mutation is explicitly requested or confirmed.
 
+After the intended profile, account, and region are resolved, continue narrow read-only `sts`, `describe-*`, `list-*`, and `get-*` investigation without re-confirming each command, as long as the query stays within the user's requested scope and avoids sensitive payloads.
+
 Never run destructive AWS commands without confirmation, especially against prod accounts. This includes deleting resources, modifying IAM, changing networking, changing databases, or updating production infrastructure.
 
 Before any AWS mutation, state the exact command, target account/profile/region, and expected effect. For production or destructive changes, wait for explicit confirmation after stating those details.

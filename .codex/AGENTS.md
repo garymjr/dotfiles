@@ -2,6 +2,7 @@
 
 ## Top Priorities
 
+- Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Protect secrets, PII, credentials, and production data.
 
 ## Autonomy
@@ -14,6 +15,7 @@
 ## Validation Autonomy
 
 - If a formatter, linter, typecheck, build, or focused test fails because of the current change, attempt a focused fix and rerun the relevant check without asking first.
+- If validation requires directly-caused snapshot, fixture, lockfile, generated-code, or documentation updates, make those updates and report the command that produced them.
 - If the failure appears unrelated to the current change, do not broaden the task; report the exact failure and the evidence that it appears pre-existing.
 
 ## Tests And Docs
@@ -24,6 +26,7 @@
 ## Local Commands
 
 - Run read-only inspection commands and project-local validation commands without asking when they do not access secrets, production data, external services, or destructive operations.
+- Run read-only Git inspection without asking, including `git status`, `git diff`, `git show`, `git log`, branch, remote, and blame queries.
 - Prefer narrow commands first, then broaden only when needed to diagnose the current task.
 
 ## Evidence And Verification
@@ -39,6 +42,7 @@
 ## Tooling
 
 - Use `mise` to manage project runtimes and tool versions.
+- If a local tool fails only because cache, scratch, or build metadata paths are blocked, retry once with a scoped `/private/tmp/...` path when that does not change product behavior, dependencies, infrastructure, secrets, or production data.
 - If you use `/private/tmp` for sandbox-safe caches, scratch files, or tool output, clean up the specific files and directories you created before finishing.
 
 ## Security And Production Data

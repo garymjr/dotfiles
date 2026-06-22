@@ -1,4 +1,0 @@
-interface:
-  display_name: "Go CLI"
-  short_description: "Run Go commands safely in Codex"
-  default_prompt: "Use $go-cli to run Go test, build, or tooling commands with writable caches in Codex."
