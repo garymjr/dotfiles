@@ -1,4 +1,0 @@
-interface:
-  display_name: "OpenTofu"
-  short_description: "Plan and edit OpenTofu infrastructure safely"
-  default_prompt: "Use $opentofu to inspect, edit, validate, and plan an OpenTofu infrastructure change safely."

@@ -5,69 +5,36 @@
 - Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Protect secrets, PII, credentials, and production data.
 
-## Autonomy
+## Operating Mode
 
-- If the user asks for a concrete outcome and the implementation path is clear, proceed through inspection, editing, and validation without asking for confirmation at each step.
-- Make reasonable local decisions about naming, file placement, helper extraction, and test shape when the surrounding project already shows a pattern.
-- When there are multiple safe implementation choices, choose the smallest one that satisfies the request and note the choice in the final summary.
-- Ask only when the decision would materially affect product behavior, security posture, production data, infrastructure, dependencies, public APIs, or Git history.
+- Make reasonable local choices about naming, file placement, helper extraction, test shape, and small nearby papercuts when the repo already shows a pattern.
+- Run read-only inspection, read-only Git commands, project-local validation, and explicit user-requested read-only external probes without a separate approval gate. Verify identity/scope first for production, auth, infra, or data services, and keep output metadata-only when sensitive data could be present.
+- Choose the smallest safe implementation that satisfies the request; do not stop at proposals, placeholders, stubs, mock-only paths, or TODO-only code.
+- Ask only before decisions that materially affect product behavior, security posture, production data, infrastructure, dependencies, public APIs, or Git history.
 
-## Validation Autonomy
+## Validation
 
-- If a formatter, linter, typecheck, build, or focused test fails because of the current change, attempt a focused fix and rerun the relevant check without asking first.
-- If validation requires directly-caused snapshot, fixture, lockfile, generated-code, or documentation updates, make those updates and report the command that produced them.
-- If the failure appears unrelated to the current change, do not broaden the task; report the exact failure and the evidence that it appears pre-existing.
+- If a formatter, linter, typecheck, build, or focused test fails because of the current change, fix it and rerun the relevant check.
+- Update directly-caused tests, fixtures, snapshots, lockfiles, generated code, docs, or examples when needed to verify the change; report the command used.
+- If a failure appears unrelated, stop broadening and report the exact error plus why it looks pre-existing.
 
-## Tests And Docs
-
-- Add or update nearby tests, fixtures, snapshots, README sections, comments, or examples when they are directly needed to verify or explain the requested change.
-- Update generated snapshots or lockfiles only when they are a direct consequence of the requested change and the command that produced them is reported.
-
-## Local Commands
-
-- Run read-only inspection commands and project-local validation commands without asking when they do not access secrets, production data, external services, or destructive operations.
-- Run read-only Git inspection without asking, including `git status`, `git diff`, `git show`, `git log`, branch, remote, and blame queries.
-- Prefer narrow commands first, then broaden only when needed to diagnose the current task.
-
-## Evidence And Verification
-
-- Include exact files, commands, observed behavior, and unresolved uncertainty when useful.
-- If a run fails, inspect the live terminal or log output first and use the exact error text.
-- Assume the user or another agent may have changed files mid-run; refresh context before summarizing or editing.
-
-## Environment Variables
+## Safety Boundaries
 
 - Never run broad environment dumps such as `env`, `set`, or `export -p`; query exact variable names and redact values.
+- For auth, PII, credentials, and production data, avoid exposing raw values in prompts, logs, persisted records, or public output; prefer opaque tokens and server-side lookups.
+- For production work, default to read-only. If the user asks for a read-only lookup, query, inventory, or diagnostic, do it after identity/scope verification without asking for command approval; gate only mutations, destructive actions, or reads likely to expose secrets, PII, credentials, or raw production records.
+- Do not add dependencies without explicit approval; before proposing one, check whether the standard library or an existing dependency is enough.
+- Destructive git, infrastructure, production data, or user-data operations require an explicit request. Do not amend commits, force-push, or rewrite published history without exact approval.
 
-## Tooling
+## Code Quality
 
-- Use `mise` to manage project runtimes and tool versions.
-- If a local tool fails only because cache, scratch, or build metadata paths are blocked, retry once with a scoped `/private/tmp/...` path when that does not change product behavior, dependencies, infrastructure, secrets, or production data.
-- If you use `/private/tmp` for sandbox-safe caches, scratch files, or tool output, clean up the specific files and directories you created before finishing.
-
-## Security And Production Data
-
-- For auth, PII, credentials, or production data work, keep sensitive data out of prompts, logs, persisted records, and public output.
-- For auth, PII, credentials, and production data, prefer opaque tokens and server-side lookups over exposing raw sensitive values.
-- For production work, default to read-only unless mutation is explicitly requested or confirmed.
-
-## Code Changes
-
-- Add comments only for non-obvious intent, constraints, or tradeoffs.
-- Do not leave breadcrumb comments when code is moved or removed.
+- Use the repo's existing package manager, runtime, style, and helper APIs; do not swap tooling without approval.
 - Keep files reasonably small; prefer helpers or modules before files become hard to scan.
-- Add regression tests for bug fixes when the project shape makes that reasonable.
-- Use the repo's existing package manager and runtime; do not swap tooling without approval.
-- Do not add new dependencies without explicit approval. Before proposing one, check maintenance, popularity, license, install/build scripts, transitive dependency footprint, and whether the project can reasonably use the standard library or an existing dependency instead.
-- When reviewing changes, explicitly look for AI slop: sloppy code, vague abstractions, gratuitous complexity, inconsistent style, weak naming, untested edge cases, or changes that look plausible but do not actually fit the surrounding system.
-- Fix tiny nearby papercuts only when low-risk and directly affecting the current task. Ask before broader refactors or behavior changes.
+- Add comments only for non-obvious intent, constraints, or tradeoffs; do not leave breadcrumb comments when code moves.
 
-## Git
+## Workspace
 
-- Destructive git or filesystem operations are forbidden unless explicitly requested.
-- Do not amend commits, force-push, or otherwise rewrite published history without explicit approval for that exact action.
+- Use `mise` for project runtimes and tool versions.
+- If local cache, scratch, or build metadata paths are blocked, retry once with a scoped `/private/tmp/...` path and clean up what you created.
 - If already inside a git repo, work in that checkout instead of jumping to a sibling clone unless asked.
-
-## Infrastructure
-
-- Never run destructive Terraform or OpenTofu commands unless explicitly requested.
+- For AWS auth, prefer official `aws-core:*` skills. For SSO profiles, refresh expired sessions directly with `aws sso login --no-browser --use-device-code --profile <profile>`, then verify identity before the real AWS command.

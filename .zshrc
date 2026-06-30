@@ -38,6 +38,11 @@ if command -v mise >/dev/null 2>&1; then
   eval "$(mise completion zsh)"
 fi
 
+# worktrunk shell integration
+if command -v wt >/dev/null 2>&1; then
+  eval "$(command wt config shell init zsh)"
+fi
+
 if command -v eza >/dev/null 2>&1; then
   alias ls='eza --group-directories-first --color=always --icons=auto'
   alias ll='eza -lah --group-directories-first --git --color=always --icons=auto'
@@ -105,3 +110,9 @@ do
   fi
 done
 unset _zsh_hl _zcompdump
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<

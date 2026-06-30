@@ -8,15 +8,11 @@
     "key": "Alt+Space"
   },
   {
-    "command": "toggleMaximizeSidePanel",
-    "key": "Command+Shift+F"
-  },
-  {
     "command": "toggleSidebar",
-    "key": "Command+S"
+    "key": "Command+B"
   },
   {
     "command": "toggleSidePanel",
-    "key": "Command+B"
+    "key": "Command+S"
   }
 ]

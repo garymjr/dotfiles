@@ -129,6 +129,12 @@ prefix_rule(
 )
 
 prefix_rule(
+    pattern = ["git", "status"],
+    decision = "allow",
+    justification = "Allows read-only Git status checks during local workflow inspection.",
+)
+
+prefix_rule(
     pattern = ["git", "push"],
     decision = "allow",
     justification = "Allows Git pushes to complete remote updates and local index bookkeeping without sandbox metadata failures after explicit user approval.",

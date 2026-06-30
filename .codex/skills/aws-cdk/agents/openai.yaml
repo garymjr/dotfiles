@@ -1,4 +1,0 @@
-interface:
-  display_name: "AWS CDK"
-  short_description: "Review and build CDK stacks safely"
-  default_prompt: "Use $aws-cdk to review this CDK stack layout and recommend safe deployment boundaries."

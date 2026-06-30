@@ -1,0 +1,13 @@
+interface:
+  display_name: "Review Greptile Comments"
+  short_description: "Handle Greptile PR feedback"
+  default_prompt: "Use $review-greptile-comments to review and handle Greptile comments on this PR."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "github"
+      description: "GitHub app for PR metadata, comments, replies, and review write-back."
+
+policy:
+  allow_implicit_invocation: true

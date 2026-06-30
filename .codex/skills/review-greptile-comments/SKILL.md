@@ -1,11 +1,11 @@
 ---
 name: review-greptile-comments
-description: Fetch, analyze, fix, reply to, and resolve Greptile comments on GitHub pull requests, defaulting to the current branch's PR. Use for Greptile bot feedback, actionable findings, handled threads, and write-back unless the user opts out.
+description: Fetch, analyze, fix, reply to, and resolve Greptile comments on GitHub pull requests, defaulting to the current branch's PR. Use for Greptile bot feedback, actionable findings, handled threads, and write-back unless the user opts out. Never reply to or resolve Greptile conversations until the relevant fixes have been committed and pushed to the PR branch.
 ---
 
 # Review Greptile Comments
 
-Use the GitHub app from this plugin as the primary interface for PR metadata, diffs, files, comments, replies, and review writes. Use `gh api graphql` only when thread-level fields such as `reviewThreads`, `isResolved`, `isOutdated`, or `resolveReviewThread` are required and the GitHub app result is not sufficient.
+Use the GitHub app as the primary interface for PR metadata, diffs, files, comments, replies, and review writes. Use `gh api graphql` only when thread-level fields such as `reviewThreads`, `isResolved`, `isOutdated`, or `resolveReviewThread` are required and the GitHub app result is not sufficient.
 
 ## Workflow
 
@@ -33,7 +33,12 @@ Use the GitHub app from this plugin as the primary interface for PR metadata, di
    - Run the narrowest formatter, typecheck, build, or test command that covers the changed code.
    - If a check fails because of the current change, fix it and rerun.
    - If a check fails for an unrelated reason, capture the exact failure and explain why it appears unrelated.
-6. Reply and resolve handled Greptile conversations after changes are made.
+6. Verify the fix is committed and pushed before GitHub write-back.
+   - Never reply to Greptile or resolve Greptile conversations while the relevant fixes are only in the working tree, staged, or committed locally but not pushed.
+   - Before write-back, verify there is a commit containing the relevant fix and that the PR branch remote contains that commit. Use local git status and PR head information; if needed, use `git rev-parse HEAD`, `git status --short`, and `gh pr view --json headRefOid,headRefName,url`.
+   - If the user asked to handle Greptile comments but did not authorize committing or pushing, stop after validation with the pending `@greptileai` reply text and unresolved thread ids.
+   - If committing and pushing are in scope, commit and push the focused fix before replying or resolving.
+7. Reply and resolve handled Greptile conversations after pushed changes exist.
    - Default to GitHub write-back. When the user asks to review, fix, address, or handle Greptile comments, treat that as approval to reply to and resolve the Greptile conversations that the resulting code changes directly address.
    - Skip GitHub write-back only when the user explicitly says not to reply, not to resolve, review-only, summarize-only, dry run, do not write to GitHub, or similar.
    - Use GitHub app write tools for replies or review comments when they are sufficient.
@@ -57,6 +62,7 @@ Use the GitHub app from this plugin as the primary interface for PR metadata, di
 
 - Do not submit reviews, request reviewers, or post unrelated GitHub comments without explicit user approval for that write action.
 - When the user asks to review, fix, address, or handle Greptile comments, replying to and resolving only the Greptile conversations directly addressed by the changes is in scope unless the user explicitly opts out.
+- Never reply to or resolve Greptile conversations until the relevant fix is committed and pushed to the PR branch.
 - Always include `@greptileai` in replies to Greptile, including posted replies and fallback reply drafts.
 - Do not expose secrets, private data, or large proprietary code excerpts in summaries or replies.
 - Do not mark a Greptile comment resolved just because a code change was made; verify the fix maps to the specific thread.
@@ -65,4 +71,4 @@ Use the GitHub app from this plugin as the primary interface for PR metadata, di
 
 ## Final Response
 
-Summarize the Greptile comments addressed, files changed, validation commands run, replies posted, conversations resolved, and any comments left unresolved. If GitHub write-back was skipped because the user opted out or a tool failed, say that explicitly.
+Summarize the Greptile comments addressed, files changed, validation commands run, commit and push status, replies posted, conversations resolved, and any comments left unresolved. If GitHub write-back was skipped because changes were not committed and pushed, the user opted out, or a tool failed, say that explicitly.

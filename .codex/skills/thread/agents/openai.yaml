@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thread"
+  short_description: "Guide Codex thread and worktree creation"
+  default_prompt: "Use $thread to create or manage a Codex app thread with the right worktree behavior."

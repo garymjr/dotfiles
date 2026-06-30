@@ -367,6 +367,123 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-06-21/lo-2"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/.local/bin"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-22/con"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-22/c"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-22/i-n"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/github-workflows"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-22/ad"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/add"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/sk"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/it-l"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/do-y"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/sk-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/use"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/up"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/i-n"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/vanta-code-review-branch-protection"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/how-does-agents-local-md-work"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/u"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-23/w"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/lo"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/loo"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/mo"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/u"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/crea"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/remov"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/new-chat-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/v"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/vanta-ma-casino-prod-api-remediation"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/lo-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/verify"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-24/new-chat-3"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-25/i-wan"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/fizzybar"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/scratch"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-26/p"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-29/i-n"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-29/i-wan"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-29/revi"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-06-30/use"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch"]
 status_line_use_colors = true
@@ -375,14 +492,20 @@ status_line_use_colors = true
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-21T03:12:44Z"
+last_updated = "2026-06-30T16:41:27Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-20T04:02:14Z"
+last_updated = "2026-06-24T06:01:55Z"
 source_type = "local"
 source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[marketplaces.agent-toolkit-for-aws]
+last_updated = "2026-06-30T16:05:34Z"
+last_revision = "8dc8e0632c16fb626466d8bd26ef92a5de113a4e"
+source_type = "git"
+source = "https://github.com/aws/agent-toolkit-for-aws.git"
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -417,17 +540,20 @@ enabled = true
 [plugins."chrome@openai-bundled"]
 enabled = true
 
-[plugins."greptile-pr-comments@personal"]
+
+[plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
-[plugins."greptile@personal"]
+[plugins."aws-core@agent-toolkit-for-aws"]
 enabled = true
 
 [features]
+hooks = true
 terminal_resize_reflow = true
-memories = true
+memories = false
 prevent_idle_sleep = true
 js_repl = false
+chronicle = false
 
 [desktop]
 conversationDetailMode = "STEPS_COMMANDS"
@@ -438,12 +564,13 @@ reviewDelivery = "inline"
 hotkey-window-projectless-default-enabled = true
 appearanceLightCodeThemeId = "codex"
 appearanceDarkCodeThemeId = "codex"
-followUpQueueMode = "queue"
+followUpQueueMode = "steer"
 notifications-turn-mode = "always"
 appearanceTheme = "system"
 codeFontSize = 14
-worktree-keep-count = 5
+worktree-keep-count = 10
 usePointerCursors = true
+mac-menu-bar-enabled = false
 
 [desktop.appearanceLightChromeTheme]
 accent = "#6f9ba6"
@@ -470,7 +597,7 @@ surface = "#181818"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 code = '"GeistMono Nerd Font", ui-monospace, "SFMono-Regular"'
-ui = "Geist, Inter"
+ui = "Geist"
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
 diffAdded = "#70b489"
@@ -486,8 +613,8 @@ global = "zed"
 "/Users/gmurray/.codex/worktrees/b4dd/central" = "ghostty"
 
 [memories]
-generate_memories = true
-use_memories = true
+generate_memories = false
+use_memories = false
 
 [[skills.config]]
 name = "build-web-apps:react-best-practices"
@@ -505,9 +632,6 @@ enabled = false
 name = "build-web-apps:supabase-postgres-best-practices"
 enabled = false
 
-[sandbox_workspace_write]
-network_access = true
-
 [mcp_servers.node_repl]
 args = []
 command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
@@ -519,13 +643,25 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_nod
 NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
 CODEX_HOME = "/Users/gmurray/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2c20141b13bec5a64cd2874d8e2df011430d5b1a70e4f5425aa10d01743311a8"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "d5cbb8ec1ee520cba7943b1e1accb6b25acd9941ea4e2e9e4dbcf25ff9983a2d"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.616.51431"
+BROWSER_USE_CODEX_APP_VERSION = "26.623.70822"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [mcp_servers.vanta]
 url = "https://mcp.vanta.com/mcp"
+
+[hooks.state]
+
+[hooks.state."aws-core@agent-toolkit-for-aws:hooks/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:f2e089d549167d9ad7d1533fe22613de38f4243a4dd4cbce0e0a808c1162503b"
+
+[hooks.state."aws-core@agent-toolkit-for-aws:hooks/hooks.json:pre_tool_use:1:0"]
+trusted_hash = "sha256:11d7b53fbeb9861a03b33c63ffd33734b5248f3522bdd96fbcd7c38402ac5305"
+
+[hooks.state."/Users/gmurray/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:5d101181a98324a4f6651b321d509b9f23c6662446f280a18c3694e4ca0885fd"
+enabled = true
