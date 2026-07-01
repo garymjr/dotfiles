@@ -61,6 +61,8 @@ zoxide = "latest"
 "~/Library/Application Support/com.mitchellh.ghostty" = { mode = "symlink" }
 "~/Library/Application Support/lazygit" = { mode = "symlink" }
 "~/.config/mise/config.toml" = "~/.dotfiles/.config/mise/config.toml"
+"/Users/gmurray/.config/herdr" = { mode = "symlink" }
+"/Users/gmurray/.config/opencode" = { mode = "symlink" }
 
 [settings]
 experimental = true
