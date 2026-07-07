@@ -1,4 +1,0 @@
-interface:
-  display_name: "Skill Cleaner"
-  short_description: "Audit and slim local Codex skills"
-  default_prompt: "Use $skill-cleaner to audit local Codex skills, disable unused ones, and tighten skill descriptions."

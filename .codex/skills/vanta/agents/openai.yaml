@@ -1,4 +1,0 @@
-interface:
-  display_name: "Vanta"
-  short_description: "Route Vanta work through MCP first"
-  default_prompt: "Use $vanta to inspect a Vanta issue and identify the next safe action."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Zentty CLI"
-  short_description: "Control Zentty panes and agent sessions"
-  default_prompt: "Use $zentty-cli to inspect this Zentty pane and choose the right CLI command."
