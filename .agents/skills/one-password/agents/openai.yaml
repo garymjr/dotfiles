@@ -1,0 +1,4 @@
+interface:
+  display_name: "1Password"
+  short_description: "Local dev secrets via 1Password"
+  default_prompt: "Use $one-password to run this local dev command with project secrets."
