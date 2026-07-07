@@ -1,6 +1,8 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 
+[[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
 # Homebrew environment
 if [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -39,4 +41,10 @@ unset _p _path_prepend _existing_path_prepend
 # mise
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
+fi
+
+# Keep Homebrew ahead of macOS system tools even after tools like mise rewrite PATH.
+# `typeset -U path PATH` above keeps the first occurrence and removes duplicates.
+if [[ -n "${HOMEBREW_PREFIX:-}" ]]; then
+  path=("$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin" $path)
 fi

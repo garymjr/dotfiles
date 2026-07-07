@@ -10,8 +10,6 @@ export HOMEBREW_NO_ENV_HINTS=1
 unset MAILCHECK MAIL MAILPATH mailpath
 unsetopt MAIL_WARNING 2>/dev/null
 
-[[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
-
 setopt autocd
 setopt interactive_comments
 bindkey -e
@@ -111,8 +109,8 @@ do
 done
 unset _zsh_hl _zcompdump
 
-# >>> grok installer >>>
-export PATH="$HOME/.grok/bin:$PATH"
-fpath=(~/.grok/completions/zsh $fpath)
-autoload -Uz compinit && compinit -C
-# <<< grok installer <<<
+# Keep Homebrew ahead of macOS system tools in interactive shells.
+if [[ -n "${HOMEBREW_PREFIX:-}" ]]; then
+  typeset -U path PATH
+  path=("$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin" $path)
+fi
