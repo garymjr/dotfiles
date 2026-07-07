@@ -26,43 +26,24 @@ worktrunk = "latest"
 yazi = "latest"
 zoxide = "latest"
 
-[bootstrap.packages]
-"brew:cmake" = "latest"
-"brew:curl" = "latest"
-"brew:git" = "latest"
-"brew:gh" = "latest"
-"brew:libpq" = "latest"
-"brew:libyaml" = "latest"
-"brew:ncurses" = "latest"
-"brew:pdftk-java" = "latest"
-"brew:pkgconf" = "latest"
-"brew:poppler" = "latest"
-"brew:tree" = "latest"
-"brew:zsh-syntax-highlighting" = "latest"
-
-[bootstrap.macos.defaults]
-"com.apple.screencaptureui" = { thumbnailExpiration = 60 }
-
 [dotfiles]
 "~/.zshrc" = { mode = "symlink" }
 "~/.zshenv" = { mode = "symlink" }
 "~/.agents/plugins/marketplace.json" = { mode = "symlink" }
 "~/.codex/AGENTS.md" = { mode = "symlink" }
-"~/.codex/automations/weekly-permission-rule-review/automation.toml" = { mode = "symlink" }
 "~/.codex/browser/config.toml" = { mode = "symlink" }
 "~/.codex/config.toml" = { mode = "symlink" }
 "~/.codex/keybindings.json" = { mode = "symlink" }
-"~/.codex/rules" = { mode = "symlink" }
 "~/.codex/skills" = { mode = "symlink" }
-"~/plugins" = { mode = "symlink" }
 "~/.config/nvim" = { mode = "symlink" }
 "~/.config/starship.toml" = { mode = "symlink" }
 "~/.gitconfig" = { mode = "symlink" }
 "~/Library/Application Support/com.mitchellh.ghostty" = { mode = "symlink" }
 "~/Library/Application Support/lazygit" = { mode = "symlink" }
 "~/.config/mise/config.toml" = "~/.dotfiles/.config/mise/config.toml"
-"/Users/gmurray/.config/herdr" = { mode = "symlink" }
-"/Users/gmurray/.config/opencode" = { mode = "symlink" }
+"~/.config/herdr" = { mode = "symlink" }
+"~/.config/opencode" = { mode = "symlink" }
+"~/.agents" = { mode = "symlink" }
 
 [settings]
 experimental = true
