@@ -29,8 +29,7 @@ zoxide = "latest"
 [dotfiles]
 "~/.zshrc" = { mode = "symlink" }
 "~/.zshenv" = { mode = "symlink" }
-"~/.agents/plugins/marketplace.json" = { mode = "symlink" }
-"~/.codex/AGENTS.md" = { mode = "symlink" }
+"~/.codex/AGENTS.md" = "~/.dotfiles/.agents/AGENTS.md"
 "~/.codex/browser/config.toml" = { mode = "symlink" }
 "~/.codex/config.toml" = { mode = "symlink" }
 "~/.codex/keybindings.json" = { mode = "symlink" }
@@ -43,6 +42,7 @@ zoxide = "latest"
 "~/.config/mise/config.toml" = "~/.dotfiles/.config/mise/config.toml"
 "~/.config/herdr" = { mode = "symlink" }
 "~/.config/opencode" = { mode = "symlink" }
+"~/.config/opencode/AGENTS.md" = "~/.dotfiles/.agents/AGENTS.md"
 "~/.agents" = { mode = "symlink" }
 
 [settings]
