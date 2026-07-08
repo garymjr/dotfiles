@@ -52,6 +52,7 @@ else
   alias l='ls -CF'
 fi
 alias lg='lazygit'
+alias pi='mise exec node@26 -- pi'
 
 rcd() {
   local repo_root

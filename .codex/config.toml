@@ -508,6 +508,45 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-07-06/revi"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/let-s-set-up-a-scheduled"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/vanta-high-findings-investigation"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/use-github-to-review-my-open"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/use-github-to-review-my-open-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/use-github-to-review-my-open-3"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/con"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/let-s-set-up-a-scheduled-2"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/use-github-to-review-my-open-4"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/ho"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/comp"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-07/please-run-a-5-shot-local"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/idpair-review-bot"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-08/i"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch"]
 status_line_use_colors = true
@@ -517,7 +556,7 @@ theme = "ansi"
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-07T03:46:52Z"
+last_updated = "2026-07-08T18:48:38Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -527,8 +566,8 @@ source_type = "local"
 source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.agent-toolkit-for-aws]
-last_updated = "2026-07-06T19:55:15Z"
-last_revision = "748da44288587dc1f04daf0ad2181a804bacbd43"
+last_updated = "2026-07-08T15:16:31Z"
+last_revision = "de66f53e3c6ba84f5ee62bb260c24b5ace9c2e73"
 source_type = "git"
 source = "https://github.com/aws/agent-toolkit-for-aws.git"
 
@@ -582,12 +621,12 @@ conversationDetailMode = "STEPS_COMMANDS"
 ambient-suggestions-enabled = false
 keepRemoteControlAwakeWhilePluggedIn = true
 preventSleepWhileRunning = true
-reviewDelivery = "inline"
+reviewDelivery = "detached"
 hotkey-window-projectless-default-enabled = true
-appearanceLightCodeThemeId = "catppuccin"
-appearanceDarkCodeThemeId = "catppuccin"
+appearanceLightCodeThemeId = "codex"
+appearanceDarkCodeThemeId = "codex"
 followUpQueueMode = "steer"
-notifications-turn-mode = "always"
+notifications-turn-mode = "unfocused"
 appearanceTheme = "system"
 codeFontSize = 14
 worktree-keep-count = 10
@@ -595,36 +634,36 @@ usePointerCursors = true
 mac-menu-bar-enabled = false
 
 [desktop.appearanceLightChromeTheme]
-accent = "#8839ef"
+accent = "#0169cc"
 contrast = 45
-ink = "#4c4f69"
+ink = "#0d0d0d"
 opaqueWindows = true
-surface = "#eff1f5"
+surface = "#ffffff"
 
 [desktop.appearanceLightChromeTheme.fonts]
 code = '"GeistMono Nerd Font"'
 ui = "Geist"
 
 [desktop.appearanceLightChromeTheme.semanticColors]
-diffAdded = "#40a02b"
-diffRemoved = "#d20f39"
-skill = "#8839ef"
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#751ed9"
 
 [desktop.appearanceDarkChromeTheme]
-accent = "#cba6f7"
+accent = "#0169cc"
 contrast = 50
-ink = "#cdd6f4"
+ink = "#fcfcfc"
 opaqueWindows = true
-surface = "#1e1e2e"
+surface = "#111111"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 code = '"GeistMono Nerd Font", ui-monospace, "SFMono-Regular"'
 ui = "Geist"
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
-diffAdded = "#a6e3a1"
-diffRemoved = "#f38ba8"
-skill = "#cba6f7"
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#b06dff"
 
 [desktop.open-in-target-preferences]
 global = "zed"
