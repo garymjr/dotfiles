@@ -1,6 +1,6 @@
 notify = ["/Users/gmurray/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 model = "gpt-5.5"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "high"
 personality = "pragmatic"
 sandbox_mode = "danger-full-access"
 approvals_reviewer = "auto_review"
@@ -547,6 +547,9 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-07-08/i"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Documents/Codex/2026-07-08/h"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch"]
 status_line_use_colors = true
@@ -556,7 +559,7 @@ theme = "ansi"
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-08T18:48:38Z"
+last_updated = "2026-07-09T05:07:30Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
