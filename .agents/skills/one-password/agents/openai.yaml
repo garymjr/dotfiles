@@ -1,4 +1,0 @@
-interface:
-  display_name: "1Password"
-  short_description: "Safely read/write agent secrets with 1Password CLI"
-  default_prompt: "Use $one-password for this task. Use the Agent Runtime vault for agent-owned secrets and never print secret values."
