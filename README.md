@@ -14,12 +14,14 @@ files are symlinks declared in `.config/mise/config.toml`, with
   `.config/mise/config.toml`
 - Neovim configuration: `.config/nvim`
 - Prompt configuration: `.config/starship.toml`
+- Herdr configuration: `.config/herdr/config.toml`
+- Opencode configuration: `.config/opencode`
 - Ghostty configuration: `Library/Application Support/com.mitchellh.ghostty`
 - Lazygit configuration: `Library/Application Support/lazygit`
 - Codex configuration, rules, skills, keybindings, browser config, and selected
   automations under `.codex`
-- Agent plugin marketplace metadata under `.agents`
-- Local personal plugins under `plugins`
+- Shared agent instructions, skills, and plugin marketplace metadata under
+  `.agents`
 
 The current setup uses symlinks for managed dotfiles.
 
@@ -84,9 +86,13 @@ git status --short
   `.config/nvim/lua/plugins`.
 - Codex skills and rules are tracked here intentionally; generated plugin cache
   directories are not.
+- `.agents/AGENTS.md` is linked into both `~/.codex/AGENTS.md` and
+  `~/.config/opencode/AGENTS.md`.
+- Herdr session, socket, release-note, and log files are local state and are not
+  tracked.
 
 ## Safety
 
 Do not commit credentials, tokens, private keys, production data, shell history,
 or machine-local state. The repository intentionally ignores Lazygit's mutable
-state file at `Library/Application Support/lazygit/state.yml`.
+state file, Herdr runtime state, and local Opencode dependency/install metadata.
