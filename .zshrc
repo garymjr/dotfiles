@@ -76,7 +76,7 @@ oc() {
     return 1
   fi
 
-  opencode attach --dir "$PWD" "$tailscale_hostname:$port"
+  opencode attach "http://$tailscale_hostname:$port" --dir "$PWD"
 }
 
 # zoxide
