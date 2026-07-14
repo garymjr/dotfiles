@@ -1,6 +1,7 @@
 [user]
   name = "Gary Murray"
   email = "garymjr@gmail.com"
+	signingkey = ~/.ssh/github-signing.pub
 [advice]
   detachedHead = false
   statusHints = false
@@ -8,6 +9,7 @@
   ui = auto
 [commit]
   verbose = true
+	gpgsign = true
 [core]
   excludesFile = ~/.config/git/ignore
   ignorecase = true
@@ -33,10 +35,10 @@
   helper = !gh auth git-credential
 [credential "https://github.com"]
 	helper = 
-	helper = !gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
 [alias]
   c = commit
   co = checkout
@@ -50,3 +52,7 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[gpg]
+	format = ssh
+[tag]
+	gpgsign = true
