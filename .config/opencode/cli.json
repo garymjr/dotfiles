@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "name": "catppuccin"
+  },
+  "attention": {
+    "enabled": true,
+    "notifications": true,
+    "sound": true
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "hide",
+    "scrollbar": false,
+    "thinking": "hide"
+  },
+  "animations": true
+}
