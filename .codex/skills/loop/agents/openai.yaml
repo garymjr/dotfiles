@@ -1,4 +1,0 @@
-interface:
-  display_name: "Loop"
-  short_description: "Turn requests into bounded goals"
-  default_prompt: "Use $loop to turn this request into a bounded goal and complete it."

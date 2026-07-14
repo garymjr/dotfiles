@@ -2,8 +2,8 @@ notify = ["/Users/gmurray/.codex/computer-use/Codex Computer Use.app/Contents/Sh
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
 personality = "pragmatic"
-sandbox_mode = "danger-full-access"
-approvals_reviewer = "auto_review"
+sandbox_mode = "workspace-write"
+approvals_reviewer = "guardian_subagent"
 approval_policy = "on-request"
 service_tier = "default"
 
@@ -550,6 +550,12 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-07-08/h"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Documents/Codex/2026-07-13/vanta-weekday-test-check"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-14/vanta-aws-inspector-investigation"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch"]
 status_line_use_colors = true
@@ -559,18 +565,18 @@ theme = "ansi"
 "gpt-5.5" = 4
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-09T17:56:28Z"
+last_updated = "2026-07-14T15:03:51Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-07-01T22:02:15Z"
+last_updated = "2026-07-10T05:01:56Z"
 source_type = "local"
 source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.agent-toolkit-for-aws]
-last_updated = "2026-07-09T15:10:50Z"
-last_revision = "4217c65af277aa5a63b88395dfd9d3655ef7e0fb"
+last_updated = "2026-07-14T15:03:48Z"
+last_revision = "74e317a6ee4221204c917770e3aaec9558a81778"
 source_type = "git"
 source = "https://github.com/aws/agent-toolkit-for-aws.git"
 
@@ -714,14 +720,14 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_n
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
 CODEX_HOME = "/Users/gmurray/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2b020a2faded171bf620563ce51864b7c3ff320f1834f0044b73fcbeabb29a76,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,cf732b4a285497bfd7e75a2ac14879bce9ae644eb4e1babeb17bb6a840dfc9bd"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.707.30751"
-SKY_CUA_SERVICE_PATH = "/Users/gmurray/.codex/plugins/cache/openai-bundled/computer-use/1.0.1000362/Codex Computer Use.app"
+BROWSER_USE_CODEX_APP_VERSION = "26.707.72221"
+SKY_CUA_SERVICE_PATH = "/Users/gmurray/.codex/plugins/cache/openai-bundled/computer-use/1.0.1000387/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.vanta]
