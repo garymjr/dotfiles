@@ -48,3 +48,26 @@ zoxide = "latest"
 experimental = true
 dotfiles.root = "~/.dotfiles"
 dotfiles.default_mode = "symlink"
+
+[bootstrap.brew.taps]
+"kitlangton/tap" = "https://github.com/kitlangton/homebrew-tap.git"
+"modem-dev/tap" = "https://github.com/modem-dev/homebrew-tap.git"
+
+[bootstrap.packages]
+"brew:cmake" = "latest"
+"brew:curl" = "latest"
+"brew:gettext" = "latest"
+"brew:gh" = "latest"
+"brew:kitlangton/tap/ghui" = "latest"
+"brew:git" = "latest"
+"brew:glib" = "latest"
+"brew:gnupg" = "latest"
+"brew:modem-dev/tap/hunk" = "latest"
+"brew:libpq" = "latest"
+"brew:libyaml" = "latest"
+"brew:ncurses" = "latest"
+"brew:pdftk-java" = "latest"
+"brew:pkgconf" = "latest"
+"brew:poppler" = "latest"
+"brew:tree" = "latest"
+"brew:zsh-syntax-highlighting" = "latest"
