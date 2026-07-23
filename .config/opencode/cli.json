@@ -2,6 +2,9 @@
   "theme": {
     "name": "catppuccin"
   },
+  "plugins": [
+    "./plugins/herdr-agent-state.js"
+  ],
   "attention": {
     "enabled": true,
     "notifications": true,
