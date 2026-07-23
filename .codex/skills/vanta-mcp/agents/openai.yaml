@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vanta MCP"
+  short_description: "Review Vanta compliance data safely"
+  default_prompt: "Use $vanta-mcp to review Vanta compliance tests without making changes."

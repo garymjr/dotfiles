@@ -8,11 +8,23 @@
     "key": "Alt+Space"
   },
   {
-    "command": "toggleSidebar",
-    "key": "Command+B"
+    "command": "reloadBrowserPage",
+    "key": null
   },
   {
-    "command": "toggleSidePanel",
-    "key": "Command+S"
+    "command": "searchChats",
+    "key": "Command+R"
+  },
+  {
+    "command": "toggleBottomPanel",
+    "key": null
+  },
+  {
+    "command": "togglePinnedSummary",
+    "key": "Command+J"
+  },
+  {
+    "command": "toggleSidebar",
+    "key": "Command+B"
   }
 ]

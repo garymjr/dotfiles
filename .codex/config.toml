@@ -1,7 +1,7 @@
 notify = ["/Users/gmurray/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
-personality = "pragmatic"
+personality = "friendly"
 sandbox_mode = "workspace-write"
 approvals_reviewer = "guardian_subagent"
 approval_policy = "on-request"
@@ -556,6 +556,48 @@ trust_level = "trusted"
 [projects."/Users/gmurray/Documents/Codex/2026-07-14/vanta-aws-inspector-investigation"]
 trust_level = "trusted"
 
+[projects."/Users/gmurray/Developer/opencode-discord-bot"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-15/th"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-16/rea"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/.codex/.chatgpt-projects/g-p-69d5494214c08191a97d3975871da788"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-20/fix-vanta-github-branch-protection"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-20/investigate-aws-inspector-vanta-issues"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-20/wh"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-21/fix"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-21/explore"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/t3code"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-23/go-t"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-23/i"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Developer/switchboard"]
+trust_level = "trusted"
+
+[projects."/Users/gmurray/Documents/Codex/2026-07-23/ad"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch"]
 status_line_use_colors = true
@@ -563,20 +605,21 @@ theme = "ansi"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
+"gpt-5.6-sol" = 1
 
 [marketplaces.openai-bundled]
-last_updated = "2026-07-14T15:03:51Z"
+last_updated = "2026-07-23T20:10:57Z"
 source_type = "local"
 source = "/Users/gmurray/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-07-10T05:01:56Z"
+last_updated = "2026-07-16T09:02:17Z"
 source_type = "local"
 source = "/Users/gmurray/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.agent-toolkit-for-aws]
-last_updated = "2026-07-14T15:03:48Z"
-last_revision = "74e317a6ee4221204c917770e3aaec9558a81778"
+last_updated = "2026-07-23T16:09:41Z"
+last_revision = "b4416dddac9b6a0cc5412136e6dbf8f07ffdb31c"
 source_type = "git"
 source = "https://github.com/aws/agent-toolkit-for-aws.git"
 
@@ -638,8 +681,8 @@ keepRemoteControlAwakeWhilePluggedIn = true
 preventSleepWhileRunning = true
 reviewDelivery = "detached"
 hotkey-window-projectless-default-enabled = true
-appearanceLightCodeThemeId = "codex"
-appearanceDarkCodeThemeId = "codex"
+appearanceLightCodeThemeId = "catppuccin"
+appearanceDarkCodeThemeId = "catppuccin"
 followUpQueueMode = "steer"
 notifications-turn-mode = "unfocused"
 appearanceTheme = "system"
@@ -647,39 +690,40 @@ codeFontSize = 14
 worktree-keep-count = 10
 usePointerCursors = true
 mac-menu-bar-enabled = false
-dock-icon-preference = "codex-system"
+dock-icon-preference = "app-default"
+git-pull-request-merge-method = "squash"
 
 [desktop.appearanceLightChromeTheme]
-accent = "#0169cc"
-contrast = 45
-ink = "#0d0d0d"
+accent = "#8839ef"
+contrast = 40
+ink = "#4c4f69"
 opaqueWindows = true
-surface = "#ffffff"
+surface = "#eff1f5"
 
 [desktop.appearanceLightChromeTheme.fonts]
-code = '"GeistMono Nerd Font"'
-ui = "Geist"
+code = '"JetBrainsMono Nerd Font"'
+ui = '"JetBrainsMono Nerd Font Propo"'
 
 [desktop.appearanceLightChromeTheme.semanticColors]
-diffAdded = "#00a240"
-diffRemoved = "#e02e2a"
-skill = "#751ed9"
+diffAdded = "#40a02b"
+diffRemoved = "#d20f39"
+skill = "#8839ef"
 
 [desktop.appearanceDarkChromeTheme]
-accent = "#0169cc"
+accent = "#cba6f7"
 contrast = 50
-ink = "#fcfcfc"
+ink = "#cdd6f4"
 opaqueWindows = true
-surface = "#111111"
+surface = "#1e1e2e"
 
 [desktop.appearanceDarkChromeTheme.fonts]
-code = '"GeistMono Nerd Font", ui-monospace, "SFMono-Regular"'
-ui = "Geist"
+code = '"JetBrainsMono Nerd Font"'
+ui = '"JetBrainsMono Nerd Font Propo"'
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
-diffAdded = "#00a240"
-diffRemoved = "#e02e2a"
-skill = "#b06dff"
+diffAdded = "#a6e3a1"
+diffRemoved = "#f38ba8"
+skill = "#cba6f7"
 
 [desktop.open-in-target-preferences]
 global = "zed"
@@ -720,18 +764,19 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_n
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
 CODEX_HOME = "/Users/gmurray/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,cf732b4a285497bfd7e75a2ac14879bce9ae644eb4e1babeb17bb6a840dfc9bd"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "41e1151f1e50f096c7561da32bb01123e74b6ecdd38f081e34da30091fc4f193,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.707.72221"
-SKY_CUA_SERVICE_PATH = "/Users/gmurray/.codex/plugins/cache/openai-bundled/computer-use/1.0.1000387/Codex Computer Use.app"
+BROWSER_USE_CODEX_APP_VERSION = "26.721.30844"
+SKY_CUA_SERVICE_PATH = "/Users/gmurray/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.vanta]
 url = "https://mcp.vanta.com/mcp"
+enabled = true
 
 [mcp_servers.computer-use]
 command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
@@ -750,3 +795,11 @@ trusted_hash = "sha256:11d7b53fbeb9861a03b33c63ffd33734b5248f3522bdd96fbcd7c3840
 [hooks.state."/Users/gmurray/.codex/hooks.json:session_start:0:0"]
 trusted_hash = "sha256:5d101181a98324a4f6651b321d509b9f23c6662446f280a18c3694e4ca0885fd"
 enabled = true
+
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "41e1151f1e50f096c7561da32bb01123e74b6ecdd38f081e34da30091fc4f193,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/gmurray/.codex"
+
+[sandbox_workspace_write]
+network_access = true
