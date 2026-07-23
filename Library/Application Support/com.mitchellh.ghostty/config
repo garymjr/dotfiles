@@ -1,11 +1,11 @@
-font-family = "Ioskeley Mono"
+font-family = "JetBrainsMono Nerd Font"
 command = /bin/zsh
 font-feature = ss01
 font-feature = ss02
 font-feature = ss03
 font-feature = ss05
 font-feature = ss09
-theme = "Catppuccin Mocha"
+theme = "Rose Pine"
 selection-invert-fg-bg = true
 # window-decoration = none
 # window-show-tab-bar = never
