@@ -5,6 +5,7 @@
 /.config/herdr/session-history.json
 /.config/herdr/session.json
 /.config/opencode/package-lock.json
+/.codex/skills/.system/
 
 .DS_Store
 /.config/opencode/AGENTS.md
